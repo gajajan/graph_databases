@@ -1,2 +1,2 @@
-# graph_databases
+# Graph databases
 Repository for a bachelor's thesis dealing with graph databases.
