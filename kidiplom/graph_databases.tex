@@ -1,0 +1,291 @@
+%%%  Ukázkový text a dokumentace stylu pro text závěrečné (bakalářské a
+%%%  diplomové) práce na KI PřF UP v Olomouci
+%%%  Copyright (C) 2012 Martin Rotter, <rotter.martinos@gmail.com>
+%%%  Copyright (C) 2014 Jan Outrata, <jan.outrata@upol.cz>
+
+
+%%  Pro získání PDF souboru dokumentu je třeba tento zdrojový text v
+%%  LaTeXu přeložit (dvakrát) programem pdfLaTeX.
+
+%%  V případě použití programu BibLaTeX pro tvorbu seznamu literatury
+%%  je poté ještě třeba spustit program Biber s parametrem jméno
+%%  souboru zdrojového textu bez přípony a následně opět (dvakrát)
+%%  přeložit zdrojový text programem pdfLaTeX.
+
+%%  Postup získání Postscriptového souboru je popsán v dokumentaci.
+
+
+%%  Třída dokumentu implementující styl pro závěrečnou práci. Vybrané
+%%  nepovinné parametry (ostatní v dokumentaci):
+
+%%  'master' pro sazbu diplomové práce, jinak se sází bakalářská práce
+
+%%  'program=kód' pro Váš studijní program/obor (specializaci), kódy
+%%  pro diplomovou práci 'infoi' pro Informatiku (Obecná informatika),
+%%  'infui' pro Informatiku (Umělá inteligence), 'ainfpst' pro
+%%  Aplikovanou informatiku (Počítačové systémy a technologie), 'uinf'
+%%  pro Učitelství informatiky pro střední školy, 'binf' pro
+%%  Bioinformatiku, 'inf' pro Informatiku (bez specializací) a 'ainf'
+%%  pro Aplikovanou informatiku (bez specializací), jinak je výchozí
+%%  ainfvs pro Aplikovanou informatiku (Vývoj software), a pro
+%%  bakalářskou práci 'infoi' pro Informatiku (Obecná informatika),
+%%  'itp' pro Informační technologie v prezenční formě, 'itk' pro
+%%  Informační technologie v kombinované formě, 'infv' pro Informatiku
+%%  pro vzdělávání, 'binf' pro Bioinfomatiku, 'inf' pro Informatiku
+%%  (bez specializací), 'ainfp' pro Aplikovanou informatiku (bez
+%%  specializací) v prezenční formě, 'ainfk' pro Aplikovanou
+%%  informatiku (bez specializací) v kombinované formě, jinak je
+%%  výchozí infpvs pro Informatiku (Programování a vývoj software)
+
+%%  'printversion' pro sazbu verze pro tisk (nebarevné logo a odkazy,
+%%  odkazy s uvedením adresy za odkazem, ne odkazy do rejstříku),
+%%  jinak verze pro prohlížeč
+
+%%  'biblatex' pro zapnutí podpory pro sazbu bibliografie pomocí
+%%  BibLaTeXu, jinak je výchozí sazba v prostředí thebibliography
+
+%%  'language=jazyk' pro jazyk práce, jazyky english pro anglický,
+%%  slovak pro slovenský, jinak je výchozí czech pro český
+
+%%  'font=sans' pro bezpatkový font (Iwona Light), jinak výchozí
+%%  patkový (Latin Modern)
+
+\documentclass[
+%  master,
+  program=infoi,
+%  printversion,
+  biblatex,
+%  language=english,
+%  font=sans,
+  figures=false,
+  glossaries,
+  index
+]{kidiplom}
+
+%% Informace pro úvodní strany. V jazyku práce (pokud není v komentáři
+%% uvedeno česky) a anglicky. Uveďte všechny, u kterých není v
+%% komentáři uvedeno, že jsou volitelné. Při neuvedení se použijí
+%% výchozí texty. Text pro jiný než nastavený jazyk práce (nepovinným
+%% parametrem language makra \documentclass, výchozí český) se zadává
+%% použitím makra s uvedením jazyka jako nepovinného parametru.
+
+%% Název práce, česky a anglicky. Měl by se vysázet na jeden řádek.
+\title{Grafové databáze – přehled a srovnání}
+\title[english]{Graph databases – overview and comparison}
+
+%% Volitelný podnázev práce, česky a anglicky. Měl by se vysázet na
+%% jeden řádek. Výchozí je prázdný.
+%% \subtitle{}
+%% \subtitle[english]{}
+
+%% Jméno autora práce. Makro nemá nepovinný parametr pro uvedení
+%% jazyka.
+\author{Jan Gaja}
+
+%% Jméno vedoucího práce (včetně titulů). Makro nemá nepovinný
+%% parametr pro uvedení jazyka.
+\supervisor{Mgr. Tomáš Urbanec}
+
+%% Volitelný rok odevzdání práce. Výchozí je aktuální (kalendářní)
+%% rok. Makro nemá nepovinný parametr pro uvedení jazyka.
+%\yearofsubmit{\the\year}
+
+%% Anotace práce, včetně anglické (obvykle překlad z jazyka
+%% práce). Jeden odstavec!
+\annotation{Práce má dva cíle:
+1. nastudovat principy ukládání a práce s daty v grafových databázích a získané poznatky sepsat do textu, který čtenáři poskytne dobrou představu o fungování,
+výhodách a nevýhodách tohoto přístupu k datům.
+2. vybrat několik implementací grafových databází, nachystat ukázky jejich použití a pokusit se navrhnout experimenty ukazující silné a slabé stránky zvolených
+implementací.}
+
+\annotation[english]{Thesis has two goals: 
+1. study the principles of storing and working with data in graph databases and and write down the knowledge gained in a text that will give the reader a good idea of how it works, advantages and disadvantages of this approach to data.
+2. select several implementations of graph databases, prepare examples of their use and try to devise experiments showing the strengths and weaknesses of the selected implementation.}
+
+%% Klíčová slova práce, včetně anglických. Oddělená (obvykle) středníkem.
+\keywords{grafové databáze; implementace grafových databází}
+\keywords[english]{graph databases; implementation of graph databases}
+
+%% Volitelná specifikace příloh textu práce, i anglicky. Výchozí je '1
+%% CD/DVD'.
+%\supplements{jedno kulaté placaté CD/DVD s malou kulatou dírou uprostřed}
+%\supplements[english]{one round flat CD/DVD with a small round hole in the middle}
+
+%% Volitelné poděkování. Stručné! Výchozí je prázdné. Makro nemá
+%% nepovinný parametr pro uvedení jazyka.
+\thanks{Děkuji, děkuji, děkuji.}
+
+%% Cesta k souboru s bibliografií pro její sazbu pomocí BibLaTeXu
+%% (zvolenou nepovinným parametrem biblatex makra
+%% \documentclass). Použijte pouze při této sazbě, ne při (výchozí)
+%% sazbě v prostředí thebibliography.
+\bibliography{bibliografie.bib}
+
+%% Další dodatečné styly (balíky) potřebné pro sazbu vlastního textu
+%% práce.
+\usepackage{lipsum}
+\usepackage{longtable}
+
+\begin{document}
+%% Sazba úvodních stran -- titulní, s bibliografickými údaji, s
+%% anotací a klíčovými slovy, s poděkováním a prohlášením, s obsahem a
+%% se seznamy obrázků, tabulek, vět a zdrojových kódů (pokud jejich
+%% sazba není vypnutá).
+\maketitle
+
+%% Vlastní text závěrečné práce. Pro povinné závěry, před přílohami,
+%% použijte prostředí kiconclusions. Povinná je i příloha s obsahem
+%% přiloženého datového média.
+
+%% -------------------------------------------------------------------
+
+\newcommand{\BibLaTeX}{\textsc{Bib}\LaTeX}
+
+\section{Grafové databáze}
+Úvod do grafových databází, co to je.
+
+\subsection{Výhody grafových databází}
+Pojednává o výhodách grafových databází. Jsou vhodné pro data, které jsou hustě propojené. Nejznáměší příklad takových dat jsou data ze sociální sítě.
+Sociální sítě často poskytují nabízení nových přátel, lidí se kterými by se uživatel chtěl spojit. Jedním ze způsbů je navrhování přátel, kteří již jsou přátelé uživatelových přátel. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy... 
+
+\subsection{Nevýhody grafových databází}
+Nevýhody grafových databázích se projeví například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat...
+
+\section{Implementace grafových databází}
+Existuje spousta implementací grafových databází. Nejznámnějšími jsou Neo4j, OrientDB, MemoGraph, TigerGraph, InfiniteGraph...
+
+\subsection{Dotazovací jazyky v grafových databázích}
+\subsubsection{Gremlin}
+\subsubsection{Cypher}
+\subsubsection{GQL}
+
+\subsection{Neo4j}
+Jedná se o nejrozšířenější open-source grafovou databázi. Implementována je v Javě. Nabízí vysoký výkon při práci s grafy. Používá Cypher jako dotazovací jazyk. 
+
+\subsection{OrientDB}
+OrientDB je open-source NoSQL databázový systém implementovaný v Javě. Je to multi-model databáze - podporuje grafový, dokumentový, hodnota/klíč a objektový model....
+
+%% Závěry práce. V jazyce práce a anglicky. Text pro jiný než
+%% nastavený jazyk práce (nepovinným parametrem language makra
+%% \documentclass, výchozí český) se zadává použitím makra s uvedením
+%% jazyka jako nepovinného parametru.
+\begin{kiconclusions}
+Závěr práce v \uv{českém} jazyce.
+\end{kiconclusions}
+
+\begin{kiconclusions}[english]
+Thesis conclusions in \uv{English}.
+\end{kiconclusions}
+
+%% Přílohy obsahu textu práce, za makrem \appendix.
+\appendix
+
+\section{První příloha}
+Text první přílohy
+
+\section{Druhá příloha}
+Text druhé přílohy
+
+%% Obsah přiloženého datového média. Poslední příloha. Upravte podle vlastní
+%% práce!
+\section{Obsah přiloženého datového média} \label{sec:ObsahMedia}
+
+Na samotném konci textu práce je uveden stručný popis obsahu
+přiloženého datového média (CD/DVD, flash disk apod.), tj.~jeho závazné adresářové struktury, důležitých
+souborů apod.
+
+\begin{description}
+
+\item[\texttt{bin/}] \hfill \\
+  Instalátor \textsc{Instalator} programu, popř.~program
+  \textsc{Program}, spustitelné přímo z~média. / Kompletní adresářová
+  struktura webové aplikace \textsc{Webovka} (v~ZIP archivu) pro
+  zkopírování na webový server. Adresář obsahuje i~všechny runtime
+  knihovny a~další soubory potřebné pro bezproblémový běh instalátoru
+  a~programu z~média / pro bezproblémový provoz webové aplikace na
+  webovém serveru.
+
+\item[\texttt{doc/}] \hfill \\
+  Text práce ve formátu PDF, vytvořený s~použitím závazného stylu KI
+  PřF UP v~Olomouci pro závěrečné práce, včetně všech příloh,
+  a~všechny soubory potřebné pro bezproblémové vygenerování PDF
+  dokumentu textu (v~ZIP archivu), tj.~zdrojový text textu, vložené
+  obrázky, apod.
+
+\item[\texttt{src/}] \hfill \\
+  Kompletní zdrojové texty programu \textsc{Program} / webové aplikace
+  \textsc{Webovka} se všemi potřebnými (příp.~převzatými) zdrojovými
+  texty, knihovnami a~dalšími soubory potřebnými pro bezproblémové
+  vytvoření spustitelných verzí programu / adresářové struktury pro
+  zkopírování na webový server.
+
+\item[\texttt{readme.txt}] \hfill \\
+  Instrukce pro instalaci a~spuštění programu \textsc{Program}, včetně
+  všech požadavků pro jeho bezproblémový provoz. / Instrukce pro
+  nasazení webové aplikace \textsc{Webovka} na webový server, včetně
+  všech požadavků pro její bezproblémový provoz, a~webová adresa, na
+  které je aplikace nasazena pro účel testování při tvorbě posudků
+  práce a~pro účel obhajoby práce.
+
+\end{description}
+
+Navíc médium obsahuje:
+
+\begin{description}
+
+\item[\texttt{data/}] \hfill \\
+  Ukázková a~testovací data použitá v~práci a~pro potřeby testování
+  práce při tvorbě posudků a~obhajoby práce.
+
+\item[\texttt{install/}] \hfill \\
+  Instalátory aplikací, runtime knihoven a~jiných souborů potřebných
+  pro provoz programu \textsc{Program} / webové aplikace
+  \textsc{Webovka}, které nejsou standardní součástí operačního
+  systému určeného pro běh programu / provoz webové aplikace.
+
+\item[\texttt{literature/}] \hfill \\
+  Vybrané položky bibliografie, příp.~jiná užitečná literatura
+  vztahující se k~práci.
+
+\end{description}
+
+U~veškerých cizích převzatých materiálů obsažených na médiu jejich
+zahrnutí dovolují podmínky pro jejich šíření nebo přiložený souhlas
+držitele copyrightu. Pro všechny použité (a~citované) materiály,
+u~kterých toto není splněno a~nejsou tak obsaženy na médiu, je uveden
+jejich zdroj (např.~webová adresa) v~bibliografii nebo textu práce
+nebo v souboru \texttt{readme.txt}.
+
+%% -------------------------------------------------------------------
+
+%% Sazba volitelného seznamu zkratek, za přílohami.
+\printglossary
+
+%% Sazba povinné bibliografie, za přílohami (případně i za seznamem
+%% zkratek). Při použití BibLaTeXu použijte makro
+%% \printbibliography. jinak prostředí thebibliography. Ne obojí!
+
+%% Sazba i v textu necitovaných zdrojů, při použití
+%% BibLaTeXu. Volitelné.
+\nocite{*}
+%% Vlastní sazba bibliografie při použití BibLaTeXu.
+\printbibliography
+
+%% Bibliografie, včetně sazby, při nepoužití BibLaTeXu.
+% \begin{thebibliography}{9}
+%\bibitem{kniha2} \uppercase{Hawke}, Paul. NanoHttpd: Light-weight HTTP server designed for embedding in other applications. GitHub [online]. 2014-05-12. [cit. 2014-12-06]. Dostupné z: \url{https://github.com/NanoHttpd/nanohttpd}
+%
+%\bibitem{jeske13} \uppercase{Jeske}, David; \uppercase{Novák}, Josef. Simple HTTP Server in \csharp: Threaded synchronous HTTP Server abstract class, to respond to HTTP requests. CodeProject: For those who code [online]. 2014-05-24. [cit. 2014-12-06]. Dostupné z: \url{http://www.codeproject.com/Articles/137979/Simple-HTTP-Server-in-C}
+%
+%\bibitem{uzis2012} \uppercase{ÚSTAV ZDRAVOTNICKÝCH INFORMACÍ A STATISTIKY ČR}. Lékaři, zubní lékaři a farmaceuti 2012 [online]. Praha 2, Palackého náměstí 4: Ústav zdravotnických informací a statistiky ČR, 2012 [cit. 2014-12-06]. ISBN 978-80-7472-089-5. Dostupné z: \url{http://www.uzis.cz/publikace/lekari-zubni-lekari-farmaceuti-2012}
+% \end{thebibliography}
+
+%% Sazba volitelného rejstříku, za bibliografií.
+\printindex
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

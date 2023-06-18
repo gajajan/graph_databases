@@ -1,0 +1,20 @@
+\babel@toc {czech}{}\relax 
+\contentsline {section}{\numberline {1}Grafové databáze}{7}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Výhody grafových databází}{7}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Nevýhody grafových databází}{7}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Implementace grafových databází}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Dotazovací jazyky v grafových databázích}{7}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Gremlin}{7}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Cypher}{7}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Neo4j}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}OrientDB}{7}{subsection.2.3}%
+\contentsline {section}{Z\'av\v er}{8}{section*.3}%
+\babel@toc {czech}{}\relax 
+\babel@toc {czech}{}\relax 
+\contentsline {section}{Conclusions}{9}{section*.5}%
+\babel@toc {english}{}\relax 
+\babel@toc {czech}{}\relax 
+\contentsline {section}{\numberline {A}První příloha}{10}{appendix.A}%
+\contentsline {section}{\numberline {B}Druhá příloha}{10}{appendix.B}%
+\contentsline {section}{\numberline {C}Obsah přiloženého datového média}{10}{appendix.C}%
+\contentsline {section}{Seznam zkratek}{12}{section*.7}%
