@@ -142,28 +142,30 @@ implementací.}
 \newcommand{\BibLaTeX}{\textsc{Bib}\LaTeX}
 
 \section{Grafové databáze}
-Úvod do grafových databází, co to je.
+
+\subsection{Úvod do grafů}
+Graf je dvojice <V,E>, kde V označuje množinu vrcholů a E označuje množinu hran. Každá hrana je určena dvěma vrcholy, které spojuje. Hrany se dělí na orientované a neorientované. Grafy nejčastěji znázorňujeme pomocí kroužků, které představují vrcholy, a úseček mezi nimi, sloužící pro reprezentaci hran. Pokud se jedná o orientovaný graf místo úseček používáme šipky.
 
 \subsection{Výhody grafových databází}
-Pojednává o výhodách grafových databází. Jsou vhodné pro data, které jsou hustě propojené. Nejznáměší příklad takových dat jsou data ze sociální sítě.
-Sociální sítě často poskytují nabízení nových přátel, lidí se kterými by se uživatel chtěl spojit. Jedním ze způsbů je navrhování přátel, kteří již jsou přátelé uživatelových přátel. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy... 
+Pojednává o výhodách grafových databází. Jsou vhodné pro data, které jsou hustě propojené. Nejznáměším příkladem takových dat jsou data ze sociálních sítí.
+Sociální sítě často poskytují nabízení nových přátel, účtů se kterými by se uživatel mohl chtít spojit. Jedním ze způsobů je navrhování přátel, kteří již jsou přáteli uživatelových přátel. V relačních databázích by takové dotazy obsahovaly řadu JOINů a nebyly by efektivní. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy... 
 
 \subsection{Nevýhody grafových databází}
-Nevýhody grafových databázích se projeví například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat...
+Nevýhody grafových databázích se projeví například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat. Takové typy dotazů jsou často v grafových databázích neefektivní v porovnání s relačními.
 
 \section{Implementace grafových databází}
 Existuje spousta implementací grafových databází. Nejznámnějšími jsou Neo4j, OrientDB, MemoGraph, TigerGraph, InfiniteGraph...
-
-\subsection{Dotazovací jazyky v grafových databázích}
-\subsubsection{Gremlin}
-\subsubsection{Cypher}
-\subsubsection{GQL}
 
 \subsection{Neo4j}
 Jedná se o nejrozšířenější open-source grafovou databázi. Implementována je v Javě. Nabízí vysoký výkon při práci s grafy. Používá Cypher jako dotazovací jazyk. 
 
 \subsection{OrientDB}
-OrientDB je open-source NoSQL databázový systém implementovaný v Javě. Je to multi-model databáze - podporuje grafový, dokumentový, hodnota/klíč a objektový model....
+OrientDB je open-source NoSQL databázový systém implementovaný v Javě. Je to multi-model databáze - podporuje grafový, dokumentový, hodnota/klíč a objektový model...
+
+\subsection{Dotazovací jazyky v grafových databázích}
+\subsubsection{Gremlin}
+\subsubsection{Cypher}
+\subsubsection{GQL - Graph Query Language}
 
 %% Závěry práce. V jazyce práce a anglicky. Text pro jiný než
 %% nastavený jazyk práce (nepovinným parametrem language makra
@@ -177,84 +179,6 @@ Závěr práce v \uv{českém} jazyce.
 Thesis conclusions in \uv{English}.
 \end{kiconclusions}
 
-%% Přílohy obsahu textu práce, za makrem \appendix.
-\appendix
-
-\section{První příloha}
-Text první přílohy
-
-\section{Druhá příloha}
-Text druhé přílohy
-
-%% Obsah přiloženého datového média. Poslední příloha. Upravte podle vlastní
-%% práce!
-\section{Obsah přiloženého datového média} \label{sec:ObsahMedia}
-
-Na samotném konci textu práce je uveden stručný popis obsahu
-přiloženého datového média (CD/DVD, flash disk apod.), tj.~jeho závazné adresářové struktury, důležitých
-souborů apod.
-
-\begin{description}
-
-\item[\texttt{bin/}] \hfill \\
-  Instalátor \textsc{Instalator} programu, popř.~program
-  \textsc{Program}, spustitelné přímo z~média. / Kompletní adresářová
-  struktura webové aplikace \textsc{Webovka} (v~ZIP archivu) pro
-  zkopírování na webový server. Adresář obsahuje i~všechny runtime
-  knihovny a~další soubory potřebné pro bezproblémový běh instalátoru
-  a~programu z~média / pro bezproblémový provoz webové aplikace na
-  webovém serveru.
-
-\item[\texttt{doc/}] \hfill \\
-  Text práce ve formátu PDF, vytvořený s~použitím závazného stylu KI
-  PřF UP v~Olomouci pro závěrečné práce, včetně všech příloh,
-  a~všechny soubory potřebné pro bezproblémové vygenerování PDF
-  dokumentu textu (v~ZIP archivu), tj.~zdrojový text textu, vložené
-  obrázky, apod.
-
-\item[\texttt{src/}] \hfill \\
-  Kompletní zdrojové texty programu \textsc{Program} / webové aplikace
-  \textsc{Webovka} se všemi potřebnými (příp.~převzatými) zdrojovými
-  texty, knihovnami a~dalšími soubory potřebnými pro bezproblémové
-  vytvoření spustitelných verzí programu / adresářové struktury pro
-  zkopírování na webový server.
-
-\item[\texttt{readme.txt}] \hfill \\
-  Instrukce pro instalaci a~spuštění programu \textsc{Program}, včetně
-  všech požadavků pro jeho bezproblémový provoz. / Instrukce pro
-  nasazení webové aplikace \textsc{Webovka} na webový server, včetně
-  všech požadavků pro její bezproblémový provoz, a~webová adresa, na
-  které je aplikace nasazena pro účel testování při tvorbě posudků
-  práce a~pro účel obhajoby práce.
-
-\end{description}
-
-Navíc médium obsahuje:
-
-\begin{description}
-
-\item[\texttt{data/}] \hfill \\
-  Ukázková a~testovací data použitá v~práci a~pro potřeby testování
-  práce při tvorbě posudků a~obhajoby práce.
-
-\item[\texttt{install/}] \hfill \\
-  Instalátory aplikací, runtime knihoven a~jiných souborů potřebných
-  pro provoz programu \textsc{Program} / webové aplikace
-  \textsc{Webovka}, které nejsou standardní součástí operačního
-  systému určeného pro běh programu / provoz webové aplikace.
-
-\item[\texttt{literature/}] \hfill \\
-  Vybrané položky bibliografie, příp.~jiná užitečná literatura
-  vztahující se k~práci.
-
-\end{description}
-
-U~veškerých cizích převzatých materiálů obsažených na médiu jejich
-zahrnutí dovolují podmínky pro jejich šíření nebo přiložený souhlas
-držitele copyrightu. Pro všechny použité (a~citované) materiály,
-u~kterých toto není splněno a~nejsou tak obsaženy na médiu, je uveden
-jejich zdroj (např.~webová adresa) v~bibliografii nebo textu práce
-nebo v souboru \texttt{readme.txt}.
 
 %% -------------------------------------------------------------------
 
