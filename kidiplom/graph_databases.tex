@@ -143,12 +143,32 @@ implementací.}
 
 \section{Grafové databáze}
 
-\subsection{Úvod do grafů}
-Graf je dvojice <V,E>, kde V označuje množinu vrcholů a E označuje množinu hran. Každá hrana je určena dvěma vrcholy, které spojuje. Hrany se dělí na orientované a neorientované. Grafy nejčastěji znázorňujeme pomocí kroužků, které představují vrcholy, a úseček mezi nimi, sloužící pro reprezentaci hran. Pokud se jedná o orientovaný graf místo úseček používáme šipky.
+Grafové databáze, stejně jako jiné databáze (například relační, NoSQL) představují systém pro uchovávání a zpracovávání dat. Jsou, jak již název napovídá, postaveny na jednom z oborů diskrétní matematiky jménem teorie grafů, podobně jako jsou relační databáze postaveny na pojmu relace. Díky této struktuře mají skvělé vlastnosti pro aplikace, které ve větší míře pracují se vztahy mezi jednotlivými entitami. 
+
+\subsection{Základní pojmy z teorie grafů}
+V této části jsou uvedeny základní definice z teorie grafů používané v textu. 
+
+\begin{definition}[Graf]
+Graf je uspořádaná dvojice <V,E>, kde V označuje množinu vrcholů a E označuje množinu hran. Každá hrana je určena dvěma vrcholy z V, které spojuje. 
+\end{definition}
+
+Grafy se dělí na orientované a neorientované. Hranu v neorientovaném grafu mezi vrcholy u a v nazýváme neorientovanou a zapisujeme pomocí množiny obsahující dvojici vrcholů, tedy {u, v}. V případě orientovaného grafu hranu nazýváme orientovanou a pro zápis používáme uspořádanou dvojici, tedy (u, v). Grafy nejčastěji znázorňujeme pomocí kroužků, které představují vrcholy, a úseček mezi nimi, sloužící pro reprezentaci hran. Pokud se jedná o orientovaný graf místo úseček používáme šipky. Pro hrany používáme označení násobné, pokud existuje mezi dvěma vrcholy hran více. O hraně začínající i končící ve stejném vrcholu mluvíme jako o smyčce.  
+
+\begin{definition}[Podgraf]
+Podgraf grafu G = <V,E> je graf H = <V1,E1>, kde $V1 \subseteq V$ a $E1 \subseteq E$, tak že každá hrana z E1 má oba vrcholy ve V1.
+\end{definition}
+
+\begin{definition}[Cesta]
+Je sekvence vrcholů. Cesta délky n má $n+1$ vrcholů.
+\end{definition}
+
+\begin{definition}[Vzdálenost]
+Vzdálenost z vrcholu u do vrcholu v můžeme definovat jako délku nejkratší cesty z u do v.
+\end{definition}
 
 \subsection{Výhody grafových databází}
-Pojednává o výhodách grafových databází. Jsou vhodné pro data, které jsou hustě propojené. Nejznáměším příkladem takových dat jsou data ze sociálních sítí.
-Sociální sítě často poskytují nabízení nových přátel, účtů se kterými by se uživatel mohl chtít spojit. Jedním ze způsobů je navrhování přátel, kteří již jsou přáteli uživatelových přátel. V relačních databázích by takové dotazy obsahovaly řadu JOINů a nebyly by efektivní. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy... 
+Grafové databáze jsou vhodné pro data, které jsou hustě propojené. Relace a vztahy mezi entitami jsou zde stejně důležité, ne-li důležitější, než samotné entity. Nejznáměším příkladem takových dat jsou data ze sociálních sítí.
+Sociální sítě často disponují funkcí nabízení nových přátel, se kterými by se uživatel mohl chtít spojit. Jedním ze způsobů je navrhování přátel, kteří již jsou přáteli přátel uživatele. V relačních databázích by takové dotazy obsahovaly řadu JOINů a nebyly by efektivní. Grafové databáze tento problém řeší efektivněji pomocí průchodu grafem. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy, systémy doporučující zboží, banky. Mezi další výhody patří ...
 
 \subsection{Nevýhody grafových databází}
 Nevýhody grafových databázích se projeví například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat. Takové typy dotazů jsou často v grafových databázích neefektivní v porovnání s relačními.

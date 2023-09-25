@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  6 MAY 2023 22:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  25 SEP 2023 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1390,51 +1390,23 @@ Underfull \hbox (badness 6758) in paragraph at lines 134--134
 
  [6
 
-] [7
-
-] [8
-
 ]
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
+nput line 151.
+ [7
+
+] [8]
 [9
 
+] [10
+
 ]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 19
-8.
- (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Overfull \hbox (9.55032pt too wide) in paragraph at lines 198--206
-\T1/lmr/m/n/12 p°ímo z mé-dia. / Kom-pletní ad-re-sá-°ová struk-tura webové apl
-i-kace \T1/lmr/m/sc/12 Webovka
- []
-
-
-Overfull \hbox (7.71727pt too wide) in paragraph at lines 198--206
-\T1/lmr/m/n/12 (v ZIP ar-chivu) pro zko-pí-ro-vání na webový ser-ver. Ad-re-sá°
- ob-sa-huje i v²echny
- []
-
-
-Overfull \hbox (8.70828pt too wide) in paragraph at lines 214--220
-\T1/lmr/m/n/12 Kompletní zdro-jové texty pro-gramu \T1/lmr/m/sc/12 Pro-gram \T1
-/lmr/m/n/12 / webové apli-kace \T1/lmr/m/sc/12 Webovka
- []
-
-
-Overfull \hbox (2.8623pt too wide) in paragraph at lines 214--220
-\T1/lmr/m/n/12 se v²emi po-t°eb-nými (p°íp. p°e-vza-tými) zdro-jo-vými texty, k
-nihov-nami a dal-
- []
-
-[10
-
-] [11]
 No file graph_databases.acr.
-[12
+[11
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 271.
+LaTeX Warning: Empty bibliography on input line 216.
 
 No file graph_databases.ind.
 
@@ -1453,31 +1425,32 @@ Package logreq Info: Writing requests to 'graph_databases.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29816 strings out of 475385
- 540783 string characters out of 2776907
- 1452598 words of memory out of 3000000
- 50627 multiletter control sequences out of 15000+600000
- 524134 words of font info for 66 fonts, out of 8000000 for 9000
+ 29785 strings out of 475385
+ 540391 string characters out of 2776907
+ 1452536 words of memory out of 3000000
+ 50599 multiletter control sequences out of 15000+600000
+ 520097 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,10n,121p,2615b,2055s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 123i,10n,121p,2615b,2057s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 pdfTeX warning (dest): name{section*.8} has been referenced but does not exist,
  replaced by a fixed one
 
-{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/U
-sers/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users
-/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users
-/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users
-/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/User
+{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
+{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
+Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/
+Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/User
+s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/User
+s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/User
+s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/User
 s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users
 /gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/
 gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/g
-ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users
-/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on graph_databases.pdf (12 pages, 262912 bytes).
+ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
+Output written on graph_databases.pdf (11 pages, 231512 bytes).
 PDF statistics:
  221 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
- 171 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
