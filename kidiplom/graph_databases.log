@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  25 SEP 2023 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  1 OCT 2023 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1396,17 +1396,17 @@ nput line 151.
  [7
 
 ] [8]
-[9
+[9] [10
 
-] [10
+] [11
 
 ]
 No file graph_databases.acr.
-[11
+[12
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 216.
+LaTeX Warning: Empty bibliography on input line 229.
 
 No file graph_databases.ind.
 
@@ -1425,10 +1425,10 @@ Package logreq Info: Writing requests to 'graph_databases.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29785 strings out of 475385
- 540391 string characters out of 2776907
+ 29795 strings out of 475385
+ 540859 string characters out of 2776907
  1452536 words of memory out of 3000000
- 50599 multiletter control sequences out of 15000+600000
+ 50602 multiletter control sequences out of 15000+600000
  520097 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,10n,121p,2615b,2057s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1448,9 +1448,9 @@ s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users
 gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on graph_databases.pdf (11 pages, 231512 bytes).
+Output written on graph_databases.pdf (12 pages, 233709 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
