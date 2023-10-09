@@ -180,12 +180,33 @@ Strom je souvislý graf neobsahující kružnice.
 \end{definition}
 
 \subsection{Výhody grafových databází}
-Grafové databáze jsou vhodné pro data, které jsou hustě propojené. Relace a vztahy mezi entitami jsou zde stejně důležité, ne-li důležitější, než samotné entity. Nejznáměším příkladem takových dat jsou data ze sociálních sítí.
-Sociální sítě často disponují funkcí nabízení nových přátel, se kterými by se uživatel mohl chtít spojit. Jedním ze způsobů je navrhování přátel, kteří již jsou přáteli přátel uživatele. V relačních databázích by takové dotazy obsahovaly řadu JOINů a nebyly by efektivní. Grafové databáze tento problém řeší efektivněji pomocí průchodu grafem. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy, systémy doporučující zboží, banky. Mezi další výhody patří ...
+Velkou výhodou těchto systémů je, že uchovávají jak samotné entity, tak všechny vztahy mezi entitami. Tedy při dotazování nedochází k výpočtu těchto vztahů, jak tomu je například u relačních databází pomocí klauzule JOIN. Tato přednost zrychluje zpracování dotazů. Grafové databáze jsou proto vhodné pro data, které jsou hustě propojená. Relace a vztahy mezi entitami jsou zde stejně důležité, ne-li důležitější, než samotné entity.
+Nejznáměším příkladem takových dat jsou data ze sociálních sítí. Sociální sítě často disponují funkcí nabízení nových přátel, se kterými by se uživatel mohl chtít spojit. Jedním ze způsobů je navrhování přátel, kteří již jsou přáteli přátel uživatele. V relačních databázích by takové dotazy obsahovaly řadu JOINů a nebyly by efektivní. Grafové databáze tento problém řeší efektivněji pomocí průchodu grafem. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy, systémy doporučující zboží, banky. Mezi další výhody patří ...
 
 \subsection{Nevýhody grafových databází}
-Nevýhody grafových databázích se projeví například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat. Takové typy dotazů jsou často v grafových databázích neefektivní v porovnání s relačními.
+Nevýhody grafových databázích se projeví při práci s tabulárním typem dat. Například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat. Takové typy dotazů jsou často v grafových databázích neefektivní v porovnání s relačními...
 
+\subsection{Modelování grafových dat}
+
+Modelování dat je proces, který překládá entity reálného světa a vztahy mezi nimi do jejich softwarové reprezentace. Uživatel popisuje doménu jako graf skládající se z vrcholů a hran pomocí vlastností a popisků. Každý výsledný model je unikátní. U každého záleží na případech použití a typech dotazů, které budou na databázi kladeny. Dodržení základních principů modelování dat je důležité pro výslednou efektivitu. Když je graf přizpůsoben dotazům, dokáže velmi rychle nalézt potřebnou odpověď. Naopak špatně zvolený modelu grafu může ve výsledku aplikaci ublížit a být překážkou. Proto správnému modelu je dobré věnovat dostatečné množství času a dodržovat obecná pravidla.
+
+Postup modelování se dá rozdělit do čtyř fází:
+\begin{enumerate}
+  \item Definice problému
+  \item Konceptuální datový model
+  \item Logický datový model
+  \item Testování modelu 
+\end{enumerate} 
+
+Nechť je potřeba vytvořit aplikaci pro letecké aerolinky. Aplikace by vypisovala lety z jednotlivých letišť a umožnila by i další funkcionalitu jakou je plánování letu, indikování zpoždění. Postup modelování dat je ukázán na tomto problému.
+
+\subsubsection{Definice problému}
+\subsubsection{Konceptuální datový model}
+\subsubsection{Logický datový model}
+\subsubsection{Testování modelu}
+
+
+%% Začátek druhé části
 \section{Implementace grafových databází}
 Existuje spousta implementací grafových databází. Nejznámnějšími jsou Neo4j, OrientDB, MemoGraph, TigerGraph, InfiniteGraph...
 
