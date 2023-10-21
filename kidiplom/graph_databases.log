@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  9 OCT 2023 11:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  21 OCT 2023 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1160,29 +1160,29 @@ Package biblatex Warning: Attempt to redefine deprecated '\mkbibnamelast'.
 
 Package biblatex Warning: Conflicting options.
 (biblatex)                'urldate=iso' requires 'seconds=true'.
-(biblatex)                Setting 'seconds=true' on input line 129.
+(biblatex)                Setting 'seconds=true' on input line 131.
 
 (graph_databases.aux)
 \openout1 = `graph_databases.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1209,7 +1209,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 129.
+Package hyperref Info: Link coloring ON on input line 131.
 \c@lstlisting=\count481
  (graph_databases.glsdefs)
 Package biblatex Info: Trying to load language 'czech' -> 'czech-iso'...
@@ -1273,8 +1273,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'graph_databases.bbl' not found.
 
 No file graph_databases.bbl.
-Package biblatex Info: Reference section=0 on input line 129.
-Package biblatex Info: Reference segment=0 on input line 129.
+Package biblatex Info: Reference section=0 on input line 131.
+Package biblatex Info: Reference segment=0 on input line 131.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
@@ -1311,50 +1311,50 @@ Package biblatex Info: Reference segment=0 on input line 129.
 <graphics/kititle-cz-nofont.pdf, id=3, 375.4025pt x 72.27pt>
 File: graphics/kititle-cz-nofont.pdf Graphic file (type pdf)
 <use graphics/kititle-cz-nofont.pdf>
-Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 134
+Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 136
 .
 (pdftex.def)             Requested size: 225.24323pt x 43.36232pt.
 <graphics/UP_znak.pdf, id=4, 101.59215pt x 101.59215pt>
 File: graphics/UP_znak.pdf Graphic file (type pdf)
 <use graphics/UP_znak.pdf>
-Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 134.
+Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 136.
 (pdftex.def)             Requested size: 101.59187pt x 101.59187pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-34.
+36.
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-34.
+36.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-134.
+136.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-134.
+136.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 134.
+(Font)              <12> on input line 136.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 134.
+(Font)              <8> on input line 136.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 134.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 134
+(Font)              <6> on input line 136.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 136
 .
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 134
+LaTeX Font Info:    Trying to load font information for U+msb on input line 136
 .
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1367,9 +1367,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/gajaj/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./graphics/k
 ititle-cz-nofont.pdf> <./graphics/UP_znak.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 134.
+(Font)              <10.95> on input line 136.
 
-Underfull \hbox (badness 6758) in paragraph at lines 134--134
+Underfull \hbox (badness 6758) in paragraph at lines 136--136
 []|\T1/lmr/m/n/10.95 Computer Science, Spe-ci-a-li-zation: Ge-ne-ral Com-pu-ter
 
  []
@@ -1392,21 +1392,48 @@ Underfull \hbox (badness 6758) in paragraph at lines 134--134
 
 ]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 151.
+nput line 153.
  [7
 
-] [8]
-[9] [10
+]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+13.
 
-] [11
+(C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [8]
+[9]
+<./graphics//TravelEnthusiastNetwork-Entity.png, id=117, 714.67pt x 487.8225pt>
+
+File: ./graphics//TravelEnthusiastNetwork-Entity.png Graphic file (type png)
+<use ./graphics//TravelEnthusiastNetwork-Entity.png>
+Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Entity.png  used o
+n input line 255.
+(pdftex.def)             Requested size: 357.33412pt x 243.91064pt.
+
+Overfull \hbox (4.59016pt too wide) in paragraph at lines 257--258
+[]\T1/lmr/m/n/12 Nyní ná-sle-duje pro-po-jení en-tit po-mocí vztah·. Po-dobn¥ j
+ako en-tity lze zejména
+ []
+
+[10 <./graphics//TravelEnthusiastNetwork-Entity.png>]
+<./graphics//TravelEnthusiastNetwork.png, id=124, 728.7225pt x 487.8225pt>
+File: ./graphics//TravelEnthusiastNetwork.png Graphic file (type png)
+<use ./graphics//TravelEnthusiastNetwork.png>
+Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork.png  used on input
+ line 259.
+(pdftex.def)             Requested size: 364.36035pt x 243.91064pt.
+ [11 <./graphics//TravelEnthusiastNetwork.png>] [12] [13
+
+] [14
 
 ]
 No file graph_databases.acr.
-[12
+[15
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 250.
+LaTeX Warning: Empty bibliography on input line 309.
 
 No file graph_databases.ind.
 
@@ -1425,32 +1452,33 @@ Package logreq Info: Writing requests to 'graph_databases.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29809 strings out of 475385
- 541003 string characters out of 2776907
- 1452536 words of memory out of 3000000
- 50607 multiletter control sequences out of 15000+600000
- 520097 words of font info for 61 fonts, out of 8000000 for 9000
+ 29869 strings out of 475385
+ 542707 string characters out of 2776907
+ 1452553 words of memory out of 3000000
+ 50659 multiletter control sequences out of 15000+600000
+ 520472 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,10n,121p,2615b,2057s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 pdfTeX warning (dest): name{section*.8} has been referenced but does not exist,
  replaced by a fixed one
 
-{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
-{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
-Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/
-Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/User
-s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/User
-s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/User
-s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/User
-s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users
-/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/
-gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/g
-ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/g
-ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on graph_databases.pdf (12 pages, 239758 bytes).
+{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
+/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Use
+rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Use
+rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Use
+rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/g
+ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/g
+ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/g
+ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/g
+ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/ga
+jaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gaj
+aj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gaja
+j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gaja
+j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
+Output written on graph_databases.pdf (15 pages, 285664 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 59 named destinations out of 1000 (max. 500000)
- 203 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

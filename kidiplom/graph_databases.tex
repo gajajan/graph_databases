@@ -125,6 +125,8 @@ implementací.}
 %% práce.
 \usepackage{lipsum}
 \usepackage{longtable}
+\usepackage{graphicx}
+\graphicspath{ {./graphics/} }
 
 \begin{document}
 %% Sazba úvodních stran -- titulní, s bibliografickými údaji, s
@@ -149,7 +151,7 @@ Grafové databáze, stejně jako jiné databáze (například relační, NoSQL) 
 V této části jsou uvedeny základní definice z teorie grafů používané v textu. 
 
 \begin{definition}[Graf]
-Graf je uspořádaná dvojice <V,E>, kde V označuje množinu vrcholů a E označuje množinu hran. Každá hrana je určena dvěma vrcholy z V, které spojuje. 
+Graf je uspořádaná dvojice <V,E>, kde V označuje množinu vrcholů a $E \subseteq V \times V$ označuje množinu hran. Každá hrana je určena dvěma vrcholy z V, které spojuje. 
 \end{definition}
 
 Grafy se dělí na orientované a neorientované. Hrana v neorientovaném grafu mezi vrcholy u a v se nazývá neorientovaná a zapisuje se pomocí množiny obsahující dvojici vrcholů, tedy {u, v}. V případě orientovaného grafu se hrana nazývá orientovaná a pro zápis se používá uspořádaná dvojice. Orientovaná hrana (u, v) začíná ve vrcholu u a končí ve vrcholu v.
@@ -179,16 +181,16 @@ Vzdálenost z vrcholu u do vrcholu v lze definovat jako délku nejkratší cesty
 Strom je souvislý graf neobsahující kružnice.
 \end{definition}
 
-\subsection{Výhody grafových databází}
-Velkou výhodou těchto systémů je, že uchovávají jak samotné entity, tak všechny vztahy mezi entitami. Tedy při dotazování nedochází k výpočtu těchto vztahů, jak tomu je například u relačních databází pomocí klauzule JOIN. Tato přednost zrychluje zpracování dotazů. Grafové databáze jsou proto vhodné pro data, které jsou hustě propojená. Relace a vztahy mezi entitami jsou zde stejně důležité, ne-li důležitější, než samotné entity.
-Nejznáměším příkladem takových dat jsou data ze sociálních sítí. Sociální sítě často disponují funkcí nabízení nových přátel, se kterými by se uživatel mohl chtít spojit. Jedním ze způsobů je navrhování přátel, kteří již jsou přáteli přátel uživatele. V relačních databázích by takové dotazy obsahovaly řadu JOINů a nebyly by efektivní. Grafové databáze tento problém řeší efektivněji pomocí průchodu grafem. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy, systémy doporučující zboží, banky. Mezi další výhody patří ...
-
-\subsection{Nevýhody grafových databází}
-Nevýhody grafových databázích se projeví při práci s tabulárním typem dat. Například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat. Takové typy dotazů jsou často v grafových databázích neefektivní v porovnání s relačními...
+%\subsection{Výhody grafových databází}
+%Velkou výhodou těchto systémů je, že uchovávají jak samotné entity, tak všechny vztahy mezi entitami. Tedy při dotazování nedochází k výpočtu těchto vztahů, jak tomu je například u relačních databází pomocí klauzule JOIN. Tato přednost zrychluje zpracování dotazů. Grafové databáze jsou proto vhodné pro data, které jsou hustě propojená. Relace a vztahy mezi entitami jsou zde stejně důležité, ne-li důležitější, než samotné entity.
+%Nejznáměším příkladem takových dat jsou data ze sociálních sítí. Sociální sítě často disponují funkcí nabízení nových přátel, se kterými by se uživatel mohl chtít spojit. Jedním ze způsobů je navrhování přátel, kteří již jsou přáteli přátel uživatele. V relačních databázích by takové dotazy obsahovaly řadu JOINů a nebyly by efektivní. Grafové databáze tento problém řeší efektivněji pomocí průchodu grafem. Další příklad, kde je vhodné použít "grafový" přístup jsou například mapy, systémy doporučující zboží, banky. Mezi další výhody patří ...
+%
+%\subsection{Nevýhody grafových databází}
+%Nevýhody grafových databázích se projeví při práci s tabulárním typem dat. Například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat. Takové typy dotazů jsou často v grafových databázích neefektivní v porovnání s relačními...
 
 \subsection{Modelování grafových dat}
 
-Modelování dat je proces, který překládá entity reálného světa a vztahy mezi nimi do jejich softwarové reprezentace. Uživatel popisuje doménu jako graf skládající se z vrcholů a hran pomocí vlastností a popisků. Každý výsledný model je unikátní. U každého záleží na případech použití a typech dotazů, které budou na databázi kladeny. Dodržení základních principů modelování dat je důležité pro výslednou efektivitu. Když je graf přizpůsoben dotazům, dokáže velmi rychle nalézt potřebnou odpověď. Naopak špatně zvolený modelu grafu může ve výsledku aplikaci ublížit a být překážkou. Proto správnému modelu je dobré věnovat dostatečné množství času a dodržovat obecná pravidla.
+Modelování dat je proces, který překládá entity reálného světa a vztahy mezi nimi do jejich softwarové reprezentace. Uživatel popisuje doménu jako graf skládající se z vrcholů a hran pomocí vlastností a popisků. Každý výsledný model je unikátní. U každého záleží na případech použití a otázkách, které mají podobu dotazů, které budou na databázi kladeny. Dodržení základních principů modelování dat je důležité pro výslednou efektivitu. Když je graf přizpůsoben dotazům, dokáže velmi rychle nalézt potřebnou odpověď. Naopak špatně zvolený modelu grafu může ve výsledku aplikaci ublížit a být překážkou. Další důležitou otázkou je budoucnost vyvíjené aplikace. Model by měl být připravený na změny, které po aplikaci budou její koncoví uživatelé požadovat. Správnému modelu je proto dobré věnovat dostatečné množství času a dodržovat obecná pravidla.
 
 Postup modelování se dá rozdělit do čtyř fází:
 \begin{enumerate}
@@ -198,11 +200,68 @@ Postup modelování se dá rozdělit do čtyř fází:
   \item Testování modelu 
 \end{enumerate} 
 
-Nechť je potřeba vytvořit aplikaci pro letecké aerolinky. Aplikace by vypisovala lety z jednotlivých letišť a umožnila by i další funkcionalitu jakou je plánování letu, indikování zpoždění. Postup modelování dat je ukázán na tomto problému.
+V této sekci se budeme snažit dobře navrhnout grafový model dat. Zkusíme si to na příkladu sociální platformu pro nadšence cestování.
 
 \subsubsection{Definice problému}
+V první fázi bychom měli zvážit co všechno by měla aplikace umět. Výsledkem by měl být její, co nejpřesnější, slovní popis. Pomoci nám může těchto pár otázek.
+
+Co od naší aplikace uživatel očekává?
+Aplikace je sociální sítí, proto by měla jistě umožnit se propojit s ostaními uživateli aplikace. Uživatelům by na základě jejich přátel, oblíbených aktivit a hodnocení destinací měly přicházet tipy na výlet. Aplikace by měla umožnit zazanamenat, že někteří uživatelé podnikli cestu společně.
+
+Jaké typy informací naše aplikace potřebuje uchovávat, aby měla danou funkcionalitu?
+\begin{itemize}
+  \item Všechny základní informace o \textbf{uživatelích}, aby se s nimi ostatní mohli spojit - jejich jméno, příjmení, unikátní identifikátor, oblíbené cestovatelské aktivity.
+  \item Informace o jednotlivých \textbf{destinacích} - jejich lokace, název, unikátní identifikátor, cestovatelské aktivity v rámci destinace.
+  \item Uživateli je umožněno psát \textbf{hodnocení} na jednotlivé destinace.
+  \item Chtěli bychom také umožnit \textbf{seskupení uživatelů}, když jedou do dané destinace společně.
+\end{itemize}
+V reálném scénáři by projekt pravděpodobně zahrnoval mnoho dalších atributů, ale pro tuto ukázkovou aplikaci to ponecháme omezené. Pro zjednodušení se vyhneme také souřadnicovým informacím a vystačíme si s informací v rámci jakého státu se daná destinace nachází.
+
+Aplikace by tedy měla zacházet s pojmy jako jsou uživatel, destinace, hodnocení, aktivity.
+Jak spolu tyto pojmy vzájemně souvisí v rámci aplikace?
+\begin{itemize}
+  \item Uživatel \textbf{sleduje} jiného uživatele.
+  \item Uživatel \textbf{se zúčastnil} cesty \textbf{do} destinace.
+  \item Uživateli se \textbf{líbí} cestovatelská aktivita.
+  \item Uživatel \textbf{napsal} recenzi \textbf{o} cestě.
+  \item Destinace \textbf{nabízí} cestovatelskou aktivitu.
+\end{itemize}
+
+Na jaké otázky potřebují uživatelé najít odpověď?
+\begin{itemize}
+  \item Jaké všechny uživatele sleduji? A koho sledují oni?
+  \item Najdi 3 nejlépe hodnocené destinace, které jsem nenavštívil, nabízející konkrétní cestovní aktivity?
+  \item Které destinace navštívil uživatel X. Kolikrát je navštívil?
+  \item Najdi mi všechny uživatele v rámci skupiny, s kterou cestuje uživatel X do destinace Y.
+  \item Najdi X destinací nabízející aktivity, které se uživatelovi líbí.
+  \item Pro konkrétní destinaci vrať měsíc v roce v kterém je nejlépe hodnocená.
+\end{itemize}
+V reálném scénáři by otázek bylo mnohem více.
+ 
 \subsubsection{Konceptuální datový model}
+Dalším krokem je vyvinout konceptuální model. Výstupem by měl být diagram popisující schéma naší aplikace z bussiness pohledu. Při vyvíjení datového modelu lidé často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími daty, proto se tato fáze v různých literaturách nazývá whiteboard model. Vyžaduje identifikování a seskupení všech entit a vztahů, které se v naší aplikaci vyskytují. Začneme entitami. Entity většinou představují objekty, jako například uživatel, účet, destinace, které jsou v databázi uloženy a propojeny vzájemnými vztahy. Je třeba si rozmyslet, které entity lze seskupit. Pokud například naše aplikace zahrnuje uživatele, zaměstance a administrátora je užitečné tuto skupinu entit sloučit do jedné. Jedním z postupů jak z našich poznámek z minulé fáze vytáhnout entity, je dívat se po podstatných jménech. 
+
+V naší aplikaci můžeme rozpoznat 6 různých entit:
+\begin{itemize}
+  \item Uživatel
+  \item Cesta
+  \item Destinace
+  \item Aktivita
+  \item Stát
+  \item Recenze
+\end{itemize}
+Naše tabule tedy má následující podobu:
+
+\includegraphics[scale=0.5]{TravelEnthusiastNetwork-Entity}
+
+Nyní následuje propojení entit pomocí vztahů. Podobně jako entity lze zejména nalézt zaměřením se na podstatná jména, tak většina vztahů můžeme identifikovat pomocí sloves. Zde bychom však měli být velmi opatrní. Ve slovese se často ukrývá podstatné jméno. V budoucím vývoji aplikace by pak mohlo dojít k problémům při rozšiřování funkcionality aplikace. Dobrým příkladem je sloveso recenzovat. Snadno si jde domyslet funkcionalitu komentování nebo jiný způsob reagování na recenze. V případě, že bychom při modelování zvolili větu "Uživatel recenzoval X." místo "Uživatel napsal recenzi o X."  mohli bychom narazit na problém, že nemáme entitu představující recenzi, na kterou bychom mohli odkazovat. Podobně pokud bychom v naší aplikaci upřednostnili větu "Uživatel navštívil destinaci." před větou "Uživatel podnikl cestu do destinace.", nemohli bychom pak na danou cestu odkazovat. Takové chyby obecně vedou v budoucnosti k migrování databáze, což je velmi obtížný a zdlouhavý proces přesouvání dat z jedné databáze do druhé, kterému je lepší se vyhnout.
+
+\includegraphics[scale=0.5]{TravelEnthusiastNetwork}
+
 \subsubsection{Logický datový model}
+Pokud jsme s diagramem z předchozí fáze spokojeni, můžeme konečně přistoupit ke kroku, ve kterém definujeme schéma v databázi. Rozpoznáme uzly a hrany a přiřadíme jim potřebné popisky a vlastnosti.
+
+
 \subsubsection{Testování modelu}
 
 
