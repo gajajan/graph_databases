@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  21 OCT 2023 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  22 OCT 2023 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1408,32 +1408,41 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: ./graphics//TravelEnthusiastNetwork-Entity.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork-Entity.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Entity.png  used o
-n input line 255.
+n input line 256.
 (pdftex.def)             Requested size: 357.33412pt x 243.91064pt.
 
-Overfull \hbox (4.59016pt too wide) in paragraph at lines 257--258
+Overfull \hbox (4.59016pt too wide) in paragraph at lines 260--261
 []\T1/lmr/m/n/12 Nyní ná-sle-duje pro-po-jení en-tit po-mocí vztah·. Po-dobn¥ j
 ako en-tity lze zejména
  []
 
-[10 <./graphics//TravelEnthusiastNetwork-Entity.png>]
-<./graphics//TravelEnthusiastNetwork.png, id=124, 728.7225pt x 487.8225pt>
+<./graphics//TravelEnthusiastNetwork.png, id=119, 728.7225pt x 487.8225pt>
 File: ./graphics//TravelEnthusiastNetwork.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork.png  used on input
- line 259.
+ line 263.
 (pdftex.def)             Requested size: 364.36035pt x 243.91064pt.
- [11 <./graphics//TravelEnthusiastNetwork.png>] [12] [13
+[10] [11 <./graphics//TravelEnthusiastNetwork-Entity.png> <./graphics//TravelEn
+thusiastNetwork.png>]
+<./graphics//TravelEnthusiastNetwork-Graph.png, id=132, 632.3625pt x 365.86688p
+t>
+File: ./graphics//TravelEnthusiastNetwork-Graph.png Graphic file (type png)
+<use ./graphics//TravelEnthusiastNetwork-Graph.png>
+Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Graph.png  used on
+ input line 280.
+(pdftex.def)             Requested size: 316.18048pt x 182.93298pt.
+ [12 <./graphics//TravelEnthusiastNetwork-Graph.png>]
+[13] [14
 
-] [14
+] [15
 
 ]
 No file graph_databases.acr.
-[15
+[16
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 309.
+LaTeX Warning: Empty bibliography on input line 329.
 
 No file graph_databases.ind.
 
@@ -1452,10 +1461,10 @@ Package logreq Info: Writing requests to 'graph_databases.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29869 strings out of 475385
- 542707 string characters out of 2776907
- 1452553 words of memory out of 3000000
- 50659 multiletter control sequences out of 15000+600000
+ 29888 strings out of 475385
+ 543265 string characters out of 2776907
+ 1453553 words of memory out of 3000000
+ 50671 multiletter control sequences out of 15000+600000
  520472 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,10n,121p,2615b,2057s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1476,9 +1485,9 @@ jaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gaj
 aj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gaja
 j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gaja
 j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on graph_databases.pdf (15 pages, 285664 bytes).
+Output written on graph_databases.pdf (16 pages, 334109 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 288 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

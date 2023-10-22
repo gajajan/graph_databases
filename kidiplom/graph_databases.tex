@@ -145,7 +145,7 @@ implementací.}
 
 \section{Grafové databáze}
 
-Grafové databáze, stejně jako jiné databáze (například relační, NoSQL) představují systém pro uchovávání a zpracovávání dat. Jsou, jak již název napovídá, postaveny na jednom z oborů diskrétní matematiky jménem teorie grafů, podobně jako jsou relační databáze postaveny na pojmu relace. Díky této struktuře mají skvělé vlastnosti pro aplikace, které ve větší míře pracují se vztahy mezi jednotlivými entitami.
+Grafové databáze, stejně jako jiné databáze (například relační, NoSQL) představují systém pro uchovávání a zpracovávání dat. Jsou, jak již název napovídá, postaveny na jednom z oborů diskrétní matematiky jménem teorie grafů, podobně jako jsou relační databáze postaveny na pojmu relace. Pracují tedy s daty v podobě grafu. Díky této struktuře mají skvělé vlastnosti pro aplikace, které ve větší míře pracují se vztahy mezi jednotlivými entitami.
 
 \subsection{Základní pojmy z teorie grafů}
 V této části jsou uvedeny základní definice z teorie grafů používané v textu. 
@@ -239,7 +239,7 @@ Na jaké otázky potřebují uživatelé najít odpověď?
 V reálném scénáři by otázek bylo mnohem více.
  
 \subsubsection{Konceptuální datový model}
-Dalším krokem je vyvinout konceptuální model. Výstupem by měl být diagram popisující schéma naší aplikace z bussiness pohledu. Při vyvíjení datového modelu lidé často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími daty, proto se tato fáze v různých literaturách nazývá whiteboard model. Vyžaduje identifikování a seskupení všech entit a vztahů, které se v naší aplikaci vyskytují. Začneme entitami. Entity většinou představují objekty, jako například uživatel, účet, destinace, které jsou v databázi uloženy a propojeny vzájemnými vztahy. Je třeba si rozmyslet, které entity lze seskupit. Pokud například naše aplikace zahrnuje uživatele, zaměstance a administrátora je užitečné tuto skupinu entit sloučit do jedné. Jedním z postupů jak z našich poznámek z minulé fáze vytáhnout entity, je dívat se po podstatných jménech. 
+Dalším krokem je vyvinout konceptuální model. Výstupem by měl být přehledný diagram popisující schéma naší aplikace z bussiness pohledu. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data spolu v rámci vyvíjené aplikace korelují. Při vyvíjení datového modelu lidé často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími daty, proto se tato fáze v různých literaturách nazývá whiteboard model. Vyžaduje identifikování a seskupení všech entit a vztahů, které se v naší aplikaci vyskytují. Začneme entitami. Entity většinou představují objekty, jako například uživatel, účet, destinace, které jsou v databázi uloženy a propojeny vzájemnými vztahy. Je třeba si rozmyslet, které entity lze seskupit. Pokud například naše aplikace zahrnuje uživatele, zaměstance a administrátora je užitečné tuto skupinu entit sloučit do jedné. Jedním z postupů jak z našich poznámek z minulé fáze vytáhnout entity, je dívat se po podstatných jménech. 
 
 V naší aplikaci můžeme rozpoznat 6 různých entit:
 \begin{itemize}
@@ -250,19 +250,39 @@ V naší aplikaci můžeme rozpoznat 6 různých entit:
   \item Stát
   \item Recenze
 \end{itemize}
-Naše tabule tedy má následující podobu:
 
-\includegraphics[scale=0.5]{TravelEnthusiastNetwork-Entity}
+Naše tabule tedy má následující podobu, kterou vystihuje Obrázek 1.
+\begin{figure}
+	\includegraphics[scale=0.5]{TravelEnthusiastNetwork-Entity}
+	\caption{Entity vyskytující se v aplikaci sociální síť pro cestovní nadšence}
+\end{figure}
 
 Nyní následuje propojení entit pomocí vztahů. Podobně jako entity lze zejména nalézt zaměřením se na podstatná jména, tak většina vztahů můžeme identifikovat pomocí sloves. Zde bychom však měli být velmi opatrní. Ve slovese se často ukrývá podstatné jméno. V budoucím vývoji aplikace by pak mohlo dojít k problémům při rozšiřování funkcionality aplikace. Dobrým příkladem je sloveso recenzovat. Snadno si jde domyslet funkcionalitu komentování nebo jiný způsob reagování na recenze. V případě, že bychom při modelování zvolili větu "Uživatel recenzoval X." místo "Uživatel napsal recenzi o X."  mohli bychom narazit na problém, že nemáme entitu představující recenzi, na kterou bychom mohli odkazovat. Podobně pokud bychom v naší aplikaci upřednostnili větu "Uživatel navštívil destinaci." před větou "Uživatel podnikl cestu do destinace.", nemohli bychom pak na danou cestu odkazovat. Takové chyby obecně vedou v budoucnosti k migrování databáze, což je velmi obtížný a zdlouhavý proces přesouvání dat z jedné databáze do druhé, kterému je lepší se vyhnout.
 
-\includegraphics[scale=0.5]{TravelEnthusiastNetwork}
+\begin{figure}
+	\includegraphics[scale=0.5]{TravelEnthusiastNetwork}
+	\caption{Konceptuální datový model pro sociální síť pro cestovní nadšence}
+\end{figure}
 
 \subsubsection{Logický datový model}
-Pokud jsme s diagramem z předchozí fáze spokojeni, můžeme konečně přistoupit ke kroku, ve kterém definujeme schéma v databázi. Rozpoznáme uzly a hrany a přiřadíme jim potřebné popisky a vlastnosti.
+Pokud jsme s diagramem z předchozí fáze spokojeni, můžeme konečně přistoupit ke kroku, ve kterém definujeme schéma, které bude v databázi. V případě relačního modelování je konceptuální model přeformátován, aby mohl být ukládán do tabulek. V případě grafového modelování toto není potřeba. Stačí identifikovat vrcholy a hrany a přiřadit jim příslušné popisky a vlastnosti. Výstupem tedy bude opět diagram, který ale bude mnohem detailnější. Bude se zabývat detaily, kterými se zabývají vývojáři. Bude definovat tvar, ve kterém budou data v databázi uložena a podle něj budeme moci klást na databázi dotazy. 
 
+Pro vytvoření grafového modelu jsou potřeba tyto 3 kroky:
+\begin{enumerate}
+  \item Převést entity na vrcholy
+  \item Převést relace na hrany
+  \item Najít a přiřadit vlastnosti vrcholům a hranám
+\end{enumerate}
+
+První jsou na řadě vrcholy. Podstatnou část práce již máme za sebou, neboť můžeme využít konceptuální model a namapovat entity na vrcholy. Zbývá jen jeden netriviální úkol - každému vrcholu přiřadit krátký, přesný a výstižný popisek. Jako vždy musíme mít na paměti budoucí rozšířitelnost a fakt, že s databází může pracovat jiný vývojář. Dobře zvolený popisek je tedy velmi žádaný. Důležité je též dbát na pojmenovávací konvenci. V našem příkladu je zvolena konvence doporučená v dokumentaci databáze Neo4j a tedy pro popisky vrcholů budeme používat CamelCase notaci, pro popisky hran UPPER\_CASE notaci s použitím podtržítka pro oddělení slov a pro vlastnosti snake\_case notaci.
+
+\begin{figure}
+	\includegraphics[scale=0.5]{TravelEnthusiastNetwork-Graph}
+	\caption{Logický datový model pro sociální síť pro cestovní nadšence}
+\end{figure}
 
 \subsubsection{Testování modelu}
+V budoucnu je možné přidat entitu cestovní kanceláře, která bude pořádat cesty do destinací a uživatelé po objednání budou do této cesty připojeni. To otevírá dveře dalším entitám například pro hodnocení cestovních kanceláří, nebo vztahům které se týká zaměstnanosti uživatelů u dané cestovky.
 
 
 %% Začátek druhé části
