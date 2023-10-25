@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  22 OCT 2023 21:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  25 OCT 2023 10:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1392,57 +1392,70 @@ Underfull \hbox (badness 6758) in paragraph at lines 136--136
 
 ]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 153.
+nput line 160.
  [7
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-13.
+25.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [8]
 [9]
-<./graphics//TravelEnthusiastNetwork-Entity.png, id=117, 714.67pt x 487.8225pt>
+<./graphics//TravelEnthusiastNetwork-Entity.png, id=118, 714.67pt x 487.8225pt>
 
 File: ./graphics//TravelEnthusiastNetwork-Entity.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork-Entity.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Entity.png  used o
-n input line 256.
+n input line 268.
 (pdftex.def)             Requested size: 357.33412pt x 243.91064pt.
 
-Overfull \hbox (4.59016pt too wide) in paragraph at lines 260--261
+Overfull \hbox (4.59016pt too wide) in paragraph at lines 273--274
 []\T1/lmr/m/n/12 Nyní ná-sle-duje pro-po-jení en-tit po-mocí vztah·. Po-dobn¥ j
 ako en-tity lze zejména
  []
 
-<./graphics//TravelEnthusiastNetwork.png, id=119, 728.7225pt x 487.8225pt>
+<./graphics//TravelEnthusiastNetwork.png, id=121, 728.7225pt x 487.8225pt>
 File: ./graphics//TravelEnthusiastNetwork.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork.png  used on input
- line 263.
+ line 277.
 (pdftex.def)             Requested size: 364.36035pt x 243.91064pt.
 [10] [11 <./graphics//TravelEnthusiastNetwork-Entity.png> <./graphics//TravelEn
 thusiastNetwork.png>]
-<./graphics//TravelEnthusiastNetwork-Graph.png, id=132, 632.3625pt x 365.86688p
-t>
+
+pdfTeX warning: pdflatex (file ./graphics//NodeLabels.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+<./graphics//NodeLabels.pdf, id=135, 844.65562pt x 596.98032pt>
+File: ./graphics//NodeLabels.pdf Graphic file (type pdf)
+<use ./graphics//NodeLabels.pdf>
+Package pdftex.def Info: ./graphics//NodeLabels.pdf  used on input line 295.
+(pdftex.def)             Requested size: 422.32678pt x 298.48943pt.
+
+Overfull \hbox (12.82559pt too wide) in paragraph at lines 295--296
+[][] 
+ []
+
+[12] [13 <./graphics//NodeLabels.pdf>] [14]
+<./graphics//TravelEnthusiastNetwork-Graph.png, id=162, 673.51625pt x 353.32pt>
+
 File: ./graphics//TravelEnthusiastNetwork-Graph.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork-Graph.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Graph.png  used on
- input line 280.
-(pdftex.def)             Requested size: 316.18048pt x 182.93298pt.
- [12 <./graphics//TravelEnthusiastNetwork-Graph.png>]
-[13] [14
+ input line 321.
+(pdftex.def)             Requested size: 336.7573pt x 176.65956pt.
+ [15 <./graphics//TravelEnthusiastNetwork-Graph.png>] [16] [17
 
-] [15
+] [18
 
 ]
 No file graph_databases.acr.
-[16
+[19
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 329.
+LaTeX Warning: Empty bibliography on input line 371.
 
 No file graph_databases.ind.
 
@@ -1461,10 +1474,10 @@ Package logreq Info: Writing requests to 'graph_databases.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29888 strings out of 475385
- 543265 string characters out of 2776907
- 1453553 words of memory out of 3000000
- 50671 multiletter control sequences out of 15000+600000
+ 29903 strings out of 475385
+ 543576 string characters out of 2776907
+ 1454913 words of memory out of 3000000
+ 50682 multiletter control sequences out of 15000+600000
  520472 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,10n,121p,2615b,2057s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1474,8 +1487,8 @@ pdfTeX warning (dest): name{section*.8} has been referenced but does not exist,
 
 {C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
 /Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Use
-rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Use
 rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Use
+rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Use
 rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/g
@@ -1485,9 +1498,9 @@ jaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gaj
 aj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gaja
 j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gaja
 j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on graph_databases.pdf (16 pages, 334109 bytes).
+Output written on graph_databases.pdf (19 pages, 441429 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 315 PDF objects out of 1000 (max. 8388607)
+ 71 named destinations out of 1000 (max. 500000)
+ 207 words of extra memory for PDF output out of 10000 (max. 10000000)
 
