@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  26 OCT 2023 08:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  27 OCT 2023 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1430,20 +1430,25 @@ File: ./graphics//NodeLabels.png Graphic file (type png)
 Package pdftex.def Info: ./graphics//NodeLabels.png  used on input line 295.
 (pdftex.def)             Requested size: 325.46513pt x 212.2926pt.
  [12 <./graphics//NodeLabels.png>] [13]
-<./graphics//TravelEnthusiastNetwork-Graph.png, id=151, 673.51625pt x 353.32pt>
-
+<./graphics//TravelEnthusiastNetwork-Graph.png, id=151, 1347.0325pt x 707.14188
+pt>
 File: ./graphics//TravelEnthusiastNetwork-Graph.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork-Graph.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Graph.png  used on
  input line 321.
-(pdftex.def)             Requested size: 336.7573pt x 176.65956pt.
- [14 <./graphics//TravelEnthusiastNetwork-Graph.png>] [15] [16
+(pdftex.def)             Requested size: 673.51462pt x 353.57007pt.
 
-] [17
+Overfull \hbox (264.01343pt too wide) in paragraph at lines 321--322
+[][] 
+ []
+
+[14] [15 <./graphics//TravelEnthusiastNetwork-Graph.png>] [16] [17
+
+] [18
 
 ]
 No file graph_databases.acr.
-[18
+[19
 
 ]
 
@@ -1466,8 +1471,8 @@ Package logreq Info: Writing requests to 'graph_databases.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29904 strings out of 475385
- 543585 string characters out of 2776907
+ 29905 strings out of 475385
+ 543592 string characters out of 2776907
  1452913 words of memory out of 3000000
  50684 multiletter control sequences out of 15000+600000
  520472 words of font info for 62 fonts, out of 8000000 for 9000
@@ -1490,9 +1495,9 @@ jaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gaj
 aj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gaja
 j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gaja
 j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on graph_databases.pdf (18 pages, 449137 bytes).
+Output written on graph_databases.pdf (19 pages, 526154 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
+ 308 PDF objects out of 1000 (max. 8388607)
+ 71 named destinations out of 1000 (max. 500000)
  207 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,18 +5,18 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Definice problému}{8}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}Konceptuální datový model}{10}{subsubsection.1.2.2}%
 \contentsline {subsubsection}{\numberline {1.2.3}Logický datový model}{11}{subsubsection.1.2.3}%
-\contentsline {subsubsection}{\numberline {1.2.4}Testování modelu}{15}{subsubsection.1.2.4}%
-\contentsline {section}{\numberline {2}Implementace grafových databází}{15}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Neo4j}{15}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}OrientDB}{15}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Dotazovací jazyky v grafových databázích}{15}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Gremlin}{15}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Cypher}{15}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}GQL - Graph Query Language}{15}{subsubsection.2.3.3}%
-\contentsline {section}{Z\'av\v er}{16}{section*.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Testování modelu}{14}{subsubsection.1.2.4}%
+\contentsline {section}{\numberline {2}Implementace grafových databází}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Neo4j}{14}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}OrientDB}{16}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Dotazovací jazyky v grafových databázích}{16}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Gremlin}{16}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Cypher}{16}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}GQL - Graph Query Language}{16}{subsubsection.2.3.3}%
+\contentsline {section}{Z\'av\v er}{17}{section*.3}%
 \babel@toc {czech}{}\relax 
 \babel@toc {czech}{}\relax 
-\contentsline {section}{Conclusions}{17}{section*.5}%
+\contentsline {section}{Conclusions}{18}{section*.5}%
 \babel@toc {english}{}\relax 
 \babel@toc {czech}{}\relax 
-\contentsline {section}{Seznam zkratek}{18}{section*.7}%
+\contentsline {section}{Seznam zkratek}{19}{section*.7}%
