@@ -1,370 +1,370 @@
-destination_id,activity_id
-1,1
-1,2
-1,3
-1,5
-1,11
-1,16
-2,4
-2,5
-2,6
-2,11
-2,15
-3,1
-3,2
-3,7
-3,12
-3,19
-4,2
-4,3
-4,6
-4,14
-4,18
-4,20
-5,1
-5,3
-5,5
-5,13
-5,16
-6,2
-6,4
-6,6
-6,16
-7,1
-7,3
-7,8
-7,11
-8,2
-8,7
-8,9
-8,11
-8,13
-8,15
-9,1
-9,5
-9,6
-9,14
-9,18
-9,19
-10,2
-10,3
-10,7
-10,12
-10,16
-11,4
-11,6
-11,10
-11,13
-11,16
-12,1
-12,2
-12,5
-12,11
-12,15
-13,3
-13,6
-13,9
-13,12
-13,16
-13,17
-14,2
-14,4
-14,7
-14,8
-14,10
-15,1
-15,5
-15,10
-15,11
-15,14
-15,17
-16,4
-16,6
-16,9
-16,12
-16,18
-17,2
-17,3
-17,7
-17,8
-17,13
-18,1
-18,2
-18,6
-18,15
-18,19
-19,3
-19,4
-19,8
-19,12
-19,17
-20,2
-20,5
-20,7
-20,13
-20,18
-21,1
-21,4
-21,9
-21,11
-21,16
-22,3
-22,6
-22,10
-22,14
-22,19
-23,2
-23,4
-23,8
-23,15
-24,1
-24,3
-24,7
-24,13
-24,20
-25,4
-25,5
-25,10
-25,12
-25,16
-26,3
-26,6
-26,9
-26,11
-26,17
-27,2
-27,4
-27,8
-27,15
-28,1
-28,5
-28,10
-28,13
-28,19
-29,2
-29,3
-29,7
-29,12
-29,16
-30,3
-30,4
-30,8
-30,14
-30,17
-31,1
-31,5
-31,10
-31,11
-31,15
-32,2
-32,6
-32,9
-32,13
-32,18
-33,1
-33,3
-33,7
-33,12
-33,16
-34,3
-34,4
-34,8
-34,15
-35,2
-35,5
-35,10
-35,13
-35,19
-36,4
-36,6
-36,8
-36,15
-37,1
-37,2
-37,7
-37,14
-37,20
-38,3
-38,5
-38,8
-38,12
-38,17
-39,2
-39,4
-39,10
-39,13
-39,19
-40,1
-40,5
-40,7
-40,15
-41,3
-41,4
-41,8
-41,12
-41,16
-42,2
-42,6
-42,9
-42,11
-42,17
-43,1
-43,5
-43,7
-43,13
-43,20
-44,4
-44,6
-44,10
-44,14
-44,18
-45,3
-45,5
-45,8
-45,15
-46,2
-46,4
-46,9
-46,11
-46,16
-47,1
-47,3
-47,7
-47,12
-47,17
-48,2
-48,5
-48,10
-48,13
-48,19
-49,4
-49,6
-49,8
-49,15
-50,3
-50,5
-50,9
-50,12
-50,18
-51,2
-51,4
-51,8
-55,7
-57,1
-57,6
-58,3
-58,6
-58,9
-64,2
-64,5
-64,8
-65,8
-65,9
-66,3
-66,5
-66,7
-67,2
-67,6
-67,9
-68,3
-68,7
-69,1
-69,4
-69,6
-69,9
-70,3
-70,7
-71,7
-71,8
-72,1
-72,5
-72,9
-73,3
-73,4
-74,4
-74,6
-74,9
-76,1
-76,2
-76,7
-77,7
-77,8
-78,1
-78,4
-78,9
-79,3
-79,6
-80,4
-80,6
-80,7
-81,5
-81,6
-82,3
-82,6
-83,2
-83,5
-83,9
-84,4
-84,5
-85,3
-85,4
-85,6
-86,4
-86,5
-87,2
-87,5
-88,2
-88,5
-88,9
-90,5
-90,6
-90,9
-91,6
-91,7
-91,9
-92,5
-92,7
-93,5
-93,7
-94,6
-94,7
-95,4
-96,1
-96,2
-97,4
-97,6
-98,4
-98,7
-98,9
-99,3
-99,4
-99,5
-100,4
-100,5
-101,6
-101,7
-102,1
-102,2
-103,2
-103,6
-104,2
-104,3
-104,8
-105,6
-105,8
-106,1
-106,11
-107,7
-107,16
-108,4
-108,12
-109,5
-109,12
-110,9
-110,14
-111,3
-111,13
-112,1
-112,14
-113,8
-113,15
+destination_id,activity_name
+1,Sightseeing
+1,Culinary Experiences
+1,Cultural Exploration
+1,Water Sports
+1,Music Festivals
+1,Amusement Parks
+2,Beach Relaxation
+2,Water Sports
+2,Adventure Tours
+2,Music Festivals
+2,Food Markets
+3,Sightseeing
+3,Culinary Experiences
+3,Historical Tours
+3,Local Music Performances
+3,Art and Museums
+4,Culinary Experiences
+4,Cultural Exploration
+4,Adventure Tours
+4,Shopping
+4,Nightlife and Bars
+4,Spa and Wellness
+5,Sightseeing
+5,Cultural Exploration
+5,Water Sports
+5,Gaming and Casinos
+5,Amusement Parks
+6,Culinary Experiences
+6,Beach Relaxation
+6,Adventure Tours
+6,Amusement Parks
+7,Sightseeing
+7,Cultural Exploration
+7,Hiking
+7,Music Festivals
+8,Culinary Experiences
+8,Historical Tours
+8,Wildlife Safari
+8,Music Festivals
+8,Gaming and Casinos
+8,Food Markets
+9,Sightseeing
+9,Water Sports
+9,Adventure Tours
+9,Shopping
+9,Nightlife and Bars
+9,Art and Museums
+10,Culinary Experiences
+10,Cultural Exploration
+10,Historical Tours
+10,Local Music Performances
+10,Amusement Parks
+11,Beach Relaxation
+11,Adventure Tours
+11,Scenic Drives
+11,Gaming and Casinos
+11,Amusement Parks
+12,Sightseeing
+12,Culinary Experiences
+12,Water Sports
+12,Music Festivals
+12,Food Markets
+13,Cultural Exploration
+13,Adventure Tours
+13,Wildlife Safari
+13,Local Music Performances
+13,Amusement Parks
+13,Sporting Events
+14,Culinary Experiences
+14,Beach Relaxation
+14,Historical Tours
+14,Hiking
+14,Scenic Drives
+15,Sightseeing
+15,Water Sports
+15,Scenic Drives
+15,Music Festivals
+15,Shopping
+15,Sporting Events
+16,Beach Relaxation
+16,Adventure Tours
+16,Wildlife Safari
+16,Local Music Performances
+16,Nightlife and Bars
+17,Culinary Experiences
+17,Cultural Exploration
+17,Historical Tours
+17,Hiking
+17,Gaming and Casinos
+18,Sightseeing
+18,Culinary Experiences
+18,Adventure Tours
+18,Food Markets
+18,Art and Museums
+19,Cultural Exploration
+19,Beach Relaxation
+19,Hiking
+19,Local Music Performances
+19,Sporting Events
+20,Culinary Experiences
+20,Water Sports
+20,Historical Tours
+20,Gaming and Casinos
+20,Nightlife and Bars
+21,Sightseeing
+21,Beach Relaxation
+21,Wildlife Safari
+21,Music Festivals
+21,Amusement Parks
+22,Cultural Exploration
+22,Adventure Tours
+22,Scenic Drives
+22,Shopping
+22,Art and Museums
+23,Culinary Experiences
+23,Beach Relaxation
+23,Hiking
+23,Food Markets
+24,Sightseeing
+24,Cultural Exploration
+24,Historical Tours
+24,Gaming and Casinos
+24,Spa and Wellness
+25,Beach Relaxation
+25,Water Sports
+25,Scenic Drives
+25,Local Music Performances
+25,Amusement Parks
+26,Cultural Exploration
+26,Adventure Tours
+26,Wildlife Safari
+26,Music Festivals
+26,Sporting Events
+27,Culinary Experiences
+27,Beach Relaxation
+27,Hiking
+27,Food Markets
+28,Sightseeing
+28,Water Sports
+28,Scenic Drives
+28,Gaming and Casinos
+28,Art and Museums
+29,Culinary Experiences
+29,Cultural Exploration
+29,Historical Tours
+29,Local Music Performances
+29,Amusement Parks
+30,Cultural Exploration
+30,Beach Relaxation
+30,Hiking
+30,Shopping
+30,Sporting Events
+31,Sightseeing
+31,Water Sports
+31,Scenic Drives
+31,Music Festivals
+31,Food Markets
+32,Culinary Experiences
+32,Adventure Tours
+32,Wildlife Safari
+32,Gaming and Casinos
+32,Nightlife and Bars
+33,Sightseeing
+33,Cultural Exploration
+33,Historical Tours
+33,Local Music Performances
+33,Amusement Parks
+34,Cultural Exploration
+34,Beach Relaxation
+34,Hiking
+34,Food Markets
+35,Culinary Experiences
+35,Water Sports
+35,Scenic Drives
+35,Gaming and Casinos
+35,Art and Museums
+36,Beach Relaxation
+36,Adventure Tours
+36,Hiking
+36,Food Markets
+37,Sightseeing
+37,Culinary Experiences
+37,Historical Tours
+37,Shopping
+37,Spa and Wellness
+38,Cultural Exploration
+38,Water Sports
+38,Hiking
+38,Local Music Performances
+38,Sporting Events
+39,Culinary Experiences
+39,Beach Relaxation
+39,Scenic Drives
+39,Gaming and Casinos
+39,Art and Museums
+40,Sightseeing
+40,Water Sports
+40,Historical Tours
+40,Food Markets
+41,Cultural Exploration
+41,Beach Relaxation
+41,Hiking
+41,Local Music Performances
+41,Amusement Parks
+42,Culinary Experiences
+42,Adventure Tours
+42,Wildlife Safari
+42,Music Festivals
+42,Sporting Events
+43,Sightseeing
+43,Water Sports
+43,Historical Tours
+43,Gaming and Casinos
+43,Spa and Wellness
+44,Beach Relaxation
+44,Adventure Tours
+44,Scenic Drives
+44,Shopping
+44,Nightlife and Bars
+45,Cultural Exploration
+45,Water Sports
+45,Hiking
+45,Food Markets
+46,Culinary Experiences
+46,Beach Relaxation
+46,Wildlife Safari
+46,Music Festivals
+46,Amusement Parks
+47,Sightseeing
+47,Cultural Exploration
+47,Historical Tours
+47,Local Music Performances
+47,Sporting Events
+48,Culinary Experiences
+48,Water Sports
+48,Scenic Drives
+48,Gaming and Casinos
+48,Art and Museums
+49,Beach Relaxation
+49,Adventure Tours
+49,Hiking
+49,Food Markets
+50,Cultural Exploration
+50,Water Sports
+50,Wildlife Safari
+50,Local Music Performances
+50,Nightlife and Bars
+51,Culinary Experiences
+51,Beach Relaxation
+51,Hiking
+55,Historical Tours
+57,Sightseeing
+57,Adventure Tours
+58,Cultural Exploration
+58,Adventure Tours
+58,Wildlife Safari
+64,Culinary Experiences
+64,Water Sports
+64,Hiking
+65,Hiking
+65,Wildlife Safari
+66,Cultural Exploration
+66,Water Sports
+66,Historical Tours
+67,Culinary Experiences
+67,Adventure Tours
+67,Wildlife Safari
+68,Cultural Exploration
+68,Historical Tours
+69,Sightseeing
+69,Beach Relaxation
+69,Adventure Tours
+69,Wildlife Safari
+70,Cultural Exploration
+70,Historical Tours
+71,Historical Tours
+71,Hiking
+72,Sightseeing
+72,Water Sports
+72,Wildlife Safari
+73,Cultural Exploration
+73,Beach Relaxation
+74,Beach Relaxation
+74,Adventure Tours
+74,Wildlife Safari
+76,Sightseeing
+76,Culinary Experiences
+76,Historical Tours
+77,Historical Tours
+77,Hiking
+78,Sightseeing
+78,Beach Relaxation
+78,Wildlife Safari
+79,Cultural Exploration
+79,Adventure Tours
+80,Beach Relaxation
+80,Adventure Tours
+80,Historical Tours
+81,Water Sports
+81,Adventure Tours
+82,Cultural Exploration
+82,Adventure Tours
+83,Culinary Experiences
+83,Water Sports
+83,Wildlife Safari
+84,Beach Relaxation
+84,Water Sports
+85,Cultural Exploration
+85,Beach Relaxation
+85,Adventure Tours
+86,Beach Relaxation
+86,Water Sports
+87,Culinary Experiences
+87,Water Sports
+88,Culinary Experiences
+88,Water Sports
+88,Wildlife Safari
+90,Water Sports
+90,Adventure Tours
+90,Wildlife Safari
+91,Adventure Tours
+91,Historical Tours
+91,Wildlife Safari
+92,Water Sports
+92,Historical Tours
+93,Water Sports
+93,Historical Tours
+94,Adventure Tours
+94,Historical Tours
+95,Beach Relaxation
+96,Sightseeing
+96,Culinary Experiences
+97,Beach Relaxation
+97,Adventure Tours
+98,Beach Relaxation
+98,Historical Tours
+98,Wildlife Safari
+99,Cultural Exploration
+99,Beach Relaxation
+99,Water Sports
+100,Beach Relaxation
+100,Water Sports
+101,Adventure Tours
+101,Historical Tours
+102,Sightseeing
+102,Culinary Experiences
+103,Culinary Experiences
+103,Adventure Tours
+104,Culinary Experiences
+104,Cultural Exploration
+104,Hiking
+105,Adventure Tours
+105,Hiking
+106,Sightseeing
+106,Music Festivals
+107,Historical Tours
+107,Amusement Parks
+108,Beach Relaxation
+108,Local Music Performances
+109,Water Sports
+109,Local Music Performances
+110,Wildlife Safari
+110,Shopping
+111,Cultural Exploration
+111,Gaming and Casinos
+112,Sightseeing
+112,Shopping
+113,Hiking
+113,Food Markets
