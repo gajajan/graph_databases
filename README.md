@@ -5,3 +5,4 @@ Repository for a bachelor's thesis dealing with graph databases.
 * In csv folder you can find csv files which contain test data.
 * In import_scripts folder you can find scripts which import csv files to graph databases Neo4j and OrientDB.
 * In kidiplom folder you can find current version of text document.
+* In queries folder you can find some queries, which are mentioned in text document.
