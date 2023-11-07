@@ -1,0 +1,18 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/ratings.csv" } },
+    "extractor": { "csv": {} },
+    "transformers": [
+      { "vertex": { "class": "Rating" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+           {"name": "Rating", "extends": "V"}
+         ]
+      }
+    }
+  }

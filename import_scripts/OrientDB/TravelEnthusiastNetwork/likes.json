@@ -1,0 +1,26 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/likes.csv" } },
+    "extractor": { "csv": {} },
+    "transformers": [
+      { "merge": { "joinFieldName": "userId", "lookup": "User.userId" } },
+      { "edge": { "class": "LIKES",
+                  "joinFieldName": "activityName",
+                  "lookup": "TravelActivity.activityName",
+                  "direction": "out" 
+                }
+      }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "User", "extends": "V"},
+            {"name": "TravelActivity", "extends": "V"},
+            {"name": "LIKES", "extends": "E"}
+         ]
+      }
+    }
+  }

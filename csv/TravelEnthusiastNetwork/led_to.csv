@@ -1,4 +1,4 @@
-journey_id,destination_id,start_date,end_date
+journeyId,destinationId,startDate,endDate
 1,21,2013-12-29,2014-01-03
 1,102,2014-01-04,2014-01-07
 1,95,2014-01-08,2014-01-07

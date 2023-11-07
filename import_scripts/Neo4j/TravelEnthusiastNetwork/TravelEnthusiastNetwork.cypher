@@ -41,38 +41,38 @@ REQUIRE d.destinationName IS NOT NULL;
 // load vertices
 LOAD CSV WITH HEADERS
 FROM 'file:///users.csv' AS row
-MERGE (u:User {userId: toInteger(row.user_id)})
+MERGE (u:User {userId: toInteger(row.userId)})
 SET 
-u.firstname = row.firstname, 
-u.lastname = row.lastname;
+u.firstName = row.firstName, 
+u.lastName = row.lastName;
 
 LOAD CSV WITH HEADERS
 FROM 'file:///journeys.csv' AS row
-MERGE (j:Journey {journeyId: toInteger(row.journey_id)})
+MERGE (j:Journey {journeyId: toInteger(row.journeyId)})
 SET 
-j.journeyName = row.journey_name,
-j.journeyStart = date(row.journey_start),
-j.journeyEnd = date(row.journey_end);
+j.journeyName = row.journeyName,
+j.journeyStart = date(row.journeyStart),
+j.journeyEnd = date(row.journeyEnd);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///destinations.csv' AS row
-MERGE (d:Destination {destinationId: toInteger(row.destination_id)}) 
+MERGE (d:Destination {destinationId: toInteger(row.destinationId)}) 
 SET
-d.destinationName = row.destination_name;
+d.destinationName = row.destinationName;
 
 LOAD CSV WITH HEADERS
 FROM 'file:///countries.csv' AS row
-MERGE (c:Country{countryCode: row.country_code})
+MERGE (c:Country{countryCode: row.countryCode})
 SET
-c.countryName = row.country_name;
+c.countryName = row.countryName;
 
 LOAD CSV WITH HEADERS
 FROM 'file:///activities.csv' AS row
-MERGE (:TravelActivity {activityName: row.activity_name});
+MERGE (:TravelActivity {activityName: row.activityName});
 
 LOAD CSV WITH HEADERS
 FROM 'file:///ratings.csv' AS row
-MERGE (r:Rating {ratingId: toInteger(row.rating_id)})
+MERGE (r:Rating {ratingId: toInteger(row.ratingId)})
 SET
 r.body = row.body,
 r.rating = toInteger(row.rating);
@@ -80,52 +80,52 @@ r.rating = toInteger(row.rating);
 //load edges
 LOAD CSV WITH HEADERS
 FROM 'file:///follows.csv' AS row
-MATCH (u1:User {userId: toInteger(row.user1_id)})
-MATCH (u2:User {userId: toInteger(row.user2_id)})
+MATCH (u1:User {userId: toInteger(row.user1Id)})
+MATCH (u2:User {userId: toInteger(row.user2Id)})
 MERGE (u1)-[:FOLLOWS]->(u2);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///is_within.csv' AS row
-MATCH (d:Destination {destinationId: row.destination_id})
-MATCH (c:Country {countryCode: row.country_code})
+MATCH (d:Destination {destinationId: row.destinationId})
+MATCH (c:Country {countryCode: row.countryCode})
 MERGE (d)-[:IS_WITHIN]->(c);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///led_to.csv' AS row
-MATCH (j:Journey {journeyId: toInteger(row.journey_id)})
-MATCH (d:Destination {destinationId: row.destination_id})
+MATCH (j:Journey {journeyId: toInteger(row.journeyId)})
+MATCH (d:Destination {destinationId: row.destinationId})
 MERGE (j)-[e:LED_TO]->(d)
 SET
-e.startDate = date(row.start_date),
-e.endDate = date(row.end_date);
+e.startDate = date(row.startDate),
+e.endDate = date(row.endDate);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///likes.csv' AS row
-MATCH (u:User {userId: toInteger(row.user_id)})
-MATCH (a:TravelActivity {activityName: row.activity_name})
+MATCH (u:User {userId: toInteger(row.userId)})
+MATCH (a:TravelActivity {activityName: row.activityName})
 MERGE (u)-[:LIKES]->(a);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///lives_in.csv' AS row
-MATCH (u:User {user_id: toInteger(row.user_id)})
-MATCH (c:Country {countryCode: row.country_code})
+MATCH (u:User {user_id: toInteger(row.userId)})
+MATCH (c:Country {countryCode: row.countryCode})
 MERGE (u)-[:LIVES_IN]->(c);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///offers.csv' AS row
-MATCH (d:Destination {destinationId: row.destination_id})
-MATCH (a:TravelActivity {activityName: row.activity_name})
+MATCH (d:Destination {destinationId: row.destinationId})
+MATCH (a:TravelActivity {activityName: row.activityName})
 MERGE (d)-[:OFFERS]->(a);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///participated.csv' AS row
-MATCH (u:User {userId: toInteger(row.user_id)})
-MATCH (j:Journey {journeyId: toInteger(row.journey_id)})
+MATCH (u:User {userId: toInteger(row.userId)})
+MATCH (j:Journey {journeyId: toInteger(row.journeyId)})
 MERGE (u)-[:PARTICIPATED]->(j);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///wrote_about.csv' AS row
-MATCH (u:User {userId: toInteger(row.user_id)})
-MATCH (r:Rating {ratingId: toInteger(row.rating_id)})
-MATCH (j:Journey {journeyId: toInteger(row.journey_id)})
+MATCH (u:User {userId: toInteger(row.userId)})
+MATCH (r:Rating {ratingId: toInteger(row.ratingId)})
+MATCH (j:Journey {journeyId: toInteger(row.journeyId)})
 MERGE (u)-[:WROTE]->(r)-[:ABOUT]->(j);

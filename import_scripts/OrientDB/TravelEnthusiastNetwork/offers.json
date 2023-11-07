@@ -1,0 +1,26 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/offers.csv" } },
+    "extractor": { "csv": {} },
+    "transformers": [
+      { "merge": { "joinFieldName": "destinationId", "lookup": "Destination.destinationId" } },
+      { "edge": { "class": "OFFERS",
+                    "joinFieldName": "activityName",
+                    "lookup": "TravelActivity.activityName",
+                    "direction": "out" 
+                }
+      }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "Destination", "extends": "V"},
+            {"name": "TravelActivity", "extends": "V"},
+            {"name": "OFFERS", "extends": "E"}
+         ]
+      }
+    }
+  }

@@ -1,0 +1,26 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/lives_in.csv" } },
+    "extractor": { "csv": {} },
+    "transformers": [
+      { "merge": { "joinFieldName": "userId", "lookup": "User.userId" } },
+      { "edge": { "class": "LIVES_IN",
+                  "joinFieldName": "countryCode",
+                  "lookup": "Country.countryCode",
+                  "direction": "out" 
+                }
+      }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "User", "extends": "V"},
+            {"name": "Country", "extends": "V"},
+            {"name": "LIVES_IN", "extends": "E"}
+         ]
+      }
+    }
+  }

@@ -1,0 +1,34 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/wrote_about.csv" } },
+    "extractor": { "csv": {} },
+    "transformers": [
+      { "merge": { "joinFieldName": "ratingId", "lookup": "Rating.ratingId" } },
+      { "edge": { "class": "WROTE",
+                  "joinFieldName": "userId",
+                  "lookup": "User.userId",
+                  "direction": "in" 
+                }
+      },
+      { "edge": { "class": "ABOUT",
+                  "joinFieldName": "journeyId",
+                  "lookup": "Journey.journeyId",
+                  "direction": "out" 
+                }
+      }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "User", "extends": "V"},
+            {"name": "Rating", "extends": "V"},
+            {"name": "Journey", "extends": "V"},
+            {"name": "WROTE", "extends": "E"},
+            {"name": "ABOUT", "extends": "E"}
+         ]
+      }
+    }
+  }

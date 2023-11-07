@@ -1,0 +1,26 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/participated.csv" } },
+    "extractor": { "csv": {} },
+    "transformers": [
+      { "merge": { "joinFieldName": "userId", "lookup": "User.userId" } },
+      { "edge": { "class": "PARTICIPATED",
+                  "joinFieldName": "journeyId",
+                  "lookup": "Journey.journeyId",
+                  "direction": "out" 
+                }
+      }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "User", "extends": "V"},
+            {"name": "Journey", "extends": "V"},
+            {"name": "PARTICIPATED", "extends": "E"}
+         ]
+      }
+    }
+  }
