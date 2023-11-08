@@ -1,11 +1,11 @@
 {
-    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/participated.csv" } },
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/likes.csv" } },
     "extractor": { "csv": {} },
     "transformers": [
       { "merge": { "joinFieldName": "userId", "lookup": "User.userId" } },
-      { "edge": { "class": "PARTICIPATED",
-                  "joinFieldName": "journeyId",
-                  "lookup": "Journey.journeyId",
+      { "edge": { "class": "LIKES",
+                  "joinFieldName": "activityName",
+                  "lookup": "TravelActivity.activityName",
                   "direction": "out" 
                 }
       }
@@ -18,8 +18,8 @@
          "dbType": "graph",
          "classes": [
             {"name": "User", "extends": "V"},
-            {"name": "Journey", "extends": "V"},
-            {"name": "PARTICIPATED", "extends": "E"}
+            {"name": "TravelActivity", "extends": "V"},
+            {"name": "LIKES", "extends": "E"}
          ]
       }
     }

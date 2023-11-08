@@ -1,5 +1,5 @@
 {
-    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/follows.csv" } },
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/follows.csv" } },
     "extractor": { "csv": {} },
     "transformers": [
       { "merge": { "joinFieldName": "user1Id", "lookup": "User.userId" } },

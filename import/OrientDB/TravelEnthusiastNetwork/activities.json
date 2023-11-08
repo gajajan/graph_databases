@@ -1,8 +1,8 @@
 {
-    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/journeys.csv" } },
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/activities.csv" } },
     "extractor": { "csv": {} },
     "transformers": [
-      { "vertex": { "class": "Journey" } }
+      { "vertex": { "class": "TravelActivity" } }
     ],
     "loader": {
       "orientdb": {
@@ -11,7 +11,7 @@
          "dbPassword": "root",
          "dbType": "graph",
          "classes": [
-           {"name": "Journey", "extends": "V"}
+           {"name": "TravelActivity", "extends": "V"}
          ]
       }
     }

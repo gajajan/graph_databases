@@ -1,5 +1,5 @@
 {
-    "source": { "file": { "path": "C:/Users/gajaj/Desktop/ŠKOLA/Bakalářka/graph_databases/csv/TravelEnthusiastNetwork/wrote_about.csv" } },
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/wrote_about.csv" } },
     "extractor": { "csv": {} },
     "transformers": [
       { "merge": { "joinFieldName": "ratingId", "lookup": "Rating.ratingId" } },

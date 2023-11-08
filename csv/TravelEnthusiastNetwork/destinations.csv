@@ -50,9 +50,18 @@ destinationId,destinationName
 49,Honolulu
 50,Marrakech
 51,Miami
+52,Casablanca
+53,Amman
+54,Frankfurt
 55,Las Vegas
+56,Bratislava
 57,Marseille
 58,Nice
+59,Wroclaw
+60,Munich
+61,Krkonoše
+62,Tel Aviv
+63,Haifa
 64,Lyon
 65,Bordeaux
 66,Tuscany
@@ -64,8 +73,12 @@ destinationId,destinationName
 72,Seattle
 73,Boston
 74,San Antonio
+75,Dublin
 76,Monaco
 77,Pisa
+78,Amalfi Coast
+79,Košice
+80,Gran Canaria
 81,Osaka
 82,Sapporo
 83,Hiroshima
@@ -74,6 +87,7 @@ destinationId,destinationName
 86,Sendai
 87,Kanazawa
 88,Kobe
+89,High Tatras
 90,Shanghai
 91,Guilin
 92,Xi'an
@@ -83,32 +97,18 @@ destinationId,destinationName
 96,Macau
 97,Wuhan
 98,Nanjing
+99,Stockholm
 100,Mykonos
 101,Rhodes
 102,Thessaloniki
 103,Crete
 104,Corfu
+105,St. Petersburg
 106,Madrid
 107,Seville
 108,Valencia
 109,Granada
+110,Jerusalem
 111,Porto
 112,Algarve
 113,Sintra
-99,Stockholm
-105,St. Petersburg
-75,Dublin
-78,Amalfi Coast
-79,Košice
-80,Gran Canaria
-110,Jerusalem
-52,Casablanca
-53,Amman
-54,Frankfurt
-56,Bratislava
-89,High Tatras
-59,Wroclaw
-60,Munich
-61,Krkonoše
-62,Tel Aviv
-63,Haifa
