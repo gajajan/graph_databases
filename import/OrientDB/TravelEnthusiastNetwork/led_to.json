@@ -6,9 +6,11 @@
       { "edge": { "class": "LED_TO",
                   "joinFieldName": "destinationId",
                   "lookup": "Destination.destinationId",
-                  "direction": "out" 
+                  "direction": "out",
+                  "edgeFields":    { "startDate": "${input.startDate}", "endDate": "${input.endDate}" }
                 }
-      }
+      },
+      { "field": { "fieldNames": ["destinationId", "startDate", "endDate"], "operation": "remove" } }
     ],
     "loader": {
       "orientdb": {

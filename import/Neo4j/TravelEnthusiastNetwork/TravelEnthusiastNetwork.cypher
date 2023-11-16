@@ -28,11 +28,11 @@ REQUIRE r.ratingId IS NODE KEY;
 
 CREATE CONSTRAINT User_firstname_exists IF NOT EXISTS
 FOR (u:User)
-REQUIRE u.firstname IS NOT NULL;
+REQUIRE u.firstName IS NOT NULL;
 
 CREATE CONSTRAINT User_lastname_exists IF NOT EXISTS
 FOR (u:User)
-REQUIRE u.lastname IS NOT NULL;
+REQUIRE u.lastName IS NOT NULL;
 
 CREATE CONSTRAINT Destination_name_exists IF NOT EXISTS
 FOR (d:Destination)

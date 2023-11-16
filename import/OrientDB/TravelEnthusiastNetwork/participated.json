@@ -8,7 +8,8 @@
                   "lookup": "Journey.journeyId",
                   "direction": "out" 
                 }
-      }
+      },
+      { "field": { "fieldNames": ["journeyId"], "operation": "remove" } }
     ],
     "loader": {
       "orientdb": {

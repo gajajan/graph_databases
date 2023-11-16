@@ -8,7 +8,8 @@
                   "lookup": "Country.countryCode",
                   "direction": "out" 
                 }
-      }
+      },
+      { "field": { "fieldNames": ["countryCode"], "operation": "remove" } }
     ],
     "loader": {
       "orientdb": {
