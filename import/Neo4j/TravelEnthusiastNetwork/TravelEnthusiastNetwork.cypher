@@ -86,14 +86,14 @@ MERGE (u1)-[:FOLLOWS]->(u2);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///is_within.csv' AS row
-MATCH (d:Destination {destinationId: row.destinationId})
+MATCH (d:Destination {destinationId: toInteger(row.destinationId)})
 MATCH (c:Country {countryCode: row.countryCode})
 MERGE (d)-[:IS_WITHIN]->(c);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///led_to.csv' AS row
 MATCH (j:Journey {journeyId: toInteger(row.journeyId)})
-MATCH (d:Destination {destinationId: row.destinationId})
+MATCH (d:Destination {destinationId: toInteger(row.destinationId)})
 MERGE (j)-[e:LED_TO]->(d)
 SET
 e.startDate = date(row.startDate),
@@ -107,13 +107,12 @@ MERGE (u)-[:LIKES]->(a);
 
 LOAD CSV WITH HEADERS
 FROM 'file:///lives_in.csv' AS row
-MATCH (u:User {user_id: toInteger(row.userId)})
-MATCH (c:Country {countryCode: row.countryCode})
-MERGE (u)-[:LIVES_IN]->(c);
-
+MATCH (u:User {userId: toInteger(row.userId)})
+MATCH (d:Destination {destinationId: toInteger(row.destinationId)})
+MERGE (u)-[:LIVES_IN]->(d);
 LOAD CSV WITH HEADERS
 FROM 'file:///offers.csv' AS row
-MATCH (d:Destination {destinationId: row.destinationId})
+MATCH (d:Destination {destinationId: toInteger(row.destinationId)})
 MATCH (a:TravelActivity {activityName: row.activityName})
 MERGE (d)-[:OFFERS]->(a);
 

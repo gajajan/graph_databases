@@ -202,7 +202,11 @@ Strom je souvislý graf $G = \langle V,E\rangle$ neobsahující kružnice.
 %		Graph Databases
 %web	https://neo4j.com/developer/guide-data-modeling/
 
-Modelování dat je proces, který překládá entity reálného světa a vztahy mezi nimi do jejich softwarové reprezentace. Uživatel popisuje doménu jako graf skládající se z vrcholů a hran pomocí vlastností a popisků. Každý výsledný model je unikátní. U každého záleží na případech použití a otázkách, které mají podobu dotazů, které budou na databázi kladeny. Dodržení základních principů modelování dat je důležité pro výslednou efektivitu. Když je graf přizpůsoben dotazům, dokáže velmi rychle nalézt potřebnou odpověď. Naopak špatně zvolený modelu grafu může ve výsledku aplikaci ublížit a být překážkou. Další důležitou otázkou je budoucnost vyvíjené aplikace. Model by měl být připravený na změny, které po aplikaci budou její koncoví uživatelé požadovat. Správnému modelu je proto dobré věnovat dostatečné množství času a dodržovat obecná pravidla.
+\begin{remark}[Překlad]
+V práci je použito  české slovo ``vlastnosti`` přeložené z anglického slova ``properties``, se kterým se běžně uživatel setká při práci s gafovou databází. Slovo ``label`` je z důvodu znělosti zachováno v původním znění.
+\end{remark}
+
+Modelování dat je proces, který překládá entity reálného světa a vztahy mezi nimi do jejich softwarové reprezentace. Uživatel popisuje doménu jako graf skládající se z vrcholů a hran pomocí vlastností a labelů. Každý výsledný model je unikátní. U každého záleží na případech použití a otázkách, které mají podobu dotazů, které budou na databázi kladeny. Dodržení základních principů modelování dat je důležité pro výslednou efektivitu. Když je graf přizpůsoben dotazům, dokáže velmi rychle nalézt potřebnou odpověď. Naopak špatně zvolený modelu grafu může ve výsledku aplikaci ublížit a být překážkou. Další důležitou otázkou je budoucnost vyvíjené aplikace. Model by měl být připravený na změny, které po aplikaci budou její koncoví uživatelé požadovat. Správnému modelu je proto dobré věnovat dostatečné množství času a dodržovat obecná pravidla. 
 
 Postup modelování se dá rozdělit do čtyř fází:
 \begin{enumerate}
@@ -241,12 +245,13 @@ Jak spolu tyto pojmy vzájemně souvisí v rámci aplikace?
 
 Na jaké otázky potřebují uživatelé najít odpověď?
 \begin{itemize}
-  \item Jaké všechny uživatele sleduji? A koho sledují oni?
+  \item Jaké všechny uživatele sleduji? A koho sledují oni? Které uživatele nesleduji ale sledují je uživatelé, které sleduji?
   \item Najdi 3 nejlépe hodnocené destinace, které jsem nenavštívil, nabízející konkrétní cestovní aktivity?
   \item Které destinace navštívil uživatel X. Kolikrát je navštívil?
   \item Najdi mi všechny uživatele v rámci skupiny, s kterou cestuje uživatel X do destinace Y.
   \item Najdi X destinací nabízející aktivity, které se uživatelovi líbí.
   \item Pro konkrétní destinaci vrať měsíc v roce v kterém je nejlépe hodnocená.
+  \item V kterých destinacích a před kolika lety jsem byl v tento konkrétní den a měsíc? 
 \end{itemize}
 V reálném scénáři by otázek bylo mnohem více.
  
@@ -274,13 +279,13 @@ Nyní následuje propojení entit pomocí vztahů. Podobně jako entity lze zejm
 
 Po důkladném rozmýšlení naše tabule má obsah, jako Obrázek \ref{koncept}.
 \begin{figure}
-	\includegraphics[scale=0.5]{TravelEnthusiastNetwork}
+	\includegraphics[scale=0.5]{TravelEnthusiastNetwork-Conceptual}
 	\caption{Konceptuální datový model pro sociální síť pro cestovní nadšence}
 	\label{koncept}
 \end{figure}
 
 \subsubsection{Logický datový model}
-Pokud jsme s diagramem z předchozí fáze spokojeni, můžeme konečně přistoupit ke kroku, ve kterém definujeme schéma, které bude v databázi. V případě relačního modelování je konceptuální model přeformátován, aby mohl být ukládán do tabulek. V případě grafového modelování toto není potřeba. Stačí identifikovat vrcholy a hrany a přiřadit jim příslušné popisky a vlastnosti. Výstupem tedy bude opět diagram, který ale bude mnohem detailnější. Bude se zabývat detaily, kterými se zabývají vývojáři. Bude definovat tvar, ve kterém budou data v databázi uložena a podle něj budeme moci klást na databázi dotazy. 
+Pokud jsme s diagramem z předchozí fáze spokojeni, můžeme konečně přistoupit ke kroku, ve kterém definujeme schéma, které bude v databázi. V případě relačního modelování je konceptuální model přeformátován, aby mohl být ukládán do tabulek. V případě grafového modelování toto není potřeba. Stačí identifikovat vrcholy a hrany a přiřadit jim příslušný label a vlastnosti. Výstupem tedy bude opět diagram, který ale bude mnohem detailnější. Bude se zabývat detaily, kterými se zabývají vývojáři. Bude definovat tvar, ve kterém budou data v databázi uložena a podle něj budeme moci klást na databázi dotazy.
 
 Pro vytvoření grafového modelu jsou potřeba tyto 3 kroky:
 \begin{enumerate}
@@ -289,31 +294,37 @@ Pro vytvoření grafového modelu jsou potřeba tyto 3 kroky:
   \item Najít a přiřadit vlastnosti vrcholům a hranám
 \end{enumerate}
 
-První jsou na řadě vrcholy. Podstatnou část práce již máme za sebou, neboť můžeme využít konceptuální model a namapovat entity na vrcholy. Zbývá jen jeden netriviální úkol - každému vrcholu přiřadit krátký, přesný a výstižný popisek. Popisek uzlu určuje, do které skupiny nebo kategorie uzlů patří. Všechny uzly se stejným popiskem pak spadají do stejné kategorie. Pro lepší pochopení je zde Obrázek \ref{labels}. Tyto popisky pak můžeme používat v dotazech na databázi a pracovat tak s různými skupinami uzlů a dosáhnout tak lepšího výkonu při dotazování. 
+První jsou na řadě vrcholy. Podstatnou část práce již máme za sebou, neboť můžeme využít konceptuální model a namapovat entity na vrcholy. Zbývá jen jeden netriviální úkol - každému vrcholu přiřadit krátký, přesný a výstižný label. Label vrcholu určuje, do které skupiny nebo kategorie vrcholů patří. Všechny vrcholy se stejným labelem pak spadají do stejné kategorie. Pro lepší pochopení je zde Obrázek \ref{labels}. Label pak můžeme používat v dotazech na databázi a pracovat tak s různými skupinami uzlů a dosáhnout tak lepšího výkonu při dotazování. 
 
 \begin{figure}
 	\includegraphics[scale=0.5]{NodeLabels}
-	\caption{Popisek uzlu definuje do které kategorie uzel spadá}
+	\caption{Label vrcholu definuje do které kategorie vrchol spadá}
 	\label{labels}
 \end{figure}
 
-Při vymýšlení popisků musíme mít jako vždy na paměti budoucí rozšířitelnost a fakt, že s databází může pracovat jiný vývojář. Dobře zvolený popisek je tedy velmi žádaný. Důležité je též dbát na pojmenovávací konvenci. V našem příkladu je zvolena konvence doporučená v dokumentaci databáze Neo4j a tedy pro popisky vrcholů budeme používat CamelCase notaci, pro popisky hran UPPER\_CASE notaci s použitím podtržítka pro oddělení slov a pro vlastnosti snake\_case notaci. Dobrým zvykem je zvolit popisek, který bude v jednotném čísle, neboť každý uzel odkazuje na jednu instanci uzlu s daným popiskem. Při přiřazování popisku je dobré myslet na jeho co největší obecnost, protože v budoucnu bychom mohli potřebovat reprezentovat jiný podobný koncept a tedy je užitečné volit co nejobecnější popisky.
+Při vymýšlení labelu musíme mít jako vždy na paměti budoucí rozšířitelnost a fakt, že s databází může pracovat jiný vývojář. Dobře zvolený label je tedy velmi žádaný. Důležité je též dbát na pojmenovávací konvenci.
 
-Povolený počet popisků uzlu se u různých grafových databází liší. Bezpečným přístupem je každému vrcholu přiřadit jeden popisek. To je například přístup Apache TinkerPop. Často se ale také hodí mít popisků víc a pomocí nich umět vyjádřit dědičnost. Pokud bychom spravovali zaměstnance v nějaké firmě, hodilo by se někdy k popisku zaměstanec mít popisek ředitel, nadřízený apod. Tyto uzly pak spadají do více skupin uzlů naráz. Proto například Neo4j nebo Amazon Neptune umožňují uzlům přiřadit žádný, jeden ale i více popisků.
+\begin{remark}[Konvence pojmenování]
+V našem příkladu je zvolena konvence doporučená v dokumentaci databáze Neo4j a tedy pro labely vrcholů budeme používat UpperCamelCase notaci, pro labely hran UPPER\_CASE notaci s použitím podtržítka pro oddělení slov (SCREAMING\_SNEAK\_CASE) a pro vlastnosti camelCase notaci.
+\end{remark}
 
-Při hledání hran opět využijeme důsledně připraveného konceptuálního modelu. Znovu se zamyslíme nad pojmenováním hran, které by opět mělo být obecné a výstižné. Navíc bychom se měli držet jedné dobré zásady. Přečtení posloupnosti vrcholu, hrany z něj vycházející a vrcholu do nějž hrana vstupuje by nám mělo dávat vcelku smysluplnou větu. V češtině však musíme opomenout skloňování. Tedy například ``Uživatel napsal hodnocení.``, nebo ``Uživatel sleduje uživatele.``. To nás přivádí k orientaci hran. Předchozí rada nám tedy specifikuje orientaci hrany, neboť obrácením hrany bychom dostali věty ``Hodnocení napsalo uživatele.``, nebo ``Uživatel sleduje uživatele.``. V druhém případě se nám smysl věty nezměnil, jelikož se jedná o smyčku jdoucí z jednoho vrcholu do toho samého vrcholu. V prvním případě, kdy bychom požadovali opačnou orientaci hran mezi vrcholy ``Uživatel`` a ``Hodnocení``, bychom museli přistoupit ke změně popisku hrany, neboť by věta postrádala smysl. Tedy například hraně ``napsal`` bychom změnili popisek na ``bylo napsáno`` a pak by věta ``Hodnocení bylo napsáno uživatelem.`` dávala smysl.
+Dobrým zvykem je zvolit label, který bude v jednotném čísle, neboť každý uzel odkazuje na jednu instanci uzlu s daným labelem. Při přiřazování labelu je dobré myslet na jeho co největší obecnost, protože v budoucnu bychom mohli potřebovat reprezentovat jiný podobný koncept a tedy je užitečné volit co nejobecnější label.
 
-Než přejdeme k vlastnostem, zbývá ještě určit jedinečnost hran. Jedinečnost lze definovat jako počet hran se stejným popiskem mezi dvěma vrcholy. Tyto vrcholy mohou a nemusí mít stejný popisek. Jedinečnost hran se dělí na dva typy jednoduchou a mnohonásobnou. Jednoduchá odkazuje na žádnou, nebo právě jednu hranu zatímco vícenásobná povoluje hran se stejným popiskem mezi dvěma vrcholy více. Co se týká jedinečnosti hran v naší aplikaci tak všechny hrany, až na hranu mezi Cestou a Destinací budou mít jedinečnost jednoduchou. Mezi Uživatelem a Cestovní aktivitou vztah ``má rád`` buď je nebo není a to lze vyjádřit pomocí existence jedné hrany mezi těmito dvěma uzly. Totéž platí pro ostatní hrany až na hranu s popiskem ``vede do``. Můžeme si představit, že v rámci cesty uživatel do dané destinace zavítá vícekrát a s touto možností by náš model měl počítat. Tedy tato hrana bude mít vícenásobnou jedinečnost. Tyto hrany pak  od sebe rozlišíme pomocí vlastností, které budou určovat období, kdy se daný uživatel v dané destinaci nacházel.
+Povolený počet labelů uzlu se u různých grafových databází liší. Bezpečným přístupem je každému vrcholu přiřadit jeden label. To je například přístup Apache TinkerPop. Často se ale také hodí mít labelů víc a pomocí nich umět vyjádřit dědičnost. Pokud bychom spravovali zaměstnance v nějaké firmě, hodilo by se někdy k labelu ``Zaměstnanec`` mít label ``Ředitel``, ``Manažer`` apod. Tyto uzly pak spadají do více skupin uzlů naráz. Proto například Neo4j nebo Amazon Neptune umožňují uzlům přiřadit žádný, jeden ale i více labelů.
+
+Při hledání hran opět využijeme důsledně připraveného konceptuálního modelu. Znovu se zamyslíme nad pojmenováním hran, které by opět mělo být obecné a výstižné. Navíc bychom se měli držet jedné dobré zásady. Přečtení posloupnosti vrcholu, hrany z něj vycházející a vrcholu do nějž hrana vstupuje by nám mělo dávat vcelku smysluplnou větu. V češtině však musíme opomenout skloňování. Tedy například ``Uživatel napsal hodnocení.``, nebo ``Uživatel sleduje uživatele.``. To nás přivádí k orientaci hran. Předchozí rada nám tedy specifikuje orientaci hrany, neboť obrácením hrany bychom dostali věty ``Hodnocení napsalo uživatele.``, nebo ``Uživatel sleduje uživatele.``. V druhém případě se nám smysl věty nezměnil, jelikož se jedná o smyčku jdoucí z jednoho vrcholu do toho samého vrcholu. V prvním případě, kdy bychom požadovali opačnou orientaci hran mezi vrcholy ``Uživatel`` a ``Hodnocení``, bychom museli přistoupit ke změně labelu hrany, neboť by věta postrádala smysl. Tedy například hraně ``napsal`` bychom změnili label na ``bylo napsáno`` a pak by věta ``Hodnocení bylo napsáno uživatelem.`` dávala smysl.
+
+Než přejdeme k vlastnostem, zbývá ještě určit jedinečnost hran. Jedinečnost lze definovat jako počet hran se stejným labelem mezi dvěma vrcholy. Tyto vrcholy mohou a nemusí mít stejný label. Jedinečnost hran se dělí na dva typy jednoduchou a mnohonásobnou. Jednoduchá odkazuje na žádnou, nebo právě jednu hranu zatímco vícenásobná povoluje hran se stejným labelem mezi dvěma vrcholy více. Co se týká jedinečnosti hran v naší aplikaci tak všechny hrany, až na hranu mezi Cestou a Destinací budou mít jedinečnost jednoduchou. Mezi uživatelem a cestovní aktivitou vztah ``LIKES`` buď je nebo není a to lze vyjádřit pomocí existence jedné hrany mezi těmito dvěma uzly. Totéž platí pro ostatní hrany až na hranu s labelem ``LED\_TO``. Jistě totiž existuje situace, kdy v rámci cesty uživatel do dané destinace zavítá vícekrát a s touto možností by náš model měl také počítat. Tedy tato hrana bude mít vícenásobnou jedinečnost. Tyto hrany pak  od sebe rozlišíme pomocí vlastností, které budou určovat období, kdy se daný uživatel v dané destinaci nacházel.
 
 Jak zjistíme, že jsme zvolili špatnou jedinečnost hran? Špatná volba se projeví v dotazech jedním z těchto způsobů:
 \begin{itemize}
   \item Databáze vrací příliš málo dat. Tato chyba nastane pokud zvolíme jednoduchou jedinečnost hran tam, kde by měla být zvolena vícenásobná jedinečnost.
   \item Databáze vrací duplikativní data. Tato chyba nastane pokud zvolíme vícenásobnou jedinečnost hran tam, kde by měla být zvolena jednoduchá jedinečnost.
-  \item Slabý výkon dotazů na databázi. Tato chyba nastane pokud zvolíme vícenásobnou jedinečnost hran tam, kde by měla být zvolena jednoduchá jedinečnost. Každá hrana stejného popisku mezi dvěma vrcholy navíc znamená rozvětvení v případě průchodu grafem a zyvšuje tedy výslednou časovou složitost dotazu.
+  \item Slabý výkon dotazů na databázi. Tato chyba nastane pokud zvolíme vícenásobnou jedinečnost hran tam, kde by měla být zvolena jednoduchá jedinečnost. Každá hrana stejného labelu mezi dvěma vrcholy navíc znamená rozvětvení v případě průchodu grafem a zyvšuje tedy výslednou časovou složitost dotazu.
 \end{itemize}
 U některých implementací grafových databází, jako například DataStax Graph nebo JanusGraph, lze tuto jedinečnost vynutit jako součást při definování schématu. U implementací bez schématického přístupu, jako je Neo4j, tuto jedinečnost lze ošetřit pouze v rámci aplikace.
 
-Poslední zastávkou při konstruování logického modelu jsou vlastnosti. Základní kameny grafu vrcholy a hrany máme, ale chybí nám způsob jak rozlišit uzly se stejným popiskem. K tomu slouží vlastnosti. V grafových databázích mohou mít vlastnosti jak hrany tak vrcholy, neboť hrany jsou pro nás stejně významné jak vrcholy. Vlastnosti v grafové databázi jsou páry klíč-hodnota a popisují konkrétní atributy hrany, či vrcholu. Hodnota vlastnosti může být různého datového typu, například řetězec, číslo, pravdivostní hodnota nebo datový typ pro uchování datumu a času. Někdy též může být hodnota typu pole nebo seznam. Pomocí vlastností následně můžeme rozlišit jednotlivé uživatele pomocí jejich křestího jména, příjmení, uživatelské přezdívky apod. K dokončení logického modelu nám tedy zbývá najít a správně přiřadit vlastnosti konkrétním vrcholům a hranám, pojmenovat je a určit jejich datový typ. K jejich nalezení nám pomohou otázky, které budeme chtít aby nám databáze zodpověděla. Z nich můžeme jednotlivé vlastnosti identifikovat a přiřadit.
+Poslední zastávkou při konstruování logického modelu jsou vlastnosti. Základní kameny grafu vrcholy a hrany máme, ale chybí nám způsob jak rozlišit uzly se stejným labelem. K tomu slouží vlastnosti. V grafových databázích mohou mít vlastnosti jak hrany tak vrcholy, neboť hrany jsou pro nás stejně významné jak vrcholy. Vlastnosti v grafové databázi jsou páry klíč-hodnota a popisují konkrétní atributy hrany, či vrcholu. Hodnota vlastnosti může být různého datového typu, například řetězec, číslo, pravdivostní hodnota nebo datový typ pro uchování datumu a času. Někdy též může být hodnota typu pole nebo seznam. Pomocí vlastností následně můžeme rozlišit jednotlivé uživatele pomocí jejich křestího jména, příjmení, uživatelské přezdívky apod. K dokončení logického modelu nám tedy zbývá najít a správně přiřadit vlastnosti konkrétním vrcholům a hranám, pojmenovat je a určit jejich datový typ. K jejich nalezení nám pomohou otázky, které budeme chtít aby nám databáze zodpověděla. Z nich můžeme jednotlivé vlastnosti identifikovat a přiřadit.
 
 Náš výsledný datový model popisuje Obrázek \ref{schema}.
 

@@ -4,12 +4,12 @@
     "transformers": [
       { "merge": { "joinFieldName": "userId", "lookup": "User.userId" } },
       { "edge": { "class": "LIVES_IN",
-                  "joinFieldName": "countryCode",
-                  "lookup": "Country.countryCode",
+                  "joinFieldName": "destinationId",
+                  "lookup": "Destination.destinationId",
                   "direction": "out" 
                 }
       },
-      { "field": { "fieldNames": ["countryCode"], "operation": "remove" } }
+      { "field": { "fieldNames": ["destinationId"], "operation": "remove" } }
     ],
     "loader": {
       "orientdb": {
@@ -19,7 +19,7 @@
          "dbType": "graph",
          "classes": [
             {"name": "User", "extends": "V"},
-            {"name": "Country", "extends": "V"},
+            {"name": "Destination", "extends": "V"},
             {"name": "LIVES_IN", "extends": "E"}
          ]
       }
