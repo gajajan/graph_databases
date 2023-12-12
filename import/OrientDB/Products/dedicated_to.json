@@ -1,0 +1,27 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/Products/dedicated_to.csv" } },
+    "extractor": { "csv": { } },
+    "transformers": [
+        { "merge": { "joinFieldName": "productId", "lookup": "Product.productId" } },
+        {
+          "edge": {
+                "class": "DEDICATED_TO",
+                "joinFieldName": "genderName",
+                "lookup": "Gender.genderName",
+                "direction": "out"
+          }
+        },
+        { "field": { "fieldNames": ["genderName"], "operation": "remove" } }
+      ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/Products",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+           {"name": "DEDICATED_TO", "extends": "E"}
+         ]
+      }
+    }
+  }

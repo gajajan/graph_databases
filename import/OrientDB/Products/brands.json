@@ -1,0 +1,22 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/Products/brands.csv" } },
+    "extractor": { "csv": {} },
+    "transformers": [
+        {
+          "vertex": {
+            "class": "Brand"
+          }
+        }
+      ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/Products",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+           {"name": "Brand", "extends": "V"}
+         ]
+      }
+    }
+  }
