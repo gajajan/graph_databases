@@ -1,4 +1,4 @@
-sourceId;sourceName;destId;destName;length
+Departure station (id);Departure station;Arrival station (id);Arrival station;Length
 520;HARELBEKE;1212;WAREGEM;8.82800046018578
 218;BRUXELL-LUX;227;BRUX-SCHUMAN;0.676257719003781
 1031;ST-D-BOVESSE;148;BEUZET;1.80135439586103

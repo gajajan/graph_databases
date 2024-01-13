@@ -1,0 +1,28 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/RailNetwork/leads_to.csv" } },
+    "extractor": { "csv": {} },
+    "transformers": [
+      { "merge": { "joinFieldName": "sourceId", "lookup": "Station.stationId" } },
+      { "vertex": {"class": "Station"} },
+      { "edge": { "class": "LEADS_TO",
+                  "joinFieldName": "destId",
+                  "lookup": "Station.stationId",
+                  "direction": "out",
+                  "edgeFields":    { "length": "${input.length}" }
+                }
+      },
+      { "field": { "fieldNames": ["sourceId", "destId", "length"], "operation": "remove" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/RailNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "Station", "extends": "V"},
+            {"name": "LEADS_TO", "extends": "E"}
+         ]
+      }
+    }
+  }
