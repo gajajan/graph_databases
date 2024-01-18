@@ -8,3 +8,5 @@ Repository for a bachelor's thesis dealing with graph databases.
 * In queries folder you can find some queries, which are mentioned in text document.
   - Files with Cypher queries
   - Files with Gremlin queries
+
+In example RailNetwork in Neo4j is used Neo4j Graph Data Science library.
