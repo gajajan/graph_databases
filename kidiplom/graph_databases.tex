@@ -126,6 +126,7 @@ implementací.}
 \usepackage{lipsum}
 \usepackage{longtable}
 \usepackage{graphicx}
+\usepackage{amssymb}
 \graphicspath{ {./graphics/} }
 
 \begin{document}
@@ -143,25 +144,24 @@ implementací.}
 
 \newcommand{\BibLaTeX}{\textsc{Bib}\LaTeX}
 
-\section{Grafové databáze}
+\section{Úvod}
 
 %tato kapitola byla napsána pomocí
 %knihy	Diskrétní struktury 1 Radim Bělohlávek
 %		https://is.muni.cz/el/fi/podzim2015/IB000/um/jine/DIM-distext05.pdf
+%		https://home.zcu.cz/~ryjacek/students/DMA/skripta/8.pdf
 %weby	https://www.ramba.cz/blog/grafova-terminologie-a-dostupne-technologie
 		
-
-
 Grafové databáze, stejně jako jiné databáze (například relační, NoSQL) představují systém pro uchovávání a zpracovávání dat. Jsou, jak již název napovídá, postaveny na jednom z oborů diskrétní matematiky jménem teorie grafů, podobně jako jsou relační databáze postaveny na pojmu relace. Pracují tedy s daty v podobě grafu. Díky této struktuře mají skvělé vlastnosti pro aplikace, které ve větší míře pracují se vztahy mezi jednotlivými entitami.
 
-\subsection{Základní pojmy z teorie grafů}
+\section{Základní pojmy z teorie grafů}
 V této části jsou uvedeny základní definice z teorie grafů používané v textu. 
 
 \begin{definition}[Graf]
-Graf G je uspořádaná dvojice $\langle V,E\rangle$, kde V označuje množinu vrcholů a $E \subseteq V \times V$ označuje množinu hran. Každá hrana je určena dvěma vrcholy z V, které spojuje. 
+Graf G je uspořádaná dvojice $\langle V,E\rangle$, kde V označuje množinu vrcholů a $E \subseteq V \times V$ označuje množinu hran. Každá hrana je určena dvěma vrcholy z V, které spojuje.
 \end{definition}
 
-Grafy se dělí na orientované a neorientované. Hrana v neorientovaném grafu mezi vrcholy u a v se nazývá neorientovaná a zapisuje se pomocí množiny obsahující dvojici vrcholů, tedy {u, v}. V případě orientovaného grafu se hrana nazývá orientovaná a pro zápis se používá uspořádaná dvojice. Orientovaná hrana (u, v) začíná ve vrcholu u a končí ve vrcholu v.
+Grafy se dělí na orientované a neorientované. Hrana v neorientovaném grafu mezi vrcholy u a v se nazývá neorientovaná a zapisuje se pomocí množiny obsahující dvojici vrcholů, tedy $ \{ u, v \} $. V případě orientovaného grafu se hrana nazývá orientovaná a pro zápis se používá uspořádaná dvojice. Orientovaná hrana $\langle u, v \rangle$ začíná ve vrcholu u a končí ve vrcholu v.
 Grafy se nejčastěji znázorňují pomocí kroužků, které představují vrcholy, a úseček mezi nimi, sloužící pro reprezentaci hran. Pokud se jedná o orientovaný graf místo úseček používáme šipky. Pro hrany používáme označení násobné, pokud existuje mezi dvěma vrcholy hran více. O hraně začínající i končící ve stejném vrcholu mluvíme jako o smyčce.
 
 \begin{definition}[Podgraf]
@@ -169,24 +169,40 @@ Podgraf grafu $G = \langle V,E\rangle$ je graf $H = \langle V1,E1\rangle$, kde $
 \end{definition}
 
 \begin{definition}[Stupeň vrcholu]
-Stupňem vrcholu u v grafu $G = \langle V,E\rangle$ se rozumí počet hran dotýkajících se u. Stupeň vrcholu u lze v orientovaném grafu dále rozdělit podle hran vcházejících a vycházejících na vstupní a výstupní.  
+Stupňem vrcholu u v grafu $G = \langle V,E\rangle$ se rozumí počet hran dotýkajících se u. Značíme jej $ deg(u) $. Stupeň vrcholu u lze v orientovaném grafu dále rozdělit podle hran vcházejících a vycházejících na vstupní $ deg_{in}(u) = | \{ \langle u, v \rangle | v \in V \} | $ a výstupní $ deg_{out}(u) = | \{ \langle v, u \rangle | v \in V \} | $ .
+\end{definition}
+
+\begin{definition}[Sled]
+Sled v grafu $G = \langle V,E\rangle$ je sekvence vrcholů a hran tvaru $ v_0, e_1, v_1, e_2, \ldots  ,e_n , v_n $, kde vrchol $ v_i \in V $ pro všechna $ i \in \{ 0, 1, 2, \ldots ,n \} $ a pro hranu $ e_i $ platí:
+\begin{itemize}
+	\item $ e_i = \{ v_{i-1}, v_i \} \in E$ pro všechna $ i \in \{ 1, 2, \ldots ,n \} $, je-li G neorientovaný.
+	\item $ e_i = \langle v_{i-1}, v_i \rangle \in E$ pro všechna $ i \in \{ 1, 2, \ldots ,n \} $, je-li G orientovaný.
+\end{itemize}
+
 \end{definition}
 
 \begin{definition}[Cesta]
-Cesta je sekvence vrcholů a hran, kde se vrcholy ani hrany neopakují. Cesta délky n má $n+1$ vrcholů.
-\end{definition}
-
-\begin{definition}[Kružnice]
-Kružnice je cesta, kde počáteční a koncový vrchol je stejný.
+Cesta je sled, kde se vrcholy ani hrany neopakují. Cesta délky n má $n+1$ vrcholů.
 \end{definition}
 
 \begin{definition}[Vzdálenost]
-Vzdálenost z vrcholu u do vrcholu v lze definovat jako délku nejkratší cesty z u do v.
+Vzdálenost z vrcholu u do vrcholu v lze definovat jako délku nejkratší cesty z u do v. Značíme ji $dist(u,v)$.
 \end{definition}
+
+\begin{definition}[Kružnice]
+Kružnice je cesta, kde počáteční a koncový vrchol je stejný. U orientovaného grafu používáme pojem cyklus.
+\end{definition}
+
+\begin{definition}[Souvislý graf]
+Neorientovaný graf $G = \langle V,E\rangle$ nazýváme souvislý pokud pro každé dva vrcholy $ u,v \in V $ platí, že existuje cesta z u do v. Komponenta grafu G je každý jeho maximální souvislý podgraf. U orientovaného grafu $H = \langle V_H,E_H \rangle$ rozlišujeme slabou a silnou souvislost. Graf H je slabě souvislý, pokud jeho symetrizace je souvislý graf. O grafu H řekneme, že je silně souvislý, pokud pro každé dva vrcholy $ u,v \in V_H $ platí, že existuje cesta z u do v.
+\end{definition}
+
+Symetrizace grafu lze popsat jako proces, ve kterém zapomeneme orientaci hran, odstraníme smyčky a vícenásobné hrany nahradíme jednoduchými a vznikne nám tak neorientovaný graf.
 
 \begin{definition}[Strom]
 Strom je souvislý graf $G = \langle V,E\rangle$ neobsahující kružnice.
 \end{definition}
+
 
 %\subsection{Výhody grafových databází}
 %Velkou výhodou těchto systémů je, že uchovávají jak samotné entity, tak všechny vztahy mezi entitami. Tedy při dotazování nedochází k výpočtu těchto vztahů, jak tomu je například u relačních databází pomocí klauzule JOIN. Tato přednost zrychluje zpracování dotazů. Grafové databáze jsou proto vhodné pro data, které jsou hustě propojená. Relace a vztahy mezi entitami jsou zde stejně důležité, ne-li důležitější, než samotné entity.
@@ -195,7 +211,7 @@ Strom je souvislý graf $G = \langle V,E\rangle$ neobsahující kružnice.
 %\subsection{Nevýhody grafových databází}
 %Nevýhody grafových databázích se projeví při práci s tabulárním typem dat. Například, když bychom data agregovali, chtěli zjistit počet uzlů, sumaci dat. Takové typy dotazů jsou často v grafových databázích neefektivní v porovnání s relačními...
 
-\subsection{Modelování grafových dat}
+\section{Modelování grafových dat}
 
 %tato kapitola byla napsána pomocí
 %knihy	Graph Databases IN ACTION
@@ -218,7 +234,7 @@ Postup modelování se dá rozdělit do čtyř fází:
 
 V této sekci se budeme snažit dobře navrhnout grafový model dat. Zkusíme si to na příkladu sociální platformu pro nadšence cestování.
 
-\subsubsection{Definice problému}
+\subsection{Definice problému}
 V první fázi bychom měli zvážit co všechno by měla aplikace umět. Výsledkem by měl být její, co nejpřesnější, slovní popis. Pomoci nám může těchto pár otázek.
 
 Co od naší aplikace uživatel očekává?
@@ -255,7 +271,7 @@ Na jaké otázky potřebují uživatelé najít odpověď?
 \end{itemize}
 V reálném scénáři by otázek bylo mnohem více.
  
-\subsubsection{Konceptuální datový model}
+\subsection{Konceptuální datový model}
 Dalším krokem je vyvinout konceptuální model. Výstupem by měl být přehledný diagram popisující důmyslně promyšlené schéma naší aplikace z bussiness pohledu. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data ruzných typů spolu v rámci vyvíjené aplikace korelují. Při vyvíjení datového modelu lidé často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími daty, proto se tato fáze v různých literaturách nazývá whiteboard model. Vyžaduje identifikování a seskupení všech entit a vztahů, které se v naší aplikaci vyskytují. Začneme entitami. Entity většinou představují objekty, jako například uživatel, účet, destinace, které jsou v databázi uloženy a propojeny vzájemnými vztahy. Je třeba si rozmyslet, které entity lze seskupit. Pokud například naše aplikace zahrnuje uživatele, zaměstance a administrátora je užitečné tuto skupinu entit sloučit do jedné. Jedním z postupů jak z našich poznámek z minulé fáze vytáhnout entity, je dívat se po podstatných jménech. 
 
 V naší aplikaci můžeme rozpoznat 6 různých entit:
@@ -284,7 +300,7 @@ Po důkladném rozmýšlení naše tabule má obsah, jako Obrázek \ref{koncept}
 	\label{koncept}
 \end{figure}
 
-\subsubsection{Logický datový model}
+\subsection{Logický datový model}
 Pokud jsme s diagramem z předchozí fáze spokojeni, můžeme konečně přistoupit ke kroku, ve kterém definujeme schéma, které bude v databázi. V případě relačního modelování je konceptuální model přeformátován, aby mohl být ukládán do tabulek. V případě grafového modelování toto není potřeba. Stačí identifikovat vrcholy a hrany a přiřadit jim příslušný label a vlastnosti. Výstupem tedy bude opět diagram, který ale bude mnohem detailnější. Bude se zabývat detaily, kterými se zabývají vývojáři. Bude definovat tvar, ve kterém budou data v databázi uložena a podle něj budeme moci klást na databázi dotazy.
 
 Pro vytvoření grafového modelu jsou potřeba tyto 3 kroky:
@@ -305,7 +321,7 @@ První jsou na řadě vrcholy. Podstatnou část práce již máme za sebou, neb
 Při vymýšlení labelu musíme mít jako vždy na paměti budoucí rozšířitelnost a fakt, že s databází může pracovat jiný vývojář. Dobře zvolený label je tedy velmi žádaný. Důležité je též dbát na pojmenovávací konvenci.
 
 \begin{remark}[Konvence pojmenování]
-V našem příkladu je zvolena konvence doporučená v dokumentaci databáze Neo4j a tedy pro labely vrcholů budeme používat UpperCamelCase notaci, pro labely hran UPPER\_CASE notaci s použitím podtržítka pro oddělení slov (SCREAMING\_SNEAK\_CASE) a pro vlastnosti camelCase notaci.
+V našem příkladu je zvolena konvence doporučená v dokumentaci databáze Neo4j a tedy pro labely vrcholů budeme používat UpperCamelCase notaci, pro labely hran UPPER\_CASE notaci s použitím podtržítka pro oddělení slov (SCREAMING\_SNAKE\_CASE) a pro vlastnosti camelCase notaci.
 \end{remark}
 
 Dobrým zvykem je zvolit label, který bude v jednotném čísle, neboť každý uzel odkazuje na jednu instanci uzlu s daným labelem. Při přiřazování labelu je dobré myslet na jeho co největší obecnost, protože v budoucnu bychom mohli potřebovat reprezentovat jiný podobný koncept a tedy je užitečné volit co nejobecnější label.
@@ -324,7 +340,7 @@ Jak zjistíme, že jsme zvolili špatnou jedinečnost hran? Špatná volba se pr
 \end{itemize}
 U některých implementací grafových databází, jako například DataStax Graph nebo JanusGraph, lze tuto jedinečnost vynutit jako součást při definování schématu. U implementací bez schématického přístupu, jako je Neo4j, tuto jedinečnost lze ošetřit pouze v rámci aplikace.
 
-Poslední zastávkou při konstruování logického modelu jsou vlastnosti. Základní kameny grafu vrcholy a hrany máme, ale chybí nám způsob jak rozlišit uzly se stejným labelem. K tomu slouží vlastnosti. V grafových databázích mohou mít vlastnosti jak hrany tak vrcholy, neboť hrany jsou pro nás stejně významné jak vrcholy. Vlastnosti v grafové databázi jsou páry klíč-hodnota a popisují konkrétní atributy hrany, či vrcholu. Hodnota vlastnosti může být různého datového typu, například řetězec, číslo, pravdivostní hodnota nebo datový typ pro uchování datumu a času. Někdy též může být hodnota typu pole nebo seznam. Pomocí vlastností následně můžeme rozlišit jednotlivé uživatele pomocí jejich křestího jména, příjmení, uživatelské přezdívky apod. K dokončení logického modelu nám tedy zbývá najít a správně přiřadit vlastnosti konkrétním vrcholům a hranám, pojmenovat je a určit jejich datový typ. K jejich nalezení nám pomohou otázky, které budeme chtít aby nám databáze zodpověděla. Z nich můžeme jednotlivé vlastnosti identifikovat a přiřadit.
+Poslední zastávkou při konstruování logického modelu jsou vlastnosti. Základní kameny grafu vrcholy a hrany máme, ale chybí nám způsob jak rozlišit uzly se stejným labelem. K tomu slouží vlastnosti. V grafových databázích mohou mít vlastnosti jak hrany tak vrcholy, neboť hrany jsou pro nás stejně významné jak vrcholy. Vlastnosti v grafové databázi jsou páry klíč-hodnota a popisují konkrétní atributy hrany, či vrcholu. Hodnota vlastnosti může být různého datového typu, například řetězec, číslo, pravdivostní hodnota nebo datový typ pro uchování datumu a času. Někdy též může být hodnota typu pole nebo seznam. Pomocí vlastností následně můžeme rozlišit jednotlivé uživatele pomocí jejich křestího jména, příjmení, uživatelské přezdívky apod. K dokončení logického modelu nám tedy zbývá najít a správně přiřadit vlastnosti konkrétním vrcholům a hranám, pojmenovat je a určit jejich datový typ. K jejich nalezení nám pomohou otázky, které budeme chtít, aby nám databáze zodpověděla. Z nich můžeme jednotlivé vlastnosti identifikovat a přiřadit.
 
 Náš výsledný datový model popisuje Obrázek \ref{schema}.
 
@@ -334,9 +350,143 @@ Náš výsledný datový model popisuje Obrázek \ref{schema}.
 	\label{schema}
 \end{figure}
 
-\subsubsection{Testování modelu}
+\subsection{Testování modelu}
 V budoucnu je možné přidat entitu cestovní kanceláře, která bude pořádat cesty do destinací a uživatelé po objednání budou do této cesty připojeni. To otevírá dveře dalším entitám například pro hodnocení cestovních kanceláří, nebo vztahům které se týká zaměstnanosti uživatelů u dané cestovky.
 
+Testování našeho grafového modelu spočívá ve vyzkoušení, zda se chová dle našeho očekávání(databáze vrací očekávané výsledky) a dotazování není moc pomalé ani pro velké množství dat. K testování lze využít široké škály nástrojů, které dotazovací jazyky a databáze nabízejí.
+
+Při testování dotazů je vhodné použít tzv. unit testy. Tedy vytvoříme si pro každý dotaz malé množství testovacích dat (například kolem 10 uzlů, tak abychom z něj pouhým okem vyčetli správnou odpověď), kterými otestujeme správnost odpovědí z databáze. Příklad unit testu je na Obrázku... TODO
+
+\section{Algoritmy}
+V této kapitole si ukážeme řadu užitečných algoritmů, které jsou určené pro práci s grafem a jsou tedy v určitých situacích vhodné aplikovat při dotazech na grafovou databázi. Umožňují nám efektivně zjistit dosažitelnost vrcholů, hledat nejkratší cesty mezi vrcholy, nacházet uzly, které pro nás mohou být svým způsobem důležité, nebo třeba analyzovat komunity(skupinky propojených uzlů) v grafu.
+
+\subsection{Prohledávání grafu}
+Pro prohledávání grafů od určitého počátečního vrcholu lze použít dva základní algoritmy:
+\begin{enumerate}
+  \item Prohledávání do šířky (zkráceně BFS z anglického spojení Breadth-first search)
+  \item Prohledávání do hloubky (zkráceně DFS z anglického spojení Depth-first search)
+\end{enumerate}
+
+První zmíněný algoritmus začne v počátečním vrcholu a následně prohledá všechny své sousední vrcholy. Jakmile projde všechny, projde sousedy sousedů počátečního uzlu a tak postupuje dokud nenavštíví všechny uzly. Lze jej efektivně implementovat pomocí fronty vrcholů. Druhý algoritmus postupuje opačně, v každém uzlu přejde do dosud nenavštíveného souseda, pokud takový soused existuje, jinak provede backtracking - tedy vrácí se do předchozích vrcholů, než nenalezne vrchol jehož soused nebyl navštíven. Při implementci využíváme zásobník. Oba algoritmy mají složitost $O(|E| + |V|)$. Průchod grafem pomocí obou algoritmů je znázorněn na Obrázku \ref{bfs-dfs}.
+
+\begin{figure}
+	\includegraphics[scale=0.4]{BfsDfs}
+	\caption{Průchod algoritmů DFS(uprostřed) a BFS(vpravo) grafem(vlevo). 
+			Pořadí, v kterém jsou uzly procházeny je znázorněno čísly v obdélnících u každého
+			uzlu.}
+	\label{bfs-dfs}
+\end{figure}
+ 
+
+\subsection{Problém nejkratší cesty}
+V praxi je často nezbytné hledání nejkratší cesty mezi dvěma, či více vrcholy. Tento problém potřebují řešit například aplikace pracující s mapami, kde se člověk potřebuje dostat z bodu A do bodu B. Cest mezi těmito body může být více. Jedna bude nejrychlejší, protože využívá vysokorychlostní silnice, tedy budeme brát v úvahu rychlosti na daných silnicích a celkovou vzdálenost. Jiná cesta může být nejkratší a tedy bereme cestu, která má z bodu A do bodu B nejkratší vzdálenost. Dalším příkladem může být hledání nejvhodnějšího autobusového spojení mezi dvěmi zastávkami.
+
+Nejkratší cesta mezi dvěma vrcholy v grafu s neohodnocenými hranami představuje cestu s nejmenším počtem hran. Počet hran na cestě tedy určuje délku cesty. Tento problém lze vyřešit pomocí algoritmů na prohledávání grafů. Konkrétně se řeší pomocí prohledávání do šířky, neboť systematicky prochází všechny vrcholy, které mají nejkratší vzdálenost od počátečního vrcholu 1, pak 2, 3 atd. dokud nenarazí na cílový vrchol.
+
+ohodnocené hrany 
+
+\subsection{Algoritmy pro míru centrality}
+%% pomocí graph in actions
+%% Graph algorithms - practical examples in apache sperk c neo4j 
+V rámci grafu můžeme identifikovat důležitost vrcholů pomocí algoritmů centrality. Můžeme detekovat jedince, které jsou svým způsobem v grafu významější než ostatní. Tyto algoritmy se dají využít například k hledání kritických částí v telekomunikačních nebo počítačových sítích, tedy těch přes které proudí spousta informací a jejichž výpadek by představoval velké potíže. Hledání důležitých lidí v rámci organizace. Hledání odlehlých dat, které mohou odhalit, že dochází k podvodům a podobně. Knihovna gds nabízí spoustu algoritmů pro měření centrality. My se podíváme na pár z nich.
+
+\subsubsection{Degree Centrality}
+Nejznámnějším a nejjednodušší mírou centrality je degree centrality. Každému uzlu v síti přiřazuje skóre podle stupně daného uzlu. V sociálních sítích mívají vrcholy i stupně v řádu desítkách milionů (jedná se o vrcholy, reprezentující účty známých osobností nebo organizací). Těmto uzlům říkáme super-uzly. Abychom prošli všechny sousedy super-uzlu potřebujeme značně více času, než v případě \"obyčejného\" uzlu. To se negativně projevuje v časové odezvě u dotazů pracujících s takovými uzly. Degree centrality nám umožňuje takové uzly odhalit. Vrcholy s větším stupněm také lze obecně považovat za důležitější, neboť přes ně může proudit více informací díky velkému počtu hran. Příkladem může být graf reprezentující železniční síť. Čím více máme z dané železniční stanice spojení, tím spíše se jedná o významější stanici.
+
+\subsubsection{Closeness Centrality}
+Vrcholy lze dále hodnotit podle closeness centrality. Vrchol s nejvyšším skóre je ten, pro který je součet nejkratších cest do všech ostatních uzlů co nejmenší. Skóre vrcholu $ u \in V $ v grafu $G = \langle V,E\rangle$ se pak počítá podle vzorce
+\begin{equation}
+\label{eq:closenessCentrality}
+closenessCentrality(u) = \frac{1}{ \sum_{ v \in V }{ dist(u,v) } },
+\end{equation}
+
+nebo se normalizuje
+\begin{equation}
+\label{eq:normalizedClosenessCentrality}
+normalizedClosenessCentrality(u) = \frac{ |V| - 1 }{ \sum_{ v \in V }{ dist(u,v) } } .
+\end{equation}
+
+V případě, že graf není souvislý, lze použít harmonic centrality, které se elegantně vypořádá s nedosažitelnými uzly. Tento a následující algoritmus mohou být v případě velkých grafů výpočetně dost náročné a tedy se často přistupuje k ne zcela přesným, zato mnohonásobně rychlejším, algoritmům.
+
+\subsubsection{Betweeness Centrality}
+Algoritmus spočítá nejkratší cesty mezi všemi možnými páry vrcholů. Následně každý vrchol obdrží skóre, které je tím vyšší, čím více nejkratších cest vede přes daný vrchol. Tyto hodnoty mohou pro nás být klíčové například v grafu, kde uzly představují křižovatky a hrany cesty mezi nimi. Informaci, kterými křižovatkami prochází nejvíce nejkratších cest, můžeme využít pro odhad těch nejvíce zatížených křižovatek. Případně díky ní můžeme odhadnout, kde se pravděpodobně bude pohybovat nejvíce lidí a tedy je potřeba zvýšit bezpečnost.
+
+\subsubsection{PageRank}
+S tímto řešením přišla na trh společnost Google. Byla určena pro hodnocení významnosti webových stránek. Webové stránky si lze představit jako vrcholy grafu. Hrany mezi nimi reprezentují odkazy na stránkách odkazující na jiné stránky. Důležitost vrcholu je určena nejen důležitostí vrcholu samotného, ale také důležitostí vrcholů na tuto stránku odkazujících. Vysoké skóre vrcholu tedy znamená, že je vrchol propojen s vrcholy, které mají též vysoké skóre. Toto řešení je založeno na lineární algebře, speciálně na vlastních vektorech a stochastických maticích. Výpočet skóre většinou vede na nekonečný výpočet a proto se omezuje počet iterací tohoto výpočtu, nebo se udává maximální možná odchylka. PageRank se používá na orientované grafy. Pro neorientované grafy lze použít algoritmus eigenvector centrality.
+
+\subsubsection{Použití algoritmů pro míru centrality}
+Výsledky aplikace jednotlivých algoritmů pro měření centrality na graf z Obrázku \ref{example-graph} je znázorněn v tabulce \ref{tab:centralityResults}.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{ | c || c | c | c | c | c | c | c | }
+ \hline
+ Vrchol & A & B & C & D & E & F & G \\
+ \hline
+ degreeCentrality & 4 & 3 & 4 & 4 & 3 & 2 & 2 \\
+ \hline
+ closenessCentrality & 0.75 & 0.6 & 0.75 & 0.75 & 0.67 & 0.55 & 0.6 \\
+ \hline
+ betweenessCentrality & 3.33 & 0.0 & 1.33 & 1.33 & 2.67 & 1.0 & 1.33 \\
+ \hline
+ eigenVectorCentrality & 0.45 & 0.41 & 0.49 & 0.49 & 0.32 & 0.14 & 0.17 \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Algoritmy pro měření centrality aplikované na jednotlivé vrcholy z grafu \ref{example-graph}}
+\label{tab:centralityResults}
+\end{table}
+
+\subsection{Detekce komunit}
+Tyto algoritmy lze využít pro hledání určitých skupin vrcholů, které mají mezi sebou více hran, než mají s ostatními vrcholy grafu. Odhalením těchto shluků vrcholů můžeme zkoumat strukturu našich dat z jiného úhlu pohledu, nebo třeba odhadovat podobné chování a preference členů v rámci skupiny. Příklad lze nalézt v sociálních sítích, kde můžeme sledovat komunity blízkých přátel, které tvoří shluky propojených vrcholů. Znalost komunit lze též využít pro doporučování produktů uživatelům s podobným nákupním chováním. Algoritmy pro detekci komunit se dělí na deterministické a nedeterministické. Deterministické vrací pro stejný graf vždy stejný výsledek, zatímco výsledek u nedeterministických může být pro stejný graf mírně odlišný. Mezi deterministické se řadí počítání trojúhelníků, výpočet shlukavacího koeficientu, nebo hledání komponent. Mezi nedeterministické patří například Label Propagation nebo Louvain Modularity. Stejně jako u míry centrality si zde ukážeme pouze pár algoritmů.
+
+\subsubsection{Počítání trojúhelníků}
+Algoritmus pro každý vrchol určí počet trojúhelníků, kterých je daný vrchol součástí. Trojúhelník je zde definován jako skupina tří navzájem propojených vrcholů. Trojúhelníky nám mohou určit do jaké míry jsou vrcholy v našem grafu propojeny. Čím je graf hustší, tím více trojúhelníků se v něm nachází. Algoritmus je oblíbený při analýze sociálních sítí, kde pomáhá detekovat komunity, nebo zkoumání skupin webových stránek s podobným námětem podle odkazů mezi nimi.
+Počet trojúhelníků lze využít též pro výpočet shlukovacího koeficientu vrcholu, který určuje pravděpodobnost, s jakou jsou jeho sousedé propojeni (tvoří s ním trojúhelník). Shlukovací koeficient vrcholu u je pak určen vztahem
+\begin{equation} 
+\label{eq:ClusteringCoefficient}
+ClusteringCoefficient(u) = \frac{2 * TriangleCount(u)}{deg(u) * (deg(u) - 1)}.
+\end{equation}
+
+\begin{figure}
+	\includegraphics[scale=0.4]{ExampleGraph}
+	\caption{Graf pro, který počítáme výskyt trojúhelníků}
+	\label{example-graph}
+\end{figure}
+
+Pro ukázkový graf na Obrázku \ref{example-graph} počet trojúhelníků a shlukovací koeficient pro jednotlivé vrcholy zobrazuje tabulka \ref{tab:trojuhelniky}. Vidíme, že vrchol A je součástí tří trojúhelníků, které jsou tvořeny vrcholy A-B-C, A-B-D a A-C-D. Stupeň vrcholu je 4. Dosazením do vzorce \ref{eq:ClusteringCoefficient} dostáváme shlukovací koeficient 0.5.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{ | c || c | c | c | c | c | c | c | }
+ \hline
+ Vrchol & A & B & C & D & E & F & G \\
+ \hline
+ TriangleCount & 3 & 3 & 4 & 4 & 1 & 0 & 0 \\
+ \hline
+ ClusteringCoefficient & 0.5 & 1.0 & 0.67 & 0.67 & 0.33 & 0.0 & 0.0 \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Počet trojúhelníků a shlukovací koeficient jednotlivých vrcholů z grafu \ref{example-graph}}
+\label{tab:trojuhelniky}
+\end{table}
+
+\subsubsection{Hledání komponent}
+Komponentu v grafu tvoří skupina uzlů, které jsou propojeny a lze se z jednoho uzlu dostat do dalšího. Najití těchto komponent je užitečné pro pochopení grafové struktury. Algoritmy řešící tento problém jsou rychlé a je možné je využít v grafu, který se často aktualizuje, pro detekci nových vrcholů mezi skupinami. Této znalosti lze využít při různých analýzách. Existuje i varianta, hledající silně souvislé komponenty.
+Pro graf na Obrázku \ref{example-graph} nám algoritmus wcc z knihovny gds vrátí, že všechny uzly grafu jsou součástí jedné komponenty.
+
+\subsection{Minimální kostra grafu}
+Dalším, mezi informatiky dobře známým, problémem je hledání minimální kostry v souvislém grafu. Vstupem je souvislý neorientovaný graf G s ohodnocenými hranami. Výstupem je minimální kostra grafu G. Kostru grafu lze definovat jako podgraf grafu G, který je stromem obsahujícím všechny vrcholy původního grafu. My požadujeme, aby kostra byla minimální, tedy aby součet ohodnocení hran v nalezeném podgrafu byl ze všech možných koster nejmenší. Příklad minimální kostry grafu je na Obrázku \ref{minimum-spanning-tree}.Problém kostry grafu má více variant. Můžeme též hledat maximální kostru grafu, nebo omezit počet vrcholů v kostře na $ k \in \mathbb{N}$ tomuto problému se říká k-spanning tree.
+Knihovna gds algoritmus na hledání kostry obsahuje. Konkrétně nabízí Jarníkův-Primův algoritmus, poprvé popsaný v roce 1930 čekým matematikem Vojtěchem Jarníkem. Jedná se o hladový algoritmus, který vyžaduje na vstupu specifikovat i počáteční vrchol s. Vrátí minimální kostru komponenty vstupního grafu obsahující s. Pokud při implementaci využíváme například binární prioritní frontu máme celkovou složitost $O(|E| \log_2 |V|)$.
+Tento algoritmus lze využít pro nejlevnější propojení měst vodním potrubím, kde nižší ohodnocení hran znamená menší náklady. Dalším využitím je aproximace problémů patřících do třídy NPTIME, jako je například problém obchodního cestujícího. 
+
+
+\begin{figure}
+	\includegraphics[scale=0.4]{Minimum-Spanning-Tree}
+	\caption{Minimální kostra grafu}
+	\label{minimum-spanning-tree}
+\end{figure}
 
 %% Začátek druhé části
 \section{Implementace grafových databází}
