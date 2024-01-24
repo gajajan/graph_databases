@@ -1,3 +1,10 @@
+MATCH (src:Station {stationId: 1048}),
+      (dst:Station {stationId: 319})
+MATCH p = (src)-[:LEADS_TO]-+(dst)
+RETURN reduce(acc = 0, r in relationships(p) | acc + r.length)
+  AS distance
+ORDER BY distance LIMIT 1
+
 //shortest path - the smallest vertices count
 MATCH (source:Station {stationId: 1048}), (dest:Station {stationId: 319})
 MATCH path = shortestPath((source)-[:LEADS_TO*]-(dest))
@@ -26,26 +33,18 @@ CALL gds.graph.project(
     }
 );
 
-//SHORTEST PATH
+//a* graph projection
+CALL gds.graph.project(
+    'a*',
+    'Station',
+    'LEADS_TO',
+    {
+        nodeProperties: ['latitude', 'longitude'],
+        relationshipProperties: 'length'
+    }
+)
 
-//yens algorithm
-MATCH (source:Station {stationId:1048}), (target:Station {stationId: 319})
-CALL gds.shortestPath.yens.stream('stations', {
-    sourceNode: source,
-    targetNode: target,
-    k: 3,
-    relationshipWeightProperty: 'length'
-})
-YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
-RETURN
-    index,
-    gds.util.asNode(sourceNode).stationName AS sourceNodeName,
-    gds.util.asNode(targetNode).stationName AS targetNodeName,
-    totalCost,
-    [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS nodeNames,
-    costs,
-    nodes(path) as path
-ORDER BY index
+//PATHS
 
 //dijkstra algorithm
 
@@ -55,22 +54,40 @@ CALL gds.shortestPath.dijkstra.stream('stations', {
     targetNode: target,
     relationshipWeightProperty: 'length'
 })
-YIELD index, sourceNode, targetNode, totalCost, nodeIds, costs, path
-RETURN
-    index,
-    gds.util.asNode(sourceNode).stationName AS sourceNodeName,
-    gds.util.asNode(targetNode).stationName AS targetNodeName,
-    totalCost,
-    [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS nodeNames,
-    costs,
-    nodes(path) as path,
-    length(path) as pathLength
-ORDER BY index
-LIMIT 1;
+YIELD totalCost, nodeIds
+RETURN  [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS stations, totalCost
+
+//random walk
+MATCH (src:Station )
+WHERE src.stationId < 10
+WITH COLLECT(src) as sourceNodes
+CALL gds.randomWalk.stream(
+  'stations',
+  {
+    sourceNodes: sourceNodes,
+    walkLength: 8,
+    walksPerNode: 1,
+    inOutFactor: 0.2
+  }
+)
+YIELD path
+RETURN [node IN nodes(path) | [node.stationName, node.stationId] ] AS stations
+
+//a*
+MATCH (source:Station {stationId: 1048}), (target:Station {stationId: 319})
+CALL gds.shortestPath.astar.stream('a*',{
+    sourceNode: source,
+    targetNode: target,
+    relationshipWeightProperty: "length",
+    latitudeProperty: "latitude",
+    longitudeProperty: "longitude"
+})
+YIELD nodeIds, totalCost
+RETURN  [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS stations, totalCost
 
 //CENTRALITY ALGORITHMS
 
-//well-known pageRank
+//pageRank
 
 CALL gds.pageRank.stream('stations')
 YIELD nodeId, score

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  18 JAN 2024 15:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  24 JAN 2024 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1149,9 +1149,17 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \l__lipsum_b_int=\count474
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
+(C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip97
+\multirow@cntb=\count475
+\multirow@dima=\skip98
+\bigstrutjot=\dimen191
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Enabling multilingual quotes.
+
 
 Package biblatex Warning: Attempt to redefine deprecated '\mkbibnamelast'.
 (biblatex)                Please use '\mkbibnamefamily' instead.
@@ -1160,43 +1168,43 @@ Package biblatex Warning: Attempt to redefine deprecated '\mkbibnamelast'.
 
 Package biblatex Warning: Conflicting options.
 (biblatex)                'urldate=iso' requires 'seconds=true'.
-(biblatex)                Setting 'seconds=true' on input line 132.
+(biblatex)                Setting 'seconds=true' on input line 133.
 
 (graph_databases.aux)
 \openout1 = `graph_databases.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count475
-\scratchdimen=\dimen191
+\scratchcounter=\count476
+\scratchdimen=\dimen192
 \scratchbox=\box109
-\nofMPsegments=\count476
-\nofMParguments=\count477
+\nofMPsegments=\count477
+\nofMParguments=\count478
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count478
-\MPscratchDim=\dimen192
-\MPnumerator=\count479
-\makeMPintoPDFobject=\count480
+\MPscratchCnt=\count479
+\MPscratchDim=\dimen193
+\MPnumerator=\count480
+\makeMPintoPDFobject=\count481
 \everyMPtoPDFconversion=\toks50
 )
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1209,8 +1217,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 132.
-\c@lstlisting=\count481
+Package hyperref Info: Link coloring ON on input line 133.
+\c@lstlisting=\count482
  (graph_databases.glsdefs)
 Package biblatex Info: Trying to load language 'czech' -> 'czech-iso'...
 Package biblatex Info: ... file 'czech-iso.lbx' found.
@@ -1273,8 +1281,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'graph_databases.bbl' not found.
 
 No file graph_databases.bbl.
-Package biblatex Info: Reference section=0 on input line 132.
-Package biblatex Info: Reference segment=0 on input line 132.
+Package biblatex Info: Reference section=0 on input line 133.
+Package biblatex Info: Reference segment=0 on input line 133.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
@@ -1311,50 +1319,50 @@ Package biblatex Info: Reference segment=0 on input line 132.
 <graphics/kititle-cz-nofont.pdf, id=3, 375.4025pt x 72.27pt>
 File: graphics/kititle-cz-nofont.pdf Graphic file (type pdf)
 <use graphics/kititle-cz-nofont.pdf>
-Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 137
+Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 138
 .
 (pdftex.def)             Requested size: 225.24323pt x 43.36232pt.
 <graphics/UP_znak.pdf, id=4, 101.59215pt x 101.59215pt>
 File: graphics/UP_znak.pdf Graphic file (type pdf)
 <use graphics/UP_znak.pdf>
-Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 137.
+Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 138.
 (pdftex.def)             Requested size: 101.59187pt x 101.59187pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-37.
+38.
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-37.
+38.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-137.
+138.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-137.
+138.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 137.
+(Font)              <12> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 137.
+(Font)              <8> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 137.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 137
+(Font)              <6> on input line 138.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 138
 .
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 137
+LaTeX Font Info:    Trying to load font information for U+msb on input line 138
 .
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1367,9 +1375,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/gajaj/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./graphics/k
 ititle-cz-nofont.pdf> <./graphics/UP_znak.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 137.
+(Font)              <10.95> on input line 138.
 
-Underfull \hbox (badness 6758) in paragraph at lines 137--137
+Underfull \hbox (badness 6758) in paragraph at lines 138--138
 []|\T1/lmr/m/n/10.95 Computer Science, Spe-ci-a-li-zation: Ge-ne-ral Com-pu-ter
 
  []
@@ -1392,9 +1400,9 @@ Underfull \hbox (badness 6758) in paragraph at lines 137--137
 
 ]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 160.
+nput line 161.
 
-Overfull \hbox (10.50548pt too wide) in paragraph at lines 176--177
+Overfull \hbox (10.50548pt too wide) in paragraph at lines 177--178
 [] []\T1/lmr/m/n/12 Sled v grafu $\OML/lmm/m/it/12 G \OT1/lmr/m/n/12 = \OMS/lms
 y/m/n/12 h\OML/lmm/m/it/12 V; E\OMS/lmsy/m/n/12 i$ \T1/lmr/m/n/12 je sek-vence 
 vr-chol· a hran tvaru $\OML/lmm/m/it/12 v[]; e[]; v[]; e[]; [] ; e[]; v[]$\T1/l
@@ -1402,93 +1410,169 @@ mr/m/n/12 ,
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-78.
+79.
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [7
 
 ]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 221.
+ line 222.
 
-[8] [9] [10]
-<./graphics//TravelEnthusiastNetwork-Entity.png, id=165, 714.67pt x 487.8225pt>
+[8]
+<./graphics//GraphDatabase-DecisionTree.png, id=177, 701.62125pt x 1085.05376pt
+>
+File: ./graphics//GraphDatabase-DecisionTree.png Graphic file (type png)
+<use ./graphics//GraphDatabase-DecisionTree.png>
+Package pdftex.def Info: ./graphics//GraphDatabase-DecisionTree.png  used on in
+put line 231.
+(pdftex.def)             Requested size: 280.64352pt x 434.01381pt.
+ [9] [10 <./graphics//GraphDatabase-DecisionTree.png>] [11]
+<./graphics//TravelEnthusiastNetwork-Entity.png, id=199, 714.67pt x 487.8225pt>
 
 File: ./graphics//TravelEnthusiastNetwork-Entity.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork-Entity.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Entity.png  used o
-n input line 289.
+n input line 326.
 (pdftex.def)             Requested size: 285.86293pt x 195.12553pt.
-
-Overfull \hbox (4.59016pt too wide) in paragraph at lines 294--295
+ [12]
+Overfull \hbox (4.59016pt too wide) in paragraph at lines 331--332
 []\T1/lmr/m/n/12 Nyní ná-sle-duje pro-po-jení en-tit po-mocí vztah·. Po-dobn¥ j
 ako en-tity lze zejména
  []
 
-<./graphics//TravelEnthusiastNetwork-Conceptual.png, id=168, 732.23563pt x 487.
+<./graphics//TravelEnthusiastNetwork-Conceptual.png, id=205, 732.23563pt x 487.
 8225pt>
 File: ./graphics//TravelEnthusiastNetwork-Conceptual.png Graphic file (type png
 )
 <use ./graphics//TravelEnthusiastNetwork-Conceptual.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Conceptual.png  us
-ed on input line 298.
+ed on input line 335.
 (pdftex.def)             Requested size: 366.11691pt x 243.91064pt.
-[11 <./graphics//TravelEnthusiastNetwork-Entity.png>]
-<./graphics//NodeLabels.png, id=177, 650.93187pt x 424.58624pt>
+[13 <./graphics//TravelEnthusiastNetwork-Entity.png>]
+<./graphics//NodeLabels.png, id=215, 650.93187pt x 424.58624pt>
 File: ./graphics//NodeLabels.png Graphic file (type png)
 <use ./graphics//NodeLabels.png>
-Package pdftex.def Info: ./graphics//NodeLabels.png  used on input line 316.
+Package pdftex.def Info: ./graphics//NodeLabels.png  used on input line 353.
 (pdftex.def)             Requested size: 325.46513pt x 212.2926pt.
- [12 <./graphics//TravelEnthusiastNetwork-Conceptual.png>] [13 <./graphics//Nod
-eLabels.png>] [14]
-<./graphics//TravelEnthusiastNetwork-Graph.png, id=200, 647.92062pt x 374.39874
+ [14 <./graphics//TravelEnthusiastNetwork-Conceptual.png>] [15 <./graphics//Nod
+eLabels.png>] [16]
+<./graphics//TravelEnthusiastNetwork-Graph.png, id=237, 647.92062pt x 374.39874
 pt>
 File: ./graphics//TravelEnthusiastNetwork-Graph.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork-Graph.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Graph.png  used on
- input line 348.
-(pdftex.def)             Requested size: 323.95952pt x 187.19891pt.
+ input line 385.
+(pdftex.def)             Requested size: 388.75537pt x 224.64098pt.
 
-[15 <./graphics//TravelEnthusiastNetwork-Graph.png>]
-<./graphics//BfsDfs.png, id=208, 1074.51437pt x 294.09875pt>
+[17 <./graphics//TravelEnthusiastNetwork-Graph.png>]
+<./graphics//RailNetwork-Graph.png, id=246, 245.41687pt x 221.32687pt>
+File: ./graphics//RailNetwork-Graph.png Graphic file (type png)
+<use ./graphics//RailNetwork-Graph.png>
+Package pdftex.def Info: ./graphics//RailNetwork-Graph.png  used on input line 
+421.
+(pdftex.def)             Requested size: 122.70813pt x 110.66315pt.
+ [18 <./graphics//RailNetwork-Graph.png>]
+<./graphics//BfsDfs.png, id=256, 1074.51437pt x 294.09875pt>
 File: ./graphics//BfsDfs.png Graphic file (type png)
 <use ./graphics//BfsDfs.png>
-Package pdftex.def Info: ./graphics//BfsDfs.png  used on input line 373.
+Package pdftex.def Info: ./graphics//BfsDfs.png  used on input line 437.
 (pdftex.def)             Requested size: 429.79813pt x 117.6374pt.
 
-Overfull \hbox (20.29694pt too wide) in paragraph at lines 373--376
+Overfull \hbox (20.29694pt too wide) in paragraph at lines 437--440
 [][] 
  []
 
-[16 <./graphics//BfsDfs.png>] [17] [18]
-<./graphics//ExampleGraph.png, id=232, 608.77437pt x 536.50438pt>
-File: ./graphics//ExampleGraph.png Graphic file (type png)
-<use ./graphics//ExampleGraph.png>
-Package pdftex.def Info: ./graphics//ExampleGraph.png  used on input line 452.
-(pdftex.def)             Requested size: 243.50543pt x 214.59795pt.
- [19] [20 <./graphics//ExampleGraph.png>]
-<./graphics//Minimum-Spanning-Tree.png, id=251, 1080.035pt x 422.07687pt>
+[19 <./graphics//BfsDfs.png>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 451.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 45
+1.
+
+(C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (29.3239pt too wide) in paragraph at lines 463--474
+ [] 
+ []
+
+<./graphics//ShortestPath-Unweighted-Example.png, id=269, 716.6775pt x 478.7887
+6pt>
+File: ./graphics//ShortestPath-Unweighted-Example.png Graphic file (type png)
+<use ./graphics//ShortestPath-Unweighted-Example.png>
+Package pdftex.def Info: ./graphics//ShortestPath-Unweighted-Example.png  used 
+on input line 480.
+(pdftex.def)             Requested size: 358.33788pt x 239.39378pt.
+[20]
+Overfull \hbox (253.44702pt too wide) in paragraph at lines 520--523
+[]\T1/lmr/m/n/12 ==>[stations:[SCHAERBEEK,BUDA,VILVOORDE,EPPEGEM,WEERDE,MECHELE
+N,WILLEBROEK,PUURS,RUISBR-
+ []
+
+
+Overfull \hbox (44.97711pt too wide) in paragraph at lines 520--523
+\T1/lmr/m/n/12 SAUV,BOOM,NIEL,SCHELLE],verticesPlusEdges:23,totalLength:47.2919
+646501541135]
+ []
+
+
+Overfull \hbox (197.97362pt too wide) in paragraph at lines 520--523
+\T1/lmr/m/n/12 ==>[stations:[SCHAERBEEK,VILVOORDE,EPPEGEM,WEERDE,MECHELEN,WILLE
+BROEK,PUURS,RUISBR-
+ []
+
+
+Overfull \hbox (44.97711pt too wide) in paragraph at lines 520--523
+\T1/lmr/m/n/12 SAUV,BOOM,NIEL,SCHELLE],verticesPlusEdges:21,totalLength:47.3549
+143075942987]
+ []
+
+
+Overfull \hbox (3.08858pt too wide) in paragraph at lines 520--523
+\T1/lmr/m/n/12 ==>[stations:[SCHAERBEEK,MECHELEN,WILLEBROEK,PUURS,RUISBR-
+ []
+
+
+Overfull \hbox (44.97711pt too wide) in paragraph at lines 520--523
+\T1/lmr/m/n/12 SAUV,BOOM,NIEL,SCHELLE],verticesPlusEdges:15,totalLength:48.9187
+709093093871] 
+ []
+
+
+Overfull \hbox (20.86128pt too wide) in paragraph at lines 524--525
+[]\T1/lmr/m/n/12 Z vrá-ce-ných vý-sledk· vi-díme, ºe nej-krat²í délka ºe-lez-ni
+c mezi sta-ni-cemi SCHAER-
+ []
+
+[21 <./graphics//ShortestPath-Unweighted-Example.png>] [22] [23]
+<./graphics//Minimum-Spanning-Tree.png, id=326, 1080.035pt x 422.07687pt>
 File: ./graphics//Minimum-Spanning-Tree.png Graphic file (type png)
 <use ./graphics//Minimum-Spanning-Tree.png>
 Package pdftex.def Info: ./graphics//Minimum-Spanning-Tree.png  used on input l
-ine 486.
+ine 551.
 (pdftex.def)             Requested size: 432.00635pt x 168.82774pt.
 
-Overfull \hbox (22.50516pt too wide) in paragraph at lines 486--487
+Overfull \hbox (22.50516pt too wide) in paragraph at lines 551--552
 [][] 
  []
 
-[21 <./graphics//Minimum-Spanning-Tree.png>] [22] [23
+[24 <./graphics//Minimum-Spanning-Tree.png>] [25] [26] [27]
+<./graphics//ExampleGraph.png, id=355, 608.77437pt x 536.50438pt>
+File: ./graphics//ExampleGraph.png Graphic file (type png)
+<use ./graphics//ExampleGraph.png>
+Package pdftex.def Info: ./graphics//ExampleGraph.png  used on input line 674.
+(pdftex.def)             Requested size: 243.50543pt x 214.59795pt.
+ [28 <./graphics//ExampleGraph.png>] [29] [30
 
-] [24
+] [31
 
 ]
 No file graph_databases.acr.
-[25
+[32
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 532.
+LaTeX Warning: Empty bibliography on input line 742.
 
 No file graph_databases.ind.
 
@@ -1507,40 +1591,43 @@ Package logreq Info: Writing requests to 'graph_databases.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30004 strings out of 475385
- 545470 string characters out of 2776907
- 1460607 words of memory out of 3000000
- 50745 multiletter control sequences out of 15000+600000
- 523267 words of font info for 63 fonts, out of 8000000 for 9000
+ 30530 strings out of 475385
+ 552236 string characters out of 2776907
+ 1560142 words of memory out of 3000000
+ 51202 multiletter control sequences out of 15000+600000
+ 531434 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,10n,121p,2615b,2057s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 123i,11n,121p,2615b,2057s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 pdfTeX warning (dest): name{section*.8} has been referenced but does not exist,
  replaced by a fixed one
 
 {C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}
-{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/
-Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/
-Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Use
-rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/g
-ajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}<C:/Users/g
-ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/g
-ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/g
-ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/
-gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/
-gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/
-gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/g
-ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/ga
-jaj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gaj
-aj/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gaja
-j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/gajaj/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gajaj/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gajaj/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gajaj/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on graph_databases.pdf (25 pages, 783794 bytes).
+{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/U
+sers/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users
+/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users
+/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Users/ga
+jaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/gajaj/
+AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}<C:/Users/gajaj/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/gajaj/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/gajaj/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/gajaj
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/gajaj
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/gajaj
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/gajaj/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/gajaj/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gajaj/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gajaj/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/gajaj/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gajaj/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gajaj/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gajaj/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/User
+s/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Us
+ers/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on graph_databases.pdf (32 pages, 966282 bytes).
 PDF statistics:
- 476 PDF objects out of 1000 (max. 8388607)
- 108 named destinations out of 1000 (max. 500000)
- 326 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 624 PDF objects out of 1000 (max. 8388607)
+ 163 named destinations out of 1000 (max. 500000)
+ 389 words of extra memory for PDF output out of 10000 (max. 10000000)
 

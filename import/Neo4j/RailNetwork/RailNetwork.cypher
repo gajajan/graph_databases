@@ -9,9 +9,11 @@ REQUIRE s.stationId IS NODE KEY;
 // load vertices
 LOAD CSV WITH HEADERS 
 FROM 'file:///stations.csv' AS row
-MERGE (s:Station {stationId: toInteger(row.sourceId)})
+MERGE (s:Station {stationId: toInteger(row.stationId)})
 SET 
-s.stationName = row.sourceName;
+s.stationName = row.stationName,
+s.latitude =  toFloat(row.latitude),
+s.longitude = toFloat(row.longitude);
 
 //load edges
 LOAD CSV WITH HEADERS

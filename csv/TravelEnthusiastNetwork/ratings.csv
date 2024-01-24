@@ -144,3 +144,498 @@ ratingId,body,rating
 143,Unsatisfactory,2
 144,Great adventure,5
 145,Poorly organized,2
+146,Excellent service,5
+147,Could be better,3
+148,Amazing experience,5
+149,Needs improvement,2
+150,Good overall,4
+151,Terrible service,1
+152,Satisfactory,3
+153,Would recommend,4
+154,Great experience,5
+155,Not so good,2
+156,Impressive,5
+157,Disappointing,2
+158,Exceptional,5
+159,Mediocre,3
+160,Outstanding,5
+161,Unsatisfactory,1
+162,Well done,4
+163,Needs work,2
+164,Very good,4
+165,Not impressed,2
+166,Superb,5
+167,Poor service,1
+168,Average,3
+169,Fantastic,5
+170,Subpar,2
+171,Top-notch,5
+172,Horrible,1
+173,Decent,3
+174,Brilliant,5
+175,Unacceptable,1
+176,Impressive,4
+177,Unimpressive,2
+178,Excellent,5
+179,Lacking,2
+180,Commendable,4
+181,Dreadful,1
+182,Good job,4
+183,Underwhelming,3
+184,Exceptional,5
+185,Not recommended,1
+186,Superior,5
+187,Meh,2
+188,Incredible,5
+189,Unremarkable,3
+190,First-rate,5
+191,Mediocre,2
+192,Awful,1
+193,Wonderful,5
+194,Average,3
+195,Outstanding,5
+196,Subpar,2
+197,Exceptional,5
+198,Displeasing,1
+199,Impressive,4
+200,Satisfactory,3
+201,Great experience,5
+202,Not so good,2
+203,Amazing,5
+204,Needs improvement,2
+205,Good overall,4
+206,Terrible,1
+207,Satisfactory,3
+208,Would recommend,4
+209,Not impressed,2
+210,Excellent service,5
+211,Unsatisfactory,1
+212,Well done,4
+213,Needs work,2
+214,Very good,4
+215,Poor service,1
+216,Average,3
+217,Fantastic,5
+218,Subpar,2
+219,Top-notch,5
+220,Horrible,1
+221,Decent,3
+222,Brilliant,5
+223,Unacceptable,1
+224,Impressive,4
+225,Unimpressive,2
+226,Excellent,5
+227,Lacking,2
+228,Commendable,4
+229,Dreadful,1
+230,Good job,4
+231,Underwhelming,3
+232,Exceptional,5
+233,Not recommended,1
+234,Superior,5
+235,Meh,2
+236,Incredible,5
+237,Unremarkable,3
+238,First-rate,5
+239,Mediocre,2
+240,Awful,1
+241,Wonderful,5
+242,Average,3
+243,Outstanding,5
+244,Subpar,2
+245,Exceptional,5
+246,Displeasing,1
+247,Impressive,4
+248,Satisfactory,3
+249,Great experience,5
+250,Not so good,2
+251,Amazing,5
+252,Needs improvement,2
+253,Good overall,4
+254,Terrible,1
+255,Satisfactory,3
+256,Would recommend,4
+257,Not impressed,2
+258,Excellent service,5
+259,Unsatisfactory,1
+260,Well done,4
+261,Needs work,2
+262,Very good,4
+263,Poor service,1
+264,Average,3
+265,Fantastic,5
+266,Subpar,2
+267,Top-notch,5
+268,Horrible,1
+269,Decent,3
+270,Brilliant,5
+271,Unacceptable,1
+272,Impressive,4
+273,Unimpressive,2
+274,Excellent,5
+275,Lacking,2
+276,Commendable,4
+277,Dreadful,1
+278,Good job,4
+279,Underwhelming,3
+280,Exceptional,5
+281,Not recommended,1
+282,Superior,5
+283,Meh,2
+284,Incredible,5
+285,Unremarkable,3
+286,First-rate,5
+287,Mediocre,2
+288,Awful,1
+289,Wonderful,5
+290,Average,3
+291,Outstanding,5
+292,Subpar,2
+293,Exceptional,5
+294,Displeasing,1
+295,Impressive,4
+296,Satisfactory,3
+297,Great experience,5
+298,Not so good,2
+299,Amazing,5
+300,Needs improvement,2
+301,Good overall,4
+302,Terrible,1
+303,Satisfactory,3
+304,Would recommend,4
+305,Not impressed,2
+306,Excellent service,5
+307,Unsatisfactory,1
+308,Well done,4
+309,Needs work,2
+310,Very good,4
+311,Poor service,1
+312,Average,3
+313,Fantastic,5
+314,Subpar,2
+315,Top-notch,5
+316,Horrible,1
+317,Decent,3
+318,Brilliant,5
+319,Unacceptable,1
+320,Impressive,4
+321,Unimpressive,2
+322,Excellent,5
+323,Lacking,2
+324,Commendable,4
+325,Dreadful,1
+326,Good job,4
+327,Underwhelming,3
+328,Exceptional,5
+329,Not recommended,1
+330,Superior,5
+331,Meh,2
+332,Incredible,5
+333,Unremarkable,3
+334,First-rate,5
+335,Mediocre,2
+336,Awful,1
+337,Fantastic Experience,5
+338,Disappointing Service,2
+339,Incredible Adventure,5
+340,Room for Improvement,3
+341,Exceptional Hospitality,5
+342,Not Recommended,1
+343,Outstanding Cuisine,4
+344,Average Performance,3
+345,Amazing Tour,5
+346,Poor Quality,1
+347,Exceptional Service,5
+348,Unsatisfactory Experience,2
+349,Great Value,4
+350,Unpleasant Stay,2
+351,Superb Entertainment,5
+352,Below Average,2
+353,Memorable Excursion,4
+354,Unimpressive Presentation,2
+355,Excellent Service,5
+356,Regrettable Decision,1
+357,Top-notch Quality,5
+358,Mediocre Experience,3
+359,Remarkable Journey,5
+360,Lackluster Performance,2
+361,Highly Recommended,5
+362,Underwhelming Adventure,3
+363,Impressive Atmosphere,4
+364,Disappointing Accommodation,2
+365,Spectacular Show,5
+366,Not Worth the Price,2
+367,Extraordinary Experience,5
+368,Unsatisfactory Service,1
+369,Delightful Discovery,4
+370,Room for Improvement,3
+371,Exceptional Treatment,5
+372,Poorly Executed,2
+373,Outstanding Adventure,5
+374,Mixed Feelings,3
+375,Incredible Performance,5
+376,Not up to Expectations,2
+377,Fantastic Escape,5
+378,Unpleasant Surprise,1
+379,Excellent Entertainment,5
+380,Disappointing Quality,2
+381,Amazing Getaway,5
+382,Subpar Experience,2
+383,Outstanding Service,5
+384,Below Par,2
+385,Memorable Moment,4
+386,Unimpressive Outcome,2
+387,Exceptional Presentation,5
+388,Unsatisfactory Result,1
+389,Great Atmosphere,4
+390,Lackluster Experience,3
+391,Remarkable Performance,5
+392,Not Worth the Hype,2
+393,Spectacular Setting,5
+394,Underwhelming Display,3
+395,Impressive Service,4
+396,Disappointing Outcome,2
+397,Extraordinary Performance,5
+398,Unsatisfactory Result,1
+399,Delightful Experience,4
+400,Room for Improvement,3
+401,Exceptional Culinary Delight,5
+402,Suboptimal Performance,2
+403,Outstanding Execution,5
+404,Mixed Emotions,3
+405,Incredible Achievement,5
+406,Not Meeting Expectations,2
+407,Fantastic Feast,5
+408,Unpleasant Experience,1
+409,Excellent Execution,5
+410,Disappointing Outcome,2
+411,Amazing Ambiance,5
+412,Poor Experience,2
+413,Exceptional Event,5
+414,Unsatisfactory Outcome,1
+415,Great Presentation,4
+416,Lackluster Performance,3
+417,Memorable Culinary Experience,5
+418,Underwhelming Display,2
+419,Impressive Event,4
+420,Disappointing Result,2
+421,Exceptional Experience,5
+422,Subpar Service,2
+423,Outstanding Adventure,5
+424,Room for Improvement,3
+425,Exceptional Hospitality,5
+426,Not Recommended,1
+427,Outstanding Cuisine,4
+428,Average Performance,3
+429,Amazing Tour,5
+430,Poor Quality,1
+431,Exceptional Service,5
+432,Unsatisfactory Experience,2
+433,Great Value,4
+434,Unpleasant Stay,2
+435,Superb Entertainment,5
+436,Below Average,2
+437,Memorable Excursion,4
+438,Unimpressive Presentation,2
+439,Excellent Service,5
+440,Regrettable Decision,1
+441,Top-notch Quality,5
+442,Mediocre Experience,3
+443,Remarkable Journey,5
+444,Lackluster Performance,2
+445,Highly Recommended,5
+446,Underwhelming Adventure,3
+447,Impressive Atmosphere,4
+448,Disappointing Accommodation,2
+449,Spectacular Show,5
+450,Not Worth the Price,2
+451,Extraordinary Experience,5
+452,Unsatisfactory Service,1
+453,Delightful Discovery,4
+454,Room for Improvement,3
+455,Exceptional Treatment,5
+456,Poorly Executed,2
+457,Outstanding Adventure,5
+458,Mixed Feelings,3
+459,Incredible Performance,5
+460,Not up to Expectations,2
+461,Fantastic Escape,5
+462,Unpleasant Surprise,1
+463,Excellent Entertainment,5
+464,Disappointing Quality,2
+465,Amazing Getaway,5
+466,Subpar Experience,2
+467,Outstanding Service,5
+468,Below Par,2
+469,Memorable Moment,4
+470,Unimpressive Outcome,2
+471,Exceptional Presentation,5
+472,Unsatisfactory Result,1
+473,Great Atmosphere,4
+474,Lackluster Experience,3
+475,Remarkable Performance,5
+476,Not Worth the Hype,2
+477,Spectacular Setting,5
+478,Underwhelming Display,3
+479,Impressive Service,4
+480,Disappointing Outcome,2
+481,Extraordinary Performance,5
+482,Unsatisfactory Result,1
+483,Delightful Experience,4
+484,Room for Improvement,3
+485,Exceptional Culinary Delight,5
+486,Suboptimal Performance,2
+487,Outstanding Execution,5
+488,Mixed Emotions,3
+489,Incredible Achievement,5
+490,Not Meeting Expectations,2
+491,Fantastic Feast,5
+492,Unpleasant Experience,1
+493,Excellent Execution,5
+494,Disappointing Outcome,2
+495,Amazing Ambiance,5
+496,Poor Experience,2
+497,Exceptional Event,5
+498,Unsatisfactory Outcome,1
+499,Great Presentation,4
+500,Lackluster Performance,3
+501,Memorable Culinary Experience,5
+502,Underwhelming Display,2
+503,Impressive Event,4
+504,Disappointing Result,2
+505,Exceptional Experience,5
+506,Subpar Service,2
+507,Outstanding Adventure,5
+508,Room for Improvement,3
+509,Exceptional Hospitality,5
+510,Not Recommended,1
+511,Outstanding Cuisine,4
+512,Average Performance,3
+513,Amazing Tour,5
+514,Poor Quality,1
+515,Exceptional Service,5
+516,Unsatisfactory Experience,2
+517,Great Value,4
+518,Unpleasant Stay,2
+519,Superb Entertainment,5
+520,Below Average,2
+521,Memorable Excursion,4
+522,Unimpressive Presentation,2
+523,Excellent Service,5
+524,Regrettable Decision,1
+525,Top-notch Quality,5
+526,Mediocre Experience,3
+527,Remarkable Journey,5
+528,Lackluster Performance,2
+529,Highly Recommended,5
+530,Underwhelming Adventure,3
+531,Impressive Atmosphere,4
+532,Disappointing Accommodation,2
+533,Spectacular Show,5
+534,Not Worth the Price,2
+535,Extraordinary Experience,5
+536,Unsatisfactory Service,1
+537,Delightful Discovery,4
+538,Room for Improvement,3
+539,Exceptional Treatment,5
+540,Poorly Executed,2
+541,Outstanding Adventure,5
+542,Mixed Feelings,3
+543,Incredible Performance,5
+544,Not up to Expectations,2
+545,Fantastic Escape,5
+546,Unpleasant Surprise,1
+547,Excellent Entertainment,5
+548,Disappointing Quality,2
+549,Amazing Getaway,5
+550,Subpar Experience,2
+551,Outstanding Service,5
+552,Below Par,2
+553,Memorable Moment,4
+554,Unimpressive Outcome,2
+555,Exceptional Presentation,5
+556,Unsatisfactory Result,1
+557,Great Atmosphere,4
+558,Lackluster Experience,3
+559,Remarkable Performance,5
+560,Not Worth the Hype,2
+561,Spectacular Setting,5
+562,Underwhelming Display,3
+563,Impressive Service,4
+564,Disappointing Outcome,2
+565,Extraordinary Performance,5
+566,Unsatisfactory Result,1
+567,Delightful Experience,4
+568,Room for Improvement,3
+569,Exceptional Culinary Delight,5
+570,Suboptimal Performance,2
+571,Outstanding Execution,5
+572,Mixed Emotions,3
+573,Incredible Achievement,5
+574,Not Meeting Expectations,2
+575,Fantastic Feast,5
+576,Unpleasant Experience,1
+577,Excellent Execution,5
+578,Disappointing Outcome,2
+579,Amazing Ambiance,5
+580,Poor Experience,2
+581,Exceptional Event,5
+582,Unsatisfactory Outcome,1
+583,Great Presentation,4
+584,Lackluster Performance,3
+585,Memorable Culinary Experience,5
+586,Underwhelming Display,2
+587,Impressive Event,4
+588,Disappointing Result,2
+589,Exceptional Experience,5
+590,Subpar Service,2
+591,Outstanding Adventure,5
+592,Room for Improvement,3
+593,Exceptional Hospitality,5
+594,Not Recommended,1
+595,Outstanding Cuisine,4
+596,Average Performance,3
+597,Amazing Tour,5
+598,Poor Quality,1
+599,Exceptional Service,5
+600,Unsatisfactory Experience,2
+601,Great Value,4
+602,Unpleasant Stay,2
+603,Superb Entertainment,5
+604,Below Average,2
+605,Memorable Excursion,4
+606,Unimpressive Presentation,2
+607,Excellent Service,5
+608,Regrettable Decision,1
+609,Top-notch Quality,5
+610,Mediocre Experience,3
+611,Remarkable Journey,5
+612,Lackluster Performance,2
+613,Highly Recommended,5
+614,Underwhelming Adventure,3
+615,Impressive Atmosphere,4
+616,Disappointing Accommodation,2
+617,Spectacular Show,5
+618,Not Worth the Price,2
+619,Extraordinary Experience,5
+620,Unsatisfactory Service,1
+621,Delightful Discovery,4
+622,Room for Improvement,3
+623,Exceptional Treatment,5
+624,Poorly Executed,2
+625,Outstanding Adventure,5
+626,Mixed Feelings,3
+627,Incredible Performance,5
+628,Not up to Expectations,2
+629,Fantastic Escape,5
+630,Unpleasant Surprise,1
+631,Excellent Entertainment,5
+632,Disappointing Quality,2
+633,Amazing Getaway,5
+634,Subpar Experience,2
+635,Outstanding Service,5
+636,Below Par,2
+637,Memorable Moment,4
+638,Unimpressive Outcome,2
+639,Exceptional Presentation,5
+640,Unsatisfactory Result,1

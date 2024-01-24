@@ -27,24 +27,23 @@ RETURN d.destinationName;
 //returns destination's properties and
 // rating of this destination
 //offers 3 destinations that the user hasnt visited
-WITH ["Sightseeing", "Water Sports"] AS activity_list
+//offers 3 destinations that the user hasnt visited
+WITH ["Book Festivals", "Fitness Bootcamps", "Craft Beer Tasting"] AS activity_list
 MATCH (a:TravelActivity) WHERE a.activityName IN activity_list
 WITH collect(a) AS activities
 MATCH (d:Destination)
 WHERE ALL(a IN activities WHERE (d)-[:OFFERS]->(a))
-AND NOT exists ( (:User {userId: 1})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d) )
+AND NOT exists ( (:User {userId: 151})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d) )
 OPTIONAL MATCH (d)<-[:LED_TO]-()<-[:ABOUT]-(r:Rating)
 WITH d, coalesce(avg(r.rating), "Not rated.") as rate
 RETURN d.destinationName AS name, rate
-ORDER BY rate DESC
-LIMIT 3;
+ORDER BY rate DESC;
 
-//3 destinations offering activities, that user likes
-MATCH (u:User {userId:5})-[:LIKES]->(a:TravelActivity)<-[:OFFERS]-(d:Destination)
+//3 unvisited destinations offering activities, that user likes
+MATCH (u:User {userId:299})-[:LIKES]->(a:TravelActivity)<-[:OFFERS]-(d:Destination)
 WHERE NOT (u)-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d)
-RETURN d, COUNT(a) AS count
-ORDER BY count DESC
-LIMIT 3;
+RETURN d.destinationName AS destination, COUNT(a) AS count, COLLECT(a.activityName) AS activities
+ORDER BY count DESC;
 
 
 //USER'S VISITED DESTINATIONS
@@ -86,8 +85,12 @@ RETURN DISTINCT u.userId
 
 //returns the destination and
 // a number indicating how many years have passed since the trip
-WITH 57 AS user_id
-MATCH (u:User {userId:user_id})-[:PARTICIPATED]->(:Journey)-[e:LED_TO]->(d:Destination)
+WITH 110 AS user_id
+MATCH (u:User {userId:user_id})-[:PARTICIPATED]->(j:Journey)-[e:LED_TO]->(d:Destination)
 WHERE e.startDate.month <= date().month <= e.endDate.month
 AND e.startDate.day <= date().day <= e.endDate.day
-RETURN d AS destination, date().year - e.startDate.year AS years
+RETURN d.destinationName AS destination, 
+date().year - e.startDate.year AS years, 
+e.startDate AS startDate, 
+e.endDate AS endDate, 
+j.journeyName AS journey;
