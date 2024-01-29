@@ -1,11 +1,11 @@
 \babel@toc {czech}{}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Tabulka obsahující soubory vygenerovaných dat pro aplikaci pro cestovní nadšence.}}{9}{table.1}%
-\contentsline {table}{\numberline {2}{\ignorespaces Tabulka obsahující soubory pro ukázku hledání cest.}}{18}{table.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces Výsledná tabulka pro dotaz \ref {kod:cypher}}}{20}{table.3}%
-\contentsline {table}{\numberline {4}{\ignorespaces Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 2 zavolaným na stanice s vlastností stationId menší než 10.}}{25}{table.4}%
-\contentsline {table}{\numberline {5}{\ignorespaces Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 0.2 zavolaným na stanice s vlastností stationId menší než 10.}}{25}{table.5}%
-\contentsline {table}{\numberline {6}{\ignorespaces Algoritmy pro měření centrality aplikované na jednotlivé vrcholy z grafu \ref {example-graph}}}{27}{table.6}%
-\contentsline {table}{\numberline {7}{\ignorespaces Počet trojúhelníků a shlukovací koeficient jednotlivých vrcholů z grafu \ref {example-graph}}}{28}{table.7}%
+\contentsline {table}{\numberline {1}{\ignorespaces Tabulka obsahující soubory vygenerovaných dat pro aplikaci pro cestovní nadšence.}}{13}{table.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces Tabulka obsahující soubory pro ukázku hledání cest.}}{21}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Výsledná tabulka pro dotaz \ref {kod:cypher}}}{24}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 2 zavolaným na stanice s vlastností stationId menší než 10.}}{29}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 0.2 zavolaným na stanice s vlastností stationId menší než 10.}}{29}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Algoritmy pro měření centrality aplikované na jednotlivé vrcholy z grafu \ref {example-graph}}}{31}{table.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces Počet trojúhelníků a shlukovací koeficient jednotlivých vrcholů z grafu \ref {example-graph}}}{33}{table.7}%
 \babel@toc {czech}{}\relax 
 \babel@toc {czech}{}\relax 
 \babel@toc {english}{}\relax 
