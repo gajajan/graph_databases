@@ -6,11 +6,14 @@ MATCH (u:User {userId:x_id})-[:FOLLOWS]->(u2) RETURN u,u2;
 
 //second neighborhood
 WITH 10 AS x_id
-MATCH (u:User {userId:x_id})-[:FOLLOWS*2]->(u2)-[:FOLLOWS]->(u3) RETURN u,u3;
+MATCH (u:User {userId:x_id})-[:FOLLOWS*2]->(u2)-[:FOLLOWS]->(u3)
+RETURN u3;
 
 //second neighborhood without first neighborhood
 WITH 10 AS x_id
-MATCH (u:User {userId:x_id})-[:FOLLOWS]->(u2)-[:FOLLOWS]->(u3) WHERE NOT exists((u)-[:FOLLOWS]->(u3)) RETURN u,u3;
+MATCH (u:User {userId:x_id})-[:FOLLOWS]->(u2)-[:FOLLOWS]->(u3)
+WHERE NOT exists((u)-[:FOLLOWS]->(u3))  AND u3 <> u
+RETURN u3;
 
 
 // DESTINATION RECOMMENDATION
