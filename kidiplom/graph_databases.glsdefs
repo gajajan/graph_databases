@@ -1,14 +1,14 @@
-\glsdefs@newdocentry{UPOL}%
+\glsdefs@newdocentry{REPL}%
 {%
-name={UPOL},%
-sort={UPOL},%
+name={REPL},%
+sort={REPL},%
 type={acronym},%
-first={UPOL},%
-firstplural={UPOLs},%
-text={UPOL},%
-plural={UPOLs},%
-description={Univerzita Palack\'eho v~Olomouci},%
-descriptionplural={Univerzita Palack\'eho v~Olomouci},%
+first={REPL},%
+firstplural={REPLs},%
+text={REPL},%
+plural={REPLs},%
+description={Read–eval–print loop},%
+descriptionplural={Read–eval–print loop},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -17,10 +17,38 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Univerzita Palack\'eho v~Olomouci},%
-longplural={Univerzita Palack\'eho v~Olomoucis},%
-short={UPOL},%
-shortplural={UPOLs},%
+long={Read–eval–print loop},%
+longplural={Read–eval–print loops},%
+short={REPL},%
+shortplural={REPLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ACID}%
+{%
+name={ACID},%
+sort={ACID},%
+type={acronym},%
+first={ACID},%
+firstplural={ACIDs},%
+text={ACID},%
+plural={ACIDs},%
+description={Atomicity Consistency Isolation Durability},%
+descriptionplural={Atomicity Consistency Isolation Durability},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Atomicity Consistency Isolation Durability},%
+longplural={Atomicity Consistency Isolation Durabilitys},%
+short={ACID},%
+shortplural={ACIDs},%
 counter={page},%
 parent={},%
 %

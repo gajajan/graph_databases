@@ -1,7 +1,3 @@
-//connect to OrientDb database
-graph = OrientGraph.open("remote:localhost/RailNetwork", "root", "root");
-//establishing a graph traversal source object
-g = graph.traversal();
 
 //repeat().until() pattern uses barriers -> it executes eagerly using breadth-first search
 g.V().has("Station", "stationId", 1048).

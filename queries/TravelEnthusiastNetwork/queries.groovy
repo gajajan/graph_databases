@@ -1,8 +1,3 @@
-//connect to OrientDb database
-graph = OrientGraph.open("remote:localhost/TravelEnthusiastNetwork", "root", "root");
-//establishing a graph traversal source object
-g = graph.traversal();
-
 //USERS'S NEIGHBORHOOD
 
 //variable for user id in this example
