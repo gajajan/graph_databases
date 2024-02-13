@@ -124,12 +124,7 @@ science}
 
 %% Další dodatečné styly (balíky) potřebné pro sazbu vlastního textu
 %% práce.
-\usepackage{lipsum}
-\usepackage{longtable}
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{multirow}
-\usepackage{tabularx}
+\usepackage{lipsum, longtable, graphicx, amssymb, multirow, tabularx}
 \graphicspath{ {./graphics/} }
 
 \begin{document}
@@ -153,15 +148,13 @@ Grafové databáze, stejně jako jiné databáze (například relační, NoSQL) 
 
 První kapitola obsahuje základní pojmy z teorie grafů používané v textu.
 
-Druhá kapitola se věnuje grafovým databázím -- co to je, k čemu to je dobré.
+Druhá kapitola se věnuje grafovým databázím -- co to je, k čemu to je dobré. Podíváme se na různé implementace grafových databází a dotazovací jazyky pro ně. Převážně pak je pozornost věnována databázi Neo4j a OrientDB a dotazovacím jazykům Cypher a Gremlin.
 
-Třetí kapitola popisuje modelování dat v grafových databázích.
+Třetí kapitola popisuje modelování dat v grafových databázích. Na konkrétním příkladu je ukázán postup modelování.
 
 Čtvrtá kapitola se zabývá  cestami v grafu.
 
 V páté kapitole je nahlédnuto na některé z algoritmů využívaných v grafových databázích. Jsou zde přehledově představeny algoritmy pro hledání cest v grafu, algoritmy pro míru centrality a podívali jsme se na problém detekce komunit.
-
-Šestá kapitola pojednává o implementacích grafových databází a dotazovacích jazycích v nich používaných. Převážně pak je pozornost věnována databázi Neo4j a OrientDB.
 
 \newpage
 
@@ -190,6 +183,8 @@ Grafy mohou mít nekonečnou množinu vrcholů. Tyto grafy se nazývají nekone�
 
 Grafy se dělí na \textit{orientované} a \textit{neorientované}. Hrana v neorientovaném grafu spojující vrcholy $u$ a $v$ se nazývá \textit{neorientovaná} a zapisuje se pomocí množiny obsahující dvojici vrcholů, tedy $ \{ u, v \} $. Hrana v orientovaném grafu začínající ve vrcholu $u$ a končící ve vrcholu $v$ se nazývá \textit{orientovaná} a pro zápis se používá uspořádaná dvojice, tedy $\langle u, v \rangle$. O hraně začínající i končící ve stejném vrcholu mluvíme jako o \textit{smyčce}.
 
+\textit{Symetrizace orientovaného grafu} $G = \langle V,E\rangle$ je neorientovaný graf $G' = \langle V,E'\rangle$, pokud pro každou hranu $\{ u,v \} \in E'$ platí, že $\langle u,v \rangle \in E$, nebo $\langle v,u \rangle \in E$.
+
 Grafy se nejčastěji znázorňují pomocí kroužků, které představují vrcholy, a úseček mezi nimi, sloužící pro reprezentaci hran. Pokud se jedná o orientovaný graf místo úseček používáme šipky. Pro hrany používáme označení \textit{vícenásobné}, pokud existuje mezi dvěma vrcholy hran více. Grafu obsahujícímu vícenásobné hrany se říká \textit{multigraf}. 
 
 Orientované i neorientované grafy též mohou mít dodatečnou informaci ve formě \textit{ohodnocení hran}. Obecně ji můžeme definovat jako funkci $w:E \to \mathbb{R}$. \textit{Ohodnoceným grafem} pak nazveme trojici $G = (V,E,w)$. Hodnotu $w(e)$ pro hranu $e \in E$ ohodnoceného grafu $G = (V,E,w)$ nazýváme \textit{váha} nebo \textit{ohodnocení hrany} $e$. Obdobně lze definovat ohodnocení vrcholů jako funkci $w:V \to \mathbb{R}$.
@@ -197,10 +192,6 @@ Orientované i neorientované grafy též mohou mít dodatečnou informaci ve fo
 \begin{remark}[Ohodnocený graf]
 Ohodnoceným grafem v textu budeme vždy myslet graf $G = (V,E,w)$, kde přiřazení $w$ je ohodnocení hran.
 \end{remark}
-
-\begin{definition}[Symetrizace orientovaného grafu]
-\textit{Symetrizace orientovaného grafu} $G = \langle V,E\rangle$ je neorientovaný graf $G' = \langle V,E'\rangle$, pokud pro každou hranu $\{ u,v \} \in E'$ platí, že $\langle u,v \rangle \in E$, nebo $\langle v,u \rangle \in E$.
-\end{definition}
 
 Symetrizaci grafu lze popsat jako proces, ve kterém zapomeneme orientaci hran, odstraníme smyčky a vícenásobné hrany nahradíme jednoduchými a vznikne nám tak neorientovaný graf.
 
@@ -263,7 +254,7 @@ S kořenovými stromy se pojí další pojmy. \textit{Hloubka vrcholu $v$} ve st
 %https://www.influxdata.com/graph-database/
 Grafová databáze je specializovaná NoSQL databáze pro uchovávání a dotazování dat, které jsou mezi sebou provázány pomocí vztahů. Jedná se o systém, který rozšiřuje grafový model o operace CREATE, READ, UPDATE a DELETE (zkráceně CRUD). Grafové modely jsou představeny v samostatné podkapitole nesoucí stejný název. Data v databázi jsou uchovávána ve formě vrcholů  a hran, které spolu tvoří graf. Jsou obvykle určeny pro použití s transakčními systémy (OLTP).
 
-\subsection{Ukládánní a zpracování dat}
+\subsection{Ukládání a zpracování dat}
 %https://neo4j.com/blog/native-vs-non-native-graph-technology/
 %https://dmccreary.medium.com/how-to-explain-index-free-adjacency-to-your-manager-1a8e68ec664a
 Grafové databáze můžeme mezi sebou rozlišovat podle zpracování a ukládání dat.
@@ -275,7 +266,13 @@ Druhou vlastností je \textit{index-free adjacency}. Ta nám říká, že v ulo�
 \textit{Nativními grafovými databázemi} označujeme ty, které s daty manipulují a uchovávají je v grafové podobě. Pracují efektivněji při průchodu grafem. Pro práci s velkým množstvím hustě propojených dat je tato architektura navrhnutá pro zacházení s daty nezbytná. Nenativní grafové databáze jsou bezpečnější volbou pro malé projekty a ne příliš propojená data, neboť obvykle staví na technologiích, které jsou známé. V této práci se budeme dále zabývat pouze nativními grafovými databázemi.
 
 \subsection{Identifikátory}
-Každý vrchol a každá hrana v grafu mají své vlastní jedinečné identifikátory (ID). To je rozdíl oproti relačním databázím, ve kterých sloupec s identifikátory může a nemusí být v tabulce. Tyto identifikátory mohou být uživatelsky měnitelné v některých grafových uložištích, ale častějším případem jsou generovány systémem automaticky. 
+Každý vrchol a každá hrana v grafu mají své vlastní jedinečné identifikátory (ID). To je rozdíl oproti relačním databázím, ve kterých sloupec s identifikátory může a nemusí být v tabulce přítomný. Tyto identifikátory mohou být uživatelsky měnitelné v některých grafových uložištích, ale častějším případem jsou generovány systémem automaticky.
+
+Například v databázi OrientDB jsou identifikátory řešeny následovně. Nejmenší jednotkou v databázi je záznam (record). Rozlišujeme 4 typy záznamů: Documents, Blobs, Vertices a Edges. Pro každý záznam pak je automaticky vygenerováno ID záznamu, označeno jako RID (Record ID). RID je uchováván ve formátu \textit{\#<cluster>:<position>}. 
+\begin{itemize}
+\item <cluster> označuje identifikátor clusteru, do kterého záznam patří. 
+\item <position> udává absolutní pozici záznamu v rámci clusteru.
+\end{itemize}
 
 \subsection{Grafové modely}
 Prostor systémů pro uchovávání grafů lze rozdělit podle grafových datových modelů. Mezi grafové modely řadíme například property graph, Resource Description Framework(RDF) a hypergrafy.
@@ -310,13 +307,13 @@ Hypergraf vznikl zobecněním klasického grafového modelu. Hypergraf obsahuje 
 
 Jednou z velkých výhod těchto systémů je, že uchovávají jak samotné entity, tak všechny vztahy mezi entitami (pomocí index-free adjacency). Tedy při dotazování nedochází k výpočtu těchto vztahů, jak tomu je například u relačních databází pomocí klauzule JOIN. To zrychluje zpracování některých typů dotazů. Jak již bylo řečeno, množství dat obecně výkon nezhoršuje, neboť čas pro vyhodnocení dotazu je úměrný pouze velikosti podgrafu, kterým procházíme. Pro aplikace, které pracují se vztahy mezi entitami ve velké míře, je proto grafová databáze ideálním řešením.
 
-Pomocí vrcholů a hran lze často lépe vystihnout dané problémy, než například pomocí tabulek. Grafy nám poskytují přirozený způsob pro ukládání a manipulaci z daty. Popisují jak nad daty v rámci aplikace přemýšlíme. Lze tak dosáhnout datových modelů, které jsou srozumitelné i laikům, což ve velkých projektech, na kterých pracuje velká spousta lidí, může být obrovský benefit.
+Pomocí vrcholů a hran lze často lépe vystihnout dané problémy, než například pomocí tabulek. Grafy nám poskytují přirozený způsob pro ukládání a manipulaci z daty. Popisují jak nad daty v rámci aplikace přemýšlíme. Lze tak dosáhnout datových modelů, které jsou srozumitelné i laikům, což ve velkých projektech, na kterých pracuje velká spousta lidí, může být obrovský benefit. To je samozřejmě podmíněno kvalitním grafovým modelem.
 
-Ve spoustě případech je dotazování prostřednictvím grafových dotazovacích jazyků přehlednější než dotazy v jiných databázích. To platí především pro dotazy pracující s relacemi mezi entitami.
+Ve spoustě případů je dotazování prostřednictvím grafových dotazovacích jazyků přehlednější než dotazy v jiných databázích. To platí především pro dotazy pracující se vztahy mezi entitami.
 
 Grafové databáze jsou obecně schema-less. Tedy struktura dat se může měnit v závislosti na potřebách aplikace. Přidávání nových vlastností, vrcholů, hran a labelů nenarušuje chod aplikace. Což přináší pozitiva pro vývojáře a budoucí vývoj.
 
-Dotazy v grafových databázích mohou vracet různé typy dat, bez toho aby ztratily výsledky smysl. V relačních databázích lze v jednom dotazu vracet výsledky pro různé entity pomocí klauzule UNION, ale vrácená data potrádají smysl, neboť vrácená tabulka obsahuje tato data různých entit smíchaná dohromady. V grafových databázích toho lze využít například k získání všech dostupných informací ke konkrétnímu zákazníkovi, které máme v databázi,  v rámci jednoho dotazu.
+Dotazy v grafových databázích mohou vracet různé typy dat, aniž by ztrácely výsledky smysl. V relačních databázích lze v jednom dotazu vracet výsledky pro různé entity pomocí klauzule UNION, ale vrácená data potrádají smysl, neboť vrácená tabulka obsahuje tato data různých entit smíchaná dohromady. V grafových databázích toho lze využít například k získání všech dostupných informací ke konkrétnímu zákazníkovi, které máme v databázi,  v rámci jednoho dotazu.
 
 Lze je využít k uchovávání vztahů mezi slovy a frázemi. Tedy v kombinaci s počítačovým zpracováním jazyka jsou vhodné v oborech jako data science, nebo machine learning.
 
@@ -345,7 +342,7 @@ Existuje spousta implementací grafových databází. Liší se například \"na
 \end{itemize}
 
 \subsubsection{Neo4j}
-Databázový systém Neo4j je nejrozšířenější open-source grafovou databází, nabízející vysoký výkon při práci s grafy. Její první verze byla vyvinuta v roce 2002 a vznikla z důvodu nespokojenosti jejich zakladatelů s výkonem RDBMS. Implementována je v Javě. Jedná se o nativní grafovou databázi. Je využívána hromadou světoznámých společností jako je například Microsoft, ebay, nebo Linkedin. Klást dotazy můžeme prostřednictvím jazyka Cypher.
+Databázový systém Neo4j je nejrozšířenější open-source grafovou databází, nabízející vysoký výkon při práci s grafy. Její první verze byla vyvinuta v roce 2002 a vznikla z důvodu nespokojenosti jejich zakladatelů s výkonem RDBMS. Implementována je v Javě. Jedná se o nativní grafovou databázi. Je využívána hromadou světoznámých společností jako je například Microsoft, eBay, nebo Linkedin. Klást dotazy můžeme prostřednictvím jazyka Cypher.
 
 %https://neo4j.com/developer/graph-platform/
 Neo4j nabízí velké množství způsobů jak interagovat s grafovými daty. Každý z nich je určen pro jinou cílovou skupinu. Například v této práci je využita aplikace Neo4j Desktop, která slouží pro správu lokálních instancí Neo4j. Verze používané aplikace je 1.5.9.
@@ -357,15 +354,10 @@ Neo4j má též spoustu rozšiřujících knihoven a nástrojů, které lze do p
 %dokumentace orientdb
 %https://orientdb.com/docs/3.2.x/datamodeling/Concepts.html#record-id
 % https://orientdb.com/docs/3.2.x/studio/index.html
-OrientDB je open-source NoSQL databázový systém implementovaný v Javě. Byl představen v roce 2010. Je to pokročilá multi-model databáze - podporuje grafový, dokumentový, klíč-hodnota a objektový model. Manipulovat s databází můžeme pomocí programovacího jazyka Java, speciálně upraveného SQL a dotazovacího jazyka Gremlin. Uživatelům je pak umožněno interagovat s databází skrze aplikaci, API, konzolu nebo prostřednictvím grafického uživatelského rozhraní -- OrientDB Studio. Pokud OrientDB Server běží lokálně, OrientDB Studio lze najít ve webovém prohlížeči na adrese \url{http://localhost:2480}. OrientDB je schématicky flexibilní. Umožňuje uchovávat schema-full, schema-less a schema-hybrid data.
+OrientDB je open-source NoSQL databázový systém implementovaný v Javě. Byl představen v roce 2010 (komerčně 2011). Jedná se o pokročilou multi-model databázi - podporuje grafový, dokumentový, klíč-hodnota a objektový model. Manipulovat s databází můžeme pomocí programovacího jazyka Java, speciálně upraveného SQL a dotazovacího jazyka Gremlin. Uživatelům je pak umožněno interagovat s databází skrze Java API, HTTP REST API, konzolu nebo prostřednictvím grafického uživatelského rozhraní -- OrientDB Studio. Pokud OrientDB Server běží lokálně, OrientDB Studio lze najít ve webovém prohlížeči na adrese \url{http://localhost:2480}. OrientDB je schématicky flexibilní. Umožňuje uchovávat schema-full, schema-less a schema-hybrid data.
 
-Nejmenší jednotkou v databázi OrientDB je záznam (record). Rozlišujeme 4 typy záznamů: Documents, Blobs, Vertices a Edges. Pro každý záznam pak je automaticky vygenerováno ID záznamu, označeno jako RID (Record ID). RID je uchováván ve formátu \textit{\#<cluster>:<position>}. 
-\begin{itemize}
-\item <cluster> označuje identifikátor clusteru, do kterého záznam patří. 
-\item <position> udává absolutní pozici záznamu v rámci clusteru.
-\end{itemize}
-
-V práci je využívána verze 3.2.23.
+%https://orientdb.com/docs/3.2.x/ee/Enterprise-Edition.html
+V práci je využívána bezplatná verze OrientDB Community Edition ve verzi 3.2.23. OrientDB nabízí i placenou verzi Enterprise Edition, která poskytuje výhody jako správu zálohování, migrační nástroje, monitorování systému a CRUD operací v reálném čase a jiné.
 
 \subsection{Dotazovací jazyky v grafových databázích}
 Jak již bylo zmíněno pro grafové databáze zatím neexistuje jeden standardní jazyk. Lze narazit na jazyky vyvinuté specificky pro konkrétní systém. Příkladem může být jazyk \textit{Cypher} vyvíjený společností Neo4j. Na druhou stranu jsou zde jazyky jakým je například \textit{Gremlin}, který je více univerzálnější a lze jej použít ve více systémech zacházejících s grafy. Mezi další známé jazky patří:
@@ -384,15 +376,20 @@ Jak již bylo zmíněno pro grafové databáze zatím neexistuje jeden standardn
 %https://neo4j.com/developer/cypher/
 Cypher je inspirovaný známým jazykem SQL z relačních databází. Důkazem může být použití několika stejnojmenných klíčových slov, jako je WHERE, LIMIT, ORDER BY apod. Jeho myšlenkou je definování, jaká data chceme z grafu dostat, místo definování jak je dostat. Cypher je unikátní v tom, že využívá kulaté závorky pro vrcholy a hranaté pro hrany, čímž docílí lepší přehlednosti v dotazu. Základní syntaxe pro průchod grafem z vrcholu \textit{vrchol1} na vrchol \textit{vrchol2}, přes hranu HRANA, která je spojuje, je ve formátu \textit{(vrchol1)-[:HRANA]->(vrchol2)}.
 
-Obdobně jako v SQL je dotaz v Cypheru je složen ze tří základních částí. První je povinná a začíná klíčovým slovem MATCH. Určuje, které vrcholy a hrany se mají vybrat. Následuje část začínající klíčovým slovem WHERE. Ta je nepovinná. Filtruje vybrané elementy z první části dotazu na základě jejich vlastností. Poslední, povinná, část začíná klíčovým slovem RETURN. Definuje, co je po provedení dotazu vráceno. Na výsledky lze aplikovat další operace, jako jsou například agregování, limitování, nebo seřazování.
+Obdobně jako v SQL je základní dotaz v Cypheru složen ze tří částí. První je povinná a začíná klíčovým slovem MATCH. Určuje, které vrcholy a hrany se mají vybrat. Část MATCH je často následována částí začínající klíčovým slovem WHERE. Ta je nepovinná. Filtruje vybrané elementy z první části dotazu na základě jejich vlastností. Poslední, povinná, část začíná klíčovým slovem RETURN. Definuje, co je po provedení dotazu vráceno. Na výsledky lze následně aplikovat další operace, jakými jsou například agregování, limitování, nebo seřazování.
+
+%https://neo4j.com/docs/cypher-manual/current/planning-and-tuning/execution-plans/#lazy-eager-evaluation
+Pro úsporu paměti implementuje vždy, kde je to možné, \textit{líné vyhodnocování dotazů} (anglicky lazy evaluation). Tedy u většiny operátorů nečekáme na všechny výsledky aplikace daného operátoru, ale hned po jejich získání na ně aplikujeme další nadřazený operátor. Výpočet podřazeného operátoru tedy obecně nemusí skončit dříve, než na výsledky začneme aplikovat nadřazený operátor. Tím nedochází k zatěžování paměti mezivýsledky výpočtu. Nicméně ne všechny dotazy lze vyhodnocovat líně. Pro operace jako je třídění, nebo agregování je nutné použít \textit{striktní vyhodnocování dotazů} (anglicky eager evaluation). S výsledky pak nadřazený operátor manipuluje až po úplném skončení výpočtu.
 
 \subsubsection{Gremlin}
 %https://www.kelvinlawrence.net/book/PracticalGremlin.html#_introduction
-Gremlin je dotazovací jazyk pro procházení grafů, který je součástí grafového výpočetního frameworku Apache TinkerPop\footnote{\url{http://tinkerpop.apache.org/}}. Gremlin lze použít pro všchna grafová uložiště, která tento framework podporují. Jedná se o imperativní jazyk s nějakými deklarativními prvky.
+%https://tinkerpop.apache.org/docs/current/reference/#gremlin-console
+\cite{practicalGremlin}
+Gremlin je dotazovací jazyk pro procházení grafů, který je součástí grafového výpočetního frameworku Apache TinkerPop\footnote{\url{http://tinkerpop.apache.org/}}. Gremlin lze použít pro všchna grafová uložiště, která tento framework podporují. Jedná se o imperativní jazyk s nějakými deklarativními prvky. Podobně jako Cypher ve většině případů vyhodnocuje dotazy líným způsobem.
 
 Apache TinkerPop mimo jiné obsahuje také Gremlin Console, což je textové \gls{REPL} rozhraní pro práci s lokálními, či vzdálenými grafy. Je založená na Groovy konzoli. Groovy je programovací jazyk, který je označován jako nadmnožina Javy. Co funguje v Javě funguje i v Groovy. V konzoli tedy můžeme používat validní kód napsaný v tomto jazyce. Díky tomu lze například uložit do proměnné určitý vrchol a na něj se pak přes danou proměnnou odkazovat. Konzole je široce rozšiřitelná pomocí různých pluginů. Pro napojení na databázi OrientDB budeme potřebovat plugin \textit{tinkerpop.orientdb}. Když je tento plugin aktivovaný, lze v konzoli vytvořit novou instanci \textit{OrientGraph}. Uložíme ji do proměnné graph. Než začneme psát dotazy pomocí Gremlinu musíme ještě vytvořit instanci zdrojového objektu procházení grafu zavoláním metody \textit{traversal()} na hodnotu v proměnné graph. Celý postup je uveden ve zdrojovém kódu \ref{kod:establishConnection}.
 
-\begin{kicode}{Java}{kod:establishConnection}{Ukázkový kód v dotazovacím jazyku Gremlin.}[h]
+\begin{kicode}{Java}{kod:establishConnection}{Připojení se k databázi OrientDB v Gremlin Console.}[h]
 //OrientDb database connector
 graph = OrientGraph.open(url, user, password);
 
@@ -407,6 +404,8 @@ g = graph.traversal();
 %		Graph Databases
 %web	https://neo4j.com/developer/guide-data-modeling/
 %https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
+
+Tato kapitola byla napsána s využitím knih \cite{inAction}, \cite{graphDatabases}, \cite{practitioner}. Dále byly využity tyto zdroje \cite{ionos}, \cite{macrometa} a \cite{neo4jModelling}.
 
 \begin{remark}[Překlad]
 V práci je použito  české slovo \uv{vlastnosti} přeložené z anglického slova \uv{properties}, se kterým se běžně uživatel setká při práci s gafovou databází. Slovo \uv{label} je z důvodu znělosti zachováno v původním znění.
@@ -796,6 +795,9 @@ g.withSack(0.0).
 Z vrácených výsledků vidíme, že nejkratší délka železnic mezi stanicemi SCHAERBEEK a MECHELEN má délku 18.2 kilometrů. Na této cestě projdeme přes 6 stanic. Jen o 50 metrů je delší druhá cesta, která obsahuje o jednu zastávku méně. Třetí výsledek je delší o více než 1.5 kilometru a jedná se o přímý spoj.
 
 \section{Algoritmy}
+
+Tato kapitola byla napsána pomocí knih \cite{graphAlgorithms} a \citep{inAction}. Dále byla využita dokumentace knihovny Graph Data Science Library \cite{neo4jGds} a zdroj \url{https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf}.
+
 V této kapitole si ukážeme řadu užitečných algoritmů, které jsou určené pro práci s grafem a jsou tedy v určitých situacích vhodné aplikovat při dotazech na grafovou databázi. Umožňují nám efektivně zjistit hledat nejkratší cesty mezi vrcholy, nacházet vrcholy, které pro nás mohou být svým způsobem důležité, nebo třeba analyzovat komunity(skupinky propojených vrcholů) v grafu. Ke grafové databázi Neo4j existuje knihovna s názvem Graph Data Science Library nabízející veškeré algoritmy, které lze po nainstalování pluginu použít. Zkráceně ji budeme označovat gds jako v dotazech Neo4j. V následujících částech si představíme užití pár algoritmů z této knihovny. 
 
 \subsection{Algoritmy pro hledání cesty v grafu}
@@ -1014,6 +1016,12 @@ Thesis conclusions in \uv{English}.
 %dotazy:
 %cypher, gremlin kódy
 %zkratky? ACID, REST API, REPL
-%jak je to s obrázky
+%jak je to s obrázky?
 %označování vrcholů má být v $$ ?
 %jak si poradit s entitami? psát je velkým písmenem, kurzívou, tučně ..?
+%lze čerpat z oficiálních dokumentací/webů poskytovatelů softwaru? Nelze moc dohledat kdy bylo vydáno a kým bylo napsáno
+%bibliografie
+%indexy, schema, na TravelEnthusiastNetwork
+%definice v prvni casti.. rozdelit do podkapitol/ nechat jako definice?
+%arangodb
+%muzu pouzivat dostupne pdf z vysokych skol?

@@ -1,6 +1,10 @@
 {
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/led_to.csv" } },
-    "extractor": { "csv": {} },
+    "extractor": { 
+      "csv": {
+        "columns": ["journeyId:integer","destinationId:integer","startDate:date","endDate:date"]
+      } 
+    },
     "transformers": [
       { "merge": { "joinFieldName": "journeyId", "lookup": "Journey.journeyId" } },
       { "edge": { "class": "LED_TO",

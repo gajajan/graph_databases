@@ -11,13 +11,12 @@ g.V().has("User", "userId", user_id). \
 //second neighborhood
 g.V().has("User", "userId", user_id).
     out("FOLLOWS").
-    dedup().
     out("FOLLOWS").
     dedup().
     valueMap();
 
 //second neighborhood without first neighborhood
-g.V().has("User", "userId", userId).
+g.V().has("User", "userId", user_id).
     match(__.as('me').out('FOLLOWS').as('f'), 
         __.as('f').out('FOLLOWS').where(neq('me')).as('fof'),
         __.not(__.as('me').out('FOLLOWS').as('fof'))).
@@ -26,7 +25,7 @@ g.V().has("User", "userId", userId).
 
 // DESTINATION RECOMMENDATION
 
-//returns a list of lists containing a destination and
+// returns a list of destinations containing a destination and
 // number indicating how many activities has the destination with specific user in common 
 g.V().has('User', 'userId', user_id).as('u').
     out('LIKES').as('a').

@@ -1,49 +1,49 @@
-activityName
-Sightseeing
-Culinary Experiences
-Cultural Exploration
-Beach Relaxation
-Water Sports
-Adventure Tours
-Historical Tours
-Hiking
-Wildlife Safari
-Scenic Drives
-Music Festivals
-Local Music Performances
-Gaming and Casinos
-Shopping
-Food Markets
-Amusement Parks
-Sporting Events
-Nightlife and Bars
-Art and Museums
-Spa and Wellness
-Photography
-Yoga Retreats
-Craft Beer Tasting
-Hot Air Balloon Rides
-Winter Sports
-National Parks Exploration
-Fishing Trips
-Dance Performances
-Botanical Gardens
-Technology Conventions
-Book Festivals
-Science Exhibitions
-Mindfulness Retreats
-Astrology and Stargazing
-DIY Workshops
-Comedy Shows
-Nature Reserves Visits
-Anime and Cosplay
-Board Games
-Performing Arts
-Virtual Reality Experiences
-Bird Watching
-Fitness Bootcamps
-Meditation Retreats
-Vintage Shopping
-Cooking Classes
-Ghost Tours
-Motorcycle Tours
+activityId,activityName
+1,Sightseeing
+2,Culinary Experiences
+3,Cultural Exploration
+4,Beach Relaxation
+5,Water Sports
+6,Adventure Tours
+7,Historical Tours
+8,Hiking
+9,Wildlife Safari
+10,Scenic Drives
+11,Music Festivals
+12,Local Music Performances
+13,Gaming and Casinos
+14,Shopping
+15,Food Markets
+16,Amusement Parks
+17,Sporting Events
+18,Nightlife and Bars
+19,Art and Museums
+20,Spa and Wellness
+21,Photography
+22,Yoga Retreats
+23,Craft Beer Tasting
+24,Hot Air Balloon Rides
+25,Winter Sports
+26,National Parks Exploration
+27,Fishing Trips
+28,Dance Performances
+29,Botanical Gardens
+30,Technology Conventions
+31,Book Festivals
+32,Science Exhibitions
+33,Mindfulness Retreats
+34,Astrology and Stargazing
+35,Comedy Shows
+36,Nature Reserves Visits
+37,Anime and Cosplay
+38,Board Games
+39,Performing Arts
+40,Crafting and DIY
+41,Virtual Reality Experiences
+42,Bird Watching
+43,Fitness Bootcamps
+44,Meditation Retreats
+45,Vintage Shopping
+46,Cooking Classes
+47,Ghost Tours
+48,Motorcycle Tours

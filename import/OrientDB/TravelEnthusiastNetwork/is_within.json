@@ -1,6 +1,10 @@
 {
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/is_within.csv" } },
-    "extractor": { "csv": {} },
+    "extractor": { 
+      "csv": {
+        "columns": ["destinationId:integer","countryCode:string"]
+      } 
+    },
     "transformers": [
       { "merge": { "joinFieldName": "destinationId", "lookup": "Destination.destinationId" } },
       { "edge": { "class": "IS_WITHIN",

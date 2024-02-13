@@ -1,6 +1,10 @@
 {
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/lives_in.csv" } },
-    "extractor": { "csv": {} },
+    "extractor": {
+      "csv": {
+        "columns": ["userId:integer","destinationId:integer"]
+      } 
+    },
     "transformers": [
       { "merge": { "joinFieldName": "userId", "lookup": "User.userId" } },
       { "edge": { "class": "LIVES_IN",

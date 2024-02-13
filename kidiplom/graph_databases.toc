@@ -1,7 +1,7 @@
 \babel@toc {czech}{}\relax 
 \contentsline {section}{\numberline {1}Základní pojmy z teorie grafů}{9}{section.1}%
 \contentsline {section}{\numberline {2}Grafové databáze}{11}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Ukládánní a zpracování dat}{12}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Ukládání a zpracování dat}{12}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Identifikátory}{12}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Grafové modely}{13}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Property graph}{13}{subsubsection.2.3.1}%
@@ -17,7 +17,7 @@
 \contentsline {subsubsection}{\numberline {2.7.2}Gremlin}{18}{subsubsection.2.7.2}%
 \contentsline {section}{\numberline {3}Modelování grafových dat}{19}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Definice problému}{20}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Co od naší aplikace uživatel očekává?}{20}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Co od naší aplikace uživatel očekává?}{22}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Jaké typy informací naše aplikace potřebuje uchovávat, aby měla danou funkcionalitu?}{22}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Jak spolu tyto pojmy vzájemně souvisí v rámci aplikace?}{23}{subsubsection.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.1.4}Na jaké otázky potřebují uživatelé najít odpověď?}{23}{subsubsection.3.1.4}%
@@ -60,3 +60,4 @@
 \babel@toc {english}{}\relax 
 \babel@toc {czech}{}\relax 
 \contentsline {section}{Seznam zkratek}{47}{section*.8}%
+\contentsline {section}{Literatura}{48}{section*.9}%

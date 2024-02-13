@@ -18,9 +18,9 @@ CREATE CONSTRAINT Country_code_nodekey IF NOT EXISTS
 FOR (c:Country)
 REQUIRE c.countryCode IS NODE KEY;
 
-CREATE CONSTRAINT TravelActivity_name_nodekey IF NOT EXISTS
+CREATE CONSTRAINT TravelActivity_id_nodekey IF NOT EXISTS
 FOR (a:TravelActivity)
-REQUIRE a.activityName IS NODE KEY;
+REQUIRE a.activityId IS NODE KEY;
 
 CREATE CONSTRAINT Rating_id_nodekey IF NOT EXISTS
 FOR (r:Rating)
@@ -68,7 +68,8 @@ c.countryName = row.countryName;
 
 LOAD CSV WITH HEADERS
 FROM 'file:///activities.csv' AS row
-MERGE (:TravelActivity {activityName: row.activityName});
+MERGE (a:TravelActivity {activityId: toInteger(row.activityId)})
+SET a.activityName = row.activityName;
 
 LOAD CSV WITH HEADERS
 FROM 'file:///ratings.csv' AS row
@@ -102,7 +103,7 @@ e.endDate = date(row.endDate);
 LOAD CSV WITH HEADERS
 FROM 'file:///likes.csv' AS row
 MATCH (u:User {userId: toInteger(row.userId)})
-MATCH (a:TravelActivity {activityName: row.activityName})
+MATCH (a:TravelActivity {activityId: toInteger(row.activityId)})
 MERGE (u)-[:LIKES]->(a);
 
 LOAD CSV WITH HEADERS
@@ -114,7 +115,7 @@ MERGE (u)-[:LIVES_IN]->(c);
 LOAD CSV WITH HEADERS
 FROM 'file:///offers.csv' AS row
 MATCH (d:Destination {destinationId: toInteger(row.destinationId)})
-MATCH (a:TravelActivity {activityName: row.activityName})
+MATCH (a:TravelActivity {activityId: toInteger(row.activityId)})
 MERGE (d)-[:OFFERS]->(a);
 
 LOAD CSV WITH HEADERS

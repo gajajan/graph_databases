@@ -1,4 +1,3 @@
-
 //repeat().until() pattern uses barriers -> it executes eagerly using breadth-first search
 g.V().has("Station", "stationId", 1048).
     repeat(out("LEADS_TO")).
@@ -18,7 +17,7 @@ g.withSack(0.0).
                 by("length").
             inV().
             simplePath()).
-    until(has("Station", "stationId", 1066)).
+    until(has("Station", "stationId", 810)).
     limit(3).
     order().
         by(sack(), asc).
@@ -72,7 +71,7 @@ g.withSack(0.0).
     until(has("Station", "stationId", 810)).
     order().
         by(sack(), asc).
-    limit(5).
+    limit(3).
     project("stations", "stationsCount", "totalLength").
         by(path().
             unfold().
@@ -80,7 +79,8 @@ g.withSack(0.0).
             values("stationName").
             fold()).
         by(path().count(local).math('(_+1)/2')).
-        by(sack())
+        by(sack()).
+    fold()
 
 //když omezíme počet zastávek...
 g.withSack(0.0).

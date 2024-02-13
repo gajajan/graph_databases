@@ -1,6 +1,10 @@
 {
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/journeys.csv" } },
-    "extractor": { "csv": {} },
+    "extractor": { 
+      "csv": {
+        "columns": ["journeyId:integer","journeyName:string","journeyStart:date","journeyEnd:date"]
+      } 
+    },
     "transformers": [
       { "vertex": { "class": "Journey" } }
     ],

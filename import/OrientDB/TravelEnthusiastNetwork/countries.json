@@ -1,6 +1,10 @@
 {
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/countries.csv" } },
-    "extractor": { "csv": {} },
+    "extractor": { 
+      "csv": {
+        "columns": ["countryName:string","countryCode:string"]
+      } 
+    },
     "transformers": [
       { "vertex": { "class": "Country" } }
     ],

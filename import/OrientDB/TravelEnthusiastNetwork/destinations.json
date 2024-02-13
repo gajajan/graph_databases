@@ -1,6 +1,10 @@
 {
   "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/destinations.csv" } },
-  "extractor": { "csv": {} },
+  "extractor": { 
+    "csv": {
+      "columns": ["destinationName:string","destinationId:integer"]
+    } 
+  },
   "transformers": [
     { "vertex": { "class": "Destination" } }
   ],
@@ -12,6 +16,9 @@
        "dbType": "graph",
        "classes": [
          {"name": "Destination", "extends": "V"}
+       ],
+       "indexes": [
+        {"class":"User", "fields":["destinationId:integer"], "type":"UNIQUE" }
        ]
     }
   }

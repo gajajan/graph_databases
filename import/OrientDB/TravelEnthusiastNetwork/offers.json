@@ -1,6 +1,10 @@
 {
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/offers.csv" } },
-    "extractor": { "csv": {} },
+    "extractor": {
+      "csv": {
+        "columns": ["destinationId:integer","activityName:string"]
+      }
+    },
     "transformers": [
       { "merge": { "joinFieldName": "destinationId", "lookup": "Destination.destinationId" } },
       { "edge": { "class": "OFFERS",

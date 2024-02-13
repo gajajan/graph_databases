@@ -1,1517 +1,1540 @@
-userId,activityName
-1,Spa and Wellness
-1,Adventure Tours
-1,Food Markets
-1,Vintage Shopping
-1,Hiking
-1,Cultural Exploration
-1,Technology Conventions
-2,Astrology and Stargazing
-2,Photography
-2,Local Music Performances
-2,Craft Beer Tasting
-2,Historical Tours
-2,Music Festivals
-3,Craft Beer Tasting
-3,Virtual Reality Experiences
-3,Nightlife and Bars
-3,Music Festivals
-3,Winter Sports
-3,Dance Performances
-3,Book Festivals
-3,Water Sports
-3,Shopping
-4,Motorcycle Tours
-4,Fitness Bootcamps
-4,Ghost Tours
-4,Local Music Performances
-4,Dance Performances
-4,Culinary Experiences
-4,Hiking
-4,Cultural Exploration
-5,Historical Tours
-5,National Parks Exploration
-5,Local Music Performances
-5,Shopping
-5,Sporting Events
-5,Book Festivals
-5,Botanical Gardens
-6,Hot Air Balloon Rides
-7,Crafting and DIY
-8,Motorcycle Tours
-8,Hot Air Balloon Rides
-8,Winter Sports
-8,Cooking Classes
-8,Performing Arts
-8,Comedy Shows
-8,Board Games
-8,Beach Relaxation
-8,Scenic Drives
-9,Fitness Bootcamps
-10,Yoga Retreats
-10,Local Music Performances
-10,Bird Watching
-10,Art and Museums
-10,Meditation Retreats
-10,Science Exhibitions
-11,Mindfulness Retreats
-12,Bird Watching
-12,Music Festivals
-12,Technology Conventions
-12,Craft Beer Tasting
-12,Astrology and Stargazing
-13,Winter Sports
-13,Book Festivals
-13,Amusement Parks
-13,Local Music Performances
-13,Sightseeing
-13,Hiking
-13,Virtual Reality Experiences
-13,Food Markets
-13,Photography
-14,Shopping
-14,Virtual Reality Experiences
-14,Spa and Wellness
-14,Fishing Trips
-15,Amusement Parks
-15,Local Music Performances
-16,Adventure Tours
-16,Fishing Trips
-17,Sightseeing
-17,Nature Reserves Visits
-17,Mindfulness Retreats
-17,Fishing Trips
-17,Fitness Bootcamps
-17,Adventure Tours
-17,Amusement Parks
-17,Vintage Shopping
-18,Winter Sports
-18,Meditation Retreats
-18,Nature Reserves Visits
-18,Fishing Trips
-18,Fitness Bootcamps
-18,Book Festivals
-18,Art and Museums
-18,Photography
-18,Historical Tours
-19,Shopping
-19,Mindfulness Retreats
-19,Photography
-19,Nature Reserves Visits
-20,Fitness Bootcamps
-20,Wildlife Safari
-20,Botanical Gardens
-20,Food Markets
-20,Spa and Wellness
-20,Nightlife and Bars
-20,Beach Relaxation
-20,Fishing Trips
-21,Local Music Performances
-21,Comedy Shows
-21,Vintage Shopping
-21,Historical Tours
-22,Yoga Retreats
-22,Wildlife Safari
-22,Hot Air Balloon Rides
-22,Sporting Events
-22,Culinary Experiences
-23,Technology Conventions
-24,Meditation Retreats
-24,Winter Sports
-24,Performing Arts
-24,Sightseeing
-24,Botanical Gardens
-25,Gaming and Casinos
-25,Virtual Reality Experiences
-25,Anime and Cosplay
-25,Fitness Bootcamps
-25,Spa and Wellness
-25,Nature Reserves Visits
-26,Vintage Shopping
-26,Nature Reserves Visits
-26,Fitness Bootcamps
-26,Ghost Tours
-27,Comedy Shows
-27,National Parks Exploration
-27,Cultural Exploration
-28,Nightlife and Bars
-28,Adventure Tours
-29,Fitness Bootcamps
-29,Amusement Parks
-29,Botanical Gardens
-29,Mindfulness Retreats
-29,Yoga Retreats
-30,Performing Arts
-30,Music Festivals
-30,Craft Beer Tasting
-30,Comedy Shows
-30,Water Sports
-31,Food Markets
-31,Motorcycle Tours
-31,Fitness Bootcamps
-32,Amusement Parks
-32,Sightseeing
-32,Scenic Drives
-32,Performing Arts
-32,Wildlife Safari
-32,Hot Air Balloon Rides
-32,Virtual Reality Experiences
-33,Bird Watching
-33,Historical Tours
-33,Virtual Reality Experiences
-33,Music Festivals
-33,Fishing Trips
-33,Botanical Gardens
-33,Photography
-34,Board Games
-35,Local Music Performances
-35,Vintage Shopping
-36,Sporting Events
-36,Nightlife and Bars
-36,Local Music Performances
-37,Bird Watching
-37,Craft Beer Tasting
-37,Food Markets
-37,Botanical Gardens
-37,Shopping
-37,Sporting Events
-37,Motorcycle Tours
-37,Historical Tours
-38,Fishing Trips
-38,Scenic Drives
-38,Astrology and Stargazing
-38,Spa and Wellness
-39,Hot Air Balloon Rides
-39,Fishing Trips
-39,Botanical Gardens
-39,Sightseeing
-39,Mindfulness Retreats
-39,Ghost Tours
-40,Book Festivals
-40,Art and Museums
-40,Historical Tours
-40,Music Festivals
-40,Photography
-40,Bird Watching
-41,Historical Tours
-41,Motorcycle Tours
-41,Ghost Tours
-41,Wildlife Safari
-41,Book Festivals
-42,Meditation Retreats
-42,Book Festivals
-42,Winter Sports
-42,Photography
-42,Nature Reserves Visits
-42,Yoga Retreats
-42,Comedy Shows
-42,Spa and Wellness
-42,Art and Museums
-43,Anime and Cosplay
-43,Botanical Gardens
-43,Amusement Parks
-43,Cooking Classes
-43,Performing Arts
-43,Fitness Bootcamps
-43,Ghost Tours
-43,Comedy Shows
-44,Performing Arts
-44,Local Music Performances
-44,Culinary Experiences
-44,Science Exhibitions
-44,Cooking Classes
-44,Comedy Shows
-44,Bird Watching
-45,Bird Watching
-45,Food Markets
-45,Sightseeing
-45,Music Festivals
-45,Fitness Bootcamps
-45,Water Sports
-45,Board Games
-45,Amusement Parks
-46,Board Games
-46,Mindfulness Retreats
-46,National Parks Exploration
-46,Cultural Exploration
-46,Motorcycle Tours
-46,Music Festivals
-46,Amusement Parks
-46,Fishing Trips
-46,Culinary Experiences
-47,Sightseeing
-47,Virtual Reality Experiences
-47,Craft Beer Tasting
-47,Winter Sports
-47,Beach Relaxation
-47,Bird Watching
-47,Amusement Parks
-47,Cooking Classes
-47,Dance Performances
-48,Comedy Shows
-48,Hiking
-48,Anime and Cosplay
-48,Gaming and Casinos
-48,Scenic Drives
-48,Yoga Retreats
-48,Sporting Events
-48,Culinary Experiences
-49,Wildlife Safari
-49,Historical Tours
-49,Gaming and Casinos
-49,Cooking Classes
-49,Crafting and DIY
-50,Botanical Gardens
-51,Art and Museums
-52,Photography
-52,Crafting and DIY
-53,Gaming and Casinos
-53,Nature Reserves Visits
-53,Sporting Events
-53,Adventure Tours
-54,Nature Reserves Visits
-54,Spa and Wellness
-54,Sporting Events
-54,Winter Sports
-55,Craft Beer Tasting
-55,Fishing Trips
-55,Beach Relaxation
-55,Bird Watching
-56,Nightlife and Bars
-56,Amusement Parks
-56,Yoga Retreats
-57,National Parks Exploration
-57,Astrology and Stargazing
-57,Botanical Gardens
-57,Cooking Classes
-57,Motorcycle Tours
-58,Shopping
-58,Comedy Shows
-58,Ghost Tours
-58,Wildlife Safari
-58,Crafting and DIY
-58,Winter Sports
-58,Bird Watching
-58,Yoga Retreats
-58,Beach Relaxation
-59,Photography
-59,Performing Arts
-59,Science Exhibitions
-59,Virtual Reality Experiences
-59,National Parks Exploration
-60,Food Markets
-60,Art and Museums
-61,Adventure Tours
-61,Botanical Gardens
-61,Performing Arts
-61,Anime and Cosplay
-61,Local Music Performances
-61,Music Festivals
-61,Scenic Drives
-61,Winter Sports
-61,Cultural Exploration
-62,Music Festivals
-62,Hot Air Balloon Rides
-62,Mindfulness Retreats
-62,Hiking
-62,Book Festivals
-62,Nightlife and Bars
-62,Art and Museums
-62,Fitness Bootcamps
-62,Botanical Gardens
-63,Winter Sports
-63,Hot Air Balloon Rides
-63,Astrology and Stargazing
-63,Amusement Parks
-63,Performing Arts
-64,Mindfulness Retreats
-64,Hot Air Balloon Rides
-64,Meditation Retreats
-65,Spa and Wellness
-65,Sporting Events
-65,Botanical Gardens
-65,Crafting and DIY
-65,Craft Beer Tasting
-65,Historical Tours
-66,Fishing Trips
-67,Cooking Classes
-67,Photography
-67,Music Festivals
-67,Fitness Bootcamps
-67,Winter Sports
-67,Anime and Cosplay
-67,Water Sports
-67,Board Games
-68,Art and Museums
-68,Botanical Gardens
-68,National Parks Exploration
-68,Fitness Bootcamps
-68,Scenic Drives
-69,Performing Arts
-70,Science Exhibitions
-70,Art and Museums
-70,Culinary Experiences
-70,Anime and Cosplay
-70,Craft Beer Tasting
-70,Hiking
-70,Virtual Reality Experiences
-70,Mindfulness Retreats
-71,Cultural Exploration
-72,Science Exhibitions
-72,Food Markets
-72,Anime and Cosplay
-72,Beach Relaxation
-72,Fishing Trips
-72,Technology Conventions
-73,Sporting Events
-74,Yoga Retreats
-74,Gaming and Casinos
-74,Food Markets
-74,Performing Arts
-74,Dance Performances
-74,National Parks Exploration
-75,Adventure Tours
-75,Comedy Shows
-75,Crafting and DIY
-75,Local Music Performances
-76,Crafting and DIY
-76,Beach Relaxation
-76,Craft Beer Tasting
-76,Hot Air Balloon Rides
-76,National Parks Exploration
-76,Vintage Shopping
-77,Science Exhibitions
-77,Adventure Tours
-77,Mindfulness Retreats
-77,Sightseeing
-77,Craft Beer Tasting
-78,Bird Watching
-78,Science Exhibitions
-79,Art and Museums
-79,Cultural Exploration
-79,Board Games
-79,National Parks Exploration
-79,Ghost Tours
-79,Science Exhibitions
-80,Winter Sports
-81,Food Markets
-81,Yoga Retreats
-81,Gaming and Casinos
-81,Art and Museums
-81,Virtual Reality Experiences
-81,Winter Sports
-82,Adventure Tours
-82,Nature Reserves Visits
-82,Performing Arts
-82,Hiking
-82,Music Festivals
-82,Virtual Reality Experiences
-82,Water Sports
-83,Botanical Gardens
-83,Performing Arts
-83,Food Markets
-83,Vintage Shopping
-83,Technology Conventions
-83,Astrology and Stargazing
-83,Photography
-84,Winter Sports
-84,Sightseeing
-85,Science Exhibitions
-85,Beach Relaxation
-85,Mindfulness Retreats
-85,Culinary Experiences
-85,Music Festivals
-85,Virtual Reality Experiences
-85,Motorcycle Tours
-85,Craft Beer Tasting
-86,Book Festivals
-87,Meditation Retreats
-87,Spa and Wellness
-87,Technology Conventions
-87,Performing Arts
-87,Bird Watching
-88,Spa and Wellness
-88,Water Sports
-88,Cultural Exploration
-88,Comedy Shows
-88,Music Festivals
-88,Art and Museums
-88,Nature Reserves Visits
-89,Spa and Wellness
-89,Motorcycle Tours
-89,Craft Beer Tasting
-89,Local Music Performances
-90,Fitness Bootcamps
-90,Craft Beer Tasting
-91,Virtual Reality Experiences
-91,Ghost Tours
-91,Bird Watching
-91,Local Music Performances
-92,Spa and Wellness
-92,Adventure Tours
-93,Gaming and Casinos
-93,Crafting and DIY
-93,Book Festivals
-93,Cultural Exploration
-93,Shopping
-93,Sightseeing
-94,Cooking Classes
-94,Local Music Performances
-94,Water Sports
-95,Cultural Exploration
-95,Book Festivals
-95,Historical Tours
-95,Scenic Drives
-95,Gaming and Casinos
-95,Astrology and Stargazing
-96,Scenic Drives
-97,Cooking Classes
-97,Adventure Tours
-97,Gaming and Casinos
-97,Amusement Parks
-98,Adventure Tours
-98,National Parks Exploration
-98,Cooking Classes
-98,Spa and Wellness
-98,Art and Museums
-98,Cultural Exploration
-98,Crafting and DIY
-98,Anime and Cosplay
-98,Gaming and Casinos
-99,Book Festivals
-99,Virtual Reality Experiences
-99,Amusement Parks
-100,Performing Arts
-100,Culinary Experiences
-100,Wildlife Safari
-100,Amusement Parks
-101,Technology Conventions
-101,Fitness Bootcamps
-101,Historical Tours
-101,Culinary Experiences
-102,Fitness Bootcamps
-102,Science Exhibitions
-103,Music Festivals
-104,Local Music Performances
-104,Cooking Classes
-104,Ghost Tours
-104,Meditation Retreats
-104,Botanical Gardens
-104,Mindfulness Retreats
-104,Music Festivals
-104,Hot Air Balloon Rides
-104,Book Festivals
-105,Vintage Shopping
-105,Local Music Performances
-105,Dance Performances
-105,Astrology and Stargazing
-105,National Parks Exploration
-105,Food Markets
-105,Anime and Cosplay
-106,Craft Beer Tasting
-106,Hiking
-106,Fitness Bootcamps
-106,Winter Sports
-106,Performing Arts
-106,Music Festivals
-106,Sightseeing
-107,Food Markets
-108,Gaming and Casinos
-108,Culinary Experiences
-108,Historical Tours
-108,Hot Air Balloon Rides
-108,Cooking Classes
-108,Winter Sports
-109,Botanical Gardens
-109,Crafting and DIY
-110,Science Exhibitions
-111,Art and Museums
-112,Fishing Trips
-112,Sporting Events
-112,Hiking
-112,Craft Beer Tasting
-112,Beach Relaxation
-112,Nature Reserves Visits
-112,Cooking Classes
-112,Music Festivals
-112,Food Markets
-113,Fitness Bootcamps
-113,Wildlife Safari
-113,Craft Beer Tasting
-113,Science Exhibitions
-113,Spa and Wellness
-113,Amusement Parks
-114,Dance Performances
-114,National Parks Exploration
-114,Shopping
-114,Virtual Reality Experiences
-114,Local Music Performances
-114,Music Festivals
-114,Vintage Shopping
-114,Hiking
-115,Scenic Drives
-115,Motorcycle Tours
-115,Beach Relaxation
-115,Astrology and Stargazing
-115,Bird Watching
-116,Ghost Tours
-116,Hiking
-116,Sightseeing
-116,Nightlife and Bars
-116,Historical Tours
-116,Meditation Retreats
-116,Botanical Gardens
-116,Music Festivals
-117,Anime and Cosplay
-117,National Parks Exploration
-117,Hiking
-117,Wildlife Safari
-118,Fitness Bootcamps
-118,Sporting Events
-118,Ghost Tours
-118,Photography
-119,Amusement Parks
-119,Sporting Events
-119,Mindfulness Retreats
-119,Vintage Shopping
-119,Cooking Classes
-119,Culinary Experiences
-119,Wildlife Safari
-119,Astrology and Stargazing
-119,Nature Reserves Visits
-120,National Parks Exploration
-120,Photography
-120,Book Festivals
-120,Beach Relaxation
-121,Historical Tours
-121,Performing Arts
-121,Photography
-121,Shopping
-121,National Parks Exploration
-121,Hot Air Balloon Rides
-121,Spa and Wellness
-121,Nature Reserves Visits
-122,Sightseeing
-122,Astrology and Stargazing
-122,Science Exhibitions
-122,Craft Beer Tasting
-123,Art and Museums
-123,Technology Conventions
-123,Spa and Wellness
-123,Yoga Retreats
-123,National Parks Exploration
-123,Cultural Exploration
-124,Food Markets
-124,Photography
-124,Gaming and Casinos
-124,Local Music Performances
-124,Art and Museums
-124,Nature Reserves Visits
-124,Scenic Drives
-125,Amusement Parks
-125,Motorcycle Tours
-125,Sightseeing
-125,Historical Tours
-126,Water Sports
-126,Art and Museums
-126,National Parks Exploration
-126,Board Games
-126,Meditation Retreats
-126,Dance Performances
-126,Sporting Events
-126,Wildlife Safari
-126,Anime and Cosplay
-127,Culinary Experiences
-127,Vintage Shopping
-127,Historical Tours
-127,Book Festivals
-128,Hiking
-128,Comedy Shows
-128,Botanical Gardens
-128,Virtual Reality Experiences
-128,Mindfulness Retreats
-128,Sightseeing
-128,Bird Watching
-129,Music Festivals
-129,Ghost Tours
-129,Mindfulness Retreats
-129,Winter Sports
-130,Photography
-130,Historical Tours
-130,Art and Museums
-131,Crafting and DIY
-131,Scenic Drives
-131,Science Exhibitions
-131,National Parks Exploration
-131,Cultural Exploration
-131,Art and Museums
-132,Board Games
-132,Water Sports
-132,Fishing Trips
-132,Historical Tours
-132,Sightseeing
-132,Local Music Performances
-133,Hot Air Balloon Rides
-133,Mindfulness Retreats
-133,Yoga Retreats
-133,Adventure Tours
-134,Meditation Retreats
-134,Performing Arts
-134,Science Exhibitions
-134,Sightseeing
-135,Bird Watching
-135,National Parks Exploration
-136,Nightlife and Bars
-136,Virtual Reality Experiences
-136,Performing Arts
-136,Spa and Wellness
-136,Technology Conventions
-136,Nature Reserves Visits
-137,Shopping
-137,Nature Reserves Visits
-137,Motorcycle Tours
-137,Hiking
-137,Vintage Shopping
-137,Historical Tours
-137,Botanical Gardens
-137,Sporting Events
-138,Crafting and DIY
-138,Mindfulness Retreats
-138,Dance Performances
-138,Spa and Wellness
-138,Anime and Cosplay
-138,Nightlife and Bars
-138,Science Exhibitions
-138,Craft Beer Tasting
-138,Wildlife Safari
-139,Food Markets
-139,Amusement Parks
-139,Comedy Shows
-139,Scenic Drives
-139,Mindfulness Retreats
-139,Historical Tours
-139,Music Festivals
-140,Book Festivals
-140,Dance Performances
-141,Cooking Classes
-141,Historical Tours
-141,Astrology and Stargazing
-142,Mindfulness Retreats
-142,Performing Arts
-142,Craft Beer Tasting
-142,Cultural Exploration
-142,Vintage Shopping
-142,Anime and Cosplay
-142,Photography
-142,Astrology and Stargazing
-142,Board Games
-143,Shopping
-143,Botanical Gardens
-143,Gaming and Casinos
-143,Wildlife Safari
-143,Local Music Performances
-143,Music Festivals
-144,Cultural Exploration
-144,Sightseeing
-144,Craft Beer Tasting
-144,Motorcycle Tours
-144,Scenic Drives
-144,Dance Performances
-145,Food Markets
-145,Performing Arts
-145,Art and Museums
-145,Spa and Wellness
-145,Historical Tours
-145,Cultural Exploration
-145,Crafting and DIY
-145,National Parks Exploration
-145,Botanical Gardens
-146,Ghost Tours
-146,Book Festivals
-146,Music Festivals
-146,Shopping
-146,Gaming and Casinos
-146,Dance Performances
-146,Beach Relaxation
-146,Nature Reserves Visits
-147,Art and Museums
-147,Anime and Cosplay
-147,Performing Arts
-147,Botanical Gardens
-147,Hot Air Balloon Rides
-147,Local Music Performances
-147,Dance Performances
-147,Historical Tours
-148,Photography
-148,Art and Museums
-148,Winter Sports
-149,Shopping
-149,Botanical Gardens
-149,Cultural Exploration
-149,Wildlife Safari
-150,Fishing Trips
-150,Shopping
-150,Food Markets
-150,Crafting and DIY
-151,Botanical Gardens
-151,Nightlife and Bars
-151,Historical Tours
-151,Gaming and Casinos
-151,Vintage Shopping
-151,Motorcycle Tours
-151,Beach Relaxation
-152,Cooking Classes
-152,Art and Museums
-152,Comedy Shows
-152,Mindfulness Retreats
-152,Yoga Retreats
-152,Winter Sports
-152,Fitness Bootcamps
-152,Sporting Events
-152,Bird Watching
-153,National Parks Exploration
-153,Water Sports
-153,Scenic Drives
-153,Meditation Retreats
-153,Hot Air Balloon Rides
-154,Astrology and Stargazing
-154,National Parks Exploration
-154,Botanical Gardens
-154,Water Sports
-154,Sporting Events
-154,Mindfulness Retreats
-154,Beach Relaxation
-154,Cultural Exploration
-154,Ghost Tours
-155,Wildlife Safari
-155,Beach Relaxation
-155,Vintage Shopping
-156,Book Festivals
-156,Cooking Classes
-156,Technology Conventions
-156,Shopping
-156,Astrology and Stargazing
-156,Water Sports
-156,Craft Beer Tasting
-156,Cultural Exploration
-156,Dance Performances
-157,Craft Beer Tasting
-157,Scenic Drives
-157,Adventure Tours
-157,Winter Sports
-157,Amusement Parks
-157,Sightseeing
-158,Meditation Retreats
-158,Music Festivals
-158,Science Exhibitions
-159,Culinary Experiences
-159,Vintage Shopping
-159,National Parks Exploration
-159,Music Festivals
-159,Technology Conventions
-159,Photography
-159,Cultural Exploration
-160,Sporting Events
-160,Botanical Gardens
-160,Local Music Performances
-161,Technology Conventions
-161,Local Music Performances
-161,Botanical Gardens
-161,Beach Relaxation
-161,Cooking Classes
-161,Hot Air Balloon Rides
-161,Crafting and DIY
-162,Fitness Bootcamps
-162,Wildlife Safari
-163,Spa and Wellness
-163,Yoga Retreats
-164,Bird Watching
-165,Ghost Tours
-165,Cooking Classes
-165,Sightseeing
-165,Shopping
-166,Anime and Cosplay
-166,Yoga Retreats
-166,Fitness Bootcamps
-167,Yoga Retreats
-167,Hot Air Balloon Rides
-167,Anime and Cosplay
-167,Spa and Wellness
-167,Adventure Tours
-167,Motorcycle Tours
-167,Fitness Bootcamps
-167,Sporting Events
-168,Food Markets
-168,Art and Museums
-169,Spa and Wellness
-169,Scenic Drives
-169,Amusement Parks
-169,Cultural Exploration
-169,Wildlife Safari
-170,Botanical Gardens
-170,Science Exhibitions
-170,Cooking Classes
-170,Winter Sports
-171,Ghost Tours
-171,Water Sports
-171,Board Games
-171,Motorcycle Tours
-171,Cultural Exploration
-171,Nightlife and Bars
-171,Local Music Performances
-172,Astrology and Stargazing
-172,Spa and Wellness
-173,Amusement Parks
-173,Food Markets
-173,Hot Air Balloon Rides
-173,Astrology and Stargazing
-173,Fitness Bootcamps
-174,Mindfulness Retreats
-174,Wildlife Safari
-175,Shopping
-175,Mindfulness Retreats
-175,Vintage Shopping
-176,Music Festivals
-176,Hiking
-176,Nature Reserves Visits
-176,Virtual Reality Experiences
-177,Local Music Performances
-177,Bird Watching
-177,Spa and Wellness
-177,Science Exhibitions
-177,Food Markets
-178,Mindfulness Retreats
-178,Cooking Classes
-178,Sporting Events
-179,Nightlife and Bars
-179,Botanical Gardens
-179,Fishing Trips
-179,Beach Relaxation
-179,Historical Tours
-179,Gaming and Casinos
-179,Food Markets
-179,Ghost Tours
-180,Bird Watching
-181,Cultural Exploration
-181,Ghost Tours
-181,Craft Beer Tasting
-181,Performing Arts
-181,Comedy Shows
-181,Amusement Parks
-181,Virtual Reality Experiences
-181,Crafting and DIY
-182,National Parks Exploration
-182,Astrology and Stargazing
-182,Crafting and DIY
-183,Science Exhibitions
-183,Meditation Retreats
-183,Scenic Drives
-183,Technology Conventions
-183,Gaming and Casinos
-183,Wildlife Safari
-183,Shopping
-184,Spa and Wellness
-184,Shopping
-184,Meditation Retreats
-184,Mindfulness Retreats
-184,Water Sports
-184,Fishing Trips
-185,Gaming and Casinos
-185,Astrology and Stargazing
-185,Shopping
-185,Winter Sports
-185,Sporting Events
-185,Sightseeing
-185,Botanical Gardens
-186,Yoga Retreats
-186,Comedy Shows
-186,Meditation Retreats
-186,Water Sports
-186,Historical Tours
-186,Performing Arts
-186,Cooking Classes
-186,Adventure Tours
-186,Cultural Exploration
-187,Bird Watching
-187,Cooking Classes
-187,Water Sports
-187,Comedy Shows
-187,Ghost Tours
-187,Music Festivals
-187,Fitness Bootcamps
-187,Local Music Performances
-188,Water Sports
-188,Wildlife Safari
-188,Performing Arts
-188,Ghost Tours
-188,Science Exhibitions
-188,National Parks Exploration
-188,Vintage Shopping
-189,Performing Arts
-189,Nature Reserves Visits
-189,Local Music Performances
-189,Science Exhibitions
-189,Fishing Trips
-190,National Parks Exploration
-190,Crafting and DIY
-190,Ghost Tours
-190,Anime and Cosplay
-190,Fishing Trips
-190,Board Games
-190,Fitness Bootcamps
-190,Technology Conventions
-190,Hiking
-191,Fitness Bootcamps
-191,Crafting and DIY
-191,Performing Arts
-192,Scenic Drives
-192,Sightseeing
-193,Music Festivals
-193,Fishing Trips
-193,Sightseeing
-193,Food Markets
-194,Performing Arts
-194,Spa and Wellness
-194,Vintage Shopping
-194,Board Games
-195,Hot Air Balloon Rides
-195,Nature Reserves Visits
-195,Local Music Performances
-195,Science Exhibitions
-195,Fishing Trips
-195,National Parks Exploration
-195,Scenic Drives
-195,Historical Tours
-195,Spa and Wellness
-196,Art and Museums
-196,Vintage Shopping
-196,Amusement Parks
-196,Historical Tours
-196,Crafting and DIY
-196,Bird Watching
-196,Sporting Events
-196,Local Music Performances
-197,Botanical Gardens
-197,Gaming and Casinos
-197,Cooking Classes
-197,Fishing Trips
-197,Dance Performances
-197,Sporting Events
-197,Anime and Cosplay
-197,Virtual Reality Experiences
-197,Science Exhibitions
-198,Dance Performances
-198,Anime and Cosplay
-199,Music Festivals
-200,Wildlife Safari
-201,Botanical Gardens
-201,Gaming and Casinos
-202,Science Exhibitions
-202,Yoga Retreats
-202,Music Festivals
-202,Local Music Performances
-202,Performing Arts
-202,Photography
-202,Culinary Experiences
-202,Water Sports
-202,Shopping
-203,Board Games
-204,Botanical Gardens
-204,Scenic Drives
-204,Ghost Tours
-204,Science Exhibitions
-205,Virtual Reality Experiences
-205,Vintage Shopping
-205,Hiking
-205,Science Exhibitions
-205,Yoga Retreats
-205,Mindfulness Retreats
-205,Winter Sports
-205,Sporting Events
-206,Cooking Classes
-206,Cultural Exploration
-206,Virtual Reality Experiences
-206,Historical Tours
-206,Wildlife Safari
-206,Science Exhibitions
-206,Crafting and DIY
-206,Book Festivals
-206,Music Festivals
-207,Vintage Shopping
-207,Food Markets
-207,Winter Sports
-207,Fishing Trips
-207,Craft Beer Tasting
-207,Virtual Reality Experiences
-207,Fitness Bootcamps
-207,Sporting Events
-208,Nature Reserves Visits
-208,Craft Beer Tasting
-208,Culinary Experiences
-208,Bird Watching
-208,Motorcycle Tours
-208,Meditation Retreats
-208,Historical Tours
-209,Crafting and DIY
-209,Technology Conventions
-209,Amusement Parks
-209,Art and Museums
-210,Motorcycle Tours
-210,Dance Performances
-211,Winter Sports
-211,Amusement Parks
-211,Science Exhibitions
-211,Bird Watching
-211,Beach Relaxation
-211,Historical Tours
-211,Mindfulness Retreats
-211,Art and Museums
-212,Technology Conventions
-212,Culinary Experiences
-212,Nightlife and Bars
-212,Motorcycle Tours
-212,Ghost Tours
-212,Comedy Shows
-212,Fitness Bootcamps
-213,Crafting and DIY
-214,Meditation Retreats
-215,Sightseeing
-215,Gaming and Casinos
-216,Photography
-216,Mindfulness Retreats
-216,Wildlife Safari
-216,Yoga Retreats
-216,Gaming and Casinos
-216,Craft Beer Tasting
-217,Vintage Shopping
-217,Music Festivals
-217,Hot Air Balloon Rides
-217,Historical Tours
-217,Beach Relaxation
-217,Scenic Drives
-217,Sightseeing
-218,Yoga Retreats
-218,Historical Tours
-218,Amusement Parks
-218,Crafting and DIY
-218,Hot Air Balloon Rides
-218,Shopping
-219,Fishing Trips
-219,Yoga Retreats
-219,Scenic Drives
-219,Ghost Tours
-220,Technology Conventions
-220,Meditation Retreats
-220,Fitness Bootcamps
-220,Adventure Tours
-220,Gaming and Casinos
-220,Cooking Classes
-220,Virtual Reality Experiences
-220,Music Festivals
-220,Scenic Drives
-221,Mindfulness Retreats
-221,Shopping
-221,Performing Arts
-221,Art and Museums
-221,Hot Air Balloon Rides
-221,Winter Sports
-222,Comedy Shows
-223,Craft Beer Tasting
-224,Cultural Exploration
-224,Astrology and Stargazing
-224,Board Games
-224,Craft Beer Tasting
-225,Ghost Tours
-226,Spa and Wellness
-226,Book Festivals
-226,Hot Air Balloon Rides
-226,Mindfulness Retreats
-226,Beach Relaxation
-227,Cooking Classes
-227,Board Games
-227,Technology Conventions
-227,Scenic Drives
-227,Hiking
-227,Amusement Parks
-227,Winter Sports
-227,Nature Reserves Visits
-227,Gaming and Casinos
-228,Photography
-228,National Parks Exploration
-228,Shopping
-228,Food Markets
-228,Fitness Bootcamps
-228,Book Festivals
-229,Amusement Parks
-229,Motorcycle Tours
-229,Beach Relaxation
-229,Book Festivals
-229,Photography
-229,Craft Beer Tasting
-229,Sporting Events
-229,Anime and Cosplay
-229,Hot Air Balloon Rides
-230,Shopping
-230,Astrology and Stargazing
-230,Music Festivals
-230,Bird Watching
-230,Mindfulness Retreats
-230,Crafting and DIY
-230,Yoga Retreats
-230,Virtual Reality Experiences
-231,Nature Reserves Visits
-231,Winter Sports
-231,Shopping
-231,Amusement Parks
-231,Science Exhibitions
-231,Fitness Bootcamps
-231,Wildlife Safari
-232,National Parks Exploration
-232,Board Games
-232,Local Music Performances
-233,Gaming and Casinos
-233,Bird Watching
-233,Music Festivals
-233,Science Exhibitions
-233,Motorcycle Tours
-233,Fishing Trips
-233,Crafting and DIY
-233,Historical Tours
-234,Shopping
-234,Nightlife and Bars
-235,Adventure Tours
-236,Gaming and Casinos
-236,Hot Air Balloon Rides
-236,Sporting Events
-236,Craft Beer Tasting
-237,Ghost Tours
-237,Mindfulness Retreats
-237,Crafting and DIY
-238,Beach Relaxation
-238,Wildlife Safari
-238,Crafting and DIY
-238,Cooking Classes
-238,Motorcycle Tours
-238,Gaming and Casinos
-239,Sporting Events
-239,Performing Arts
-239,Dance Performances
-240,Astrology and Stargazing
-240,Nature Reserves Visits
-240,Photography
-240,Crafting and DIY
-240,Botanical Gardens
-240,Fishing Trips
-240,Art and Museums
-241,Hot Air Balloon Rides
-241,Dance Performances
-241,Meditation Retreats
-242,Mindfulness Retreats
-242,Historical Tours
-242,Scenic Drives
-242,Cultural Exploration
-242,Water Sports
-242,Beach Relaxation
-243,Adventure Tours
-244,Meditation Retreats
-244,Adventure Tours
-245,Amusement Parks
-245,Cultural Exploration
-245,Beach Relaxation
-245,Culinary Experiences
-245,Nightlife and Bars
-245,Performing Arts
-245,Mindfulness Retreats
-245,Craft Beer Tasting
-246,Adventure Tours
-246,Performing Arts
-246,Crafting and DIY
-246,Local Music Performances
-246,Cooking Classes
-246,Astrology and Stargazing
-247,Meditation Retreats
-247,Fishing Trips
-247,Food Markets
-247,Botanical Gardens
-247,Virtual Reality Experiences
-248,Meditation Retreats
-248,Winter Sports
-249,Historical Tours
-249,Mindfulness Retreats
-249,Nature Reserves Visits
-249,Photography
-249,National Parks Exploration
-249,Yoga Retreats
-250,Book Festivals
-250,Cultural Exploration
-250,Scenic Drives
-251,Vintage Shopping
-251,Nightlife and Bars
-251,Mindfulness Retreats
-251,Anime and Cosplay
-251,Music Festivals
-251,Hot Air Balloon Rides
-252,Craft Beer Tasting
-253,Adventure Tours
-253,Music Festivals
-253,Virtual Reality Experiences
-253,Scenic Drives
-253,Cooking Classes
-253,Mindfulness Retreats
-253,Hot Air Balloon Rides
-253,Technology Conventions
-254,Fishing Trips
-254,Water Sports
-254,Hot Air Balloon Rides
-254,Amusement Parks
-254,National Parks Exploration
-254,Performing Arts
-254,Bird Watching
-254,Music Festivals
-255,Cultural Exploration
-255,Shopping
-255,Fitness Bootcamps
-255,Beach Relaxation
-255,Photography
-255,Spa and Wellness
-255,Amusement Parks
-256,Virtual Reality Experiences
-256,Dance Performances
-256,Spa and Wellness
-256,Music Festivals
-256,Amusement Parks
-256,Nightlife and Bars
-256,Winter Sports
-256,Craft Beer Tasting
-257,National Parks Exploration
-257,Scenic Drives
-257,Virtual Reality Experiences
-258,Comedy Shows
-258,Fishing Trips
-258,Wildlife Safari
-258,Ghost Tours
-259,Ghost Tours
-259,Photography
-259,Bird Watching
-260,Wildlife Safari
-260,Comedy Shows
-260,Book Festivals
-261,Shopping
-261,Comedy Shows
-261,Winter Sports
-261,Hot Air Balloon Rides
-261,Nightlife and Bars
-261,Spa and Wellness
-261,Historical Tours
-261,Gaming and Casinos
-261,Craft Beer Tasting
-262,Fishing Trips
-262,Photography
-262,Anime and Cosplay
-262,Amusement Parks
-262,Historical Tours
-262,Nature Reserves Visits
-262,Art and Museums
-262,Science Exhibitions
-262,Winter Sports
-263,Art and Museums
-263,Science Exhibitions
-263,Crafting and DIY
-263,Photography
-263,Amusement Parks
-263,Fitness Bootcamps
-263,Yoga Retreats
-264,Motorcycle Tours
-264,Nature Reserves Visits
-264,Fishing Trips
-264,Cooking Classes
-264,Board Games
-264,Sporting Events
-265,Local Music Performances
-265,Spa and Wellness
-265,National Parks Exploration
-265,Science Exhibitions
-265,Water Sports
-265,Culinary Experiences
-265,Astrology and Stargazing
-265,Adventure Tours
-266,Amusement Parks
-266,Meditation Retreats
-266,Photography
-266,Botanical Gardens
-266,Art and Museums
-267,Motorcycle Tours
-267,Beach Relaxation
-267,Nature Reserves Visits
-267,Meditation Retreats
-267,Local Music Performances
-267,Adventure Tours
-267,Hiking
-268,Nightlife and Bars
-268,Meditation Retreats
-269,Mindfulness Retreats
-269,Music Festivals
-269,Local Music Performances
-269,Botanical Gardens
-269,Photography
-269,Ghost Tours
-270,Music Festivals
-270,Shopping
-270,National Parks Exploration
-270,Yoga Retreats
-270,Art and Museums
-270,Botanical Gardens
-270,Winter Sports
-271,Comedy Shows
-271,Technology Conventions
-271,Music Festivals
-272,Wildlife Safari
-272,Bird Watching
-272,Mindfulness Retreats
-272,Gaming and Casinos
-272,Botanical Gardens
-272,Adventure Tours
-273,Yoga Retreats
-273,Botanical Gardens
-274,Sightseeing
-274,Board Games
-274,Shopping
-274,Art and Museums
-274,Music Festivals
-275,Technology Conventions
-275,Vintage Shopping
-276,Anime and Cosplay
-276,Book Festivals
-276,Local Music Performances
-276,Technology Conventions
-276,Meditation Retreats
-276,Music Festivals
-276,Gaming and Casinos
-276,Science Exhibitions
-277,Music Festivals
-277,Dance Performances
-277,Sightseeing
-277,Meditation Retreats
-277,Botanical Gardens
-278,Sightseeing
-278,Art and Museums
-278,Gaming and Casinos
-278,Cooking Classes
-279,Culinary Experiences
-279,Technology Conventions
-279,Mindfulness Retreats
-280,Fishing Trips
-280,Yoga Retreats
-281,Nature Reserves Visits
-281,Virtual Reality Experiences
-281,Crafting and DIY
-281,Bird Watching
-281,Art and Museums
-281,Winter Sports
-281,Performing Arts
-281,Local Music Performances
-282,Cooking Classes
-282,Astrology and Stargazing
-282,Ghost Tours
-282,Comedy Shows
-282,Sporting Events
-283,Bird Watching
-283,Motorcycle Tours
-283,Anime and Cosplay
-283,Beach Relaxation
-283,Vintage Shopping
-283,Comedy Shows
-283,Fitness Bootcamps
-283,Board Games
-283,Adventure Tours
-284,Yoga Retreats
-284,Scenic Drives
-284,Hiking
-284,Technology Conventions
-284,Art and Museums
-284,Shopping
-284,National Parks Exploration
-285,Fishing Trips
-285,Adventure Tours
-285,Comedy Shows
-285,Historical Tours
-285,Food Markets
-286,Crafting and DIY
-286,Wildlife Safari
-286,Water Sports
-287,Sightseeing
-287,Mindfulness Retreats
-287,Wildlife Safari
-287,Virtual Reality Experiences
-287,Scenic Drives
-287,Cultural Exploration
-287,Performing Arts
-287,Historical Tours
-287,Winter Sports
-288,Winter Sports
-288,Hot Air Balloon Rides
-288,Cultural Exploration
-288,Ghost Tours
-288,Adventure Tours
-288,Book Festivals
-288,Spa and Wellness
-289,Food Markets
-289,Scenic Drives
-289,Nature Reserves Visits
-289,Spa and Wellness
-289,Music Festivals
-289,Performing Arts
-290,Spa and Wellness
-290,Music Festivals
-290,Nightlife and Bars
-290,Amusement Parks
-290,Bird Watching
-290,Motorcycle Tours
-291,Crafting and DIY
-291,Anime and Cosplay
-291,Motorcycle Tours
-291,National Parks Exploration
-291,Nature Reserves Visits
-291,Food Markets
-291,Art and Museums
-291,Vintage Shopping
-292,Adventure Tours
-292,Art and Museums
-292,Nature Reserves Visits
-292,Ghost Tours
-293,Board Games
-294,Beach Relaxation
-294,Dance Performances
-294,Spa and Wellness
-294,Culinary Experiences
-294,Craft Beer Tasting
-295,Mindfulness Retreats
-295,Cultural Exploration
-295,Gaming and Casinos
-295,Astrology and Stargazing
-296,Spa and Wellness
-296,Botanical Gardens
-296,Culinary Experiences
-296,Vintage Shopping
-296,Anime and Cosplay
-297,Adventure Tours
-297,Botanical Gardens
-297,Water Sports
-297,Meditation Retreats
-297,Hot Air Balloon Rides
-297,Board Games
-297,Historical Tours
-298,Book Festivals
-298,Science Exhibitions
-298,Technology Conventions
-298,Craft Beer Tasting
-298,Scenic Drives
-298,Mindfulness Retreats
-298,Anime and Cosplay
-298,Bird Watching
-299,Nature Reserves Visits
-299,Fitness Bootcamps
-299,Yoga Retreats
-299,Hot Air Balloon Rides
-299,Wildlife Safari
-300,Vintage Shopping
+userId,activityId
+1,19
+1,34
+1,39
+1,20
+1,24
+1,17
+2,1
+2,9
+2,33
+2,28
+2,13
+2,43
+3,24
+3,23
+3,28
+3,10
+3,31
+3,7
+3,44
+4,18
+4,33
+4,10
+5,39
+5,37
+5,23
+5,12
+5,46
+5,27
+5,2
+5,29
+6,34
+6,15
+6,47
+6,33
+6,4
+6,18
+6,3
+6,31
+7,39
+7,32
+7,10
+8,3
+8,16
+8,15
+8,26
+8,8
+8,46
+8,10
+9,43
+9,32
+9,10
+9,46
+9,14
+9,36
+9,47
+10,31
+10,20
+11,9
+11,16
+11,17
+11,26
+11,22
+11,21
+11,45
+11,43
+12,28
+12,40
+12,6
+12,33
+13,39
+13,38
+13,30
+14,40
+14,26
+14,42
+14,5
+14,8
+14,43
+14,12
+14,35
+14,36
+15,1
+15,21
+15,44
+15,5
+15,38
+15,29
+16,9
+16,4
+17,19
+17,41
+17,26
+17,23
+17,21
+17,36
+18,47
+18,8
+18,43
+19,30
+19,23
+20,29
+20,16
+20,25
+20,12
+20,46
+20,32
+20,5
+21,42
+21,17
+21,30
+21,15
+22,23
+22,45
+23,46
+23,14
+23,25
+23,44
+23,42
+23,16
+23,5
+23,39
+24,47
+24,16
+25,6
+25,16
+25,20
+25,5
+25,19
+25,44
+25,9
+25,40
+26,28
+26,46
+26,34
+26,24
+26,33
+26,48
+26,44
+27,7
+27,4
+27,44
+27,36
+28,40
+29,15
+29,39
+29,38
+29,24
+29,7
+29,45
+29,31
+30,26
+30,36
+30,13
+31,34
+31,11
+31,42
+31,35
+32,40
+32,31
+32,15
+32,5
+32,11
+32,27
+33,13
+33,9
+33,29
+33,17
+33,32
+34,38
+34,16
+34,24
+34,35
+34,37
+34,13
+34,6
+35,30
+35,32
+35,2
+35,35
+35,41
+35,26
+35,19
+35,24
+35,27
+36,44
+36,36
+36,15
+36,47
+36,26
+36,7
+36,25
+36,23
+37,24
+37,22
+37,13
+37,37
+38,2
+38,6
+38,28
+39,8
+39,21
+39,32
+39,7
+39,41
+39,25
+39,45
+39,15
+39,28
+40,31
+41,18
+41,5
+41,15
+41,12
+41,29
+42,9
+42,32
+42,30
+42,31
+42,10
+42,39
+43,43
+43,2
+43,40
+43,29
+43,48
+43,41
+43,8
+43,21
+44,11
+44,47
+44,32
+45,19
+45,5
+45,28
+46,23
+46,6
+46,16
+47,20
+47,18
+47,35
+48,15
+48,21
+48,12
+48,39
+48,40
+48,9
+49,10
+49,27
+49,30
+49,32
+49,8
+49,44
+49,4
+50,48
+50,1
+50,16
+51,13
+51,47
+51,14
+51,24
+51,23
+52,19
+53,20
+53,33
+53,12
+53,21
+53,27
+53,43
+53,34
+53,42
+54,2
+55,26
+55,28
+56,4
+56,28
+56,8
+56,32
+56,15
+56,30
+56,36
+56,23
+56,18
+57,26
+57,2
+57,24
+57,42
+57,20
+57,12
+58,6
+58,12
+58,42
+58,13
+58,21
+58,37
+58,28
+58,11
+59,42
+59,7
+59,30
+59,47
+59,21
+59,11
+59,36
+59,8
+59,28
+60,44
+60,14
+61,38
+61,45
+61,24
+61,37
+61,3
+61,10
+62,28
+62,13
+62,1
+62,16
+63,47
+63,46
+63,24
+64,17
+64,7
+64,2
+64,10
+64,28
+64,48
+64,31
+64,20
+64,41
+65,42
+65,22
+66,38
+66,30
+66,33
+66,34
+67,3
+68,15
+68,14
+68,45
+68,19
+68,44
+68,40
+69,43
+70,44
+70,25
+70,4
+71,33
+71,5
+72,3
+72,6
+72,9
+72,33
+72,16
+72,35
+72,13
+72,39
+72,24
+73,29
+73,33
+73,13
+73,10
+73,24
+73,5
+73,20
+73,26
+74,23
+74,20
+74,27
+75,9
+75,28
+75,14
+75,35
+75,7
+75,36
+75,13
+75,6
+75,32
+76,14
+76,34
+76,21
+76,3
+76,7
+76,18
+76,26
+77,9
+77,39
+78,25
+79,8
+79,44
+79,17
+80,15
+80,35
+80,39
+80,1
+80,33
+80,40
+80,46
+81,19
+81,42
+81,12
+81,27
+81,4
+81,40
+81,33
+81,35
+82,13
+82,28
+82,26
+82,18
+82,44
+82,10
+83,44
+83,11
+83,30
+84,6
+84,25
+84,48
+84,10
+84,14
+84,39
+85,13
+85,36
+85,15
+85,30
+85,8
+85,34
+86,28
+86,16
+86,44
+86,35
+86,2
+86,32
+86,33
+86,25
+86,26
+87,26
+87,1
+87,14
+87,7
+87,18
+87,38
+87,3
+87,20
+88,17
+88,18
+88,25
+88,38
+88,8
+88,32
+88,48
+88,43
+89,44
+89,8
+89,1
+89,36
+89,17
+90,10
+90,26
+90,19
+90,35
+90,11
+90,43
+91,29
+91,17
+91,18
+92,43
+92,17
+92,46
+92,28
+92,2
+92,33
+92,4
+93,35
+93,8
+93,3
+93,4
+93,45
+93,10
+93,34
+93,28
+94,44
+94,41
+94,48
+94,2
+94,28
+94,45
+94,3
+94,23
+94,21
+95,37
+95,19
+96,7
+96,10
+96,3
+96,39
+96,33
+96,15
+97,35
+97,38
+97,45
+97,34
+97,28
+97,21
+97,17
+98,15
+98,41
+98,7
+98,32
+98,44
+98,27
+98,40
+98,1
+98,20
+99,39
+99,21
+99,38
+99,10
+99,22
+99,29
+99,15
+99,33
+100,9
+100,27
+100,26
+100,37
+101,3
+101,1
+101,48
+101,34
+101,30
+102,39
+102,18
+102,45
+103,10
+103,11
+103,32
+103,21
+104,27
+105,22
+105,5
+105,26
+106,35
+106,14
+106,2
+107,27
+107,42
+107,30
+107,36
+107,20
+108,3
+108,20
+108,7
+108,48
+108,2
+108,30
+109,14
+109,45
+110,19
+110,48
+110,16
+110,40
+110,46
+110,26
+110,9
+111,16
+111,22
+111,38
+111,18
+112,36
+112,40
+112,21
+112,22
+112,19
+112,11
+112,24
+112,47
+113,18
+113,8
+113,6
+113,27
+113,12
+113,23
+113,44
+113,22
+114,28
+114,16
+114,38
+114,36
+114,18
+114,8
+114,33
+114,31
+114,24
+115,1
+115,36
+115,29
+115,4
+115,34
+115,25
+115,40
+115,9
+116,45
+117,21
+117,11
+117,15
+117,16
+117,25
+117,35
+118,38
+118,43
+118,27
+118,2
+118,6
+118,37
+118,45
+118,18
+118,34
+119,22
+119,27
+119,47
+119,38
+119,31
+119,45
+120,42
+120,29
+120,20
+120,2
+121,36
+121,40
+122,18
+122,19
+122,34
+122,28
+122,24
+122,20
+122,17
+123,21
+123,9
+123,14
+123,30
+123,2
+124,20
+124,46
+125,14
+125,16
+125,24
+125,2
+125,22
+125,5
+125,20
+125,33
+126,48
+126,4
+126,45
+126,28
+126,3
+126,20
+127,22
+128,1
+128,13
+128,43
+128,26
+128,8
+129,8
+130,35
+130,48
+131,38
+132,48
+132,14
+132,9
+132,38
+132,8
+132,27
+132,10
+133,34
+134,28
+134,18
+134,47
+134,38
+134,48
+134,43
+134,24
+134,4
+134,26
+135,36
+136,11
+137,37
+137,10
+137,36
+137,22
+137,41
+137,5
+137,11
+137,34
+138,37
+139,6
+139,1
+139,21
+139,28
+139,16
+140,32
+140,33
+140,17
+140,8
+141,10
+141,42
+141,8
+141,20
+141,38
+141,27
+141,24
+141,14
+142,31
+142,3
+142,45
+142,33
+142,48
+142,7
+143,30
+143,3
+143,36
+143,12
+143,47
+143,39
+143,1
+144,27
+144,38
+144,30
+144,46
+144,21
+144,19
+144,2
+145,14
+145,42
+145,47
+145,10
+145,21
+145,29
+145,11
+146,15
+147,44
+147,21
+147,30
+148,38
+148,9
+148,37
+148,16
+148,24
+148,29
+148,21
+148,48
+149,16
+149,14
+149,13
+149,1
+149,37
+149,42
+149,17
+149,2
+150,43
+150,39
+150,48
+150,21
+151,14
+151,28
+151,43
+151,38
+151,23
+151,37
+151,2
+152,15
+152,23
+152,38
+152,1
+153,35
+153,9
+153,6
+153,45
+153,39
+153,2
+153,24
+154,7
+154,45
+154,30
+154,38
+154,1
+155,18
+155,13
+155,44
+155,7
+155,10
+156,8
+156,18
+156,26
+156,6
+156,34
+156,36
+156,40
+156,45
+156,10
+157,18
+157,14
+157,12
+157,22
+157,31
+157,1
+157,6
+157,33
+158,24
+159,11
+159,2
+159,16
+159,38
+160,22
+160,20
+160,34
+160,43
+160,12
+160,26
+160,6
+160,13
+161,27
+161,40
+161,35
+161,7
+162,8
+162,19
+162,1
+162,26
+162,15
+163,34
+163,7
+163,48
+163,20
+164,30
+164,43
+164,12
+164,4
+164,25
+164,22
+164,44
+164,3
+164,27
+165,12
+166,37
+166,26
+166,4
+166,32
+166,12
+166,41
+166,3
+167,7
+167,15
+167,2
+167,43
+167,40
+167,37
+167,24
+167,1
+168,41
+168,45
+168,8
+169,39
+169,9
+169,31
+170,43
+170,16
+170,11
+170,13
+170,40
+171,42
+171,44
+171,39
+171,13
+171,46
+171,41
+172,21
+173,27
+173,5
+173,30
+173,43
+173,13
+173,28
+173,38
+173,24
+173,15
+174,30
+174,35
+175,27
+175,13
+175,7
+175,28
+175,40
+175,38
+175,33
+175,34
+176,23
+176,8
+177,3
+177,19
+177,41
+178,48
+178,20
+178,43
+178,2
+178,18
+179,25
+179,18
+179,12
+179,23
+179,37
+179,17
+180,18
+180,12
+180,28
+180,19
+180,10
+180,35
+181,8
+181,48
+181,46
+181,28
+181,14
+181,30
+181,39
+181,3
+182,48
+183,23
+183,4
+183,45
+183,7
+183,9
+184,25
+184,13
+184,5
+184,10
+185,1
+185,43
+186,40
+186,34
+186,15
+186,22
+187,12
+187,47
+187,18
+187,6
+187,30
+187,46
+187,14
+187,40
+188,48
+188,20
+188,36
+189,7
+189,48
+189,40
+190,38
+190,10
+190,26
+191,22
+191,18
+191,44
+191,26
+191,36
+192,24
+192,43
+192,18
+192,1
+192,31
+192,22
+192,36
+192,6
+192,32
+193,36
+194,8
+194,33
+194,29
+194,18
+194,35
+194,16
+195,33
+195,24
+195,13
+195,7
+195,6
+195,34
+196,7
+197,43
+197,18
+197,28
+197,10
+197,3
+197,21
+197,15
+197,33
+197,44
+198,22
+198,47
+198,10
+199,13
+199,48
+199,7
+199,20
+199,31
+199,24
+199,37
+199,29
+200,20
+200,8
+200,2
+201,1
+201,37
+201,16
+201,18
+201,13
+202,34
+202,21
+203,15
+203,6
+203,23
+203,35
+203,29
+203,26
+203,24
+203,33
+204,48
+205,26
+205,10
+205,41
+205,8
+205,2
+205,1
+205,17
+206,11
+206,42
+206,21
+206,48
+206,30
+207,36
+207,32
+207,18
+208,19
+208,18
+208,20
+208,32
+209,8
+209,35
+210,39
+210,34
+210,31
+210,13
+210,35
+210,7
+210,42
+210,12
+211,35
+211,28
+211,1
+211,48
+211,29
+211,12
+212,18
+212,23
+212,8
+212,41
+212,48
+212,40
+212,2
+212,11
+213,16
+213,39
+213,25
+213,24
+213,19
+213,3
+213,32
+213,35
+214,14
+214,6
+214,11
+214,21
+214,26
+215,7
+215,39
+215,43
+215,26
+215,45
+215,37
+216,4
+216,41
+216,7
+216,26
+216,29
+217,41
+217,9
+217,19
+217,36
+217,26
+217,35
+217,45
+217,4
+217,43
+218,6
+218,3
+218,14
+219,9
+219,40
+219,22
+219,12
+219,18
+219,29
+220,41
+220,23
+220,31
+220,30
+220,16
+220,19
+220,45
+220,44
+221,29
+221,17
+221,21
+221,46
+221,34
+221,23
+221,1
+222,22
+222,2
+222,28
+222,29
+222,13
+222,34
+222,24
+222,41
+223,40
+223,46
+223,33
+223,1
+223,30
+224,25
+224,22
+224,9
+225,6
+225,40
+225,19
+225,11
+225,1
+225,47
+225,34
+225,21
+225,38
+226,44
+226,31
+226,19
+226,4
+226,23
+226,13
+226,10
+227,18
+227,7
+227,40
+228,39
+228,32
+229,42
+229,22
+229,28
+229,44
+229,39
+230,45
+230,17
+230,16
+230,5
+230,15
+231,10
+231,48
+231,19
+231,18
+231,23
+231,3
+231,42
+231,31
+232,37
+232,21
+232,42
+232,17
+232,4
+232,29
+232,44
+232,41
+232,24
+233,11
+233,43
+233,24
+233,37
+233,27
+233,42
+233,16
+233,15
+234,28
+234,23
+234,9
+234,16
+235,7
+235,22
+235,30
+235,33
+236,12
+236,24
+236,8
+237,46
+237,17
+237,29
+237,31
+238,9
+238,36
+238,31
+238,42
+238,18
+238,48
+238,2
+238,27
+239,12
+239,21
+240,40
+240,10
+240,19
+240,33
+240,42
+240,5
+240,15
+240,23
+240,34
+241,22
+241,43
+242,20
+242,33
+243,20
+243,9
+243,46
+244,6
+244,21
+244,41
+244,24
+244,4
+245,3
+245,18
+245,29
+245,44
+246,43
+246,2
+247,41
+247,42
+247,34
+247,19
+247,48
+247,25
+248,17
+248,6
+249,16
+249,41
+249,26
+249,24
+250,34
+250,21
+250,42
+250,12
+250,14
+251,13
+251,25
+251,37
+251,45
+251,34
+252,39
+252,25
+252,14
+252,5
+252,35
+252,7
+252,21
+252,33
+253,7
+253,5
+253,39
+253,1
+253,2
+253,9
+253,26
+253,28
+254,6
+254,22
+254,32
+254,38
+254,48
+255,3
+255,36
+255,1
+255,34
+255,5
+256,47
+256,36
+256,7
+256,21
+256,26
+257,31
+257,43
+257,4
+257,28
+257,35
+257,19
+257,21
+257,32
+258,45
+258,32
+258,40
+258,39
+258,29
+258,8
+258,25
+259,24
+259,13
+259,27
+259,22
+259,7
+259,25
+259,28
+259,26
+260,35
+260,48
+260,31
+261,14
+261,2
+261,35
+261,45
+261,26
+261,21
+261,37
+262,22
+262,2
+262,21
+262,40
+262,18
+262,25
+262,42
+262,13
+262,46
+263,23
+263,4
+263,44
+263,10
+263,5
+263,39
+263,22
+264,10
+264,37
+264,47
+264,28
+264,34
+264,15
+265,2
+265,43
+265,26
+265,39
+265,35
+266,14
+267,31
+267,18
+267,39
+267,14
+267,1
+268,5
+268,32
+268,14
+269,45
+269,4
+269,16
+269,36
+269,31
+269,9
+269,35
+269,41
+269,44
+270,28
+270,5
+270,46
+270,41
+270,13
+270,40
+270,17
+270,25
+270,32
+271,3
+271,32
+271,41
+271,42
+272,40
+272,17
+272,22
+272,11
+272,25
+273,32
+273,1
+273,41
+273,24
+273,2
+273,16
+273,43
+273,4
+274,11
+274,3
+274,5
+274,31
+274,7
+274,21
+274,8
+274,35
+275,16
+275,25
+275,39
+275,8
+275,1
+275,35
+275,14
+275,4
+275,26
+276,38
+276,45
+276,44
+277,9
+277,12
+277,18
+277,35
+277,30
+277,2
+277,21
+277,38
+278,26
+278,41
+278,34
+278,31
+279,15
+279,44
+280,27
+281,14
+281,48
+281,40
+282,42
+282,36
+282,25
+282,1
+282,44
+282,45
+282,5
+282,40
+283,28
+283,32
+283,48
+284,12
+285,42
+285,36
+285,13
+285,30
+285,1
+285,18
+286,23
+286,16
+286,36
+287,29
+287,12
+287,3
+287,26
+287,44
+288,15
+288,7
+288,30
+288,34
+288,44
+288,43
+288,41
+289,41
+289,3
+289,27
+289,25
+289,32
+289,4
+289,16
+289,45
+289,5
+290,14
+290,10
+290,26
+290,24
+290,29
+290,21
+290,20
+290,5
+290,3
+291,25
+292,14
+292,4
+292,29
+292,11
+292,37
+293,2
+293,3
+293,48
+293,43
+293,1
+294,19
+294,15
+294,33
+295,26
+295,36
+295,29
+295,15
+295,31
+295,2
+295,22
+295,8
+296,44
+296,10
+296,33
+296,22
+296,14
+297,37
+297,36
+297,35
+298,26
+298,22
+298,3
+298,5
+298,11
+298,43
+299,24
+299,23
+299,18
+300,31
+300,36
+300,34
+300,17

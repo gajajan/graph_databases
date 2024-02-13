@@ -1,6 +1,10 @@
 {
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/likes.csv" } },
-    "extractor": { "csv": {} },
+    "extractor": {
+      "csv": {
+        "columns": ["userId:integer","activityName:string"]
+      } 
+    },
     "transformers": [
       { "merge": { "joinFieldName": "userId", "lookup": "User.userId" } },
       { "edge": { "class": "LIKES",

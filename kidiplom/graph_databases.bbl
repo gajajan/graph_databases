@@ -1,0 +1,334 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{practicalGremlin}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=61e73b8ee0c5bcb2a059634709efae0a}{%
+           family={Lawrence},
+           familyi={L\bibinitperiod},
+           given={Kelvin\bibnamedelima R.},
+           giveni={K\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{61e73b8ee0c5bcb2a059634709efae0a}
+      \strng{fullhash}{61e73b8ee0c5bcb2a059634709efae0a}
+      \strng{bibnamehash}{61e73b8ee0c5bcb2a059634709efae0a}
+      \strng{authorbibnamehash}{61e73b8ee0c5bcb2a059634709efae0a}
+      \strng{authornamehash}{61e73b8ee0c5bcb2a059634709efae0a}
+      \strng{authorfullhash}{61e73b8ee0c5bcb2a059634709efae0a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Practical gremlin: An apache tinkerpop tutorial}
+      \field{month}{5}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://kelvinlawrence.net/book/PracticalGremlin.html
+      \endverb
+      \verb{url}
+      \verb https://kelvinlawrence.net/book/PracticalGremlin.html
+      \endverb
+    \endentry
+    \entry{inAction}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4ecb7e92e8010a16cd144444a881acba}{%
+           family={Bechberger},
+           familyi={B\bibinitperiod},
+           given={Dave},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c29539f722523a05a03e53e1c04661a6}{%
+           family={Perryman},
+           familyi={P\bibinitperiod},
+           given={Josh},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Manning}%
+      }
+      \strng{namehash}{1a5fa5eb175563cee2deda98ed13f388}
+      \strng{fullhash}{1a5fa5eb175563cee2deda98ed13f388}
+      \strng{bibnamehash}{1a5fa5eb175563cee2deda98ed13f388}
+      \strng{authorbibnamehash}{1a5fa5eb175563cee2deda98ed13f388}
+      \strng{authornamehash}{1a5fa5eb175563cee2deda98ed13f388}
+      \strng{authorfullhash}{1a5fa5eb175563cee2deda98ed13f388}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st Edition}
+      \field{isbn}{978-1-61729-637-6}
+      \field{title}{Graph databases in action: Examples in Gremlin}
+      \field{year}{2020}
+    \endentry
+    \entry{graphDatabases}{book}{}
+      \name{author}{3}{}{%
+        {{hash=eaed36ba79bb2c6095773ccc079ca1d0}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+        {{hash=de1f6562412a8121370e1b6d96e5e72d}{%
+           family={Webber},
+           familyi={W\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2be209985a2c19f4ea597e15b8093025}{%
+           family={Eifrem},
+           familyi={E\bibinitperiod},
+           given={Emil},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O’Reilly Media, Inc.}%
+      }
+      \strng{namehash}{77edf458bcda3ac3061f8e216386c363}
+      \strng{fullhash}{77edf458bcda3ac3061f8e216386c363}
+      \strng{bibnamehash}{77edf458bcda3ac3061f8e216386c363}
+      \strng{authorbibnamehash}{77edf458bcda3ac3061f8e216386c363}
+      \strng{authornamehash}{77edf458bcda3ac3061f8e216386c363}
+      \strng{authorfullhash}{77edf458bcda3ac3061f8e216386c363}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd Edition}
+      \field{isbn}{978-1-491-93200-1}
+      \field{title}{Graph databases}
+      \field{year}{2015}
+    \endentry
+    \entry{practitioner}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7e3a56b041e27498551bce0851ab3e94}{%
+           family={Broecheler},
+           familyi={B\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=785aeb7f0dd378069d9b3cbd7e06759e}{%
+           family={Gosnell},
+           familyi={G\bibinitperiod},
+           given={Denise\bibnamedelima Koessler},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O’Reilly Media, Inc.}%
+      }
+      \strng{namehash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{fullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{bibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{authorbibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{authornamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{authorfullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st Edition}
+      \field{isbn}{978-1-492-04407-9}
+      \field{title}{Practitioner’s Guide to graph data: Applying graph thinking and graph technologies to solve complex problems}
+      \field{year}{2020}
+    \endentry
+    \entry{ionos}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=712b5363adce54e7c1daea15779b5287}{%
+           family={IONOS},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{fullhash}{712b5363adce54e7c1daea15779b5287}
+      \strng{bibnamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authorbibnamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authornamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authorfullhash}{712b5363adce54e7c1daea15779b5287}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{IONOS Digital Guide}
+      \field{month}{10}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
+      \endverb
+      \verb{url}
+      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
+      \endverb
+    \endentry
+    \entry{macrometa}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=feacd4d82692591f68b105d87e24e41f}{%
+           family={Macrometa},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{feacd4d82692591f68b105d87e24e41f}
+      \strng{fullhash}{feacd4d82692591f68b105d87e24e41f}
+      \strng{bibnamehash}{feacd4d82692591f68b105d87e24e41f}
+      \strng{authorbibnamehash}{feacd4d82692591f68b105d87e24e41f}
+      \strng{authornamehash}{feacd4d82692591f68b105d87e24e41f}
+      \strng{authorfullhash}{feacd4d82692591f68b105d87e24e41f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Macrometa}
+      \verb{urlraw}
+      \verb https://www.macrometa.com/docs/graphs/graph-concepts/graphs-and-indexes
+      \endverb
+      \verb{url}
+      \verb https://www.macrometa.com/docs/graphs/graph-concepts/graphs-and-indexes
+      \endverb
+    \endentry
+    \entry{neo4jModelling}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4f16d2b1f38f316b477da6dbf0e9bc79}{%
+           family={Neo4j},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{fullhash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{bibnamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{authorbibnamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{authornamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{authorfullhash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \field{extraname}{1}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Neo4j Graph Data Platform}
+      \verb{urlraw}
+      \verb https://neo4j.com/developer/guide-data-modeling/
+      \endverb
+      \verb{url}
+      \verb https://neo4j.com/developer/guide-data-modeling/
+      \endverb
+    \endentry
+    \entry{graphAlgorithms}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6ec5ddd69ddd6dcb80c48b037fff6b54}{%
+           family={Needham},
+           familyi={N\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ca915f7583058f316af487fa1416a9be}{%
+           family={Hodler},
+           familyi={H\bibinitperiod},
+           given={Amy\bibnamedelima E.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O’Reilly Media, Inc.}%
+      }
+      \strng{namehash}{e3a7806cabc758a58d3db2789774e36e}
+      \strng{fullhash}{e3a7806cabc758a58d3db2789774e36e}
+      \strng{bibnamehash}{e3a7806cabc758a58d3db2789774e36e}
+      \strng{authorbibnamehash}{e3a7806cabc758a58d3db2789774e36e}
+      \strng{authornamehash}{e3a7806cabc758a58d3db2789774e36e}
+      \strng{authorfullhash}{e3a7806cabc758a58d3db2789774e36e}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st Edition}
+      \field{isbn}{978-1-492-05781-9}
+      \field{title}{Graph Algorithms: Practical Examples in Apache Spark and Neo4j}
+      \field{year}{2019}
+    \endentry
+    \entry{neo4jGds}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4f16d2b1f38f316b477da6dbf0e9bc79}{%
+           family={Neo4j},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{fullhash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{bibnamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{authorbibnamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{authornamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \strng{authorfullhash}{4f16d2b1f38f316b477da6dbf0e9bc79}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Neo4j Graph Data Platform}
+      \verb{urlraw}
+      \verb https://neo4j.com/docs/graph-data-science/2.6/algorithms/
+      \endverb
+      \verb{url}
+      \verb https://neo4j.com/docs/graph-data-science/2.6/algorithms/
+      \endverb
+    \endentry
+    \entry{graphIntroduction}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fe1b56b5024e175361f5c726be88539a}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Robin\bibnamedelima James},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{fe1b56b5024e175361f5c726be88539a}
+      \strng{fullhash}{fe1b56b5024e175361f5c726be88539a}
+      \strng{bibnamehash}{fe1b56b5024e175361f5c726be88539a}
+      \strng{authorbibnamehash}{fe1b56b5024e175361f5c726be88539a}
+      \strng{authornamehash}{fe1b56b5024e175361f5c726be88539a}
+      \strng{authorfullhash}{fe1b56b5024e175361f5c726be88539a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4th Edition}
+      \field{isbn}{0-582-24993-7}
+      \field{title}{Introduction to graph theory}
+      \field{year}{1996}
+      \true{nocite}
+    \endentry
+    \entry{Ramba_2016}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b6520a2c04b83aad878a28e3fd8549dd}{%
+           family={Ramba},
+           familyi={R\bibinitperiod},
+           given={Jaroslav},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6520a2c04b83aad878a28e3fd8549dd}
+      \strng{fullhash}{b6520a2c04b83aad878a28e3fd8549dd}
+      \strng{bibnamehash}{b6520a2c04b83aad878a28e3fd8549dd}
+      \strng{authorbibnamehash}{b6520a2c04b83aad878a28e3fd8549dd}
+      \strng{authornamehash}{b6520a2c04b83aad878a28e3fd8549dd}
+      \strng{authorfullhash}{b6520a2c04b83aad878a28e3fd8549dd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Úvod do grafové terminologie | Ramba.cz}
+      \field{month}{11}
+      \field{title}{Ing. Jaroslav Ramba}
+      \field{year}{2016}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.ramba.cz/blog/grafova-terminologie-a-dostupne-technologie
+      \endverb
+      \verb{url}
+      \verb https://www.ramba.cz/blog/grafova-terminologie-a-dostupne-technologie
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

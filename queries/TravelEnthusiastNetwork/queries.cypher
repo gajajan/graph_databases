@@ -1,19 +1,20 @@
 //USERS'S NEIGHBORHOOD
 
 //first neighborhood
-WITH 10 AS x_id
-MATCH (u:User {userId:x_id})-[:FOLLOWS]->(u2) RETURN u,u2;
+WITH 6 AS x_id
+MATCH (:User {userId:x_id})-[:FOLLOWS]->(f)
+RETURN f.userId, f.firstName, f.lastName;
 
 //second neighborhood
-WITH 10 AS x_id
-MATCH (u:User {userId:x_id})-[:FOLLOWS*2]->(u2)-[:FOLLOWS]->(u3)
-RETURN u3;
+WITH 6 AS x_id
+MATCH (u:User {userId:x_id})-[:FOLLOWS*2]->(fof)
+RETURN DISTINCT fof.userId, fof.firstName, fof.lastName;
 
 //second neighborhood without first neighborhood
-WITH 10 AS x_id
-MATCH (u:User {userId:x_id})-[:FOLLOWS]->(u2)-[:FOLLOWS]->(u3)
-WHERE NOT exists((u)-[:FOLLOWS]->(u3))  AND u3 <> u
-RETURN u3;
+WITH 6 AS x_id
+MATCH (u:User {userId:x_id})-[:FOLLOWS*2]->(fof)
+WHERE NOT exists((u)-[:FOLLOWS]->(fof))  AND fof <> u
+RETURN DISTINCT fof;
 
 
 // DESTINATION RECOMMENDATION
@@ -27,10 +28,10 @@ WHERE ALL(x IN activities WHERE (d)-[:OFFERS]->(x))
 RETURN d.destinationName;
 
 //offers 3 destinations that the user hasnt visited
+//destinations has to offer all activities in list
 //returns destination's properties and
 // rating of this destination
-//offers 3 destinations that the user hasnt visited
-//offers 3 destinations that the user hasnt visited
+//order by rating average
 WITH ["Book Festivals", "Fitness Bootcamps", "Craft Beer Tasting"] AS activity_list
 MATCH (a:TravelActivity) WHERE a.activityName IN activity_list
 WITH collect(a) AS activities
@@ -53,25 +54,27 @@ ORDER BY count DESC;
 
 //returns a destination and
 // a number indicating how many times user visited specific destination
-WITH 55 AS user_id
+
+WITH 6 AS user_id
 MATCH (u:User {userId:user_id})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d:Destination)
 RETURN d.destinationName, COUNT(d) AS count
-ORDER BY count DESC;
+ORDER BY count DESC, d.destinationName ASC;
 
 
 //USER'S TRAVEL BUDDIES
 
 //returns users
-WITH 50 AS user_id
-MATCH (u:User {userId:user_id})-[:PARTICIPATED]->(:Journey)<-[:PARTICIPATED]-(travel_buddies:User)
-WHERE NOT travel_buddies IS u
-RETURN DISTINCT travel_buddies;
+WITH 3 AS user_id
+MATCH (u:User {userId:user_id})-[:PARTICIPATED]->(:Journey)<-[:PARTICIPATED]-(f:User)
+WHERE NOT f IS u
+RETURN DISTINCT f.userId AS userId, f.firstName AS firstName, f.lastName AS lastName, COUNT (f) AS count
+ORDER BY firstName, lastName
 
 
 //THE MOST FAVOURITE MONTH FOR VISITING SPECIFIC DESTINATION
 
 //returns number indicating month in year
-MATCH (d:Destination {destinationName: "Paris"})<-[:LED_TO]-(j:Journey)<-[:ABOUT]-(r:Rating)
+MATCH (d:Destination {destinationId: 1})<-[:LED_TO]-(j:Journey)<-[:ABOUT]-(r:Rating)
 WITH d, j.journeyStart.month AS month, coalesce(avg(r.rating), 'Not rated.') as rate
 ORDER BY rate DESC
 LIMIT 1

@@ -1,6 +1,10 @@
 {
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/wrote_about.csv" } },
-    "extractor": { "csv": {} },
+    "extractor": {
+      "csv": {
+        "columns": ["userId:integer","ratingId:integer","journeyId:integer"]
+      }
+    },
     "transformers": [
       { "merge": { "joinFieldName": "ratingId", "lookup": "Rating.ratingId" } },
       { "edge": { "class": "WROTE",
