@@ -32,30 +32,32 @@ RETURN d.destinationName;
 //returns destination's properties and
 // rating of this destination
 //order by rating average
-WITH ["Book Festivals", "Fitness Bootcamps", "Craft Beer Tasting"] AS activity_list
+WITH ["Book Festivals", "Fitness Bootcamps"] AS activity_list
 MATCH (a:TravelActivity) WHERE a.activityName IN activity_list
 WITH collect(a) AS activities
 MATCH (d:Destination)
 WHERE ALL(a IN activities WHERE (d)-[:OFFERS]->(a))
-AND NOT exists ( (:User {userId: 151})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d) )
+AND NOT exists ( (:User {userId: 3})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d) )
 OPTIONAL MATCH (d)<-[:LED_TO]-()<-[:ABOUT]-(r:Rating)
 WITH d, coalesce(avg(r.rating), "Not rated.") as rate
 RETURN d.destinationName AS name, rate
 ORDER BY rate DESC;
 
 //3 unvisited destinations offering activities, that user likes
-MATCH (u:User {userId:299})-[:LIKES]->(a:TravelActivity)<-[:OFFERS]-(d:Destination)
+MATCH (u:User {userId:3})-[:LIKES]->(a:TravelActivity)<-[:OFFERS]-(d:Destination)
 WHERE NOT (u)-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d)
-RETURN d.destinationName AS destination, COUNT(a) AS count, COLLECT(a.activityName) AS activities
-ORDER BY count DESC;
-
+OPTIONAL MATCH (d)<-[:LED_TO]-()<-[:ABOUT]-(r:Rating)
+WITH d, coalesce(avg(r.rating), "Not rated.") as rate
+RETURN d.destinationName AS name, rate
+ORDER BY rate DESC
+LIMIT 3;
 
 //USER'S VISITED DESTINATIONS
 
 //returns a destination and
 // a number indicating how many times user visited specific destination
 
-WITH 6 AS user_id
+WITH 3 AS user_id
 MATCH (u:User {userId:user_id})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d:Destination)
 RETURN d.destinationName, COUNT(d) AS count
 ORDER BY count DESC, d.destinationName ASC;

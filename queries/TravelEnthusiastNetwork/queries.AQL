@@ -1,0 +1,127 @@
+
+//first neighboorhood
+FOR f IN OUTBOUND @user FOLLOWS
+    RETURN f
+
+//second neighboorhood
+FOR fof IN 2..2 OUTBOUND @user FOLLOWS
+    RETURN DISTINCT fof
+
+//second neighboorhood without first
+LET f = (
+    FOR v IN OUTBOUND @user FOLLOWS
+        RETURN DISTINCT v
+)
+
+FOR fof IN 2..2 OUTBOUND @user FOLLOWS
+    FILTER fof._id != startVertex
+    FILTER fof not in f
+    RETURN DISTINCT fof
+
+//visited destinations
+FOR journey IN OUTBOUND @user PARTICIPATED
+    FOR d IN OUTBOUND journey LED_TO
+        COLLECT name = d.destinationName WITH COUNT INTO count
+        SORT count DESC, name
+        RETURN {name, count}
+
+//travel buddies
+FOR journey IN OUTBOUND @user PARTICIPATED
+    FOR f IN INBOUND journey PARTICIPATED
+        FILTER f._id != @user
+        COLLECT key = f._key, firstName = f.firstName, lastName = f.lastName WITH COUNT INTO count
+        SORT firstName, lastName
+        RETURN { key, firstName, lastName, count }
+
+//destinations which offer activities in list
+FOR d IN Destination
+    LET matching_activities = (
+        FOR v IN OUTBOUND d OFFERS
+            FILTER v.activityName IN @activity_list
+            RETURN DISTINCT v
+    )
+    FILTER LENGTH(matching_activities) == LENGTH(@activity_list)
+RETURN d
+
+//destinations with most activity offers
+FOR activity IN OUTBOUND @user LIKES
+    FOR d IN INBOUND activity OFFERS
+        COLLECT name = d.destinationName WITH COUNT INTO count
+        SORT count DESC
+        RETURN {name, count}
+
+//destination recommendation based on activity list
+LET destinations = (
+    FOR d IN Destination
+        LET matching_activities = (
+            FOR v IN OUTBOUND d OFFERS
+                FILTER v.activityName IN @activity_list
+                RETURN DISTINCT v
+        )
+        FILTER LENGTH(matching_activities) == LENGTH(@activity_list)
+        RETURN d._id
+)
+
+LET filteredDestinations = (
+    FOR destination IN destinations
+        LET paths = (
+            FOR j IN OUTBOUND @user PARTICIPATED
+                FOR d IN OUTBOUND j LED_TO
+                    FILTER d._id == destination
+                    RETURN 1
+        )
+        FILTER LENGTH(paths) == 0
+        RETURN destination
+)
+
+FOR d IN filteredDestinations
+    LET averageRating = AVG(
+        FOR r IN 2..2 INBOUND d LED_TO, ABOUT
+            RETURN r.rating
+    )
+    SORT averageRating DESC
+    LET destination = DOCUMENT(d)
+    RETURN {destination, averageRating: averageRating ? : 'not rated'}
+
+//destination recommendation based on user's favourite activities
+LET destinations = (
+    FOR d IN 2..2 OUTBOUND @user LIKES, INBOUND OFFERS
+        RETURN DISTINCT d._id
+)
+
+LET filteredDestinations = (
+    FOR destination IN destinations
+        LET paths = (
+            FOR d IN 2..2 OUTBOUND @user PARTICIPATED, LED_TO
+                FILTER d._id == destination
+                RETURN 1
+        )
+        FILTER LENGTH(paths) == 0
+        RETURN destination
+)
+
+FOR d IN filteredDestinations
+    LET averageRating = AVG(
+        FOR r IN 2..2 INBOUND d LED_TO, ABOUT
+            RETURN r.rating
+    )
+    SORT averageRating DESC
+    LIMIT 3
+    LET destination = DOCUMENT(d)
+    RETURN {destination, averageRating: averageRating ? : 'not rated'}
+
+//favourite month
+FOR j IN INBOUND @destination LED_TO
+    COLLECT monthAggregate = DATE_MONTH(j.journeyStart) INTO months
+    LET monthJourneys = (
+        FOR m IN months
+            RETURN m.j._id
+    )
+    LET averageRating = AVG(
+        FOR j IN monthJourneys
+            FOR r IN INBOUND j ABOUT
+                RETURN r.rating
+    )
+    SORT averageRating DESC
+    LIMIT 1
+    RETURN { month: monthAggregate, averageRating: averageRating ? : 'not rated' }
