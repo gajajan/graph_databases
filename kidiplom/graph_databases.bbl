@@ -271,6 +271,34 @@
       \verb https://neo4j.com/docs/graph-data-science/2.6/algorithms/
       \endverb
     \endentry
+    \entry{astar}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf
+      \endverb
+      \verb{url}
+      \verb https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf
+      \endverb
+    \endentry
+    \entry{disk}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://belohlavek.inf.upol.cz/vyuka/DiskretniStruktury-2020.pdf
+      \endverb
+      \verb{url}
+      \verb http://belohlavek.inf.upol.cz/vyuka/DiskretniStruktury-2020.pdf
+      \endverb
+    \endentry
     \entry{graphIntroduction}{book}{}
       \name{author}{1}{}{%
         {{hash=fe1b56b5024e175361f5c726be88539a}{%

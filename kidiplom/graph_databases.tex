@@ -127,6 +127,10 @@ science}
 \usepackage{lipsum, longtable, graphicx, amssymb, multirow, tabularx}
 \graphicspath{ {./graphics/} }
 
+\newacronym{REPL}{REPL}{Read–eval–print loop}
+\newacronym{ACID}{ACID}{Atomicity Consistency Isolation Durability}
+\makeglossaries
+
 \begin{document}
 %% Sazba úvodních stran -- titulní, s bibliografickými údaji, s
 %% anotací a klíčovými slovy, s poděkováním a prohlášením, s obsahem a
@@ -161,6 +165,7 @@ V páté kapitole je nahlédnuto na některé z algoritmů využívaných v graf
 \section{Základní pojmy z teorie grafů}
 %tato kapitola byla napsána pomocí
 %knihy	Diskrétní struktury 1 Radim Bělohlávek
+%http://belohlavek.inf.upol.cz/vyuka/DiskretniStruktury-2020.pdf
 %		https://is.muni.cz/el/fi/podzim2015/IB000/um/jine/DIM-distext05.pdf
 %		https://home.zcu.cz/~ryjacek/students/DMA/skripta/8.pdf
 %		Introduction to Graph Theory - Robin J. Wilson
@@ -311,7 +316,7 @@ Pomocí vrcholů a hran lze často lépe vystihnout dané problémy, než např�
 
 Ve spoustě případů je dotazování prostřednictvím grafových dotazovacích jazyků přehlednější než dotazy v jiných databázích. To platí především pro dotazy pracující se vztahy mezi entitami.
 
-Grafové databáze jsou obecně schema-less. Tedy struktura dat se může měnit v závislosti na potřebách aplikace. Přidávání nových vlastností, vrcholů, hran a labelů nenarušuje chod aplikace. Což přináší pozitiva pro vývojáře a budoucí vývoj.
+Grafové databáze obecně nevynucují definování schématu. Často se označují jako schema-less. Tedy struktura dat se může měnit v závislosti na potřebách aplikace. Přidávání nových vlastností, vrcholů, hran a labelů nenarušuje chod aplikace. Což přináší pozitiva pro vývojáře a budoucí vývoj. Ovšem základní model dat by měl být znám, abychom mohli s daty pracovat.
 
 Dotazy v grafových databázích mohou vracet různé typy dat, aniž by ztrácely výsledky smysl. V relačních databázích lze v jednom dotazu vracet výsledky pro různé entity pomocí klauzule UNION, ale vrácená data potrádají smysl, neboť vrácená tabulka obsahuje tato data různých entit smíchaná dohromady. V grafových databázích toho lze využít například k získání všech dostupných informací ke konkrétnímu zákazníkovi, které máme v databázi,  v rámci jednoho dotazu.
 
@@ -331,14 +336,15 @@ Grafovým databázím též dělají problém dotazy, které operují nad celým
 Jelikož jsou grafové databáze často schema-less může docházet k nekonzistenci ukládaných dat. Ne všechny implementace grafových databází totiž disponují mechanismy, které by v případě potřeby nekonzistenci zabránily. Konzistence dat je tedy často řešena pouze na aplikační úrovni.
 
 \subsection{Implementace grafových databází}
-Existuje spousta implementací grafových databází. Liší se například \"nativností\", dotazovacím jazykem, škálovatelností a podporou \gls{ACID} transakcí. Jakou z nich využít pro naši aplikaci je otázka preferencí. My se zaměříme na dvě implementace, a to Neo4j a OrientDB. Dalšími známými databázemi jsou například:
+%https://db-engines.com/en/system/AllegroGraph
+Existuje spousta implementací grafových databází. Liší se například \"nativností\", dotazovacím jazykem, škálovatelností a podporou \gls{ACID} transakcí. Jakou z nich využít pro naši aplikaci je otázka preferencí. My se zaměříme na tři implementace, a to Neo4j, OrientDB a ArangoDB. Dalšími známými databázemi jsou například:
 
 \begin{itemize}
-\item Amazon Neptune \footnote{\url{https://aws.amazon.com/neptune}} -- rychlý, spolehlivý, plně řízený systém pro hustě propojené grafy. Výhodou je podpora známých dotazovací jazyků Gremlin, openCypher a SPARQL.
-\item TigerGraph \footnote{\url{https://www.tigergraph.com}} -- moderní, nativní, paralelní grafová databáze pro ukládání property graphs. Na webu uvádějí až dvacetčtyřikrát rychlejší načítání dat oproti jiným implementacím.
-\item ArangoDB \footnote{\url{https://arangodb.com}} -- nabízí nativní, multi-model databázový systém. Data mohou být uložena jako páry klíč-hodnota, dokumenty, nebo grafy a ke všem lze přistupovat pomocí jednotného dotazovacího jazyka AQL.
-\item FlockDB -- vyvinuta společností Twitter (teď X?). Jedná se o nenativní grafovou databázi, navrženou pro real-time sociální aplikace.
-\item JanusGraph \footnote{\url{https://janusgraph.org}} -- jedná se o open-source projekt společnosti The Linux Foundation. Je založen na Apache TinkerPop a tedy lze klást dotazy prostřednictvím jazyka Gremlin.
+\item \textbf{Amazon Neptune} \footnote{\url{https://aws.amazon.com/neptune}} -- rychlý, spolehlivý, plně řízený a vysoce zabezpečený systém pro hustě propojené grafy. Podporuje jak property graph tak RDF. Databáze byla představena v roce 2017 společností Amazon. Výhodou je podpora známých dotazovací jazyků Gremlin, openCypher a SPARQL.
+\item \textbf{TigerGraph} \footnote{\url{https://www.tigergraph.com}} -- moderní, nativní grafová databáze pro ukládání property graph. Nabízí vestavěné paralelní výpočty nad grafy.
+\item \textbf{AllegroGraph} \footnote{\url{https://allegrograph.com/}} -- výkonná multi-model open-source databáze. Data mohou být uložena ve formě RDF grafu, vektorů, nebo dokumentů. AllegroGraph je kompatibilní se standardy W3C/ISO a podporuje dotazy prostřednictvím SPARQL a Prologu. Dle \cite{graphDatabases} nemá nativní grafové zpracování. První vydání v roce 2004. Předností je kombinování geografických, časových informací a údajů z analýzy sociálních sítí současně v rámci jednoho dotazu. To umožňuje odpovědět na otázky jako: Najdi zda nejvlivnější kamarád Alice (využití analýzy sociálních sítí) v poslední dekádě (časový údaj) provedl platbu kartou 100 kilometrů od Olomouce (geografický údaj). 
+\item \textbf{FlockDB} -- vyvinuta společností Twitter (teď X?). Jedná se o nenativní open-source grafovou databázi, navrženou pro real-time sociální aplikace.
+\item \textbf{JanusGraph} \footnote{\url{https://janusgraph.org}} -- jedná se o open-source projekt společnosti The Linux Foundation. Jedná se o odnož grafové databáze Titan. Je založen na Apache TinkerPop a tedy lze klást dotazy prostřednictvím jazyka Gremlin. Kromě online transakčního zpracování (OLTP) podporuje JanusGraph globální grafovou analýzu (OLAP) díky integraci Apache Spark.
 \end{itemize}
 
 \subsubsection{Neo4j}
@@ -359,8 +365,29 @@ OrientDB je open-source NoSQL databázový systém implementovaný v Javě. Byl 
 %https://orientdb.com/docs/3.2.x/ee/Enterprise-Edition.html
 V práci je využívána bezplatná verze OrientDB Community Edition ve verzi 3.2.23. OrientDB nabízí i placenou verzi Enterprise Edition, která poskytuje výhody jako správu zálohování, migrační nástroje, monitorování systému a CRUD operací v reálném čase a jiné.
 
+\subsubsection{ArangoDB}
+%https://docs.arangodb.com/3.11
+ArangoDB stejně jako předchozí dvě je open-source databáze. Je multi-model databáze. Lze ji použít jako plnohodnotné úložiště dokumentů, grafů a párů klíč-hodnota, full-text vyhledávací engine nebo jakoukoli kombinaci těchto technologií. První verze byla představena společností ArangoDB Inc. v roce 2012. S daty je možno pracovat prostřednictvím jazyka AQL (ArangoDB Query Language). Pokud server provozující ArangoDB běží lokálně je možno interagovat s databází skrze webové rozhraní na adrese \url{127.0.0.1:8529}, nebo prostřednictvím textového rozhraní \textit{arangosh}.
+
+Data jsou ukládána ve známém formátu JSON. Nejmenší jednotkou v databázi je \textit{dokument} -- jeden záznam dat. Dokumenty jsou dále organizovány do kolekcí. Kolekce mohou obsahovat libovolné množství dokumentů. Tímto způsobem můžeme seskupovat dokumenty. Dokumenty jsou ukládány v binární podobě zvané \textit{VelocyPack}. Každý dokument má dále atributy, které slouží jako vlastnosti. Navíc obsahují 3 povinné atributy, nazývané \textit{systémové}, které začínají podtržítkem. mají datový typ string.
+\begin{itemize}
+\item \textit{\_key} -- nazývá se \textit{dokumentový klíč}. Každý dokument v rámci kolekce má hodnotu tohoto atributu unikátní. Dokumentový klíč lze specifikovat při vytváření dokumentu. Pak již nelze změnit. Pokud není specifikován, je atributu přiřazena hodnota automaticky.
+\item \textit{\_id} -- nazývá se \textit{dokumentový identifikátor}. Identifikuje dokument v rámci databáze. Je ve formě \textit{<název-kolekce>/<klíč-dokumentu>}.
+\item \textit{\_rev} -- nazývá se \textit{dokumentová revize}. Hodnota atributu je automaticky obdržena serverem a pro uživatele je jen ke čtení.
+\end{itemize}
+Hrany v databázi jsou uloženy ve speciálních dokumentech a kolekcích, nazvané \textit{hranové}. A mají další dva systémové atributy.
+\begin{itemize}
+\item \textit{\_from} -- hodnota atributu je rovna dokumentovému identifikátoru počátečního vrcholu.
+\item \textit{\_to} -- hodnota atributu je rovna dokumentovému identifikátoru koncového vrcholu.
+\end{itemize}
+Další vlastnosti jsou uživatelsky definovatelné. 
+
+Ačkoli je ArangoDB schema-less, umožňuje vynutit strukturu dokumentů v rámci kolekcí.  Toho lze dosáhnout pomocí definování JSON Schema\footnote{\url{https://json-schema.org/}} formátu.
+
+ArangoDB nabízí též placenou verzi, nabízející například vyšší výkonnost, zabezpečení a škálování grafů.
+
 \subsection{Dotazovací jazyky v grafových databázích}
-Jak již bylo zmíněno pro grafové databáze zatím neexistuje jeden standardní jazyk. Lze narazit na jazyky vyvinuté specificky pro konkrétní systém. Příkladem může být jazyk \textit{Cypher} vyvíjený společností Neo4j. Na druhou stranu jsou zde jazyky jakým je například \textit{Gremlin}, který je více univerzálnější a lze jej použít ve více systémech zacházejících s grafy. Mezi další známé jazky patří:
+Pomocí dotazovacích jazyků lze formulovat dotazy, které lze klást na databázi. Pomocí nich lze definovat \textit{grafové vzory}. Ty popisují, jakým způsobem grafem procházíme. Na základě procházených vrcholů a hran následně můžeme dostat odpovědi na dotazy. Jak již bylo zmíněno pro grafové databáze zatím neexistuje jeden standardní jazyk. Lze narazit na jazyky vyvinuté specificky pro konkrétní systém. Příkladem může být jazyk \textit{Cypher} vyvíjený společností Neo4j. Na druhou stranu jsou zde jazyky jakým je například \textit{Gremlin}, který je více univerzálnější a lze jej použít ve více systémech zacházejících s grafy. Mezi další známé jazky patří:
 %https://venturebeat.com/business/what-are-graph-database-query-languages/
 \begin{itemize}
 \item \textit{SPARQL} -- využívaný pro znalostní grafy v RDF formátu
@@ -421,7 +448,7 @@ Je potřeba také podotknout, že ne všechna data jsou vhodná pro uchováván�
 	\label{fig:GraphDatabase-DecisionTree}
 \end{figure}
 
-Pokud se pro požití grafové databáze rozhodneme, můžeme přistoupit k modelování dat. V této kapitole se tedy zaměříme na návrh grafového modelu. Zkusíme si to na příkladu sociální platformy pro nadšence cestování. Pracovně ji nazveme Travel Enthusiast Network. Sociální sítě jsou totiž jedním z případů, kdy použití grafových databází dává smysl. Tato aplikace tedy bude umožňovat cestovatelům se propojit s ostatními. Dále bude zaznamenávat jejich výlety do různých destinací, hodnocení těchto cest, cestovatelské aktivity, které destinace nabízí a které se mohou uživatelům aplikace líbit. Na základě svých přátel a hodnocení cest do destinací aplikace dokáže uživateli doporučit jiné destinace, které dosud nenavštívil. Naše aplikace se tedy bude dotýkat i dalšího případu užití grafových databází, a to systémů pro doporučování, které jsou v praxi hojně využívány. Pro vyzkoušení dotazů můžeme využít csv souborů, obsahujících vygenerovaná data pro naši aplikaci. Seznam všech souborů, rozdělený na entity a vztahy mezi nimi a počet řádků (včetně hlavičky) jednotlivých souborů lze vyčíst z tabulky \ref{tab:TravelEnthusiastNetwork-csv}.
+Pokud se pro požití grafové databáze rozhodneme, můžeme přistoupit k modelování dat. V této kapitole se tedy zaměříme na návrh grafového modelu. Zkusíme si to na příkladu sociální platformy pro nadšence cestování. Sociální sítě jsou totiž jedním z případů, kdy použití grafových databází pro ukládání dat dává smysl. Tato aplikace tedy bude umožňovat cestovatelům se propojit s ostatními. Dále bude zaznamenávat jejich výlety do různých destinací, hodnocení těchto cest, cestovatelské aktivity, které destinace nabízí a které se mohou uživatelům aplikace líbit. Na základě svých přátel a hodnocení cest do destinací aplikace dokáže uživateli doporučit jiné destinace, které dosud nenavštívil. Naše aplikace se tedy bude dotýkat i dalšího případu užití grafových databází, a to systémů pro doporučování, které jsou v praxi hojně využívány. Pro vyzkoušení dotazů můžeme využít csv souborů, obsahujících vygenerovaná data pro naši aplikaci. Seznam všech souborů, rozdělený na entity a vztahy mezi nimi a počet řádků (včetně hlavičky) jednotlivých souborů lze vyčíst z tabulky \ref{tab:TravelEnthusiastNetwork-csv}.
 
 \begin{table}[h]
 \begin{tabularx}{\textwidth}{ | l | c | c | X | }
@@ -460,35 +487,37 @@ Postup modelování se dá rozdělit do čtyř fází:
 V následujících částech se na jednotlivé fáze podíváme detailněji. 
 
 \subsection{Definice problému}
-V první fázi bychom měli zvážit co všechno by měla aplikace umět. Výsledkem by měl být její, co nejpřesnější, slovní popis. Pomoci nám může těchto pár otázek.
+V první fázi bychom měli zvážit co všechno by měla aplikace umět. Výsledkem by měl být její, co nejpřesnější, slovní popis. Pomoci nám může odpovědět na těchto pár otázek.
 
-\subsubsection{Co od naší aplikace uživatel očekává?}
-Aplikace je sociální sítí, proto by měla jistě umožnit se propojit s ostaními uživateli aplikace. Uživatelům by na základě jejich přátel, oblíbených aktivit a hodnocení destinací měly přicházet tipy na výlet. Aplikace by měla umožnit zazanamenat, že někteří uživatelé podnikli cestu společně.
+\subsubsection{Co od aplikace očekáváme?}
+Aplikace je sociální sítí, a proto by měla jednotlivým uživatelům umožňovat se propojit s ostaními uživateli aplikace. To je umožněno pomocí relace sledování. Uživatelům by pak na základě jimi sledovaných uživatelů, oblíbených aktivit a hodnocení destinací měly přicházet tipy na výlet. Aplikace by měla umožnit zazanamenat, že někteří uživatelé podnikli cestu společně. Uživatelé budou moci v rámci jedné cesty navštívit více destinací.
 
-\subsubsection{Jaké typy informací naše aplikace potřebuje uchovávat, aby měla danou funkcionalitu?}
+\subsubsection{S jakými informacemi aplikace pracuje?}
 \begin{itemize}
-  \item Všechny základní informace o \textbf{uživatelích}, aby se s nimi ostatní mohli spojit - jejich jméno, příjmení, unikátní identifikátor, oblíbené cestovatelské aktivity.
-  \item Informace o jednotlivých \textbf{destinacích} - jejich lokace, název, unikátní identifikátor, cestovatelské aktivity v rámci destinace.
-  \item Uživateli je umožněno psát \textbf{hodnocení} jednotlivých \textbf{cest}, které podniknul.
-  \item Chtěli bychom také umožnit \textbf{seskupení uživatelů}, když jedou do dané destinace společně.
+  \item Všechny základní informace o \textit{uživatelích}, aby se s nimi ostatní mohli spojit - jejich jméno, příjmení, unikátní identifikátor, oblíbené \textit{cestovatelské aktivity}.
+  \item Informace o \textit{cestách}, které uživatelé podnikli.
+  \item Informace o konkrétních \textit{destinacích} jako je jejich lokace, název, cestovatelské aktivity, které destinace nabízí.
+  \item Uživateli je umožněno psát \textit{hodnocení} jednotlivých \textit{cest}, které podniknul.
 \end{itemize}
-V reálném scénáři by projekt pravděpodobně zahrnoval mnoho dalších atributů, ale pro tuto ukázkovou aplikaci to ponecháme omezené. Pro zjednodušení se vyhneme také přesným souřadnicovým informacím a vystačíme si s informací v rámci jakého státu se daná destinace nachází.
+V reálném scénáři by projekt pravděpodobně zahrnoval mnoho dalších informací, ale pro tuto ukázkovou aplikaci to ponecháme omezené. Pro zjednodušení se vyhneme přesným souřadnicovým informacím a vystačíme si s informací v rámci jakého státu se daná destinace nachází. Dále uživatelům aplikace bude dovolovat psát hodnocení na dané cesty, nikoliv na destinace, které v rámci cesty podnikli. Uživatelé cestující spolu se budou účastnit stejné cesty do destinací. 
 
-Aplikace by tedy měla zacházet s pojmy jako jsou uživatel, destinace, hodnocení, cestovní aktivita.
+Aplikace by tedy měla zacházet s pojmy jako jsou uživatel, destinace, stát, cesta, hodnocení a cestovní aktivita.
 
-\subsubsection{Jak spolu tyto pojmy vzájemně souvisí v rámci aplikace?}
+\subsubsection{Jak spolu tyto informace vzájemně souvisí?}
+Následující seznam ukazuje, jakým způsobem jsou odopovědi na předchozí otázku mezi sebou propojeny. 
 \begin{itemize}
-  \item Uživatel \textbf{sleduje} jiného uživatele.
-  \item Uživatel \textbf{se zúčastnil} cesty \textbf{do} destinace.
-  \item Uživateli se \textbf{líbí} cestovatelská aktivita.
-  \item Uživatel \textbf{napsal} recenzi \textbf{o} cestě.
-  \item Destinace \textbf{nabízí} cestovatelskou aktivitu.
-  \item Destinace \textbf{je ve} státě.
+  \item Uživatel \textit{sleduje} jiného uživatele.
+  \item Uživatel \textit{se zúčastnil} cesty \textit{vedoucí do} destinace.
+  \item Uživateli se \textit{líbí} cestovatelská aktivita.
+  \item Uživatel \textit{napsal} recenzi \textit{o} cestě.
+  \item Destinace \textit{nabízí} cestovatelskou aktivitu.
+  \item Destinace \textit{je ve} státě.
 \end{itemize}
 
-\subsubsection{Na jaké otázky potřebují uživatelé najít odpověď?}
+\subsubsection{Na jaké otázky potřebujeme v aplikaci najít odpověď?}
+\label{sec:questions}
 \begin{itemize}
-  \item Jaké všechny uživatele sleduji? A koho sledují oni? Které uživatele nesleduji ale sledují je uživatelé, které sleduji?
+  \item Jaké všechny uživatele sleduji? A koho sledují oni? Které uživatele nesleduji, ale sledují je uživatelé, které sleduji?
   \item Najdi 3 nejlépe hodnocené destinace, které jsem nenavštívil, nabízející konkrétní cestovní aktivity?
   \item Které destinace navštívil uživatel X? Kolikrát je navštívil?
   \item Najdi mi všechny uživatele v rámci skupiny, s kterou cestuje uživatel X do destinace Y.
@@ -499,27 +528,29 @@ Aplikace by tedy měla zacházet s pojmy jako jsou uživatel, destinace, hodnoce
 V reálném scénáři by otázek mohlo být mnohem více.
  
 \subsection{Konceptuální datový model}
-Dalším krokem je vyvinout konceptuální model. Výstupem by měl být přehledný diagram popisující důmyslně promyšlené schéma naší aplikace z bussiness pohledu. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data ruzných typů v rámci vyvíjené aplikace spolu souvisí. Při vyvíjení datového modelu vývojáři často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími daty, proto se tato fáze v různých literaturách nazývá whiteboard model. Tento proces vyžaduje identifikování a seskupení všech entit a vztahů, které se v naší aplikaci vyskytují. 
+Dalším krokem je vyvinout konceptuální model. Výstupem by měl být přehledný diagram popisující typy dat v naší aplikaci. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data ruzných typů v rámci vyvíjené aplikace spolu souvisí. Tento proces vyžaduje identifikování, seskupení a propojení všech entit a vztahů, které se v naší aplikaci vyskytují. Nejedná se o jednoduchý úkol. Je možné, že jej navrhneme špatně a budeme muset jej předělat.
+
+Při vyvíjení datového modelu vývojáři často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími. Proto se konceptuální model v různých literaturách nazývá whiteboard model. 
 
 \subsubsection{Entity}
-Začneme entitami. Entity většinou představují objekty, jako například uživatel, účet, destinace, které jsou v databázi uloženy a propojeny vzájemnými vztahy. Je třeba si rozmyslet, které entity lze seskupit. Pokud například naše aplikace obsahuje uživatele, zaměstance a administrátory je užitečné tuto skupinu entit sloučit do jedné a pojmenovat ji například Osoba. Jedním z osvědčených postupů, jak z našich poznámek z minulé fáze vytáhnout entity, je dívat se po podstatných jménech. Pokud se budeme řídit tohoto postupu, tak z věty \uv{Uživateli se líbí cestovatelská aktivita.} získáme dvě entity, a to Uživatel a Cestovatelská aktivita.
+Entity většinou představují objekty, jakými jsou například \textit{Uživatel}, \textit{Účet}, nebo \textit{Město}, které jsou v databázi uloženy a propojeny vzájemnými vztahy. 
+
+Jedním z osvědčených postupů, jak z našich poznámek z minulé fáze vytáhnout entity, je dívat se po podstatných jménech. Pokud se budeme řídit tohoto postupu, tak z věty \uv{Uživateli se líbí cestovatelská aktivita.} získáme dvě entity, a to \textit{Uživatel} a \textit{Cestovatelská aktivita}. Avšak ne všechna podstatná jména jsou nutně enetity. Příkladem může být podstatné jméno \uv{příjmení}. Příjmení v naší aplikaci chápeme jako součást uživatele. A v této fázi se jedná o nepodstatný detail.
 
 V naší aplikaci můžeme dohromady rozpoznat 6 různých entit:
 \begin{itemize}
-  \item Uživatel
-  \item Cesta
-  \item Destinace
-  \item Aktivita
-  \item Stát
-  \item Recenze
+  \item \textit{Uživatel}
+  \item \textit{Cesta}
+  \item \textit{Destinace}
+  \item \textit{Aktivita}
+  \item \textit{Stát}
+  \item \textit{Recenze}
 \end{itemize}
 
-Seskupení uživatelů cestujících spolu do destinací jsme sloučili s entitou Cesta. Jedná se o mírné zjednodušení, které nebude mít na funkčnost žádný velký vliv.
-
 \subsubsection{Vztahy}
-Nyní následuje propojení entit pomocí vztahů. Entity v rámci naší palikace jsme identifikovali  zejména zaměřením se na podstatná jména z poznámek o aplikaci. Vztahy můžeme získat obdobně pomocí sloves. Zde bychom však měli být velmi opatrní. Ve slovese se často ukrývá podstatné jméno. V budoucím vývoji aplikace by pak mohlo dojít k problémům při rozšiřování funkcionality aplikace. Dobrým příkladem je sloveso \uv{recenzovat}. Pokud bychom při modelování zvolili větu \uv{Uživatel recenzoval X.} místo \uv{Uživatel napsal recenzi o X.}, tak bychom mohli v budoucím vývoji aplikace narazit na problém, že nemáme entitu představující recenzi, na kterou bychom mohli odkazovat. Snadno si jde domyslet komentování nebo jiný způsob reagování na recenze. Podobně pokud bychom v naší aplikaci upřednostnili větu "Uživatel navštívil destinaci." před větou \uv{Uživatel podnikl cestu do destinace.}, uživatel by pak nemohl danou cestu hodnotit tak, jak to máme v popisu naší aplikace. Takové chyby obecně vedou v budoucnosti k migrování databáze, což je velmi obtížný a zdlouhavý proces přesouvání dat z jedné databáze do druhé, kterému je lepší se vyhnout.
+Nyní následuje propojení entit pomocí vztahů. Entity v rámci naší aplikace jsme identifikovali  zejména zaměřením se na podstatná jména z poznámek o aplikaci. Vztahy můžeme získat obdobně pomocí sloves. Zde bychom však měli být velmi opatrní. Ve slovese se často ukrývá podstatné jméno. V budoucím vývoji aplikace by pak mohlo dojít k problémům při rozšiřování funkcionality aplikace. Dobrým příkladem je sloveso \uv{recenzovat}. Pokud bychom při modelování zvolili větu \uv{Uživatel recenzoval X.} místo \uv{Uživatel napsal recenzi o X.}, tak bychom mohli v budoucím vývoji aplikace narazit na problém, že nemáme entitu představující recenzi, na kterou bychom mohli odkazovat. Snadno si jde domyslet komentování nebo jiný způsob reagování na recenze. Podobně, pokud bychom v naší aplikaci upřednostnili větu \uv{Uživatel navštívil destinaci.} před větou \uv{Uživatel podnikl cestu do destinace.}, uživatel by pak nemohl danou cestu hodnotit tak, jak to máme v popisu naší aplikace. Takové chyby mohou vést v budoucnosti k migrování databáze, což je velmi obtížný a zdlouhavý proces přesouvání dat z jedné databáze do druhé, kterému je lepší se vyhnout.
 
-Hledáme tedy slovesa, které představují relaci mezi námi nalezenými entitami. Po aplikaci tohoto doporučení na větu \uv{Uživateli se líbí cestovatelská aktivita.} získáme vztah se líbí mezi entitami Uživatel a Cestovatelská aktivita. Stejným způsobem postupujeme dál a hledáme všechny důležité vztahy. Může se stát, že při důkladném hledání vztahů nalezneme další entity, které jsme předtím nenalezli. Můžeme se dostat do situace, kdy váháme, zda určitý typ dat má tvořit entitu nebo relaci v našem modelu. V této situaci je obecně doporučeno se rozhodovat podle toho, zda některý dotaz na databázi dostane na vstupu informaci ve formě tohoto typu dat. Pokud ano, tato data bychom měli reprezentovat jako entitu. Například lze takto odvodit, že slovo Uživatel musí být entita, protože je vstupem (proměnnou) v dotazu odpovídajícím na otázku \uv{Které destinace navštívil uživatel X? Kolikrát je navštívil?}.
+Hledáme tedy slovesa, které představují relaci mezi námi nalezenými entitami. Po aplikaci tohoto doporučení na větu \uv{Uživateli se líbí cestovatelská aktivita.} získáme vztah \textit{se líbí} mezi entitami \textit{Uživatel} a \textit{Cestovatelská aktivita}. Stejným způsobem postupujeme dál a hledáme všechny důležité vztahy. Může se stát, že při důkladném hledání vztahů nalezneme další entity, které jsme předtím nenalezli. Můžeme se dostat do situace, kdy váháme, zda určitý typ dat má tvořit entitu nebo relaci v našem modelu. V této situaci je obecně doporučeno se rozhodovat podle toho, zda některý dotaz na databázi dostane na vstupu informaci ve formě tohoto typu dat. Pokud ano, tato data bychom měli reprezentovat jako entitu. Například lze takto odvodit, že slovo Uživatel musí být entita, protože je vstupem (proměnnou) v dotazu odpovídajícím na otázku \uv{Které destinace navštívil uživatel X? Kolikrát je navštívil?}.
 
 \subsubsection{Konceptuální model}
 
@@ -550,7 +581,7 @@ Podstatnou část práce již máme za sebou, neboť můžeme využít dobře na
 \end{figure}
 
 Dobrým zvykem je zvolit label, který bude v jednotném čísle. Při přiřazování labelu je dobré myslet na jeho co největší obecnost, protože v budoucnu bychom mohli potřebovat reprezentovat jiný podobný koncept a tedy je užitečné volit co nejobecnější label. Povolený počet labelů pro jeden vrchol se u různých grafových databází liší. Bezpečným přístupem je každému vrcholu přiřadit jeden label. To je například přístup Apache TinkerPop. Často se ale také hodí mít labelů více a pomocí nich umět vyjádřit dědičnost. Vrcholy pak spadají do více skupin vrcholů naráz. 
-Příkladem může být systém pro správu zaměstnanců a klientů v nějaké firmě. Zde by se mohlo hodit kromě labelu Zaměstnanec a Klient mít label Osoba. Neboť zaměstnanec, reprezentovaný vrcholem v databázi, jistě sdílí s klientem informace jako je jméno, datum narození apodobně, ale může mít nějaké dodatečné informace, jako je například plat, nebo identifikační číslo zaměstnance. Nyní jednoduše můžeme vybrat data týkající se pouze klientů, ale zároveň můžeme požádat databázi o informaci o všech lidech spravovaných v databázi. Příklad přiřazení více labelů jednomu vrcholu je znázorněn na obrázku \ref{fig:MoreVertexLabels}. To je důvod, proč databáze, jako Neo4j nebo Amazon Neptune umožňují vrcholům přiřadit žádný, jeden, ale i více labelů.
+Příkladem může být systém pro správu zaměstnanců a klientů v nějaké firmě. Zde by se mohlo hodit kromě labelu \textit{Zaměstnanec} a \textit{Klient} mít label \textit{Osoba}. Neboť zaměstnanec, reprezentovaný vrcholem v databázi, jistě sdílí s klientem informace jako je jméno, datum narození apodobně, ale může mít nějaké dodatečné informace, jako je například plat, nebo identifikační číslo zaměstnance. Nyní jednoduše můžeme vybrat data týkající se pouze klientů, ale zároveň můžeme požádat databázi o informaci o všech lidech spravovaných v databázi. Příklad přiřazení více labelů jednomu vrcholu je znázorněn na obrázku \ref{fig:MoreVertexLabels}. To je důvod, proč databáze, jako Neo4j nebo Amazon Neptune umožňují vrcholům přiřadit žádný, jeden, ale i více labelů.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{MoreVertexLabels}
@@ -565,11 +596,11 @@ V našem příkladu je zvolena konvence doporučená v dokumentaci databáze Neo
 \end{remark}
 
 \subsubsection{Hranové labely}
-Při hledání hran opět využijeme připraveného konceptuálního modelu. Podobně jako u vrcholů se zamyslíme nad labelem hran, které by opět mělo být obecné a výstižné. Navíc bychom se měli držet jedné dobré zásady. Přečtením labelu počátečního vrcholu, labelu hrany z něj vycházející a labelu cílového vrcholu do nějž hrana vstupuje by nám mělo dávat vcelku smysluplnou větu. V češtině však musíme opomenout skloňování. Příkladem by mohla být věta \uv{Uživatel napsal hodnocení.}, která vznikla spojením vrcholového labelu Uživatel, hranového labelu napsal a labelu cílového vrcholu Hodnocení. Ve většině případů mají věty tvar podle následující posloupnosti větných členů podmět-přísudek-předmět.
+Při hledání hran opět využijeme připraveného konceptuálního modelu. Podobně jako u vrcholů se zamyslíme nad labelem hran, které by opět mělo být obecné a výstižné. Navíc bychom se měli držet jedné dobré zásady. Přečtením labelu počátečního vrcholu, labelu hrany z něj vycházející a labelu cílového vrcholu do nějž hrana vstupuje by nám mělo dávat vcelku smysluplnou větu. V češtině však musíme opomenout skloňování. Příkladem by mohla být věta \uv{Uživatel napsal hodnocení.}, která vznikla spojením vrcholového labelu \textit{Uživatel}, hranového labelu \textit{napsal} a labelu cílového vrcholu \textit{Hodnocení}. Ve většině případů mají věty tvar podle následující posloupnosti větných členů -- podmět-přísudek-předmět.
 
-To nás přivádí k orientaci hran. Předchozí rada nám rovnou specifikuje i orientaci hrany. Tedy z věty \uv{Uživatel napsal hodnocení.} máme, že hrana s labelem napsal vede z vrcholu s labelem Uživatel do vrcholu s labelem Hodnocení, nikdy ne naopak. Obrácením hrany bychom přečtením vrchol-hrana-vrchol dostali větu \uv{Hodnocení napsalo uživatele.}. Pokud bychom požadovali opačnou orientaci hran mezi vrcholy s labely Uživatel a Hodnocení, bychom museli přistoupit ke změně labelu hrany, neboť by věta postrádala smysl. Tedy například hraně s labelem napsal bychom změnili label na bylo napsáno a pak by věta \uv{Hodnocení bylo napsáno uživatelem.} dávala smysl. Orientace hrany by měla reflektovat to, jak přirozeným způsobem přemýšlíme o datech v naší doméně.
+To nás přivádí k orientaci hran. Předchozí rada nám rovnou specifikuje i orientaci hrany. Tedy z věty \uv{Uživatel napsal hodnocení.} máme, že hrana s labelem \textit{napsal} vede z vrcholu s labelem \textit{Uživatel} do vrcholu s labelem \textit{Hodnocení}, nikdy ne naopak. Obrácením hrany bychom přečtením vrchol-hrana-vrchol dostali nesmyslnou větu \uv{Hodnocení napsalo uživatele.}. Pokud bychom v tomto případě požadovali opačnou orientaci hran, museli bychom přistoupit ke změně labelu hrany. Tedy například hraně s labelem \textit{napsal} bychom změnili label na \textit{bylo napsáno} a pak by věta \uv{Hodnocení bylo napsáno uživatelem.} dávala smysl. Orientace hrany by měla reflektovat to, jak přirozeným způsobem přemýšlíme o datech v naší doméně.
 
-Než přejdeme k vlastnostem, zbývá ještě určit \textit{jedinečnost} hran. Jedinečnost lze definovat jako počet hran se stejným labelem mezi dvěma vrcholy. Tyto vrcholy mohou a nemusí mít stejný label. 
+Nyní zbývá ještě určit \textit{jedinečnost} hran. Jedinečnost lze definovat jako počet hran se stejným labelem mezi dvěma vrcholy. Tyto vrcholy mohou a nemusí mít stejný label. 
 
 Jedinečnost hran se dělí na dva typy:
 \begin{itemize}
@@ -577,8 +608,8 @@ Jedinečnost hran se dělí na dva typy:
 \item \textit{mnohonásobná}.
 \end{itemize} 
 
-Jednoduchá jedinečnost odkazuje na žádnou, nebo právě jednu hranu zatímco vícenásobná povoluje hran se stejným labelem mezi dvěma vrcholy více. Na jednoduchou jedinečnost hrany $e$ lze též nahlížet tak, že skupina sousedních vrcholů, do kterých se dostaneme přes hranu $e$, neobsahuje více instancí jednoho vrcholu, tedy tvoří množinu vrcholů. Zatímco u mnohonásobné jedinečnosti dostaneme kolekci sousedních vrcholů, kde se vrcholy mohou opakovat. 
-Co se týká jedinečnosti hran v naší aplikaci tak všechny hrany, až na hranu mezi Cestou a Destinací budou mít jedinečnost jednoduchou. Například vztah mezi uživatelem a cestovní aktivitou s labelem LIKES buď je nebo není a to lze vyjádřit pomocí existence jedné hrany mezi těmito dvěma vrcholy. Totéž platí pro ostatní hranové labely až na hranu s labelem LED\_TO. Jistě totiž může existovat situace, kdy v rámci cesty uživatel do dané destinace zavítá vícekrát a s touto možností by náš model měl také počítat. Tedy tato hrana bude mít vícenásobnou jedinečnost. Tyto hrany pak od sebe rozlišíme pomocí vlastností, které budou určovat období, kdy se daný uživatel v dané destinaci nacházel. Hrany s mnohonásobnou jedinečností bychom měli rozlišovat pomocí vlastností, aby byly unikátní, jinak tato jedinečnost postrádá smysl.
+Jednoduchá jedinečnost odkazuje na žádnou, nebo právě jednu hranu zatímco vícenásobná povoluje hran se stejným labelem mezi dvěma vrcholy více. Na jednoduchou jedinečnost hrany s konkrétním hranovým labelem lze též nahlížet tak, že skupina sousedních vrcholů, do kterých se dostaneme přes hrany s tímto labelem, neobsahuje více instancí jednoho vrcholu, tedy tvoří množinu vrcholů. Zatímco u mnohonásobné jedinečnosti dostaneme kolekci sousedních vrcholů, kde se vrcholy mohou opakovat. 
+Co se týče jedinečnosti hran v naší aplikaci tak všechny hrany, až na hrany mezi vrcholy s labelem \textit{Cesta} a \textit{Destinace} budou mít jedinečnost jednoduchou. Například vztah mezi uživatelem a cestovní aktivitou s labelem \textit{LIKES} buď je nebo není a to lze vyjádřit pomocí existence jedné hrany mezi těmito dvěma vrcholy. Totéž platí pro ostatní hranové labely, až na hranu s labelem \textit{LED\_TO}. Jistě totiž může existovat situace, kdy v rámci cesty uživatel do dané destinace zavítá vícekrát a s touto možností by náš model měl také počítat. Tedy tato hrana bude mít vícenásobnou jedinečnost. Tyto hrany pak od sebe rozlišíme pomocí vlastností, které budou určovat období, kdy se daný uživatel v dané destinaci nacházel. Hrany s mnohonásobnou jedinečností bychom měli rozlišovat pomocí vlastností, aby byly unikátní, jinak tato jedinečnost postrádá smysl.
 
 Jak zjistíme, že jsme zvolili špatnou jedinečnost hran? Špatná volba se projeví v dotazech jedním z těchto způsobů:
 \begin{itemize}
@@ -604,7 +635,7 @@ Naše výsledné grafové schéma popisuje obrázek \ref{fig:Schema}.
 Testování našeho grafového modelu spočívá ve vyzkoušení, zda se chová dle našeho očekávání (databáze vrací očekávané výsledky) a dotazování není moc pomalé ani pro velké množství dat. K testování lze využít široké škály nástrojů, které dotazovací jazyky a databáze nabízejí.
 
 \subsubsection{Unit testy}
-Při testování správnosti dotazů je vhodné použít tzv. \textit{unit testy}. Tedy vytvoříme si pro každý dotaz malé množství testovacích dat (například kolem 10 vrcholů, tak abychom z něj pouhým okem vyčetli správnou odpověď), kterými otestujeme správnost odpovědí z databáze. Příkladem unit testu je zdrojový kód \ref{kod:UnitTest}. Tento kód vloží do databáze data, která tvoří graf znázorněný na obrázku \ref{fig:UnitTest-Graph}. Následně zkontroluje dotaz hledající všechny uživatele, které mají od uživatele s vlastností userId rovnou 1 vzdálenost rovnou 2. Vidíme, že po spuštění testu databáze by měla vrátit uživatele s identifikátory 3 a 4. Následně po sobě uklidíme a testovací data smažeme.
+Při testování správnosti dotazů je vhodné použít tzv. \textit{unit testy}. Tedy vytvoříme si pro každý dotaz malé množství testovacích dat (například kolem 10 vrcholů, tak abychom z něj pouhým okem vyčetli správnou odpověď), kterými otestujeme správnost odpovědí z databáze. Příkladem unit testu je zdrojový kód \ref{kod:UnitTest}. Tento kód vloží do databáze data, která tvoří graf znázorněný na obrázku \ref{fig:UnitTest-Graph}. Následně zkontroluje dotaz hledající všechny uživatele, které mají od uživatele s vlastností userId rovnou 1 vzdálenost rovnou 2. Vidíme, že po spuštění testu databáze by měla vrátit uživatele s identifikátory 3 a 4. Následně po sobě uklidíme. Smažeme testovací data.
 
 \begin{kicode}{SQL}{kod:UnitTest}{Ukázkový kód pro kontrolu správnosti dotazu.}[h]
 // Vytvoření testovacích dat
@@ -612,7 +643,7 @@ CREATE (u1:User {userId: 1, firstName: "John", lastName: "Doe"})
 CREATE (u2:User {userId: 2, firstName: "Alice", lastName: "Smith"})
 CREATE (u3:User {userId: 3, firstName: "Bob", lastName: "John"})
 CREATE (u4:User {userId: 4, firstName: "Jane", lastName: "Doe"})
-CREATE (u5:User {userId: 5, firstName: "Charlie", lastName: "Brown"})
+CREATE (u5:User {userId: 5, firstName: "Charlie", lastName: "Bae"})
 
 CREATE (u1)-[:FOLLOWS]->(u2)
 CREATE (u2)-[:FOLLOWS]->(u3)
@@ -645,6 +676,18 @@ Pro efektivní hledání dat v rámci grafu lze použít \textit{indexy}. Toho l
 
 \subsubsection{Denormalizace}
 \textit{Denormalizace} je metoda, která do databáze přidává redundantní data za účelem zrychlení čtení dat. Denormalizace v grafových databázích většinou znamená kopírování hodnot vlastností vrcholů na incidentní hrany. Často se jedná o časové informace. Nevýhodou tohoto procesu je udržba těchto kopií což vede k zpomalení zápisů. Denormalizace je tedy vhodná pouze pro aplikace, kde počet operací pro čtení z databáze mnohonásobně převyšuje počet operací pro zápis.
+
+\section{Known walks}
+Často při průchodu grafem předem známe grafový vzor určující cestu, kterou musíme projít, abychom dosáhli požadovaných výsledků pro daný dotaz. Předem víme délku cesty a vrcholové a hranové labely, přes které cesta prochází. Tento průchod grafem je v knize \cite{inAction} označen jako \textit{known walk}. Při překladu otázek na dotazy v naší aplikaci pro cestovatelské nadšence s datovým modelem na obrázku \ref{fig:Schema} zjistíme, že všechny grafové vzory představují known walk.
+
+Příkladem může být dotaz odpovídající na otázku \uv{Které destinace navštívil uživatel X?}. Vidíme, že v dotazu budou jistě figurovat dvě entity, konkrétně: \textit{Uživatel} a \textit{Destinace}. Při pohledu na grafové schéma je zřejmé, že abychom dostali všechny navštívené destinace pro konkrétního uživatele, musíme v grafu projít i přes všechny vrcholy s labelem \textit{Cesta}, které uživatel podniknul. Tyto vrcholy spojují uživatele s destinacemi, které navštívil. Jedná se tedy o known walk neboť víme, že musíme provést cesty o délkách 3 obsahující vrcholy s labely \textit{Uživatel}, \textit{Cesta} a \textit{Destinace}. Nyní je otázkou, v kterých vrcholech je dobré průchod začít. Volba počátečních vrcholů má často velký vliv na výsledný čas výpočtu. Jednou z možností je začít na vrcholech s labelem \textit{Destinace}. Grafový vzor by pak určoval cestu ze všech vrcholů s labelem \textit{Destinace} přes hrany spojující tyto vrcholy s vrcholy s labelem \textit{Cesta}. Následně pro všechny tyto cesty zkontrolujeme, zda se jich daný uživatel zúčastnil. Destinace, které by takto nebyly s uživatelem spojeny, by byly vyfiltrovány. Vyhovující destinace by byly vráceny. Ačkoliv tato možnost vede ke správnému výsledku, procházet přes všechny destinace a tedy i přes všechny cesty není nejvhodnější. Lze si jistě představit stovky tisíc destinací a miliony cest uložených v databázi, které by se musely projít. Obdobně nevyhovující by bylo začínat ve vrcholech s labelem \textit{Cesta}. Nejvýhodnějším řešením je začít ve vrcholu představujícím konkrétního uživatele. Následně projít přes vrcholy s labelem \textit{Cesta}, kterých se uživatel zúčastnil a dostat se tak ke všem destinacím, které daný uživatel navštívil. Obecně je dobré začínat v co nejmenším počtu vrcholů. Výsledný dotaz v cypheru pak vypadá jak zdrojový kód \ref{kod:VisitedDestinations}. Dotaz rovnou vrací i kolikrát daný uživatel destinaci navštívil. 
+
+\begin{kicode}{Cypher}{kod:VisitedDestinations}{Ukázkový kód v Cypheru.}[h]
+WITH 3 AS user_id
+MATCH (u:User {userId:user_id})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d:Destination)
+RETURN d.destinationName, COUNT(d) AS count
+ORDER BY count DESC, d.destinationName ASC;
+\end{kicode}
 
 \section{Hledání cest mezi 2 vrcholy}
 %%https://opendata.infrabel.be/explore/dataset/station_to_station/information/?disjunctive.stationfrom_name&disjunctive.stationto_name&sort=stationfrom_name&basemap=jawg.light&location=8,50.51448,4.32709
@@ -705,7 +748,7 @@ Tento problém lze vyřešit pomocí algoritmů na prohledávání grafů. Konkr
 
 V Cypheru lze cesty obsahující 1 až 4 hrany najít pomocí dotazu ve zdrojovém kódu \ref{kod:cypher}. Na řádku 2 vyfiltrujeme ty sledy, které obsahují cyklus. Pro lepší přehled výsledky oindexujeme a seřadíme podle délky cesty. Tabulka \ref{tab:ShortestPath-Unweighted-Example} ukazuje výsledek tohoto dotazu po zavolání. Obrázek \ref{fig:ShortestPath-Unweighted-Example} pak znázorňuje podgraf, který obsahuje všechny vrcholy a hrany vystupující v dotazu. Tučnou čarou je zde znázorněna cesta, která ve výsledné tabulce má index 3. Čárkovaně je vyznačena cesta označená v tabulce indexem 1.
 
-\begin{kicode}{SQL}{kod:cypher}{Ukázkový kód v Cypheru.}[h]
+\begin{kicode}{Cypher}{kod:cypher}{Ukázkový kód v Cypheru.}[h]
 MATCH path=(src:Station {stationId: 157})-[:LEADS_TO*1..4]->(dst:Station {stationId: 1061})
 WHERE ALL(node IN nodes(path) WHERE 1 = size([n IN nodes(path) WHERE n = node]))
 WITH path, [node IN nodes(path) | node.stationName] AS stations
@@ -796,7 +839,7 @@ Z vrácených výsledků vidíme, že nejkratší délka železnic mezi stanicem
 
 \section{Algoritmy}
 
-Tato kapitola byla napsána pomocí knih \cite{graphAlgorithms} a \citep{inAction}. Dále byla využita dokumentace knihovny Graph Data Science Library \cite{neo4jGds} a zdroj \url{https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf}.
+Tato kapitola byla napsána pomocí knih \cite{graphAlgorithms} a \cite{inAction}. Dále byla využita dokumentace knihovny Graph Data Science Library \cite{neo4jGds} a zdroje \cite{astar} a \cite{disk}.
 
 V této kapitole si ukážeme řadu užitečných algoritmů, které jsou určené pro práci s grafem a jsou tedy v určitých situacích vhodné aplikovat při dotazech na grafovou databázi. Umožňují nám efektivně zjistit hledat nejkratší cesty mezi vrcholy, nacházet vrcholy, které pro nás mohou být svým způsobem důležité, nebo třeba analyzovat komunity(skupinky propojených vrcholů) v grafu. Ke grafové databázi Neo4j existuje knihovna s názvem Graph Data Science Library nabízející veškeré algoritmy, které lze po nainstalování pluginu použít. Zkráceně ji budeme označovat gds jako v dotazech Neo4j. V následujících částech si představíme užití pár algoritmů z této knihovny. 
 
@@ -818,7 +861,7 @@ V knihovně gds lze A* použít například pro vrcholy reprezentující nějako
 
 \subsubsection{Minimální kostra grafu}
 Dalším, mezi informatiky dobře známým, problémem je hledání minimální kostry v souvislém grafu. Vstupem je souvislý neorientovaný graf G s ohodnocenými hranami. Výstupem je minimální kostra grafu G. Kostru grafu lze definovat jako podgraf grafu G, který je stromem obsahujícím všechny vrcholy původního grafu. My požadujeme, aby kostra byla minimální, tedy aby součet ohodnocení hran v nalezeném podgrafu byl ze všech možných koster nejmenší. Příklad minimální kostry grafu je na obrázku \ref{fig:minimum-spanning-tree}. Problém kostry grafu má více variant. Můžeme též hledat maximální kostru grafu, nebo omezit počet vrcholů v kostře na $ k \in \mathbb{N}$ tomuto problému se říká k-spanning tree.
-Knihovna gds algoritmus na hledání kostry obsahuje. Konkrétně nabízí Jarníkův-Primův algoritmus, poprvé popsaný v roce 1930 čekým matematikem Vojtěchem Jarníkem. Jedná se o hladový algoritmus, který vyžaduje na vstupu specifikovat i počáteční vrchol s. Vrátí minimální kostru komponenty vstupního grafu obsahující s. Pokud při implementaci využíváme například binární prioritní frontu máme celkovou složitost $O(|E| \log_2 |V|)$.
+Knihovna gds algoritmus na hledání kostry obsahuje. Konkrétně nabízí Jarníkův-Primův algoritmus, poprvé popsaný v roce 1930 čekým matematikem Vojtěchem Jarníkem. Jedná se o hladový algoritmus, který vyžaduje na vstupu specifikovat i počáteční vrchol $s$. Vrátí minimální kostru komponenty vstupního grafu obsahující $s$. Pokud při implementaci využíváme například binární prioritní frontu máme celkovou složitost $O(|E| \log_2 |V|)$.
 Tento algoritmus lze využít pro nejlevnější propojení měst vodním potrubím, kde nižší ohodnocení hran znamená menší náklady. Dalším využitím je aproximace problémů patřících do třídy NPTIME, jako je například problém obchodního cestujícího. 
 
 \begin{figure}
@@ -980,9 +1023,8 @@ Thesis conclusions in \uv{English}.
 %% -------------------------------------------------------------------
 
 %% Sazba volitelného seznamu zkratek, za přílohami.
+
 \printglossary
-\newacronym{REPL}{REPL}{Read–eval–print loop}
-\newacronym{ACID}{ACID}{Atomicity Consistency Isolation Durability}
 
 %% Sazba povinné bibliografie, za přílohami (případně i za seznamem
 %% zkratek). Při použití BibLaTeXu použijte makro
@@ -1012,16 +1054,3 @@ Thesis conclusions in \uv{English}.
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
-
-%dotazy:
-%cypher, gremlin kódy
-%zkratky? ACID, REST API, REPL
-%jak je to s obrázky?
-%označování vrcholů má být v $$ ?
-%jak si poradit s entitami? psát je velkým písmenem, kurzívou, tučně ..?
-%lze čerpat z oficiálních dokumentací/webů poskytovatelů softwaru? Nelze moc dohledat kdy bylo vydáno a kým bylo napsáno
-%bibliografie
-%indexy, schema, na TravelEnthusiastNetwork
-%definice v prvni casti.. rozdelit do podkapitol/ nechat jako definice?
-%arangodb
-%muzu pouzivat dostupne pdf z vysokych skol?

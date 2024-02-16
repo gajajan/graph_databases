@@ -36,7 +36,7 @@
 %% jazyk dokumentu: czech, english, slovak
 \DeclareStringOption[czech]{language}[czech]
 %% podpora seznamu zkratek
-\DeclareStringOption[false]{glossaries}[true]
+\DeclareStringOption[true]{glossaries}[true]
 %% podpora rejstříku
 \DeclareStringOption[false]{index}[true]
 %% font dokumentu: sans, jinak serif
@@ -659,12 +659,29 @@
 	morestring=[b][stringstyle]{"}
 }
 
+\lstdefinelanguage{Cypher}{
+  morekeywords={CALL, CREATE, DELETE, DETACH, FOREACH, LOAD, MATCH, MERGE, OPTIONAL, REMOVE, RETURN, SET, START, UNION, UNWIND, WITH, LIMIT, ORDER, SKIP, WHERE, YIELD, ASC, ASCENDING, ASSERT, BY, CSV, DESC, DESCENDING, ON, ALL, CASE, COUNT, ELSE, END, EXISTS, THEN, WHEN, AND, AS, CONTAINS, DISTINCT, ENDS, IN, IS, NOT, OR, STARTS, XOR, CONSTRAINT, CREATE, DROP, EXISTS, INDEX, NODE, NODES, KEY, UNIQUE, INDEX, JOIN, SCAN, USING, false, null, true, ADD, DO, FOR, MANDATORY, OF, REQUIRE, SCALAR},
+	sensitive=false,
+	morecomment=[l][commentstyle]{//},
+	morestring=[b][stringstyle]{"},
+	morestring=[b][stringstyle]{'},
+}
+
+\lstdefinelanguage{AQL}{
+  morekeywords={AGGREGATE, ALL, ALL_SHORTEST_PATHS, AND, ANY, ASC, COLLECT, DESC, DISTINCT, FALSE, FILTER, FOR, GRAPH, IN, INBOUND, INSERT, INTO, K_PATHS, K_SHORTEST_PATHS, LET, LIKE, LIMIT, NONE, NOT, NULL, OR, OUTBOUND, REMOVE, REPLACE, RETURN, SHORTEST_PATH, SORT, TRUE, UPDATE, UPSERT, WINDOW, WITH},
+	sensitive=false,
+	morecomment=[s][commentstyle]{/*}{*/},
+	morecomment=[l][commentstyle]{//},
+	morestring=[b][stringstyle]{"},
+	morestring=[b][stringstyle]{'},
+}
+
 \newcommand{\csharp}{C\kern-.03em\raise.38ex\hbox{\scriptsize{\#}}}
 \newcommand{\cpp}{C\kern-.05em\raise.38ex\hbox{\scriptsize{++}}}
 \newcommand{\keyword}[1]{{\ttfamily\color{darkgray}{#1}}}
 
 %% Načtení jazyků.
-\lstloadlanguages{[ANSI]C,[LaTeX]TeX,PHP,HTML,Lisp,SQL,TeX,Python,Java,TutorialD,text,csharp,cpp,JavaScript,CSS}
+\lstloadlanguages{[ANSI]C,[LaTeX]TeX,PHP,HTML,Lisp,SQL,Cypher,AQL,TeX,Python,Java,TutorialD,text,csharp,cpp,JavaScript,CSS}
 
 %% Definice makra a prostředí pro sazbu zdroj. kódů.
 \newcommand{\kiinlinecode}[3]{\lstinline[style=kibasestyle,alsoletter={\{\}\\},language=#1]#2#3#2\ignorespacesafterend}

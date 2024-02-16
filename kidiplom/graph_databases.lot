@@ -1,12 +1,12 @@
 \babel@toc {czech}{}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Tabulka obsahující soubory vygenerovaných dat pro aplikaci pro cestovní nadšence.}}{22}{table.1}%
-\contentsline {table}{\numberline {2}{\ignorespaces Tabulka obsahující soubory pro ukázku hledání cest.}}{33}{table.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces Výsledná tabulka pro dotaz ve zdrojovém kódu \ref {kod:cypher}.}}{36}{table.3}%
-\contentsline {table}{\numberline {4}{\ignorespaces Výsledná tabulka pro dotaz \ref {kod:ShortestPath-Weighted-Example}.}}{38}{table.4}%
-\contentsline {table}{\numberline {5}{\ignorespaces Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 2 zavolaným na stanice s vlastností stationId menší než 10.}}{40}{table.5}%
-\contentsline {table}{\numberline {6}{\ignorespaces Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 0.2 zavolaným na stanice s vlastností stationId menší než 10.}}{41}{table.6}%
-\contentsline {table}{\numberline {7}{\ignorespaces Algoritmy pro měření centrality aplikované na jednotlivé vrcholy z grafu na obrázku \ref {fig:example-graph}.}}{42}{table.7}%
-\contentsline {table}{\numberline {8}{\ignorespaces Počet trojúhelníků a shlukovací koeficient jednotlivých vrcholů z grafu na obrázku \ref {fig:example-graph}.}}{44}{table.8}%
+\contentsline {table}{\numberline {1}{\ignorespaces Tabulka obsahující soubory vygenerovaných dat pro aplikaci pro cestovní nadšence.}}{23}{table.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces Tabulka obsahující soubory pro ukázku hledání cest.}}{35}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Výsledná tabulka pro dotaz ve zdrojovém kódu \ref {kod:cypher}.}}{38}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Výsledná tabulka pro dotaz \ref {kod:ShortestPath-Weighted-Example}.}}{39}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 2 zavolaným na stanice s vlastností stationId menší než 10.}}{43}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 0.2 zavolaným na stanice s vlastností stationId menší než 10.}}{43}{table.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces Algoritmy pro měření centrality aplikované na jednotlivé vrcholy z grafu na obrázku \ref {fig:example-graph}.}}{45}{table.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces Počet trojúhelníků a shlukovací koeficient jednotlivých vrcholů z grafu na obrázku \ref {fig:example-graph}.}}{46}{table.8}%
 \babel@toc {czech}{}\relax 
 \babel@toc {czech}{}\relax 
 \babel@toc {english}{}\relax 
