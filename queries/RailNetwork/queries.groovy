@@ -109,3 +109,46 @@ g.withSack(0.0).
             fold()).
         by(path().count(local).math('(_+1)/2')).
         by(sack())
+
+clockWithResult(1){
+g.withSack(0.0).
+    V().
+    has("Station", "stationId", 13).
+    repeat(outE("LEADS_TO").
+            sack(sum).by("length").
+            inV().as("visited").
+            simplePath().
+            group("minDist").
+                by().by(sack().min()).
+            filter(project("currMinDist", "sackDist").
+                    by(select("minDist").select(select("visited"))).
+                    by(sack()).
+                where("currMinDist", eq("sackDist")))).
+    until(has("Station", "stationId", 502)).
+    order().
+        by(sack(), asc).
+    limit(2).
+    project("stations", "stationsCount", "totalLength").
+        by(path().
+            unfold().
+            hasLabel("Station").
+            values("stationName").
+            fold()).
+        by(path().count(local).math('(_+1)/2')).
+        by(sack()).
+    fold().
+    next()
+}
+
+
+clockWithResult(1){
+    g.V().has("Station", "stationId", 1048).
+    repeat(out("LEADS_TO")).
+    until(has("Station", "stationId", 319)).
+    limit(1).
+    path().
+        by("stationName").as("stations").
+    count(local).as("stationsOnPath").
+    select("stations", "stationsOnPath").
+    next()
+}

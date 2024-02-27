@@ -2,18 +2,18 @@
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/TravelEnthusiastNetwork/likes.csv" } },
     "extractor": {
       "csv": {
-        "columns": ["userId:integer","activityName:string"]
+        "columns": ["userId:integer","activityId:integer"]
       } 
     },
     "transformers": [
       { "merge": { "joinFieldName": "userId", "lookup": "User.userId" } },
       { "edge": { "class": "LIKES",
-                  "joinFieldName": "activityName",
-                  "lookup": "TravelActivity.activityName",
+                  "joinFieldName": "activityId",
+                  "lookup": "TravelActivity.activityId",
                   "direction": "out" 
                 }
       },
-      { "field": { "fieldNames": ["activityName"], "operation": "remove" } }
+      { "field": { "fieldNames": ["activityId"], "operation": "remove" } }
     ],
     "loader": {
       "orientdb": {

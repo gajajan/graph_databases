@@ -1,0 +1,34 @@
+{
+    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/Youtube/com-youtube.ungraph.tsv" } },
+    "extractor": { 
+      "csv": {
+        "columns": ["FromNodeId:integer","ToNodeId:integer"],
+        "separator": "\t"
+      } 
+    },
+    "transformers": [
+      { "merge": { "joinFieldName": "FromNodeId", "lookup": "User.userId" } },
+      { "vertex": {"class": "User"} },
+      { "edge": { "class": "FRIENDS",
+                  "joinFieldName": "ToNodeId",
+                  "lookup": "User.userId",
+                  "direction": "out" 
+                }
+      },
+      { "field": { "fieldNames": ["FromNodeId", "ToNodeId"], "operation": "remove" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/Youtube",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "batchCommit": 1000,
+         "wal" : false,
+         "classes": [
+            {"name": "User", "extends": "V"},
+            {"name": "FRIENDS", "extends": "E"}
+         ]
+      }
+    }
+}

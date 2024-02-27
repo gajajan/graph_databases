@@ -1,18 +1,13 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'graph_databases.blg'
-[149] biber-MSWIN64:340> INFO - === 
-[194] Biber.pm:418> INFO - Reading 'graph_databases.bcf'
-[325] Biber.pm:975> INFO - Using all citekeys in bib section 0
-[346] Biber.pm:4401> INFO - Processing section 0
-[363] Biber.pm:4592> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
-[429] bibtex.pm:1713> INFO - LaTeX decoding ...
-[467] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
-[616] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
-[616] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[616] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
-[635] bbl.pm:654> INFO - Writing 'graph_databases.bbl' with encoding 'UTF-8'
-[641] bbl.pm:757> INFO - Output to graph_databases.bbl
-[641] Biber.pm:130> WARN - legacy month field 'May' in entry 'practicalGremlin' is not an integer - this will probably not sort properly.
-[641] Biber.pm:130> WARN - legacy month field 'Nov' in entry 'Ramba_2016' is not an integer - this will probably not sort properly.
-[641] Biber.pm:130> WARN - legacy month field 'October' in entry 'ionos' is not an integer - this will probably not sort properly.
-[641] Biber.pm:132> INFO - WARNINGS: 3
+[259] biber-MSWIN64:340> INFO - === 
+[328] Biber.pm:418> INFO - Reading 'graph_databases.bcf'
+[909] Biber.pm:975> INFO - Using all citekeys in bib section 0
+[950] Biber.pm:4401> INFO - Processing section 0
+[969] Biber.pm:4592> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
+[1033] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1059] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'[1[1252] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1252] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1252] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
+[1279] bbl.pm:654> INFO - Writing 'graph_databases.bbl' with encoding 'UTF-8'
+[1293] bbl.pm:757> INFO - Output to graph_databases.bbl
