@@ -51,14 +51,11 @@
 %%  patkový (Latin Modern)
 
 \documentclass[
-%  master,
   program=infoi,
-%  printversion,
   biblatex=true,
-%  language=english,
-%  font=sans,
-  figures=false,
-  glossaries=true,
+  sourcecodes=true,
+  figures=true,
+  glossaries=false,
   index
 ]{kidiplom}
 
@@ -124,11 +121,8 @@ science}
 
 %% Další dodatečné styly (balíky) potřebné pro sazbu vlastního textu
 %% práce.
-\usepackage{lipsum, longtable, graphicx, amssymb, multirow, tabularx, glossaries}
+\usepackage{lipsum, longtable, graphicx, amssymb, multirow, tabularx, makecell, minted}
 \graphicspath{ {./graphics/} }
-
-\newacronym{REPL}{REPL}{Read–eval–print loop}
-\newacronym{ACID}{ACID}{Atomicity Consistency Isolation Durability}
 
 \begin{document}
 %% Sazba úvodních stran -- titulní, s bibliografickými údaji, s
@@ -149,15 +143,19 @@ science}
 
 Grafové databáze, stejně jako jiné databáze (například relační, NoSQL) představují systém pro uchovávání a zpracovávání dat. Jsou, jak již název napovídá, postaveny na jednom z oborů diskrétní matematiky jménem teorie grafů, podobně jako jsou relační databáze postaveny na pojmu relace. Pracují tedy s daty v podobě grafu. Díky této struktuře mají skvělé vlastnosti pro aplikace, které ve větší míře pracují se vztahy mezi jednotlivými entitami.
 
-První kapitola obsahuje základní pojmy z teorie grafů používané v textu.
+První kapitola obsahuje základní pojmy a definice z teorie grafů používané v textu.
 
-Druhá kapitola se věnuje grafovým databázím -- co to je, k čemu to je dobré. Podíváme se na různé implementace grafových databází a dotazovací jazyky pro ně. Převážně pak je pozornost věnována databázi Neo4j a OrientDB a dotazovacím jazykům Cypher a Gremlin.
+Druhá kapitola se věnuje grafovým databázím. Je představeno několik rozdělení grafových databází. Jsou uvedeny jejich výhody a nevýhody. Ukázány různé implementace grafových databází na trhu a dotazovací jazyky pro ně. Převážně pak je pozornost věnována databázím Neo4j, ArangoDB a OrientDB a jim příslušným dotazovacím jazykům Cypher, AQL a Gremlin.
 
 Třetí kapitola popisuje modelování dat v grafových databázích. Na konkrétním příkladu je ukázán postup modelování.
 
-Čtvrtá kapitola se zabývá  cestami v grafu.
+Čtvrtá kapitola pojednává o předdefinovaných cestách, které jsou známy a specifikovány v rámci databázového schématu. 
 
-V páté kapitole je nahlédnuto na některé z algoritmů využívaných v grafových databázích. Jsou zde přehledově představeny algoritmy pro hledání cest v grafu, algoritmy pro míru centrality a podívali jsme se na problém detekce komunit.
+Pátá kapitola se zabývá hledáním cest mezi dvěma vrcholy.
+
+V šesté kapitole je nahlédnuto na některé z algoritmů využívaných v grafových databázích. Jsou zde přehledově představeny algoritmy pro hledání cest v grafu, algoritmy pro míru centrality a podívali jsme se na problém detekce komunit.
+
+V sedmé kapitole jsou shrnuty výsledky porovnávání třech zvolených grafových databází.
 
 \newpage
 
@@ -267,16 +265,17 @@ Vrchol $v$ nazýváme \textit{předchůdce} (rodič) vrcholu $u$, pokud v kořen
 \section{Grafové databáze}
 %Graph databases neo4j
 %https://www.influxdata.com/graph-database/
-Grafová databáze je specializovaná NoSQL databáze pro uchovávání a dotazování dat, které jsou mezi sebou provázány pomocí vztahů. Jedná se o systém, který rozšiřuje grafový model o operace CREATE, READ, UPDATE a DELETE (zkráceně CRUD). Data v databázi jsou uchovávána ve formě vrcholů  a hran, které spolu tvoří graf. Cílem této části je představit základní vlastnosti grafových databází, jejich výhody v porovnání s jinými typy databází a na závěr je nahlédnuto na některé implementace. Při psaní jsem čerpal z \cite{graphDatabases}, \cite{influxdata}.
+Grafová databáze je specializovaná NoSQL databáze pro uchovávání a dotazování dat, které jsou mezi sebou provázány pomocí vztahů. Jedná se o systém, který rozšiřuje grafový model o operace CREATE, READ, UPDATE a DELETE (zkráceně CRUD). Data v databázi jsou uchovávána ve formě vrcholů  a hran, které spolu tvoří graf. Cílem této části je představit základní vlastnosti grafových databází, jejich výhody v porovnání s jinými typy databází a na závěr je nahlédnuto na některé implementace. Při psaní jsem čerpal z \cite{graphDatabases}, \cite{influxdata} a \cite{ionos}.
 
-\subsection{Ukládání a zpracování dat}
+\subsection{Nativní ukládání a zpracování dat}
 %https://neo4j.com/blog/native-vs-non-native-graph-technology/
 %https://dmccreary.medium.com/how-to-explain-index-free-adjacency-to-your-manager-1a8e68ec664a
+\cite{indexFreeAdjacency}
 Grafové databáze můžeme mezi sebou rozlišovat podle zpracování a ukládání dat.
 
 Grafová databáze má \textit{nativní grafové uložiště}, pokud umožňuje uchovávání a správu dat v grafové podobě. Tento přístup zefektivňuje následnou práci s daty. Nicméně ne všechny grafové databáze se vydávají při ukládání dat stejnou cestou. Některé z nich tato data serializují do jiných typů databází. Tento způsob se především opírá o vyspělost a známost jiných technologií, hlavně co se týče relačních databází.
 
-Druhou vlastností je \textit{index-free adjacency}. Ta nám říká, že v uložišti jsou s každým vrcholem mimo jiné uloženy přímé odkazy (pointery) na sousední vrcholy. Pro přístup k sousedům každého vrcholu tedy není potřeba žádná další datová struktura, nebo globální index. Obdobně to platí pro hrany. S každou hranou máme též uloženy ukazatele na koncové vrcholy, které jsou s danou hranou incidentní. Výsledkem je skvělý výkon při procházení grafem, protože z aktuálního vrcholu se lze dostat na specifický vrchol s konstantní časovou složitostí. Navíc výkon není závislý na velikosti grafu v databázi, nýbrž na množství procházených dat. Toto je obrovská výhoda ve srovnání s relačními databázemi, kde je zpracování požadavku závislé na velikosti spojovaných tabulek. Nevýhodou tohoto přístupu je, že některé dotazy (zejména ty při kterých nedochází k průchodu grafem) mohou být na výkon nebo paměť mnohem náročnější.
+Druhou vlastností je \textit{index-free adjacency}. Ta nám říká, že v uložišti jsou s každým vrcholem mimo jiné uloženy přímé odkazy (pointery) na sousední vrcholy. Pro přístup k sousedům každého vrcholu tedy není potřeba žádná další datová struktura, nebo globální index. Obdobně to platí pro hrany. S každou hranou máme též uloženy ukazatele na koncové vrcholy, které jsou s danou hranou incidentní. Výsledkem je skvělý výkon při procházení grafem, protože z aktuálního vrcholu se lze dostat na specifický vrchol s konstantní časovou složitostí. Navíc výkon není závislý na velikosti grafu v databázi, nýbrž na množství procházených dat. Toto je obrovská výhoda ve srovnání s relačními databázemi, kde je zpracování požadavku závislé na velikosti spojovaných tabulek. Nevýhodou tohoto přístupu je, že některé dotazy mohou být na výkon nebo paměť mnohem náročnější. Zejména ty, při kterých nedochází k průchodu grafem.
 
 \textit{Nativními grafovými databázemi} označujeme ty, které s daty manipulují a uchovávají je v grafové podobě. Pracují efektivněji při průchodu grafem. Pro práci s velkým množstvím hustě propojených dat je tato architektura navrhnutá pro zacházení s daty nezbytná. Nenativní grafové databáze jsou bezpečnější volbou pro malé projekty a ne příliš propojená data, neboť obvykle staví na technologiích, které jsou známé. V této práci se budeme dále zabývat pouze nativními grafovými databázemi.
 
@@ -291,12 +290,12 @@ Jak z názvu vyplývá, jedná se o model, ve kterém jsou grafy doplněny o vla
 %https://www.strafelda.cz/knowledge-graph
 RDF model umožňuje vyjadřovat tvrzení o věcech v podobě jednoduchých vět, které gramaticky sestávají z podmětu, přísudku a předmětu. Tyto věty nazýváme tvrzení. Tvrzení samozřejmě nevyjadřujeme jako věty v přirozeném jazyku, ale v počítačové notaci. RDF model zavádí následující strukturu zvanou trojice: \textit{subjekt predikát objekt}. Subjekt je obdobou podmětu, predikát je obdobou přísudku a objekt je obdobou předmětu. Každá věta popisuje hranu spojující vrcholy definované subjektem a objektem. Predikát je pak pojmenováním hrany. RDF model je známý ze sémantického webu, kde je použit pro odvození informací pomocí sémantického označení odkazů spojujících webové zdroje.\cite{rdf}
 
-Tento model též nachází využití v aplikacích využívajících znalostní grafy (anglicky knowledge graphs). Příkladem těchto grafů je například Google Knowledge Graph \footnote{https://blog.google/products/search/introducing-knowledge-graph-things-not/}. Google jej využívá například ve svém hlasovém ovládání Google Asistenta, nebo od května 2012 data získaná z tohoto grafu vizualizuje v tzv. Knowledge Graph panelu. \cite{knowledgeGraphs} Knowledge graph panel zobrazuje obrázek \ref{fig:Knowledge-Graph}.
+Tento model též nachází využití v aplikacích využívajících znalostní grafy (anglicky knowledge graphs). Příkladem těchto grafů je například Google Knowledge Graph \footnote{https://blog.google/products/search/introducing-knowledge-graph-things-not/}. Google jej využívá například ve svém hlasovém ovládání Google Asistenta, nebo od května 2012 data získaná z tohoto grafu vizualizuje v tzv. Knowledge Graph panelu. \cite{knowledgeGraphs} Knowledge graph pro nizozemského informatika Edsgera Djikstru zobrazuje obrázek \ref{fig:Knowledge-Graph}.
 
 %https://www.semrush.com/blog/knowledge-graph/
 \begin{figure}
 	\includegraphics[width=\textwidth]{KnowledgeGraph-Example}
-	\caption{Knowledge graph pro nizozemského informatika Edsgera Djikstru.}
+	\caption{Knowledge graph.}
 	\label{fig:Knowledge-Graph}
 \end{figure}
 
@@ -305,48 +304,44 @@ Hypergraf vznikl zobecněním klasického grafového modelu. Hypergraf obsahuje 
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{Hypergraph-Example}
-	\caption{Hypergraf znázorňující studenty zapsané na kurzy.}
+	\caption{Hypergraf.}
 	\label{fig:Hypergraph-Example}
 \end{figure}
 
-\subsection{OLAP vs OLTP}
+\subsection{Systémy OLTP a OLAP}
 %https://cambridge-intelligence.com/choosing-graph-database/#:~:text=Scalability%20of%20graph,in%20their%20data.
 %http://langer.zam.slu.cz/teaching/dbaii/olap_oltp.pdf
-
+\cite{oltpOlap}
 Grafové databáze dále můžeme rozdělit do dvou kategorií: \textit{OLAP} (On-Line Analytical Processing) a \textit{OLTP} (On-Line Transactional Processing).
 
 \begin{itemize}
-\item OLTP systémy jsou navrženy pro rychlé a efektivní zpracování velkého množství transakcí. Používá je většina grafových databází. Hodí se pro aplikace, ve kterých jsou data v reálném čase přidávána, mazána a modifikována. Nachází využití například v doporučovacích a bankovních systémech, sociálních sítích a při odhalování podvodů.
-\item OLAP systémy jsou navrženy pro komplexní analýzu velkého objemu dat. Data se z databáze ve většině případů čtou. Zpracovávájí malé množství složitých dotazů. Využívány jsou například v analýze znalostních grafů.
+\item OLTP systémy jsou navrženy pro rychlé a efektivní zpracování velkého množství transakcí. Nejsou vhodné pro analýzu dat. Grafové databáze jsou obvykle navrhnuty pro použití v OLTP systémech. Hodí se pro aplikace, ve kterých jsou data v reálném čase přidávána, mazána a modifikována. Nachází využití například v doporučovacích a bankovních systémech, sociálních sítích a při odhalování podvodů.
+\item OLAP systémy jsou navrženy pro komplexní analýzu velkého objemu dat. Data se z databáze ve většině případů čtou. Zpracovávájí malé množství časově a výpočetně náročných dotazů. Využívány jsou například v analýze znalostních grafů.
 \end{itemize}
 
 \subsection{Výhody grafových databází}
 %https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
+Nativní grafové databáze uchovávají jak samotné entity, tak všechny vztahy mezi entitami. Při dotazování nedochází k výpočtu těchto vztahů, jak tomu je například u relačních databází pomocí klauzule JOIN. To zrychluje zpracování některých typů dotazů. Množství dat obecně výkon nezhoršuje, neboť čas pro vyhodnocení dotazu závisí pouze na velikosti podgrafu, kterým procházíme. Pro aplikace, které pracují se vztahy mezi entitami ve velké míře, je proto nativní grafová databáze ideálním řešením.
 
-Jednou z velkých výhod těchto systémů je, že uchovávají jak samotné entity, tak všechny vztahy mezi entitami (pomocí index-free adjacency). Tedy při dotazování nedochází k výpočtu těchto vztahů, jak tomu je například u relačních databází pomocí klauzule JOIN. To zrychluje zpracování některých typů dotazů. Jak již bylo řečeno, množství dat obecně výkon nezhoršuje, neboť čas pro vyhodnocení dotazu je úměrný pouze velikosti podgrafu, kterým procházíme. Pro aplikace, které pracují se vztahy mezi entitami ve velké míře, je proto grafová databáze ideálním řešením.
-
-Pomocí vrcholů a hran lze často lépe vystihnout dané problémy, než například pomocí tabulek. Grafy nám poskytují přirozený způsob pro ukládání a manipulaci z daty. Popisují jak nad daty v rámci aplikace přemýšlíme. Lze tak dosáhnout datových modelů, které jsou srozumitelné i laikům, což ve velkých projektech, na kterých pracuje velká spousta lidí, může být obrovský benefit. To je samozřejmě podmíněno kvalitním grafovým modelem.
-
-Ve spoustě případů je dotazování prostřednictvím grafových dotazovacích jazyků přehlednější než dotazy v jiných databázích. To platí především pro dotazy pracující se vztahy mezi entitami.
+Pomocí vrcholů a hran lze často lépe vystihnout dané problémy, než například pomocí tabulek. Díky grafové struktuře můžeme data ukládat a manipulovat s nimi přirozeným způsobem. Popisují jak nad daty v rámci aplikace přemýšlíme. Lze tak dosáhnout datových modelů, které jsou srozumitelné i laikům, což ve velkých projektech, na kterých pracuje velká spousta lidí, může být obrovská výhoda. Navíc ve spoustě případů je dotazování prostřednictvím grafových dotazovacích jazyků přehlednější než dotazy v jiných databázích. To platí především pro dotazy pracující se vztahy mezi entitami.
 
 Grafové databáze obecně nevynucují definování schématu. Často se označují jako schema-less. Tedy struktura dat se může měnit v závislosti na potřebách aplikace. Přidávání nových vlastností, vrcholů, hran a labelů nenarušuje chod aplikace. Což přináší pozitiva pro vývojáře a budoucí vývoj. Ovšem základní model dat by měl být znám, abychom mohli s daty pracovat.
 
-Dotazy v grafových databázích mohou vracet různé typy dat, aniž by ztrácely výsledky smysl. V relačních databázích lze v jednom dotazu vracet výsledky pro různé entity pomocí klauzule UNION, ale vrácená data potrádají smysl, neboť vrácená tabulka obsahuje tato data různých entit smíchaná dohromady. V grafových databázích toho lze využít například k získání všech dostupných informací ke konkrétnímu zákazníkovi, které máme v databázi,  v rámci jednoho dotazu.
+Dotazy v grafových databázích mohou vracet různé typy dat, aniž by ztrácely výsledky smysl. V relačních databázích lze v jednom dotazu vracet výsledky pro různé entity pomocí klauzule UNION, ale vrácená data potrádají smysl, neboť vrácená tabulka obsahuje tato data různých entit smíchaná dohromady. V grafových databázích toho lze využít například k získání všech dostupných informací ke konkrétnímu zákazníkovi, které máme v databázi, v rámci jednoho dotazu.
 
-Lze je využít k uchovávání vztahů mezi slovy a frázemi. Tedy v kombinaci s počítačovým zpracováním jazyka jsou vhodné v oborech jako data science, nebo machine learning.
+Grafové databáze lze využít k uchovávání vztahů mezi slovy a frázemi. Tedy v kombinaci s počítačovým zpracováním jazyka jsou vhodné v oborech jako data science, nebo machine learning.
 
 %https://www.computerworld.cz/clanky/semanticke-technologie-grafove-databaze/
-I přes problematické shardování nabízí spousta implementací grafových databází horizontální škálování. To nám umožňuje rozdělit data na více výpočetních strojů v případě uchovávání enormních grafů.
+I přes problematické rozdělení grafových dat (sharding) mnoho implementací grafových databází nabízí horizontální škálování. To umožňuje rozdělit data mezi více výpočetních strojů. To je klíčové při uchování obrovských grafů a pro snížení zátěže jednotlivých strojů. Je spousta technik jak data rozdělit. Například pomocí hashování unifikátorů, nebo pomocí grafových vzorů. Ale volba správné techniky je obtížná.
 
 Každý vrchol a každá hrana v grafu mají své vlastní jedinečné identifikátory (ID). To je rozdíl oproti relačním databázím, ve kterých sloupec s identifikátory může a nemusí být v tabulce přítomný. Tyto identifikátory mohou být uživatelsky měnitelné v některých grafových uložištích, ale častějším případem jsou generovány systémem automaticky.
 
 \subsection{Nevýhody grafových databází}
+Grafové databáze jsou mezi ostatními druhy databází poněkud mladé. Narozdíl od relačních databází je všechny mezi sebou nepropojuje jeden standardizovaný dotazovací jazyk. Jeho absence škodí jejich popularitě, neboť pro vývojáře znamená, že pro práci s více grafovými databázemi je nucen používat více různých dotazovacích jazyků, místo specializování se na jeden univerzální. Navíc při změně grafové databáze hrozí, že bude nutné přepsat všechny dotazy do jiného dotazovacího jazyka. Spousta databází používá speciálně upravený jazyk SQL, umožňující základní práci s databází. Jednou z nich je OrientDB. Nejednotnost dotazovacího jazyka by mohla být v blízké době minulostí. Podle dostupných informací se pracuje na normovaném jazyku GQL, což je zkratka pro Graph Query Language\footnote{\url{https://www.gqlstandards.org}}.
 
-Grafové databáze jsou mezi ostatními druhy databází poněkud mladé. Narozdíl od relačních databází je všechny mezi sebou nepropojuje jeden standardizovaný dotazovací jazyk. Jeho absence škodí jejich popularitě, neboť pro vývojáře znamená, že pro práci s více grafovými databázemi je nucen používat více různých dotazovacích jazyků, místo specializování se na jeden univerzální. Navíc při změně grafové databáze hrozí, že bude nutné přepsat všechny dotazy do jiného dotazovacího jazyka. Spousta databází používá speciálně upravený jazyk SQL, umožňující základní práci s databází. Jednou z nich je OrientDB. Práce s databází je však při použití SQL značně omezená. Avšak nejednotnost dotazovacího jazyka by mohla být v blízké době minulostí. Podle dostupných informací se pracuje na normovaném jazyku GQL, což je zkratka pro Graph Query Language\footnote{\url{https://www.gqlstandards.org}}.
+Data v podobě grafu nejsou dobrou volbou pro aplikace využívající transakce. Při velkém objemu transakčních dat nejsou tak efektivní jako jiné.
 
-Data, která mají grafovou strukturu též nejsou dobrou volbou pro aplikace využívající transakce. Při velkém objemu transakčních dat nejsou tak efektivní jako jiné.
-
-Grafovým databázím též dělají problém dotazy, které operují nad celým grafem. Jedná se především o filtrování a agregování. Pokud se v aplikaci soustředíme především na takové typy operací je lepší zvolit jiné databázové technologie.
+Grafovým databázím dělají problém dotazy, které operují nad celým grafem. Jedná se především o filtrování a agregování. Pokud se v aplikaci soustředíme především na takové typy operací je lepší zvolit jiné databázové technologie.
 
 Jelikož jsou grafové databáze často schema-less může docházet k nekonzistenci ukládaných dat. Ne všechny implementace grafových databází totiž disponují mechanismy, které by v případě potřeby nekonzistenci zabránily. Konzistence dat je tedy často řešena pouze na aplikační úrovni.
 
@@ -363,18 +358,20 @@ Existuje spousta implementací grafových databází. Liší se například \"na
 \end{itemize}
 
 \subsubsection{Neo4j}
+\cite{neo4jDoc}, \cite{neo4jDev}
 Databázový systém Neo4j je nejrozšířenější open-source grafovou databází na trhu s největší uživatelskou základnou. Nabízí vysoký výkon při práci s grafy. Její první verze byla vyvinuta v roce 2002 a vznikla z důvodu nespokojenosti jejich zakladatelů s výkonem relačních databází. Implementována je v Javě. Jedná se o nativní grafovou databázi. Je využívána hromadou světoznámých společností jako je například Microsoft, eBay, nebo Linkedin. Klást dotazy můžeme prostřednictvím jazyka Cypher.
 
 %https://neo4j.com/developer/graph-platform/
 Neo4j nabízí velké množství způsobů jak interagovat s grafovými daty. Každý z nich je určen pro jinou cílovou skupinu. Například v této práci je využita aplikace Neo4j Desktop, která slouží pro správu lokálních instancí Neo4j. Verze používané aplikace je 1.5.9.
 Dalším produktem je cloudový databázový servis pojmenovaný Neo4j AuraDB. Vznikl v roce 2019. Je také dostupný v bezplatné verzi, která je však omezená -- lze v ní spravovat nejvýše 200 tisíc vrcholů a 400 tisíc hran.
-Neo4j má též spoustu rozšiřujících knihoven a nástrojů, které lze do produktů doinstalovat (pokud již nejsou součástí). Například se jedná o nástroj pomáhající při migrování dat z relační databáze do Neo4j, standardní knihovna procedur a funkcí apod. V práci je pak ukázána knihovna gds s užitečnými grafovými algoritmy.
+Neo4j má též spoustu rozšiřujících knihoven a nástrojů, které lze do produktů doinstalovat (pokud již nejsou součástí). Například se jedná o nástroj pomáhající při migrování dat z relační databáze do Neo4j, standardní knihovna procedur a funkcí apod. V práci je pak ukázána knihovna s užitečnými grafovými algoritmy.
 
 \subsubsection{OrientDB}
 %How well a multi-model database performs against its single-model variants
 %dokumentace orientdb
 %https://orientdb.com/docs/3.2.x/datamodeling/Concepts.html#record-id
 % https://orientdb.com/docs/3.2.x/studio/index.html
+\cite{orientDBDoc}
 OrientDB je open-source NoSQL databázový systém implementovaný v Javě. Byl představen v roce 2010 (komerčně 2011). Jedná se o pokročilou multi-model databázi - podporuje grafový, dokumentový, klíč-hodnota a objektový model. Manipulovat s databází můžeme pomocí programovacího jazyka Java, speciálně upraveného SQL a dotazovacího jazyka Gremlin. Uživatelům je pak umožněno interagovat s databází skrze Java API, HTTP REST API, konzolu nebo prostřednictvím grafického uživatelského rozhraní -- OrientDB Studio. Pokud OrientDB Server běží lokálně, OrientDB Studio lze najít ve webovém prohlížeči na adrese \url{http://localhost:2480}. OrientDB je schématicky flexibilní. Umožňuje uchovávat schema-full, schema-less a schema-hybrid data.
 
 V databázi OrientDB jsou identifikátory řešeny následovně. Nejmenší jednotkou v databázi je záznam (record). Rozlišujeme 4 typy záznamů: Documents, Blobs, Vertices a Edges. Pro každý záznam pak je automaticky vygenerováno ID záznamu, označeno jako RID (Record ID). RID je uchováván ve formátu \textit{\#<cluster>:<position>}. 
@@ -388,6 +385,7 @@ V práci je využívána bezplatná verze OrientDB Community Edition ve verzi 3.
 
 \subsubsection{ArangoDB}
 %https://docs.arangodb.com/3.11
+\cite{arangoDBDoc}
 ArangoDB stejně jako předchozí dvě je open-source databáze. Je multi-model databáze. Lze ji použít jako plnohodnotné úložiště dokumentů, grafů a párů klíč-hodnota, full-text vyhledávací engine nebo jakoukoli kombinaci těchto technologií. První verze byla představena společností ArangoDB Inc. v roce 2012. S daty je možno pracovat prostřednictvím jazyka AQL (ArangoDB Query Language). Pokud server provozující ArangoDB běží lokálně je možno interagovat s databází skrze webové rozhraní na adrese \url{127.0.0.1:8529}, nebo prostřednictvím textového rozhraní \textit{arangosh}. Lze též komunikovat prostřednictvím HTTP API, nebo driveru.
 
 Data jsou ukládána ve známém formátu JSON. Nejmenší jednotkou v databázi je \textit{dokument} -- jeden záznam dat. Dokumenty jsou dále organizovány do kolekcí. Kolekce mohou obsahovat libovolné množství dokumentů. Tímto způsobem můžeme seskupovat dokumenty. Dokumenty jsou ukládány v binární podobě zvané \textit{VelocyPack}. Každý dokument má dále atributy, které slouží jako vlastnosti. Navíc obsahují 3 povinné atributy, nazývané \textit{systémové}, které začínají podtržítkem. Mají datový typ string a všechny jsou určené pouze ke čtení.
@@ -421,7 +419,12 @@ Pomocí dotazovacích jazyků lze formulovat dotazy, které lze klást na datab�
 
 \subsubsection{Cypher}
 %https://neo4j.com/developer/cypher/
-Cypher je inspirovaný známým jazykem SQL z relačních databází. Důkazem může být použití několika stejnojmenných klíčových slov, jako je WHERE, LIMIT, ORDER BY apod. Navíc v obou případech se jedná o deklarativní dotazovací jazyky. Myšlenkou deklarativních jazyků je definování, jaká data chceme z databáze dostat, místo definování jak je dostat. Cypher je unikátní v tom, že využívá kulaté závorky pro vrcholy a hranaté pro hrany, čímž docílí lepší přehlednosti v dotazu. Základní syntaxe pro průchod grafem z vrcholu \textit{vrchol1} na vrchol \textit{vrchol2}, přes hranu HRANA, která je spojuje, je ve formátu \textit{(vrchol1)-[:HRANA]->(vrchol2)}.
+\cite{neo4jDoc}, \cite{neo4jDev}
+Cypher je inspirovaný známým jazykem SQL z relačních databází. Důkazem může být použití několika stejnojmenných klíčových slov, jako je WHERE, LIMIT, ORDER BY apod. Navíc v obou případech se jedná o deklarativní dotazovací jazyky. Myšlenkou deklarativních jazyků je definování, jaká data chceme z databáze dostat, místo definování jak je dostat. Cypher je unikátní v tom, že využívá kulaté závorky pro vrcholy a hranaté pro hrany, čímž docílí lepší přehlednosti v dotazu. Základní syntaxe pro průchod grafem z vrcholu \textit{vrchol1} na vrchol \textit{vrchol2}, přes hranu HRANA, která je spojuje, je ve formátu 
+
+\begin{center}
+\textit{(vrchol1)-[:HRANA]->(vrchol2)}.
+\end{center}
 
 Obdobně jako v SQL je základní dotaz v Cypheru složen ze tří částí. První je povinná a začíná klíčovým slovem MATCH. Určuje, které vrcholy a hrany se mají vybrat. Část MATCH je často následována částí začínající klíčovým slovem WHERE. Ta je nepovinná. Filtruje vybrané elementy z první části dotazu na základě jejich vlastností. Poslední, povinná, část začíná klíčovým slovem RETURN. Definuje, co je po provedení dotazu vráceno. Na výsledky lze následně aplikovat další operace, jakými jsou například agregování, limitování, nebo seřazování.
 
@@ -431,10 +434,15 @@ Pro úsporu paměti implementuje vždy, kde je to možné, \textit{líné vyhodn
 \subsubsection{Gremlin}
 %https://www.kelvinlawrence.net/book/PracticalGremlin.html#_introduction
 %https://tinkerpop.apache.org/docs/current/reference/#gremlin-console
-\cite{practicalGremlin}
+\cite{practicalGremlin}, \cite{tinkerPopDoc}
+
 Gremlin je dotazovací jazyk pro procházení grafů, který je součástí grafového výpočetního frameworku Apache TinkerPop\footnote{\url{http://tinkerpop.apache.org/}}. Gremlin lze použít pro všchna grafová uložiště, která tento framework podporují. Jedná se o imperativní jazyk s nějakými deklarativními prvky. Podobně jako Cypher ve většině případů vyhodnocuje dotazy líným způsobem.
 
-Apache TinkerPop mimo jiné obsahuje také Gremlin Console, což je textové \gls{REPL} rozhraní pro práci s lokálními, či vzdálenými grafy. Je založená na Groovy konzoli. Groovy je programovací jazyk, který je označován jako nadmnožina Javy. Co funguje v Javě funguje i v Groovy. V konzoli tedy můžeme používat validní kód napsaný v tomto jazyce. Díky tomu lze například uložit do proměnné určitý vrchol a na něj se pak přes danou proměnnou odkazovat. Konzole je široce rozšiřitelná pomocí různých pluginů. Pro napojení na databázi OrientDB budeme potřebovat plugin \textit{tinkerpop.orientdb}. Když je tento plugin aktivovaný, lze v konzoli vytvořit novou instanci \textit{OrientGraph}. Uložíme ji do proměnné graph. Než začneme psát dotazy pomocí Gremlinu musíme ještě vytvořit instanci zdrojového objektu procházení grafu zavoláním metody \textit{traversal()} na hodnotu v proměnné graph. Celý postup je uveden ve zdrojovém kódu \ref{kod:establishConnection}.
+Apache TinkerPop mimo jiné obsahuje také Gremlin Console, což je textové REPL (Read-Eval-Print Loop) rozhraní pro práci s lokálními, či vzdálenými grafy. Je založená na Groovy konzoli. Groovy je programovací jazyk, který je označován jako nadmnožina Javy. Co funguje v Javě funguje i v Groovy. V konzoli tedy můžeme používat validní kód napsaný v tomto jazyce. Díky tomu lze například uložit do proměnné určitý vrchol a na něj se pak přes danou proměnnou odkazovat. Konzole je široce rozšiřitelná pomocí různých pluginů.
+
+Pro napojení na databázi OrientDB budeme potřebovat plugin \textit{tinkerpop.orientdb}. Když je tento plugin aktivovaný, lze v konzoli vytvořit novou instanci \textit{OrientGraph}. Uložíme ji do proměnné graph. Při vytváření je nutné specifikovat URL pro připojení k databázi. Připojit se můžeme k lokální databázi, vzdáleně k databázovému serveru, nebo k jednorázové databázi v paměti. Může být též potřeba zadat přihlašovací údaje.
+
+Než začneme psát dotazy pomocí Gremlinu musíme ještě vytvořit instanci zdrojového objektu pro procházení grafu zavoláním metody \textit{traversal()} na hodnotu v proměnné graph. Celý postup je uveden ve zdrojovém kódu \ref{kod:establishConnection}.
 
 \begin{kicode}{Java}{kod:establishConnection}{Připojení se k databázi OrientDB v Gremlin Console.}[h]
 //OrientDb database connector
@@ -446,11 +454,12 @@ g = graph.traversal();
 
 \subsubsection{AQL}
 %https://docs.arangodb.com/3.11/aql/fundamentals/syntax/
+\cite{arangoDBDoc}
 Jedná se převážně o deklarativní dotazovací jazyk používaný v databázi ArangoDB. Snaží se být nezávislý na klientovi (client-independent). To znamená, že jazyk a syntaxe není závislá na programovacím jazyku, který klient využívá. Obdobně jako velká čast grafových dotazovacích jazyků je ovlivněný jazykem SQL. Jazyk je jednotný pro všechny databázové modely.
 
 AQL je čistě DML (Data Manipulation Language) jazyk. Tedy umí číst a manipulovat s daty v kolekcích. Neumí vytvářet a odstraňovat databáze, kolekce a indexy.
 
-Každý dotaz v AQL musí buď vracet výsledky pomocí klíčového slova \textit{RETURN}, nebo provádět operaci, která modifikuje data. Je podporován pouze jeden dotaz v rámci jednoho dotazovacího řetězce. Není možné provést výpočet více oddělených dotazů pro jedno zavolání.
+Každý dotaz v AQL musí buď vracet výsledky pomocí klíčového slova \textit{RETURN}, nebo provádět operaci, která modifikuje data. Je podporován pouze jeden dotaz v rámci jednoho dotazovacího řetězce. Není možné provést výpočet více oddělených dotazů pro jedno zavolání. Dotaz je opět vyhodnocován líně, pokud se v něm neobjevují poddotazy, ty jsou ve výrazech vyhodnocovány předem, příkladem je ternární operátor.
 
 Dotazy lze klást prostřednictvím webového rozhraní, nebo konzole arangosh. V práci se dotazy kladly pouze prostřednictvím první zmíněné možnosti.
 
@@ -462,7 +471,7 @@ Dotazy lze klást prostřednictvím webového rozhraní, nebo konzole arangosh. 
 %web	https://neo4j.com/developer/guide-data-modeling/
 %https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
 
-Tato kapitola byla napsána s využitím knih \cite{inAction}, \cite{graphDatabases}, \cite{practitioner}. Dále byly využity tyto zdroje \cite{ionos}, \cite{macrometa} a \cite{neo4jModelling}.
+Tato kapitola byla napsána s využitím knih \cite{inAction}, \cite{graphDatabases}, \cite{practitioner}. Dále byly využity tyto zdroje \cite{ionos}, \cite{macrometa} a \cite{neo4jDev}.
 
 \begin{remark}[Překlad]
 V práci je použito  české slovo \uv{vlastnosti} přeložené z anglického slova \uv{properties}, se kterým se běžně uživatel setká při práci s gafovou databází. Slovo \uv{label} je z důvodu znělosti zachováno v původním znění.
@@ -474,36 +483,36 @@ Je potřeba také podotknout, že ne všechna data jsou vhodná pro uchováván�
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{GraphDatabase-DecisionTree}
-	\caption{Rozhodovací strom pro otázku: Je pro naši aplikaci grafová databáze vhodná?}
+	\caption{Rozhodovací strom pro vhodnost použití grafové databáze.}
 	\label{fig:GraphDatabase-DecisionTree}
 \end{figure}
 
 Pokud se pro požití grafové databáze rozhodneme, můžeme přistoupit k modelování dat. V této kapitole se tedy zaměříme na návrh grafového modelu. Zkusíme si to na příkladu sociální platformy pro nadšence cestování. Sociální sítě jsou totiž jedním z případů, kdy použití grafových databází pro ukládání dat dává smysl. Tato aplikace tedy bude umožňovat cestovatelům se propojit s ostatními. Dále bude zaznamenávat jejich výlety do různých destinací, hodnocení těchto cest, cestovatelské aktivity, které destinace nabízí a které se mohou uživatelům aplikace líbit. Na základě svých přátel a hodnocení cest do destinací aplikace dokáže uživateli doporučit jiné destinace, které dosud nenavštívil. Naše aplikace se tedy bude dotýkat i dalšího případu užití grafových databází, a to systémů pro doporučování, které jsou v praxi hojně využívány. Pro vyzkoušení dotazů můžeme využít csv souborů, obsahujících vygenerovaná data pro naši aplikaci. Seznam všech souborů, rozdělený na entity a vztahy mezi nimi a počet řádků (včetně hlavičky) jednotlivých souborů lze vyčíst z tabulky \ref{tab:TravelEnthusiastNetwork-csv}.
 
 \begin{table}[h]
+\caption{Tabulka souborů pro aplikaci pro cestovní nadšence.}
+\label{tab:TravelEnthusiastNetwork-csv}
 \begin{tabularx}{\textwidth}{ | l | c | c | X | }
  \hline
  \textbf{Typ} & \textbf{Název souboru} & \textbf{Počet řádků} & \textbf{Informace o souboru} \\
  \hline \hline
- \multirow{6}{*}{Entity} & activities.csv & 49 & Aktivity, které mohou destinace nabízet. \\
- & countries.csv & 58 & Státy, v kterých se vyskytují jednotlivé destinace.\\
- & destinations.csv & 204 & Destinace, které mohou uživatelé navštívit. \\
- & journeys.csv & 297 & Cesty, v rámci kterých uživatelé navštěvují destinace. \\
- & ratings.csv & 641 & Hodnocení jednotlivých cest uživateli.\\
- & users.csv & 301 & Uživatelé sociální sítě Travel Enthusiast Network.\\
+ \multirow{6}{*}{Entity} & \texttt{activities.csv} & 49 & Aktivity, které mohou destinace nabízet. \\
+ & \texttt{countries.csv} & 58 & Státy, v kterých se vyskytují jednotlivé destinace.\\
+ & \texttt{destinations.csv} & 204 & Destinace, které mohou uživatelé navštívit. \\
+ & \texttt{journeys.csv} & 297 & Cesty, v rámci kterých uživatelé navštěvují destinace. \\
+ & \texttt{ratings.csv} & 641 & Hodnocení jednotlivých cest uživateli.\\
+ & \texttt{users.csv} & 301 & Uživatelé sociální sítě Travel Enthusiast Network.\\
  \hline
- \multirow{8}{*}{Vztahy} & follows.csv & 5738 & Vztah mezi uživateli. \\
- & is\_within.csv & 204 & Vztah mezi destinacemi a státy. \\
- & led\_to.csv & 1442 & Vztah mezi cestami a destinacemi.\\
- & likes.csv & 1517 & Vztah mezi uživateli a cestovními aktivitami. \\
- & lives\_in.csv & 301 & Vztah mezi uživateli a destinacemi.\\
- & offers.csv & 2023 & Vztah mezi destinacemi a cestovními aktivitami.\\
- & participated.csv & 1518 & Vztah mezi uživateli a jejich cestami. \\
- & wrote\_about.csv & 641 & Vztahy mezi uživateli, recenzemi a cestami. \\
+ \multirow{8}{*}{Vztahy} & \texttt{follows.csv} & 5738 & Vztah mezi uživateli. \\
+ & \texttt{is\_within.csv} & 204 & Vztah mezi destinacemi a státy. \\
+ & \texttt{led\_to.csv} & 1442 & Vztah mezi cestami a destinacemi.\\
+ & \texttt{likes.csv} & 1517 & Vztah mezi uživateli a cestovními aktivitami. \\
+ & \texttt{lives\_in.csv} & 301 & Vztah mezi uživateli a destinacemi.\\
+ & \texttt{offers.csv} & 2023 & Vztah mezi destinacemi a cestovními aktivitami.\\
+ & \texttt{participated.csv} & 1518 & Vztah mezi uživateli a jejich cestami. \\
+ & \texttt{wrote\_about.csv} & 641 & Vztahy mezi uživateli, recenzemi a cestami. \\
  \hline
 \end{tabularx}
-\caption{Tabulka obsahující soubory vygenerovaných dat pro aplikaci pro cestovní nadšence.}
-\label{tab:TravelEnthusiastNetwork-csv}
 \end{table}
 
 Postup modelování se dá rozdělit do čtyř fází:
@@ -613,7 +622,7 @@ Příkladem může být systém pro správu zaměstnanců a klientů v nějaké 
 Častou chybou při navrhování labelů je nekonzistentní pojmenovávací konvence. Proto je dobré si nyní stanovit pojmenovací konvenci, kterou se budeme řídit.
 
 \begin{remark}[Konvence pojmenování]
-V našem příkladu je zvolena konvence doporučená v dokumentaci databáze Neo4j a tedy pro labely vrcholů budeme používat UpperCamelCase notaci, pro labely hran UPPER\_CASE notaci s použitím podtržítka pro oddělení slov (SCREAMING\_SNAKE\_CASE) a pro vlastnosti camelCase notaci.
+V našem příkladu je zvolena konvence doporučená v dokumentaci databáze Neo4j a tedy pro labely vrcholů budeme používat \textit{UpperCamelCase} notaci, pro labely hran \textit{SCREAMING\_SNAKE\_CASE} notaci s použitím podtržítka pro oddělení slov a pro vlastnosti camelCase notaci.
 \end{remark}
 
 \subsubsection{Hranové labely}
@@ -625,26 +634,27 @@ Nyní zbývá ještě určit \textit{jedinečnost} hran. Jedinečnost lze defino
 
 Jedinečnost hran se dělí na dva typy:
 \begin{itemize}
-\item \textit{jednoduchá},
-\item \textit{mnohonásobná}.
+\item \textit{jednoduchá}
+\item a \textit{mnohonásobná}.
 \end{itemize} 
 
 Jednoduchá jedinečnost odkazuje na žádnou, nebo právě jednu hranu zatímco vícenásobná povoluje hran se stejným labelem mezi dvěma vrcholy více. Na jednoduchou jedinečnost hrany s konkrétním hranovým labelem lze též nahlížet tak, že skupina sousedních vrcholů, do kterých se dostaneme přes hrany s tímto labelem, neobsahuje více instancí jednoho vrcholu, tedy tvoří množinu vrcholů. Zatímco u mnohonásobné jedinečnosti dostaneme kolekci sousedních vrcholů, kde se vrcholy mohou opakovat. 
 Co se týče jedinečnosti hran v naší aplikaci tak všechny hrany, až na hrany mezi vrcholy s labelem \textit{Cesta} a \textit{Destinace} budou mít jedinečnost jednoduchou. Například vztah mezi uživatelem a cestovní aktivitou s labelem \textit{LIKES} buď je nebo není a to lze vyjádřit pomocí existence jedné hrany mezi těmito dvěma vrcholy. Totéž platí pro ostatní hranové labely, až na hranu s labelem \textit{LED\_TO}. Jistě totiž může existovat situace, kdy v rámci cesty uživatel do dané destinace zavítá vícekrát a s touto možností by náš model měl také počítat. Tedy tato hrana bude mít vícenásobnou jedinečnost. Tyto hrany pak od sebe rozlišíme pomocí vlastností, které budou určovat období, kdy se daný uživatel v dané destinaci nacházel. Hrany s mnohonásobnou jedinečností bychom měli rozlišovat pomocí vlastností, aby byly unikátní, jinak tato jedinečnost postrádá smysl.
 
-Jak zjistíme, že jsme zvolili špatnou jedinečnost hran? Špatná volba se projeví v dotazech jedním z těchto způsobů:
-\begin{itemize}
-  \item Databáze vrací příliš málo dat. Tato chyba nastane pokud zvolíme jednoduchou jedinečnost hran tam, kde by měla být zvolena vícenásobná jedinečnost.
-  \item Databáze vrací duplikativní data. Tato chyba nastane pokud zvolíme vícenásobnou jedinečnost hran tam, kde by měla být zvolena jednoduchá jedinečnost.
-  \item Slabý výkon dotazů na databázi. Tato chyba nastane pokud zvolíme vícenásobnou jedinečnost hran tam, kde by měla být zvolena jednoduchá jedinečnost. Každá hrana stejného labelu mezi dvěma vrcholy navíc znamená rozvětvení v případě průchodu grafem a zyvšuje tedy výslednou časovou složitost dotazu.
-\end{itemize}
+Zvolení správné jedinečnosti hran je klíčové pro správné chování databáze. Pokud zvolíme jednoduchou jedinečnost tam, kde by měla být vícenásobná, databáze může vracet méně dat než očekáváme. Naopak, vícenásobná jedinečnost hran tam, kde by měla být jednoduchá, může vést k duplikátivním datům a sníženému výkonu dotazů. Každá hrana se stejným labelem mezi dvěma vrcholy zvyšuje čas výpočtu a komplikuje průchod grafem.
 
 U některých implementací grafových databází, jako například DataStax Graph nebo JanusGraph, lze tuto jedinečnost vynutit jako součást při definování schématu. U implementací bez schématického přístupu, jako je Neo4j, tuto jedinečnost lze ošetřit pouze v rámci aplikace.
 
 \subsubsection{Vlastnosti}
-Poslední zastávkou při konstruování logického modelu jsou vlastnosti. Základní kameny grafu vrcholy a hrany máme, ale chybí nám způsob jak rozlišit jednotlivé vrcholy se stejným labelem. K tomu nám slouží vlastnosti. V grafových databázích mohou mít vlastnosti jak hrany tak vrcholy, neboť hrany jsou pro nás stejně významné jak vrcholy. Vlastnosti v grafové databázi jsou páry klíč-hodnota a popisují konkrétní atributy hrany, či vrcholu. Hodnota vlastnosti může být různého datového typu, například řetězec, číslo, pravdivostní hodnota nebo datový typ pro uchování datumu a času. Někdy též může být hodnota typu pole nebo seznam. Pomocí vlastností následně můžeme rozlišovat jednotlivé uživatele například pomocí jejich křestního jména, příjmení, uživatelské přezdívky. To se nám hodí při filtrování dat, když chceme vybrat pouze vrcholy s určitou vlastností. Jednou z vlastností bývá unikátní identifikátor každého vrcholu, díky kterým přistupujeme ke konkretním vrcholům. K dokončení logického modelu nám tedy zbývá najít a správně přiřadit potřebné vlastnosti konkrétním vrcholovým a hranovým labelům, rozumně je pojmenovat a určit jejich datový typ. K jejich nalezení nám opět mohou pomoci otázky, které chceme aby nám databáze zodpověděla. Z nich můžeme jednotlivé vlastnosti identifikovat a přiřadit.
+Poslední zastávkou při konstruování logického modelu jsou vlastnosti. Základní kameny grafu vrcholy a hrany máme, ale chybí nám způsob jak rozlišit jednotlivé vrcholy se stejným labelem. K tomu nám slouží vlastnosti. V grafových databázích mohou mít vlastnosti jak hrany tak vrcholy, neboť hrany jsou pro nás stejně významné jak vrcholy.
 
-Naše výsledné grafové schéma popisuje obrázek \ref{fig:Schema}.
+Vlastnosti v grafové databázi jsou páry klíč-hodnota a popisují konkrétní atributy hrany, či vrcholu. Hodnota vlastnosti může být různého datového typu, například řetězec, číslo, pravdivostní hodnota nebo datový typ pro uchování datumu a času. Někdy též může být hodnota typu pole nebo seznam.
+
+Pomocí vlastností následně můžeme rozlišovat jednotlivé uživatele například pomocí jejich křestního jména, příjmení, nebo uživatelské přezdívky. To se nám hodí při filtrování dat, když chceme vybrat pouze vrcholy s určitou vlastností. Jednou z vlastností bývá unikátní identifikátor každého vrcholu, díky kterým přistupujeme ke konkretním vrcholům.
+
+K dokončení logického modelu nám tedy zbývá najít a správně přiřadit potřebné vlastnosti konkrétním vrcholovým a hranovým labelům, rozumně je pojmenovat a určit jejich datový typ. K jejich nalezení nám opět mohou pomoci otázky, které chceme aby nám databáze zodpověděla. Z nich můžeme jednotlivé vlastnosti identifikovat a přiřadit.
+
+Naše výsledné grafové schéma popisuje obrázek \ref{fig:Schema}. Vrcholové labely jsou uvedeny v kroužcích. Hranové labely jsou vepsány do šipek. Vlastnosti vrcholů a hran jsou zobrazeny v obdélnících nacházejících se u vrcholů a na hranách.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{TravelEnthusiastNetwork-Graph}
@@ -656,15 +666,15 @@ Naše výsledné grafové schéma popisuje obrázek \ref{fig:Schema}.
 Testování našeho grafového modelu spočívá ve vyzkoušení, zda se chová dle našeho očekávání (databáze vrací očekávané výsledky) a dotazování není moc pomalé ani pro velké množství dat. K testování lze využít široké škály nástrojů, které dotazovací jazyky a databáze nabízejí.
 
 \subsubsection{Unit testy}
-Při testování správnosti dotazů je vhodné použít tzv. \textit{unit testy}. Tedy vytvoříme si pro každý dotaz malé množství testovacích dat (například kolem 10 vrcholů, tak abychom z něj pouhým okem vyčetli správnou odpověď), kterými otestujeme správnost odpovědí z databáze. Příkladem unit testu je zdrojový kód \ref{kod:UnitTest}. Tento kód vloží do databáze data, která tvoří graf znázorněný na obrázku \ref{fig:UnitTest-Graph}. Následně zkontroluje dotaz hledající všechny uživatele, které mají od uživatele s vlastností userId rovnou 1 vzdálenost rovnou 2. Vidíme, že po spuštění testu databáze by měla vrátit uživatele s identifikátory 3 a 4. Následně po sobě uklidíme. Smažeme testovací data.
+Při testování správnosti dotazů je vhodné použít tzv. \textit{unit testy}. Tedy vytvoříme si pro každý dotaz malé množství testovacích dat (například kolem 10 vrcholů, tak abychom z něj pouhým okem vyčetli správnou odpověď), kterými otestujeme správnost odpovědí z databáze. Příkladem unit testu je zdrojový kód \ref{kod:UnitTest}. Tento kód vloží do databáze data, která tvoří graf znázorněný na obrázku \ref{fig:UnitTest-Graph}. Následně zkontroluje dotaz hledající všechny uživatele, které mají od uživatele s vlastností userId rovnou 1 vzdálenost rovnou 2. Vidíme, že po spuštění testu databáze by měla vrátit uživatele s identifikátory 4 a 5. Následně po sobě uklidíme. Smažeme testovací data.
 
-\begin{kicode}{SQL}{kod:UnitTest}{Ukázkový kód pro kontrolu správnosti dotazu.}[h]
+\begin{kicode}{SQL}{kod:UnitTest}{Unit test.}[h]
 // Vytvoření testovacích dat
 CREATE (u1:User {userId: 1, firstName: "John", lastName: "Doe"})
-CREATE (u2:User {userId: 2, firstName: "Alice", lastName: "Smith"})
+CREATE (u2:User {userId: 2, firstName: "Lisa", lastName: "Fog"})
 CREATE (u3:User {userId: 3, firstName: "Bob", lastName: "John"})
 CREATE (u4:User {userId: 4, firstName: "Jane", lastName: "Doe"})
-CREATE (u5:User {userId: 5, firstName: "Charlie", lastName: "Bae"})
+CREATE (u5:User {userId: 5, firstName: "Paul", lastName: "Bae"})
 
 CREATE (u1)-[:FOLLOWS]->(u2)
 CREATE (u2)-[:FOLLOWS]->(u3)
@@ -682,31 +692,39 @@ MATCH (u:User) WHERE u.userId IN [1, 2, 3, 4, 5]
 DETACH DELETE u;
 \end{kicode}
 
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[width=\textwidth]{UnitTest-Graph}
 	\caption{Graf vytvořený pomocí zdrojového kódu \ref{kod:UnitTest}.}
 	\label{fig:UnitTest-Graph}
 \end{figure}
 
 \subsubsection{Profile a Explain}
-Pokud čelíme pomalému vykonávání některých dotazů, můžeme použít zejména dva nástroje pro diagnostiku problémů. První z nich se nazývá \textit{explain} a slouží pro vysvětlení jak se bude průchod grafem vyvíjet na základě našeho dotazu. Používá se v situacích, kdy chceme zjistit chování průchodu grafem, ale nechceme jej vykonat. Výsledkem je optimalizovaný exekuční plán daného dotazu, který bude vykonán na datech. Druhému říkáme \textit{profile} a podle dodaného dotazu profiluje, co průchod grafem udělal. Profile je hojně používaným nástrojem pro analýzu dotazů, neboť dotazy jsou často pomalé pouze pro několik vrcholů -- například těch, které mají vysoký stupeň. Toho lze využít k porovnání chování rychlých a pomalých vykonání dotazu. Získané informace pak využijeme k optimalizování našich dotazů.
+Pokud čelíme pomalému vykonávání některých dotazů, můžeme použít dva nástroje pro diagnostiku problémů.
+
+První z nich se nazývá \textit{explain} a slouží pro vysvětlení jak se bude průchod grafem vyvíjet na základě našeho dotazu. Používá se v situacích, kdy chceme zjistit chování průchodu grafem, ale nechceme jej vykonat. Výsledkem je optimalizovaný exekuční plán daného dotazu, který by byl vykonán na datech.
+
+Druhému říkáme \textit{profile} a podle dodaného dotazu profiluje, co průchod grafem udělal. Profile je hojně používaným nástrojem pro analýzu dotazů, neboť dotazy jsou často pomalé pouze pro několik vrcholů -- například těch, které mají vysoký stupeň. Toho lze využít k porovnání chování rychlých a pomalých vykonání dotazu. Získané informace pak využijeme k optimalizování našich dotazů.
 
 \subsubsection{Indexy}
 %%https://www.macrometa.com/docs/graphs/graph-concepts/graphs-and-indexes
-Pro efektivní hledání dat v rámci grafu lze použít \textit{indexy}. Toho lze využít pro vylepšení dotazů, neboť díky nim můžeme zrychlit průchod grafem, přístup ke konkrétním datům a další operace pracující s daty. Indexy vytvoří redundantní kopii vybraných dat v databázi podle zadaných kritérií. Jou výhodné pro data, které jsou častým terčem hledání. Nejčastěji se jedná o vlastnosti, které často vystupují ve filtrování dat v dotazu, nebo identifikátory vrcholů. Dále se využívají pro vlastnosti, na kterých jsou prováděny různé operace s řetězci. Příkladem je hledání slov začínající, končící, nebo obsahující určitý podřetězec. Implementace jako je TinkerGraph poskytuje pouze globální indexy jedné hodnoty. Oproti tomu databáze jako Neo4j nabízí celou škálu různých typů indexů. Indexy také však mají nevýhody. Zvýšují nároky na úložný prostor a mohou zpomalovat zápisy do databáze. Měly by tedy být vytvářeny pouze pro data, pro které budou obzvláště výhodné.
+Pro efektivní hledání dat v rámci grafu lze použít \textit{indexy}. Toho lze využít pro vylepšení dotazů, neboť díky nim můžeme zrychlit průchod grafem, přístup ke konkrétním datům a další operace pracující s daty. Indexy vytvoří redundantní kopii vybraných dat v databázi podle zadaných kritérií. Jsou výhodné pro data, které jsou častým terčem hledání. Nejčastěji se jedná o vlastnosti, které často vystupují ve filtrování dat v dotazu, nebo identifikátory vrcholů. Dále se využívají pro vlastnosti, na kterých jsou prováděny různé operace s řetězci. Příkladem je hledání slov začínající, končící, nebo obsahující určitý podřetězec.
+
+Implementace jako je TinkerGraph poskytuje pouze globální indexy jedné hodnoty. Oproti tomu databáze jako Neo4j nabízí celou škálu různých typů indexů. Indexy také však mají nevýhody. Zvýšují nároky na úložný prostor a mohou zpomalovat zápisy do databáze. Měly by tedy být vytvářeny pouze pro data, pro které budou obzvláště výhodné.
 
 \subsubsection{Denormalizace}
 \textit{Denormalizace} je metoda, která do databáze přidává redundantní data za účelem zrychlení čtení dat. Denormalizace v grafových databázích většinou znamená kopírování hodnot vlastností vrcholů na incidentní hrany. Často se jedná o časové informace. Nevýhodou tohoto procesu je udržba těchto kopií což vede k zpomalení zápisů. Denormalizace je tedy vhodná pouze pro aplikace, kde počet operací pro čtení z databáze mnohonásobně převyšuje počet operací pro zápis.
 
-\section{Known walks}
-Často při průchodu grafem předem známe grafový vzor určující cestu, kterou musíme projít, abychom dosáhli požadovaných výsledků pro daný dotaz. Předem víme délku cesty a vrcholové a hranové labely, přes které cesta prochází. Tento průchod grafem je v knize \cite{inAction} označen jako \textit{known walk}. Při překladu otázek na dotazy v naší aplikaci pro cestovatelské nadšence s datovým modelem na obrázku \ref{fig:Schema} zjistíme, že všechny grafové vzory představují known walk.
+%V naší aplikaci bychom mohli přidat redundantní data ratingDate na hranu s labelem WROTE. To by se mohlo hodit v případě, kdy bychom hledali hodnocení, které uživatel napsal naposledy. Místo hledání tohoto hodnocení na základě vlastnosti vrcholů reprezentujících uživatelovo hodnocení, bychom hledali hranu vedoucí do toho správného vrcholu.
+
+\section{Known walk}
+Často při průchodu grafem předem známe grafový vzor určující cestu, kterou musíme projít, abychom dosáhli požadovaných výsledků pro daný dotaz. Předem víme délku cesty a vrcholové a hranové labely, přes které cesta prochází. Tento průchod grafem je v knize \cite{inAction} označen jako \textit{known walk}. Při překladu otázek na~dotazy v naší aplikaci pro cestovatelské nadšence s datovým modelem na~obrázku \ref{fig:Schema} zjistíme, že všechny grafové vzory představují known walk.
 
 \subsection{Příklad použití}
-Příkladem může být dotaz odpovídající na otázku \uv{Které destinace navštívil uživatel s identifikátorem X?}. Vidíme, že v dotazu budou jistě figurovat dvě entity, konkrétně: \textit{Uživatel} a \textit{Destinace}. Při pohledu na grafové schéma je zřejmé, že abychom dostali všechny navštívené destinace pro konkrétního uživatele, musíme v grafu projít i přes všechny vrcholy s labelem \textit{Cesta}, které uživatel podniknul. Tyto vrcholy spojují uživatele s destinacemi, které navštívil. Jedná se tedy o known walk, neboť víme, že musíme provést cesty obsahující vrcholy s labely \textit{Uživatel}, \textit{Cesta} a \textit{Destinace}.
+Příkladem může být dotaz odpovídající na otázku \uv{Které destinace navštívil uživatel s identifikátorem X?}. Vidíme, že v dotazu budou jistě figurovat dvě entity, konkrétně: \textit{Uživatel} a \textit{Destinace}. Při pohledu na grafové schéma je zřejmé, že abychom dostali všechny navštívené destinace pro konkrétního uživatele, musíme v grafu projít i přes všechny vrcholy s labelem \textit{Cesta}, které uživatel podniknul. Tyto vrcholy spojují uživatele s destinacemi, které navštívil. Jedná se tedy o~known walk, neboť víme, že musíme provést cesty obsahující vrcholy s labely \textit{Uživatel}, \textit{Cesta} a \textit{Destinace}.
 
-Nyní je otázkou, v kterých vrcholech je dobré průchod začít. Volba počátečních vrcholů má často velký vliv na výsledný čas výpočtu. Jednou z možností je začít na vrcholech s labelem \textit{Destinace}. Grafový vzor by pak určoval cestu ze všech vrcholů s labelem \textit{Destinace} přes hrany spojující tyto vrcholy s vrcholy s labelem \textit{Cesta}. Následně pro všechny vrcholy s labelem \textit{Cesta} zkontrolujeme, zda se jich vrchol s labelem \textit{Uživatel}, který má shodný identifikátor, zúčastnil. Destinace, které by takto nebyly s uživatelem spojeny, by byly vyfiltrovány. Vyhovující destinace by byly vráceny. Ačkoliv by tento výpočet vedl ke správnému výsledku, procházet přes všechny destinace a tedy i přes všechny cesty není nejvhodnější. Vrcholů, které bychom museli zkontrolovat, je zbytečně mnoho. Obdobně nevyhovující by bylo začínat ve vrcholech s labelem \textit{Cesta}. Nejvýhodnějším řešením je začít ve vrcholu představujícím konkrétního uživatele. Následně projít přes vrcholy s labelem \textit{Cesta}, kterých se uživatel zúčastnil a dostat se tak ke všem destinacím, které daný uživatel navštívil. Obecně je doporučeno začínat v co nejmenším počtu vrcholů. Výsledný dotaz v Cypheru ukazuje zdrojový kód \ref{kod:VisitedDestinations}. Do odpovědi je zahrnuta též informace, kolikrát daný uživatel destiance navštívil. Výsledky jsou podle toho seřazeny.
+Nyní je otázkou, v kterých vrcholech je dobré průchod začít. Volba počátečních vrcholů má často velký vliv na výsledný čas výpočtu. Jednou z možností je začít na vrcholech s labelem \textit{Destinace}. Grafový vzor by pak určoval cestu ze~všech vrcholů s labelem \textit{Destinace} přes hrany spojující tyto vrcholy s~vrcholy s~labelem \textit{Cesta}. Následně pro všechny vrcholy s labelem \textit{Cesta} zkontrolujeme, zda se jich vrchol s labelem \textit{Uživatel}, který má shodný identifikátor, zúčastnil. Destinace, které by takto nebyly s uživatelem spojeny, by byly vyfiltrovány. Vyhovující destinace by byly vráceny. Ačkoliv by tento výpočet vedl ke správnému výsledku, procházet přes všechny destinace a tedy i přes všechny cesty není nejvhodnější. Vrcholů, které bychom museli zkontrolovat, je zbytečně mnoho. Obdobně nevyhovující by bylo začínat ve vrcholech s labelem \textit{Cesta}. Nejvýhodnějším řešením je začít ve vrcholu představujícím konkrétního uživatele. Následně projít přes vrcholy s labelem \textit{Cesta}, kterých se uživatel zúčastnil a dostat se tak ke všem destinacím, které daný uživatel navštívil. Obecně je doporučeno začínat v co nejmenším počtu vrcholů. Výsledný dotaz v Cypheru ukazuje zdrojový kód \ref{kod:VisitedDestinations}. Do odpovědi je zahrnuta též informace, kolikrát daný uživatel destiance navštívil. Výsledky jsou podle toho seřazeny.
 
-\begin{kicode}{Cypher}{kod:VisitedDestinations}{Ukázkový kód v Cypheru.}[h]
+\begin{kicode}{Cypher}{kod:VisitedDestinations}{Known walk.}[h]
 WITH 3 AS id
 MATCH (u:User {userId:id})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d:Destination)
 RETURN d.destinationName, COUNT(d) AS count
@@ -715,27 +733,27 @@ ORDER BY count DESC, d.destinationName ASC;
 
 \section{Hledání cest mezi 2 vrcholy}
 %%https://opendata.infrabel.be/explore/dataset/station_to_station/information/?disjunctive.stationfrom_name&disjunctive.stationto_name&sort=stationfrom_name&basemap=jawg.light&location=8,50.51448,4.32709
-V této kapitole si odhalíme další velkou výhodu grafových databází a to hledání cest mezi vrcholy. V první části si připomeneme dva základní algoritmy pro průchod grafem a následně této znalosti využijeme ve druhé části při zjišťování dosažitelnosti a hledání nejkratších cest ve smyslu počtu hran mezi dvěma vrcholy. Ve třetí části se podíváme na hledání cesty s nejmenším možným součtem ohodnocení hran na této cestě.
+V této kapitole si odhalíme další velkou výhodu grafových databází a to hledání cest mezi vrcholy. Ne vždy platí, že cestu mezi dvěma vrcholy známe. Často máme pouze počáteční a cílový vrchol a chceme zjistit, zda je jeden z druhého dosažitelný, nebo hledáme nejkratší cestu mezi nimi. V první části si připomeneme dva základní algoritmy pro průchod grafem a následně této znalosti využijeme ve druhé části při zjišťování dosažitelnosti a hledání nejkratších cest ve smyslu počtu hran mezi dvěma vrcholy. Ve třetí části se podíváme na hledání cesty s nejmenším možným součtem ohodnocení hran na této cestě.
 
 Pro ukázkové příklady je použitý dataset\footnote{\url{https://opendata.infrabel.be/explore/dataset/station_to_station/information/?disjunctive.stationfrom_name&disjunctive.stationto_name&sort=stationfrom_name&basemap=jawg.light&location=8,50.51448,4.32709}} obsahující informace o belgických železničních stanicích a spojeních mezi nimi. Jednoduchý model znázorňuje obrázek \ref{fig:RailNetwork-Graph}. V databázi tedy budeme uchovávat tedy pouze vrcholy s labelem Station a hrany mezi nimi s labelem LEADS\_TO. Původní dataset je rozdělen do dvou csv souborů. Jeden uchovává informace o železničních stanicích a druhý spojení mezi nimi. Informace obsahující souřadnice pro jednotlivá spojení byly vypuštěny. Seznam souborů shrnuje tabulka \ref{tab:RailNetwork-csv}.
 
 \begin{table}[h]
+\caption{Tabulka souborů pro ukázku hledání cest.}
+\label{tab:RailNetwork-csv}
 \begin{tabularx}{\textwidth}{ | l | c | c | X | }
  \hline
  \textbf{Typ} & \textbf{Název souboru} & \textbf{Počet řádků} & \textbf{Informace o souboru} \\
  \hline \hline
- Entity & stations.csv & 560 & Informace o železničních stanicích. \\
+ Entity & \texttt{stations.csv} & 560 & Informace o železničních stanicích. \\
  \hline
- Vztahy & leads\_to.csv & 1386 & Vztah mezi stanicemi.\\
+ Vztahy & \texttt{leads\_to.csv} & 1386 & Vztah mezi stanicemi.\\
  \hline
 \end{tabularx}
-\caption{Tabulka obsahující soubory pro ukázku hledání cest.}
-\label{tab:RailNetwork-csv}
 \end{table}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
-	\includegraphics[scale=0.5]{RailNetwork-Graph}
+	\includegraphics[scale=0.75]{RailNetwork-Graph}
 	\caption{Model grafové databáze pro ukázkové příklady v této kapitole.}
 	\label{fig:RailNetwork-Graph}
 \end{center}
@@ -744,14 +762,14 @@ Pro ukázkové příklady je použitý dataset\footnote{\url{https://opendata.in
 \subsection{Procházení grafu}
 Pro prohledávání grafů od určitého počátečního vrcholu lze použít dva známé grafové algoritmy:
 \begin{enumerate}
-  \item Prohledávání do šířky (zkráceně BFS z anglického spojení Breadth-first search)
-  \item Prohledávání do hloubky (zkráceně DFS z anglického spojení Depth-first search)
+  \item \textit{Prohledávání do šířky}, označované jako BFS (z anglického Breadth-First Search)
+  \item \textit{Prohledávání do hloubky}, označované jako DFS (z anglického Depth-First Search)
 \end{enumerate}
-Oba algoritmy mají složitost $O(|E| + |V|)$.
+Oba algoritmy mají složitost $O(|E| + |V|)$. Oba byly vymysleny pro hledání cesty v bludišti.
 
 Algoritmus BFS začne v počátečním vrcholu a následně prohledá všechny své sousední vrcholy. Poté projde sousedy sousedů počátečního vrcholu, které ještě nenavštívil a tak postupuje dokud nenavštíví všechny dosažitelné vrcholy. Tento způsob procházení grafu lze znázornit pomocí kořenového stromu. Kořenem je počáteční uzel. Algoritmus prochází vrcholy grafu po jednotlivých úrovních tohoto stromu. Platí, že nejkratší cesta z počátečního vrcholu do vrcholu $v$ v grafu je rovna hloubce $v$ ve stromu, který vznikne průchodem do šířky.  Lze jej efektivně implementovat pomocí fronty vrcholů. Průchod grafem do šířky a strom, vzniklý průchodem algoritmu jsou znázorněny na obrázku \ref{fig:bfs}. Pořadí, v kterém jsou vrcholy procházeny je znázorněno čísly v obdélnících u každého vrcholu.
 
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[width=\textwidth]{Bfs}
 	\caption{Průchod algoritmu  BFS grafem.}
 	\label{fig:bfs}
@@ -759,7 +777,7 @@ Algoritmus BFS začne v počátečním vrcholu a následně prohledá všechny s
 
 Algoritmus DFS postupuje opačně, v aktuálně navštíveném vrcholu přejde do dosud nenavštíveného souseda, pokud takový soused existuje, jinak provede backtracking -- vrací se zpět po cestě odkud přišel, dokud nenalezne vrchol jehož soused nebyl navštíven. Skončí jakmile jsou všechny vrcholy navštíveny. Tento způsob procházení grafu lze opět znázornit pomocí kořenového stromu, kde kořen je počáteční uzel. Avšak v tomto stromu pozorování ohledně nejkratších cest, jaké jsme udělali u BFS obecně neplatí. Při implementci využíváme zásobník. Průchod grafem do hloubky a strom, vzniklý průchodem algoritmu jsou znázorněny na obrázku \ref{fig:dfs}. Pořadí, v kterém jsou vrcholy procházeny je znázorněno čísly v obdélnících u každého vrcholu.
 
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[width=\textwidth]{Dfs}
 	\caption{Průchod algoritmu DFS grafem.}
 	\label{fig:dfs}
@@ -776,7 +794,7 @@ V případě algoritmu procházení do hloubky bychom nalezení nejkratší cest
 
 V AQL lze cesty mezi stanicemi obsahující 1 až 4 hrany najít pomocí dotazu ve zdrojovém kódu \ref{kod:unweightedPath}. Na řádku 2 vyfiltrujeme ty sledy, které obsahují cyklus a specifikujeme strategii prohledávání do šířky. Výsledky jsou seřazeny podle vzdálenosti. Tabulka \ref{tab:ShortestPath-Unweighted-Example} ukazuje výsledek tohoto dotazu po zavolání. Obrázek \ref{fig:ShortestPath-Unweighted-Example} pak znázorňuje podgraf, který obsahuje všechny vrcholy a hrany vystupující v dotazu. Tučnou čarou jsou zde vyznačeny nejkratší cesty mezi stanicemi.
 
-\begin{kicode}{AQL}{kod:unweightedPath}{Nejkratší cesty v neohodnoceném grafu ze stanice Bilzen do stanice Schulen.}[h]
+\begin{kicode}{AQL}{kod:unweightedPath}{Cesty v neohodnoceném grafu.}[h]
 FOR v,e,p IN 1..4 OUTBOUND 'Station/157' LEADS_TO
 OPTIONS {uniqueVertices: 'path', order: 'bfs'}
     FILTER p.vertices[-1]._id == 'Station/1061'
@@ -791,6 +809,8 @@ OPTIONS {uniqueVertices: 'path', order: 'bfs'}
 
 \begin{table}[h]
 \begin{center}
+\caption{Výsledná tabulka pro dotaz ve zdrojovém kódu \ref{kod:unweightedPath}.}
+\label{tab:ShortestPath-Unweighted-Example}
 \begin{tabular}{ | l | c | }
  \hline
  \textbf{stations}  & \textbf{distance} \\
@@ -803,8 +823,6 @@ OPTIONS {uniqueVertices: 'path', order: 'bfs'}
  \hline
 \end{tabular}
 \end{center}
-\caption{Výsledná tabulka pro dotaz ve zdrojovém kódu \ref{kod:unweightedPath}.}
-\label{tab:ShortestPath-Unweighted-Example}
 \end{table}
 
 \begin{figure}
@@ -817,9 +835,9 @@ OPTIONS {uniqueVertices: 'path', order: 'bfs'}
 \subsection{Cesta v ohodnoceném grafu}
 Délka cesty mezi počátečním a koncovým vrcholem v ohodnoceném grafu je dána součtem ohodnocení hran na cestě. Tedy nejmenší počet hran na cestě nutně neznamená, že součet ohodnocení hran je menší než na jiné cestě obsahující více hran. Z tohoto důvodu zde nemůžeme pro vyřešení SSSP použít lehce modifikovaný algoritmus, který nám řešil problém v předchozí části.
 
-Jedním ze způsobů, jak vyřešit SSSP, je udržování a aktualizování nejkratších nalezených cest do již navštívených vrcholů. Tento princip je známý z významného algoritmu pro řešení SSSP -- Djikstrově algoritmu. Je ho využito ve zdrojovém kódu \ref{kod:ShortestPath-Weighted-Example} v jazyku Gremlin. Výsledek, který dostaneme shrnuje tabulka \ref{tab:ShortestPath-Weighted-Example}. Celková vzdálenost v kilometrech je zaokrouhlená na 4 desetinná místa.
+Jedním ze způsobů, jak vyřešit SSSP, je udržování a aktualizování nejkratších nalezených cest do již navštívených vrcholů. Tento princip je známý z významného algoritmu pro řešení SSSP -- Djikstrově algoritmu. Je ho využito ve zdrojovém kódu \ref{kod:ShortestPath-Weighted-Example} v jazyku Gremlin. Výsledek, který dostaneme shrnuje tabulka \ref{tab:ShortestPath-Weighted-Example}. Celková vzdálenost v je zaokrouhlená na celé metry.
 
-\begin{kicode}{Java}{kod:ShortestPath-Weighted-Example}{Ukázkový kód v dotazovacím jazyku Gremlin.}[h]
+\begin{kicode}{Java}{kod:ShortestPath-Weighted-Example}{Hledání nejkratší cesty v ohodnoceném grafu.}[h]
 g.withSack(0.0).V().
     has("Station", "stationId", 1048).
     repeat(outE("LEADS_TO").
@@ -848,19 +866,19 @@ g.withSack(0.0).V().
 \end{kicode}
 
 \begin{table}[h]
+\caption{Výsledná tabulka pro dotaz ve zdrojovém kódu \ref{kod:ShortestPath-Weighted-Example}.}
+\label{tab:ShortestPath-Weighted-Example}
 \begin{tabularx}{\textwidth}{ | X | c | c | }
  \hline
  \textbf{stations}  & \textbf{stationsCount} & \textbf{totalLength} \\
  \hline \hline
- SCHAERBEEK, BUDA, VILVOORDE, EPPEGEM, WEERDE, MECHELEN & 6 & 18.2057 \\
+ SCHAERBEEK, BUDA, VILVOORDE, EPPEGEM, WEERDE, MECHELEN & 6 & 18\,206 m \\
  \hline
- SCHAERBEEK, VILVOORDE, EPPEGEM, WEERDE, MECHELEN & 5 & 18.2687 \\
+ SCHAERBEEK, VILVOORDE, EPPEGEM, WEERDE, MECHELEN & 5 & 18\,269 m \\
  \hline
- SCHAERBEEK, MECHELEN & 2 & 19.8325 \\
+ SCHAERBEEK, MECHELEN & 2 & 19\,833 m \\
  \hline
 \end{tabularx}
-\caption{Výsledná tabulka pro dotaz \ref{kod:ShortestPath-Weighted-Example}.}
-\label{tab:ShortestPath-Weighted-Example}
 \end{table}
 
 Z vrácených výsledků vidíme, že nejkratší délka železnic mezi stanicemi SCHAERBEEK a MECHELEN má délku 18.2 kilometrů. Na této cestě projdeme přes 6 stanic. Jen o 50 metrů je delší druhá cesta, která obsahuje o jednu zastávku méně. Třetí výsledek je delší o více než 1.5 kilometru a jedná se o přímý spoj.
@@ -875,91 +893,98 @@ Grafové databáze nabízí optimalizované algoritmy pro hledání nejkratší 
 
 \section{Algoritmy}
 
-Tato kapitola byla napsána pomocí knih \cite{graphAlgorithms} a \cite{inAction}. Dále byla využita dokumentace knihovny Graph Data Science Library \cite{neo4jGds} a zdroje \cite{astar} a \cite{disk}.
+Tato kapitola byla napsána pomocí knih \cite{graphAlgorithms} a \cite{inAction}. Dále byla využita dokumentace knihovny Graph Data Science Library \cite{neo4jDoc} a zdroje \cite{astar} a \cite{disk}.
 
-V této kapitole si ukážeme řadu užitečných algoritmů, které jsou určené pro práci s grafem a jsou tedy v určitých situacích vhodné aplikovat při dotazech na grafovou databázi. Umožňují nám efektivně zjistit hledat nejkratší cesty mezi vrcholy, nacházet vrcholy, které pro nás mohou být svým způsobem důležité, nebo třeba analyzovat komunity(skupinky propojených vrcholů) v grafu. Ke grafové databázi Neo4j existuje knihovna s názvem Graph Data Science Library nabízející veškeré algoritmy, které lze po nainstalování pluginu použít. Zkráceně ji budeme označovat gds jako v dotazech Neo4j. V následujících částech si představíme užití pár algoritmů z této knihovny. 
+V této kapitole si ukážeme řadu užitečných algoritmů, které jsou určené pro práci s grafem a jsou tedy v určitých situacích vhodné aplikovat při dotazech na grafovou databázi. Umožňují nám efektivně hledat nejkratší cesty mezi vrcholy, nacházet vrcholy, které pro nás mohou být svým způsobem důležité, nebo třeba analyzovat komunity(skupinky propojených vrcholů) v grafu. Tyto algoritmy a mnohé další obsahuje knihovna s názvem \textit{Graph Data Science Library}. Tuto knihovnu lze dodatečně nainstalovat do databáze Neo4j. Zkráceně ji budeme označovat \textit{GDS}.
+
+Pro nejefektivnější běh algoritmů používá \textit{GDS} k reprezentaci dat grafu speciální formát grafu uložený dočasně v paměti. Jedná se o strukturu vrcholů a hran, jejichž vlastnosti mohou být pouze číselné. Každý takový graf je pojmenován a díky tomu na něj můžeme odkazovat v algoritmech. Tyto odkazy jsou uložené v \textit{grafovém katalogu}. Graf lze vytvořit více způsoby. V práci je použitý způsob vytvoření grafu pomocí \textit{Cypher projekce}.
+
+Algoritmy pak mohou běžet ve třech režimech:
+\begin{itemize}
+\item \textit{stream} -- výsledky algoritmu obdržíme jako výsledek dotazu.
+\item \textit{mutate} -- výstup algoritmu aktualizuje graf v paměti.
+\item \textit{write} -- zapíše výsledek algoritmu zpět do databáze Neo4j.
+\end{itemize}
 
 \subsection{Algoritmy pro hledání cesty v grafu}
 V praxi je užitečné v grafu najít rychle optimální cestu mezi dvěma, či více vrcholy. Tento problém potřebují řešit například nástroje pracující s grafy reprezentující mapy, které hledají vhodné trasy mezi body na mapě. Dalšími příklady optimalizační problémů jsou řízení dodavatelských řetězců, hledání nejvhodnějšího autobusového spojení a analýza počítačové sítě. 
 
-Pro řešení tohoto problému vznikly různé algoritmy, hledající optimální výsledek. Každý pracuje odlišně a je výhodný pro různé poddruhy problémů. Pár z nich si zde představíme.
+Pro řešení tohoto problému vznikly různé algoritmy. Každý pracuje odlišně a je výhodný pro různé poddruhy problémů. Pár z nich si zde představíme.
 
 \subsubsection{Djikstra}
-Jeden z nejznámějších algoritmů pro hledání nejkratší cesty. Lze jej aplikovat na neohodnocené grafy, nebo grafy s kladným ohodnocením hran. Jedná se o hladový algoritmus, který k specifikovanému vrcholu vydá nejkratší cestu z tohoto vrcholu do všech ostatních vrcholů. Lze jej také omezit, aby iteroval jen dokud nenajde nejkratší cestu ke konkrétnímu cílovému vrcholu. Dosáhne správného řešení díky pamatování dosud nejkratších nalezených cest do již navštívených vrcholů. V každé iteraci pak vybere jeden vrchol s nejkratší nalezenou cestu ze všech, které dosud nebyly vybrány a následně aktualizuje všechny nejkratší cesty vedoucí přes tento vybraný vrchol. Pokud je nějaký vrchol nedosažitelný nebo ještě nebyl nenavštívený, má hodnotu $\infty$. Nevýhodou tohoto algoritmu je, že pro nalezení nejkratší cesty pro 2 zadané vrcholy je v nejhorším případě potřeba nalézt všechny nejkratší cesty do ostatních vrcholů, než se algoritmus dostane k požadovanému výsledku. To nastává v případě, kdy mezi dvěma vrcholy je nejkratší cesta nejdelší ze všech nejkratších cest z počátečního vrcholu do ostatních vrcholů. Tento problém se pokouší řešit následující algoritmus.
+Jeden z nejznámějších algoritmů pro hledání nejkratší cesty. Lze jej aplikovat na neohodnocené grafy, nebo grafy s kladným ohodnocením hran. Jedná se o hladový algoritmus, který k specifikovanému vrcholu vydá nejkratší cestu z tohoto vrcholu do všech ostatních vrcholů. Lze jej také omezit, aby iteroval jen dokud nenajde nejkratší cestu ke konkrétnímu cílovému vrcholu. Správné řešení je dosáhnuto díky pamatování si dosud nejkratších nalezených cest do již navštívených vrcholů. V každé iteraci pak vybere jeden vrchol s nejkratší nalezenou cestu ze všech, které dosud nebyly vybrány a následně aktualizuje všechny nejkratší cesty vedoucí přes tento vybraný vrchol. Pokud je nějaký vrchol nedosažitelný nebo ještě nebyl nenavštívený, má hodnotu $\infty$.
+
+Nevýhodou tohoto algoritmu je, že pro nalezení nejkratší cesty pro 2 zadané vrcholy je v nejhorším případě potřeba nalézt všechny nejkratší cesty do ostatních vrcholů, než se algoritmus dostane k požadovanému výsledku. To nastává v případě, kdy mezi dvěma vrcholy je nejkratší cesta nejdelší ze všech nejkratších cest z počátečního vrcholu do ostatních vrcholů.
 
 \subsubsection{A*}
 %%https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf
 %%https://neo4j.com/docs/graph-data-science/current/algorithms/astar/
 %% Graph algorithms - practical examples in apache sperk c neo4j 
-A* (čteme A-star) pracuje podobně jako Djikstrův algoritmus, ale v mnoha případech ji najde rychleji. Je to protože dostane navíc na vstupu dodatečnou informaci, kterou používá při rozhodování do jakého vrcholu bude algoritmus pokračovat. Toto rozhodnutí je provedeno na základě funkce $f(n) = g(n) + h(n)$, kde funkce $g(n)$ představuje součet ohodnocení nejkratší cesty ze startu přes dosud navštívené vrcholy do $n$ a funkce $h(n)$ je odhad délky cesty z n do cíle. Funkci $h(n)$ říkáme heuristika. V každé iteraci pak algoritmus pokračuje vrcholem, pro který je hodnota funkce $f$ nejmenší. Pro správné výsledky by heuristika měla být optimistická, tedy odhad by měl být menší nebo roven skutečné vzdálenosti do cíle. Platí, že čím lépe odhadneme heuristiku tím rychleji algoritmus najde řešení. Pro svůj rychlý výpočet je například implementován ve videohrách. Djikstrův algoritmus je speciálním případem A*. Pro něj platí $h(v)=0$ pro všechny vrcholy $v \in V$.
+A* pracuje podobně jako Djikstrův algoritmus. Avšak často dosahuje výsledku rychleji díky dodatečné informaci, kterou dostane na vstupu. Této informaci se říká heuristika. Je to funkce $h\colon V\to \mathbb{R}^+$ odhadující délku cesty ze všech vrcholů do cílového vrcholu.
 
-V knihovně gds lze A* použít například pro vrcholy reprezentující nějakou lokaci, která je přesně určena pomocí zeměpisné šířky a délky. Geografické souřadnice nám slouží jako část heuristické funkce.
+Rozhodnutí do jakého vrcholu bude algoritmus pokračovat je provedeno na základě funkce $f(n) = g(n) + h(n)$ pro každý navštívený vrchol $n$. Funkce $g(n)$ představuje součet ohodnocení nejkratší cesty ze startu přes dosud navštívené vrcholy do $n$. Funkce $h(n)$ je vstupní heuristika. V každé iteraci pak algoritmus pokračuje vrcholem, pro který je hodnota funkce $f$ nejmenší.
+
+Pro správné výsledky by heuristika měla být optimistická, tedy odhad by měl být menší nebo roven skutečné vzdálenosti do cíle. Platí, že čím lépe odhadneme heuristiku tím rychleji algoritmus najde řešení. Djikstrův algoritmus je speciálním případem A*. Pro něj platí $h(v)=0$ pro všechny vrcholy $v \in V$.
+
+V \textit{GDS} lze A* použít například pro vrcholy reprezentující nějakou lokaci, která je přesně určena pomocí zeměpisné šířky a délky. Geografické souřadnice nám slouží jako část heuristické funkce. Pro svůj rychlý výpočet je například implementován ve videohrách.
 
 \subsubsection{Minimální kostra grafu}
-Dalším, mezi informatiky dobře známým, problémem je hledání minimální kostry v souvislém grafu. Vstupem je souvislý neorientovaný graf G s ohodnocenými hranami. Výstupem je minimální kostra grafu G. Kostru grafu lze definovat jako podgraf grafu G, který je stromem obsahujícím všechny vrcholy původního grafu. My požadujeme, aby kostra byla minimální, tedy aby součet ohodnocení hran v nalezeném podgrafu byl ze všech možných koster nejmenší. Příklad minimální kostry grafu je na obrázku \ref{fig:minimum-spanning-tree}. Problém kostry grafu má více variant. Můžeme též hledat maximální kostru grafu, nebo omezit počet vrcholů v kostře na $ k \in \mathbb{N}$ tomuto problému se říká k-spanning tree.
-Knihovna gds algoritmus na hledání kostry obsahuje. Konkrétně nabízí Jarníkův-Primův algoritmus, poprvé popsaný v roce 1930 čekým matematikem Vojtěchem Jarníkem. Jedná se o hladový algoritmus, který vyžaduje na vstupu specifikovat i počáteční vrchol $s$. Vrátí minimální kostru komponenty vstupního grafu obsahující $s$. Pokud při implementaci využíváme například binární prioritní frontu máme celkovou složitost $O(|E| \log_2 |V|)$.
-Tento algoritmus lze využít pro nejlevnější propojení měst vodním potrubím, kde nižší ohodnocení hran znamená menší náklady. Dalším využitím je aproximace problémů patřících do třídy NPTIME, jako je například problém obchodního cestujícího. 
+Dalším, mezi informatiky dobře známým, problémem je hledání minimální kostry v souvislém grafu. Vstupem je souvislý neorientovaný graf G s ohodnocenými hranami. Výstupem je minimální kostra grafu G. Kostru grafu lze definovat jako podgraf grafu G, který je stromem obsahujícím všechny vrcholy původního grafu. My požadujeme, aby kostra byla minimální, tedy aby součet ohodnocení hran v nalezeném podgrafu byl ze všech možných koster nejmenší. Příklad minimální kostry grafu je na obrázku \ref{fig:minimum-spanning-tree}.
 
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[width=\textwidth]{Minimum-Spanning-Tree}
-	\caption{Algoritmus hledající minimální kostru grafu.}
+	\caption{Minimální kostra grafu.}
 	\label{fig:minimum-spanning-tree}
 \end{figure}
 
+ Problém kostry grafu má více variant. Můžeme též hledat maximální kostru grafu, nebo omezit počet vrcholů v kostře na $ k \in \mathbb{N}$ tomuto problému se říká k-spanning tree.
+
+\textit{GDS} algoritmus na hledání kostry obsahuje. Konkrétně nabízí Jarníkův-Primův algoritmus, poprvé popsaný v roce 1930 čekým matematikem Vojtěchem Jarníkem. Tento iterativní hladový algoritmus vyžaduje na vstupu specifikovat kromě grafu i počáteční vrchol $s$. Postupně je z něj vytvářen strom $T$ tak, že v~každém kroku je k $T$ připojena jedna hrana. Vždy je vybrána hrana s nejmenší váhou, která vede z $T$ do vrcholu mimo $T$. Pokud neexistuje hrana, která by šla do stromu přidat, výpočet skončí. $T$ je minimální kostra komponenty vstupního grafu obsahující $s$. Pokud při implementaci využíváme binární prioritní frontu máme celkovou složitost $O(|E| \log_2 |V|)$.
+
+Tento algoritmus lze využít pro nejlevnější propojení měst vodním potrubím, kde nižší ohodnocení hran znamená menší náklady. Dalším využitím je aproximace problémů patřících do třídy NPTIME, jako je například problém obchodního cestujícího. 
+
 \subsubsection{Random walk}
-Jak už název napovídá, Random walk provádí náhodné sledy v grafu specifikované délky. Simuluje průchod grafem přičemž náhodně vybírá hrany. V klasické verzi algoritmu je v každém vrcholu pravděpodobnost vybrání hrany uniformní a nezáleží na předchozích výběrech. Knihovna gds nabízí Random walk druhého řádu. U tohoto algoritmu se specifikují dva parametry:
+Random walk provádí náhodné sledy zadané délky. Simuluje průchod grafem přičemž náhodně vybírá hrany. V klasické verzi algoritmu je v každém vrcholu pravděpodobnost vybrání hrany uniformní a nezáleží na předchozích výběrech. \textit{GDS} nabízí Random walk druhého řádu. U tohoto algoritmu se specifikují dva parametry:
 
 \begin{itemize}
-\item \textit{returnFactor} -- vyjadřuje tendenci algoritmu se vracet zpět k naposledy navštívenému vrcholu. Hodnoty menší než 1, pravděpodobnost tohoto výběru zvyšují.
-\item \textit{inOutFactor} -- vyjadřuje tendenci algoritmu zůstávat či nezůstávat v blízkosti počátečního vrcholu. Čím vyšší hodnota je zadána, tím bude průchod grafem lokálnější.
+\item \texttt{returnFactor} -- vyjadřuje tendenci algoritmu se vracet zpět k naposledy navštívenému vrcholu. Hodnoty menší než 1 pravděpodobnost tohoto výběru zvyšují.
+\item \texttt{inOutFactor} -- vyjadřuje tendenci algoritmu zůstávat či nezůstávat v blízkosti počátečního vrcholu. Čím vyšší hodnota je zadána, tím bude průchod grafem lokálnější.
 \end{itemize}
 
 V klasické verzi jsou oba parametry nastaveny na hodnotu 1. Pravděpodobnost výběru též můžeme ovlivnit pomocí ohodnocených hran. Vlastnost hrany, která je vyšší než jedna pravděpodobnost výběru této hrany zvyšuje. Naopak hodnoty z intervalu $(0,1)$ pravděpodobnost zmenšují.
 
-Random walk se používá jako součást jiných algoritmů, kde je potřeba množina náhodných, ale navzájem propojených vrcholů. V následující ukázce byl algoritmus gds.randomWalk použit na železniční stanice, které mají vlastnost stationId menší než 10. To jsou stanice s vlastností stationName AALST, AALTER a AARSCHOT. Tabulka \ref{tab:randomWalkLocal} zobrazuje výsledky s parametrem inOutFactor rovným 2. V tabulce \ref{tab:randomWalkSpread} jsou vidět výsledky s parametrem inOutFactor rovným hodnotě 0.2.    
+Random walk se používá jako součást jiných algoritmů, kde je potřeba množina náhodných, ale navzájem propojených vrcholů. V následující ukázce byl algoritmus použit na železniční stanice \ref{fig:RailNetwork-Graph}. Algoritmus začínal ve stanici s identifikátorem 9. Tabulka \ref{tab:randomWalk} ukazuje výsledky algoritmu. Pro jedno nastavení parametrů jsou ukázány tři náhodné cesty. Cesta je reprezentována ve druhém sloupci řádkem identifikátorů vrcholů oddělených středníkem, přes které prochází. V třetím sloupci je pro každou cestu spočítána vzdálenost vzdušnou čarou z počátečního do cílového vrcholu.
 
 \begin{table}[h]
-\begin{tabular}{ | p{\dimexpr\textwidth-2\tabcolsep} | }
+\caption{Random walk.}
+\label{tab:randomWalk}
+\begin{tabularx}{\textwidth}{ | X | l | l | }
  \hline
- \textbf{stations} \\
+ \textbf{Parametry} & \textbf{Vrcholy na cestě} & \textbf{Vzdálenost} \\
  \hline \hline
- AALST, EREMBODEGEM, DENDERLEEUW, IDDERGEM, DENDERLEEUW, GENT-ST-P, DENDERLEEUW, GENT-ST-P \\
+ \multirow{3}{*}{\shortstack{returnFactor = 20;\\inOutFactor = 0,2}} & 9; 132; 187; 541; 814; 142; 732; 644 & 29\,596 m \\
+ & 9; 686; 1134; 1270; 326; 1061; 523; 19 & 38\,943 m \\
+ & 9; 1238; 553; 1174; 368; 648; 916; 1260 & 19\,693 m \\
  \hline
- AALTER, MARIA-AALTER, AALTER, BELLEM, HANSBEKE, BELLEM, HANSBEKE, BELLEM \\
+ \multirow{3}{*}{\shortstack{returnFactor = 0,2;\\inOutFactor = 20}} & 9; 132; 9; 132; 9; 132; 686; 132 & 8\,181 m \\
+ & 9; 686; 9; 686; 9; 686; 9; 686 & 9\,587 m \\
+ & 9; 132; 9; 686; 9; 686; 9; 132 & 8\,181 m \\
  \hline
- AARSCHOT, BEGIJNENDIJK, AARSCHOT, LANGDORP, AARSCHOT, "BEGIJNENDIJK, AARSCHOT, LANGDORP \\
- \hline
-\end{tabular}
-\caption{Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 2 zavolaným na stanice s vlastností stationId menší než 10.}
-\label{tab:randomWalkLocal}
-\end{table}
-
-\begin{table}[h]
-\begin{tabular}{ | p{\dimexpr\textwidth-2\tabcolsep} | }
- \hline
- \textbf{stations} \\
- \hline \hline
- AALST, LEDE, AALST, EREMBODEGEM, DENDERLEEUW, MELLE, KWATRECHT, WETTEREN \\
- \hline
- AALTER, BELLEM, HANSBEKE, LANDEGEM, HANSBEKE, BELLEM, AALTER, MARIA-AALTER \\
- \hline
- AARSCHOT, LANGDORP, TESTELT, LANGDORP, BEGIJNENDIJK, BOOISCHOT, HEIST-BERG, MELKOUWEN \\
- \hline
-\end{tabular}
-\caption{Výsledek algoritmu Random walk s parametrem inOutFactor nastaveným na hodnotu 0.2 zavolaným na stanice s vlastností stationId menší než 10.}
-\label{tab:randomWalkSpread}
+\end{tabularx}
 \end{table}
 
 \subsection{Algoritmy pro míru centrality}
 %% pomocí graph in actions
 %% Graph algorithms - practical examples in apache sperk c neo4j 
-V rámci grafu můžeme identifikovat důležitost vrcholů pomocí algoritmů centrality. Můžeme detekovat jedince, které jsou svým způsobem v grafu významější než ostatní. Tyto algoritmy se dají využít například k hledání kritických částí v telekomunikačních nebo počítačových sítích, tedy těch přes které proudí spousta informací a jejichž výpadek by představoval velké potíže. Hledání důležitých lidí v rámci organizace. Hledání odlehlých dat, které mohou odhalit, že dochází k podvodům a podobně. Knihovna gds nabízí spoustu algoritmů pro měření centrality. My se podíváme na pár z nich.
+V rámci grafu můžeme identifikovat důležitost vrcholů pomocí algoritmů centrality. Můžeme detekovat jedince, které jsou svým způsobem v grafu významější než ostatní. Tyto algoritmy se dají využít například k hledání kritických částí v telekomunikačních nebo počítačových sítích, tedy těch přes které proudí spousta informací a jejichž výpadek by představoval velké potíže. Hledání důležitých lidí v rámci organizace. Hledání odlehlých dat, které mohou odhalit, že dochází k podvodům a podobně. \textit{GDS} nabízí spoustu algoritmů pro měření centrality. My se podíváme na pár z nich.
 
 \subsubsection{Degree Centrality}
-Nejznámnějším a nejjednodušší mírou centrality je degree centrality. Každému vrcholu v síti přiřazuje skóre podle stupně daného vrcholu. V sociálních sítích mívají vrcholy i stupně v řádu desítkách milionů (jedná se o vrcholy, reprezentující účty známých osobností nebo organizací). Těmto vrcholům říkáme super-uzly. Abychom prošli všechny sousedy super-uzlu potřebujeme značně více času, než v případě \uv{obyčejného} vrcholu. To se negativně projevuje v časové odezvě u dotazů pracujících s takovými vrcholy. Degree centrality nám umožňuje takové vrcholy odhalit. Vrcholy s větším stupněm také lze obecně považovat za důležitější, neboť přes ně může proudit více informací díky velkému počtu hran. Příkladem může být graf reprezentující železniční síť. Čím více máme z dané železniční stanice spojení, tím spíše se jedná o významější stanici.
+Jedná se o nejznámnější a nejjednodušší míru centrality. Každému vrcholu v síti přiřazuje skóre podle stupně daného vrcholu. V sociálních sítích mívají vrcholy i stupně v řádu desítkách milionů (jedná se o vrcholy, reprezentující účty známých osobností nebo organizací). Těmto vrcholům říkáme super-uzly. Abychom prošli všechny sousedy super-uzlu potřebujeme značně více času, než v případě \uv{obyčejného} vrcholu. To se negativně projevuje v časové odezvě u dotazů pracujících s takovými vrcholy. Degree centrality nám umožňuje takové vrcholy odhalit. Vrcholy s větším stupněm také lze obecně považovat za důležitější, neboť přes ně může proudit více informací díky velkému počtu hran. Příkladem může být graf reprezentující železniční síť. Čím více máme z dané železniční stanice spojení, tím spíše se jedná o významější stanici.
 
 \subsubsection{Closeness Centrality}
-Vrcholy lze dále hodnotit podle closeness centrality. Vrchol s nejvyšším skóre je ten, pro který je součet nejkratších cest do všech ostatních vrcholů co nejmenší. Skóre vrcholu $ u \in V $ v grafu $G = \langle V,E\rangle$ se pak počítá podle vzorce
+Nejvlivnější vrchol je ten, pro který je součet nejkratších cest do všech ostatních vrcholů co nejmenší. Algoritmy pro Closeness a Betweeness Centrality mohou být v případě velkých grafů výpočetně dost náročné. Proto se často přistupuje k jiným, ne zcela přesným, zato mnohonásobně rychlejším, algoritmům.
+
+Skóre vrcholu $ u \in V $ v grafu $G = \langle V,E\rangle$ se pak počítá podle vzorce
 \begin{equation}
 \label{eq:closenessCentrality}
 closenessCentrality(u) = \frac{1}{ \sum_{ v \in V }{ dist(u,v) } },
@@ -971,76 +996,130 @@ nebo se normalizuje
 normalizedClosenessCentrality(u) = \frac{ |V| - 1 }{ \sum_{ v \in V }{ dist(u,v) } } .
 \end{equation}
 
-V případě, že graf není souvislý, lze použít harmonic centrality, které se elegantně vypořádá s nedosažitelnými vrcholy. Tento a následující algoritmus mohou být v případě velkých grafů výpočetně dost náročné a tedy se často přistupuje k ne zcela přesným, zato mnohonásobně rychlejším, algoritmům.
+V případě, že graf není souvislý, lze použít \textit{harmonic centrality}, které se vypořádá s nedosažitelnými vrcholy.
 
 \subsubsection{Betweeness Centrality}
-Algoritmus spočítá nejkratší cesty mezi všemi možnými páry vrcholů. Následně každý vrchol obdrží skóre, které je tím vyšší, čím více nejkratších cest vede přes daný vrchol. Tyto hodnoty mohou pro nás být klíčové například v grafu, kde vrcholy představují křižovatky a hrany cesty mezi nimi. Informaci, kterými křižovatkami prochází nejvíce nejkratších cest, můžeme využít pro odhad těch nejvíce zatížených křižovatek. Případně díky ní můžeme odhadnout, kde se pravděpodobně bude pohybovat nejvíce lidí a tedy je potřeba zvýšit bezpečnost.
+Algoritmus spočítá nejkratší cesty mezi všemi možnými páry vrcholů. Následně každý vrchol obdrží skóre, které je tím vyšší, čím více nejkratších cest vede přes daný vrchol. Tyto hodnoty mohou pro nás být klíčové například v grafu, kde vrcholy představují křižovatky a hrany cesty mezi nimi. Informaci, kterými křižovatkami prochází nejvíce nejkratších cest, můžeme využít pro odhad lokací, kde se pravděpodobně bude pohybovat nejvíce lidí a tedy je potřeba zvýšit bezpečnost.
 
 \subsubsection{PageRank}
-S tímto řešením přišla na trh společnost Google. Byla určena pro hodnocení významnosti webových stránek. Webové stránky si lze představit jako vrcholy grafu. Hrany mezi nimi reprezentují odkazy na stránkách odkazující na jiné stránky. Důležitost vrcholu je určena nejen důležitostí vrcholu samotného, ale také důležitostí vrcholů na tuto stránku odkazujících. Vysoké skóre vrcholu tedy znamená, že je vrchol propojen s vrcholy, které mají též vysoké skóre. Toto řešení je založeno na lineární algebře, speciálně na vlastních vektorech a stochastických maticích. Výpočet skóre většinou vede na nekonečný výpočet a proto se omezuje počet iterací tohoto výpočtu, nebo se udává maximální možná odchylka. PageRank se používá na orientované grafy. Pro neorientované grafy lze použít algoritmus eigenvector centrality.
+S tímto algoritmem přišla na trh společnost Google. Byl určena pro hodnocení významnosti webových stránek. Webové stránky si lze představit jako vrcholy grafu. Hrany mezi nimi reprezentují odkazy na stránkách odkazující na jiné stránky. Důležitost vrcholu je určena nejen důležitostí vrcholu samotného, ale také důležitostí vrcholů na tuto stránku odkazujících. Vysoké skóre vrcholu tedy znamená, že je vrchol propojen s vrcholy, které mají též vysoké skóre. Toto řešení je založeno na vlastních vektorech a stochastických maticích z lineární algebry. Výpočet skóre většinou vede na nekonečný výpočet a proto se omezuje počet iterací tohoto výpočtu, nebo se udává maximální možná odchylka. PageRank se používá na orientované grafy. Pro neorientované grafy lze použít algoritmus eigenvector centrality.
 
 \subsubsection{Použití algoritmů pro míru centrality}
-Výsledky aplikace jednotlivých algoritmů pro měření centrality na graf z obrázku \ref{fig:example-graph} je znázorněn v tabulce \ref{tab:centralityResults}.
+Výsledky aplikace zmíněných algoritmů pro měření centrality na graf z obrázku \ref{fig:example-graph} je znázorněn v tabulce \ref{tab:centralityResults}.
 
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{ | l || c | c | c | c | c | c | c | }
- \hline
- \textbf{Vrchol} & A & B & C & D & E & F & G \\
- \hline
- \textbf{Degree Centrality} & 4 & 3 & 4 & 4 & 3 & 2 & 2 \\
- \hline
- \textbf{Closeness Centrality} & 0.75 & 0.6 & 0.75 & 0.75 & 0.67 & 0.55 & 0.6 \\
- \hline
- \textbf{Betweeness Centrality} & 3.33 & 0.0 & 1.33 & 1.33 & 2.67 & 1.0 & 1.33 \\
- \hline
- \textbf{Eigen Vector Centrality} & 0.45 & 0.41 & 0.49 & 0.49 & 0.32 & 0.14 & 0.17 \\
- \hline
-\end{tabular}
-\end{center}
-\caption{Algoritmy pro měření centrality aplikované na jednotlivé vrcholy z grafu na obrázku \ref{fig:example-graph}.}
-\label{tab:centralityResults}
-\end{table}
-
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{ExampleGraph}
 	\caption{Příklad grafu, na kterém jsou prováděny algoritmy.}
 	\label{fig:example-graph}
 \end{figure}
 
+\begin{table}[h]
+\begin{center}
+\caption{Výsledky měření centrality.}
+\label{tab:centralityResults}
+\begin{tabular}{ | l || c | c | c | c | c | c | c | }
+ \hline
+ \textbf{Vrchol} & A & B & C & D & E & F & G \\
+ \hline
+ \textbf{Degree Centrality} & 4 & 3 & 4 & 4 & 3 & 2 & 2 \\
+ \hline
+ \textbf{Closeness Centrality} & 0,75 & 0,6 & 0,75 & 0,75 & 0,67 & 0,55 & 0,6 \\
+ \hline
+ \textbf{Betweeness Centrality} & 3,33 & 0 & 1,33 & 1,33 & 2,67 & 1 & 1,33 \\
+ \hline
+ \textbf{Eigen Vector Centrality} & 0,45 & 0,41 & 0,49 & 0,49 & 0,32 & 0,14 & 0,17 \\
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
 \subsection{Detekce komunit}
-Tyto algoritmy lze využít pro hledání určitých skupin vrcholů, které mají mezi sebou více hran, než mají s ostatními vrcholy grafu. Odhalením těchto shluků vrcholů můžeme zkoumat strukturu našich dat z jiného úhlu pohledu, nebo třeba odhadovat podobné chování a preference členů v rámci skupiny. Příklad lze nalézt v sociálních sítích, kde můžeme sledovat komunity blízkých přátel, které tvoří shluky propojených vrcholů. Znalost komunit lze též využít pro doporučování produktů uživatelům s podobným nákupním chováním. Algoritmy pro detekci komunit se dělí na deterministické a nedeterministické. Deterministické vrací pro stejný graf vždy stejný výsledek, zatímco výsledek u nedeterministických může být pro stejný graf mírně odlišný. Mezi deterministické se řadí počítání trojúhelníků, výpočet shlukavacího koeficientu, nebo hledání komponent. Mezi nedeterministické patří například Label Propagation nebo Louvain Modularity. Stejně jako u míry centrality si zde ukážeme pouze pár algoritmů.
+Tyto algoritmy lze využít pro hledání určitých skupin vrcholů, které mají mezi sebou více hran, než mají s ostatními vrcholy grafu. Těmto skupinám říkáme komunity. Příklad lze nalézt v sociálních sítích, kde můžeme sledovat komunity blízkých přátel, které tvoří shluky propojených vrcholů. Znalost komunit lze též využít pro doporučování produktů uživatelům s podobným nákupním chováním.
+
+Algoritmy pro detekci komunit se dělí na \textit{deterministické} a \textit{nedeterministické}. Deterministické vrací pro stejný graf vždy stejný výsledek, zatímco výsledek u nedeterministických může být pro stejný graf mírně odlišný. Mezi deterministické se řadí počítání trojúhelníků, výpočet shlukavacího koeficientu, nebo hledání komponent. Mezi nedeterministické patří například Label Propagation, nebo Louvain Modularity.
 
 \subsubsection{Počítání trojúhelníků}
-Algoritmus pro každý vrchol určí počet trojúhelníků, kterých je daný vrchol součástí. Trojúhelník je zde definován jako skupina tří navzájem propojených vrcholů. Trojúhelníky nám mohou určit do jaké míry jsou vrcholy v našem grafu propojeny. Čím je graf hustší, tím více trojúhelníků se v něm nachází. Algoritmus je oblíbený při analýze sociálních sítí, kde pomáhá detekovat komunity, nebo zkoumání skupin webových stránek s podobným námětem podle odkazů mezi nimi.
-Počet trojúhelníků lze využít též pro výpočet shlukovacího koeficientu vrcholu, který určuje pravděpodobnost, s jakou jsou jeho sousedé propojeni (tvoří s ním trojúhelník). Shlukovací koeficient vrcholu u je pak určen vztahem
+Algoritmus pro každý vrchol určí počet \textit{trojúhelníků}, kterých je daný vrchol součástí. Trojúhelník je zde definován jako skupina tří navzájem propojených vrcholů. Trojúhelníky nám pomáhají určit do jaké míry jsou vrcholy v našem grafu propojeny. V hustých grafech, lze obvykle nalézt více trojúhelníků. Algoritmus je oblíbený při analýze sociálních sítí, kde pomáhá detekovat komunity, nebo zkoumání skupin webových stránek s podobným námětem podle odkazů mezi nimi.
+
+Počet trojúhelníků lze využít též pro výpočet \textit{shlukovacího koeficientu} vrcholu, který určuje pravděpodobnost, s jakou jsou jeho sousedé propojeni (tvoří s ním trojúhelník). Shlukovací koeficient vrcholu u je pak určen vzorcem
+
 \begin{equation} 
 \label{eq:ClusteringCoefficient}
 ClusteringCoefficient(u) = \frac{2 * TriangleCount(u)}{deg(u) * (deg(u) - 1)}.
 \end{equation}
 
-Pro ukázkový graf na obrázku \ref{fig:example-graph} počet trojúhelníků a shlukovací koeficient pro jednotlivé vrcholy zobrazuje tabulka \ref{tab:trojuhelniky}. Vidíme, že vrchol A je součástí tří trojúhelníků, které jsou tvořeny vrcholy A-B-C, A-B-D a A-C-D. Stupeň vrcholu je 4. Dosazením do vzorce \ref{eq:ClusteringCoefficient} dostáváme shlukovací koeficient 0.5.
+Pro ukázkový graf na obrázku \ref{fig:example-graph} počet trojúhelníků a shlukovací koeficient jednotlivých vrcholů zobrazuje tabulka \ref{tab:triangles}. Vidíme, že vrchol A je součástí tří trojúhelníků, které jsou tvořeny vrcholy A-B-C, A-B-D a A-C-D. Stupeň vrcholu je 4. Dosazením do vzorce \ref{eq:ClusteringCoefficient} dostáváme shlukovací koeficient 0.5.
 
 \begin{table}[h]
 \begin{center}
+\caption{Počet trojúhelníků a shlukovací koeficient.}
+\label{tab:triangles}
 \begin{tabular}{ | l || c | c | c | c | c | c | c | }
  \hline
  \textbf{Vrchol} & A & B & C & D & E & F & G \\
  \hline
  \textbf{Triangle Count} & 3 & 3 & 4 & 4 & 1 & 0 & 0 \\
  \hline
- \textbf{Clustering Coefficient} & 0.5 & 1.0 & 0.67 & 0.67 & 0.33 & 0.0 & 0.0 \\
+ \textbf{Clustering Coefficient} & 0,5 & 1 & 0,67 & 0,67 & 0,33 & 0 & 0 \\
  \hline
 \end{tabular}
 \end{center}
-\caption{Počet trojúhelníků a shlukovací koeficient jednotlivých vrcholů z grafu na obrázku \ref{fig:example-graph}.}
-\label{tab:trojuhelniky}
 \end{table}
 
 \subsubsection{Hledání komponent}
-Komponentu v grafu tvoří skupina vrcholů, které jsou propojeny a lze se z jednoho vrcholu dostat do dalšího. Najití těchto komponent je užitečné pro pochopení grafové struktury. Algoritmy řešící tento problém jsou rychlé a je možné je využít v grafu, který se často aktualizuje, pro detekci nových vrcholů mezi skupinami. Této znalosti lze využít při různých analýzách. Existuje i varianta, hledající silně souvislé komponenty.
-Pro graf na obrázku \ref{fig:example-graph} nám algoritmus pro hledání slabě souvislých komponent z knihovny gds vrátí, že všechny vrcholy grafu jsou součástí jedné komponenty.
+Nalezení komponent v grafu je užitečné pro pochopení našich dat. Algoritmy pro tuto úlohu jsou rychlé. Mohou být využívány v grafech, které se často aktualizují, pro detekci nových vrcholů mezi skupinami. Toho lze pak využít při různých analýzách. Existují algoritmy pro hledání silně a slabě souvislých komponent.
+
+Pro graf na obrázku \ref{fig:example-graph} nám algoritmus pro hledání slabě souvislých komponent vrátí, že všechny vrcholy grafu jsou součástí jedné komponenty.
+
+\subsubsection{Algoritmus Louvain}
+Algoritmus se snaží maximalizovat modularitu komunit. Mudularita je způsob jakým můžeme měřit kvalitu komunit. Porovnává komunity v grafu s náhodným grafem, který vznikne odstraněním hran v původním grafu a následným přidáním těchto hran mezi dva náhodně zvolené nepropojené vrcholy. Předpokládá se rovnoměrné spojení těchto vrcholů. Hodnota je vždy mezi -1 a 1. Čím je hodnota vyšší tím jsou vrcholy v komunitách propojenější. Výpočet modularity je počítán vzorcem
+\begin{equation} 
+\label{eq:louvain}
+M = \frac{1}{2m} \sum_{u,v} [A_{uv} - \frac{k_u k_v}{2m}] \delta (C_u, C_v),
+\end{equation}
+kde
+\begin{itemize}
+\item $u$ a $v$ jsou vrcholy,
+\item $m$ je součet přes všechna ohodnocení hran,
+\item $A_{uv}$ je váha hrany mezi vrcholy $u$ a $v$,
+\item $k_x$ je součet přes všechna ohodnocení hran incidentních s $x$
+\item a 
+$
+ \delta (C_u, C_v)=
+    \begin{cases}
+        1 & \text{jestliže } u \text{ i } v \text{ patří do stejné komunity,} \\
+        0 & \text{jinak.}
+    \end{cases}
+$
+\end{itemize}
+Podíl $\frac{k_u k_v}{2W}$ ve vzorci \ref{eq:louvain} odpovídá náhodnému grafu mající stejnou distribuci stupňů a tedy vyjadřuje očekávanou sumu ohodnocení hran mezi dvěma vrcholy.
+
+Na začátku každý vrchol tvoří komunitu. V neohodnoceném grafu má každá hrana váhu 1. Algoritmus má dva kroky:
+\begin{enumerate}
+\item Každý vrchol v grafu je přiřazen do nějaké komunity. Následně dochází k vyhodnocování změny modularity, pokud vrchol přeřadíme do jiné komunity. Vyhodnocuje se pomocí vzorce \ref{eq:louvain}. Cílem je nejlepší rozřazení jednotlivých vrcholů do komunit.
+\item Každá komunita tvoří vrchol nového grafu. Ohodnocené hrany v novém grafu představují jak jsou komunity mezi sebou propojeny. Hrana má takovou váhu, kolik mezi komunitami existuje spojení. Tento nový graf bude vstupem v další iteraci.
+\end{enumerate}
+Algoritmus iteruje tak dlouho, dokud dochází ke zvyšování modularity ve vzniklých komunitách.
+
+Pro ukázkový graf \ref{fig:example-graph} nám algoritmus rozdělil vrcholy do dvou komunit. Výsledky shrnuje tabulka \ref{tab:louvain}.
+
+\begin{table}[h]
+\begin{center}
+\caption{Algoritmus Louvain.}
+\label{tab:louvain}
+\begin{tabular}{ | l || c | c | c | c | c | c | c | }
+ \hline
+ \textbf{Vrchol} & A & B & C & D & E & F & G \\
+ \hline
+ \textbf{Komunita} & 2 & 2 & 2 & 2 & 6 & 6 & 6 \\
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Experimenty}
+Zde budou experimenty se zvolenými databázemi.
 
 %% Závěry práce. V jazyce práce a anglicky. Text pro jiný než
 %% nastavený jazyk práce (nepovinným parametrem language makra

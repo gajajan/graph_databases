@@ -1,5 +1,5 @@
 //parameters for connector
-url = "remote:localhost/RailNetwork";
+url = "embedded:/Users/gajaj/orientdb-tp3-3.2.23/databases/RailNetwork";
 user = "root";
 password = "root";
 

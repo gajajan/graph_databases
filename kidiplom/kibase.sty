@@ -82,7 +82,7 @@
 \RequirePackage{ifthen}
 
 %% Seznam zkratek.
-\ifthenelse{\equal{\kib@glossaries}{true}}{
+\ifthenelse{\equal{\kib@glossaries}{false}}{
   %% glossaries definuje \printindex (definovany take makeidx) i kdyz
   %% by NEMEL bez parametru index!
   \RequirePackage{savesym}
@@ -327,7 +327,7 @@
 
 \ifthenelse{\equal{\kib@glossaries}{true}}{
 	%% Zapnutí generování zkratek.
-	\makeglossaries
+%	\makeglossaries
 
 	%% Zkratky tučně a bez interpunkce za zkratkou.
 	\renewcommand{\glsnamefont}[1]{\textbf{#1}}

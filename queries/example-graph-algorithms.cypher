@@ -94,3 +94,9 @@ CALL gds.wcc.stream('cities')
 YIELD nodeId, componentId
 RETURN gds.util.asNode(nodeId).name AS name, componentId
 ORDER BY componentId, name
+
+//louvain
+CALL gds.louvain.stream('cities')
+YIELD nodeId, communityId, intermediateCommunityIds
+RETURN gds.util.asNode(nodeId).name AS name, communityId
+ORDER BY componentId, name

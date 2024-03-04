@@ -161,9 +161,35 @@
       \verb https://www.influxdata.com/graph-database/
       \endverb
     \endentry
-    \entry{rdf}{misc}{}
+    \entry{indexFreeAdjacency}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b619ccc302aa27f70a1bb97879838234}{%
+           family={McCreary},
+           familyi={M\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b619ccc302aa27f70a1bb97879838234}
+      \strng{fullhash}{b619ccc302aa27f70a1bb97879838234}
+      \strng{bibnamehash}{b619ccc302aa27f70a1bb97879838234}
+      \strng{authorbibnamehash}{b619ccc302aa27f70a1bb97879838234}
+      \strng{authornamehash}{b619ccc302aa27f70a1bb97879838234}
+      \strng{authorfullhash}{b619ccc302aa27f70a1bb97879838234}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{month}{02}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://dmccreary.medium.com/how-to-explain-index-free-adjacency-to-your-manager-1a8e68ec664a
+      \endverb
+      \verb{url}
+      \verb https://dmccreary.medium.com/how-to-explain-index-free-adjacency-to-your-manager-1a8e68ec664a
+      \endverb
+    \endentry
+    \entry{rdf}{misc}{}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Série Znalostní grafy: Díl 2: Datový model RDF}
@@ -189,8 +215,8 @@
       \strng{authorbibnamehash}{6f0ec40626e98c9792877e25ac381ca6}
       \strng{authornamehash}{6f0ec40626e98c9792877e25ac381ca6}
       \strng{authorfullhash}{6f0ec40626e98c9792877e25ac381ca6}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -201,6 +227,100 @@
       \endverb
       \verb{url}
       \verb https://www.strafelda.cz/knowledge-graph
+      \endverb
+    \endentry
+    \entry{oltpOlap}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{month}{02}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb http://langer.zam.slu.cz/teaching/dbaii/olap_oltp.pdf
+      \endverb
+      \verb{url}
+      \verb http://langer.zam.slu.cz/teaching/dbaii/olap_oltp.pdf
+      \endverb
+    \endentry
+    \entry{ionos}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=712b5363adce54e7c1daea15779b5287}{%
+           family={IONOS},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{fullhash}{712b5363adce54e7c1daea15779b5287}
+      \strng{bibnamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authorbibnamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authornamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authorfullhash}{712b5363adce54e7c1daea15779b5287}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{IONOS Digital Guide}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
+      \endverb
+      \verb{url}
+      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
+      \endverb
+    \endentry
+    \entry{neo4jDoc}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{Neo4j Documentation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://neo4j.com/docs
+      \endverb
+      \verb{url}
+      \verb https://neo4j.com/docs
+      \endverb
+    \endentry
+    \entry{neo4jDev}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{Neo4j Developer Center}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://neo4j.com/developer
+      \endverb
+      \verb{url}
+      \verb https://neo4j.com/developer
+      \endverb
+    \endentry
+    \entry{orientDBDoc}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{OrientDB Documentation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.orientdb.com/docs/last/index.html
+      \endverb
+      \verb{url}
+      \verb https://www.orientdb.com/docs/last/index.html
+      \endverb
+    \endentry
+    \entry{arangoDBDoc}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{ArangoDB Documentation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.arangodb.com
+      \endverb
+      \verb{url}
+      \verb https://docs.arangodb.com
       \endverb
     \endentry
     \entry{practicalGremlin}{misc}{}
@@ -217,17 +337,32 @@
       \strng{authorbibnamehash}{61e73b8ee0c5bcb2a059634709efae0a}
       \strng{authornamehash}{61e73b8ee0c5bcb2a059634709efae0a}
       \strng{authorfullhash}{61e73b8ee0c5bcb2a059634709efae0a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
-      \field{journaltitle}{Practical gremlin: An apache tinkerpop tutorial}
+      \field{labeltitlesource}{title}
       \field{month}{02}
+      \field{title}{Practical gremlin: An apache tinkerpop tutorial}
       \field{year}{2024}
       \verb{urlraw}
       \verb https://kelvinlawrence.net/book/PracticalGremlin.html
       \endverb
       \verb{url}
       \verb https://kelvinlawrence.net/book/PracticalGremlin.html
+      \endverb
+    \endentry
+    \entry{tinkerPopDoc}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{TinkerPop Documentation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://tinkerpop.apache.org/docs
+      \endverb
+      \verb{url}
+      \verb https://tinkerpop.apache.org/docs
       \endverb
     \endentry
     \entry{inAction}{book}{}
@@ -252,8 +387,8 @@
       \strng{authorbibnamehash}{1a5fa5eb175563cee2deda98ed13f388}
       \strng{authornamehash}{1a5fa5eb175563cee2deda98ed13f388}
       \strng{authorfullhash}{1a5fa5eb175563cee2deda98ed13f388}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
@@ -283,39 +418,14 @@
       \strng{authorbibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
       \strng{authornamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
       \strng{authorfullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
       \field{isbn}{978-1-492-04407-9}
       \field{title}{Practitioner’s Guide to graph data: Applying graph thinking and graph technologies to solve complex problems}
       \field{year}{2020}
-    \endentry
-    \entry{ionos}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=712b5363adce54e7c1daea15779b5287}{%
-           family={IONOS},
-           familyi={I\bibinitperiod}}}%
-      }
-      \strng{namehash}{712b5363adce54e7c1daea15779b5287}
-      \strng{fullhash}{712b5363adce54e7c1daea15779b5287}
-      \strng{bibnamehash}{712b5363adce54e7c1daea15779b5287}
-      \strng{authorbibnamehash}{712b5363adce54e7c1daea15779b5287}
-      \strng{authornamehash}{712b5363adce54e7c1daea15779b5287}
-      \strng{authorfullhash}{712b5363adce54e7c1daea15779b5287}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{journaltitle}{IONOS Digital Guide}
-      \field{month}{02}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
-      \endverb
-      \verb{url}
-      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
-      \endverb
     \endentry
     \entry{macrometa}{misc}{}
       \name{author}{1}{}{%
@@ -329,43 +439,18 @@
       \strng{authorbibnamehash}{feacd4d82692591f68b105d87e24e41f}
       \strng{authornamehash}{feacd4d82692591f68b105d87e24e41f}
       \strng{authorfullhash}{feacd4d82692591f68b105d87e24e41f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
-      \field{journaltitle}{Macrometa}
+      \field{labeltitlesource}{title}
       \field{month}{02}
+      \field{title}{Macrometa}
       \field{year}{2024}
       \verb{urlraw}
       \verb https://www.macrometa.com/docs/graphs/graph-concepts/graphs-and-indexes
       \endverb
       \verb{url}
       \verb https://www.macrometa.com/docs/graphs/graph-concepts/graphs-and-indexes
-      \endverb
-    \endentry
-    \entry{neo4jModelling}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=4f16d2b1f38f316b477da6dbf0e9bc79}{%
-           family={Neo4j},
-           familyi={N\bibinitperiod}}}%
-      }
-      \strng{namehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{fullhash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{bibnamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{authorbibnamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{authornamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{authorfullhash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{journaltitle}{Neo4j Graph Data Platform}
-      \field{month}{02}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://neo4j.com/developer/guide-data-modeling/
-      \endverb
-      \verb{url}
-      \verb https://neo4j.com/developer/guide-data-modeling/
       \endverb
     \endentry
     \entry{graphAlgorithms}{book}{}
@@ -390,8 +475,8 @@
       \strng{authorbibnamehash}{e3a7806cabc758a58d3db2789774e36e}
       \strng{authornamehash}{e3a7806cabc758a58d3db2789774e36e}
       \strng{authorfullhash}{e3a7806cabc758a58d3db2789774e36e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
@@ -399,35 +484,9 @@
       \field{title}{Graph Algorithms: Practical Examples in Apache Spark and Neo4j}
       \field{year}{2019}
     \endentry
-    \entry{neo4jGds}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=4f16d2b1f38f316b477da6dbf0e9bc79}{%
-           family={Neo4j},
-           familyi={N\bibinitperiod}}}%
-      }
-      \strng{namehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{fullhash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{bibnamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{authorbibnamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{authornamehash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \strng{authorfullhash}{4f16d2b1f38f316b477da6dbf0e9bc79}
-      \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{journaltitle}{Neo4j Graph Data Platform}
-      \field{month}{02}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://neo4j.com/docs/graph-data-science/2.6/algorithms/
-      \endverb
-      \verb{url}
-      \verb https://neo4j.com/docs/graph-data-science/2.6/algorithms/
-      \endverb
-    \endentry
     \entry{astar}{misc}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{month}{02}
       \field{year}{2024}
       \verb{urlraw}
