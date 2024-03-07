@@ -2138,7 +2138,42 @@
     <bcf:datasource type="file" datatype="bibtex">bibliografie.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">graphIntroduction</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">Ramba_2016</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">disk</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">directedGraph</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">graphDatabases</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">influxdata</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">ionos</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">indexFreeAdjacency</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">rdf</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">knowledgeGraphs</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">oltpOlap</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">graphDatabases</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">neo4jDoc</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">neo4jDev</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">orientDBDoc</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">arangoDBDoc</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">neo4jDoc</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">neo4jDev</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">practicalGremlin</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">tinkerPopDoc</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">orientDBDoc</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">arangoDBDoc</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">inAction</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">graphDatabases</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">practitioner</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">ionos</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">macrometa</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">neo4jDev</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">inAction</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">inAction</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">graphAlgorithms</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">inAction</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">neo4jDoc</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">astar</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">disk</bcf:citekey>
+    <bcf:citekey order="36" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -288,21 +288,21 @@ Jak z názvu vyplývá, jedná se o model, ve kterém jsou grafy doplněny o vla
 \subsubsection{RDF}
 %převzáno a lehce upraveno z https://data.gov.cz/%C4%8Dl%C3%A1nky/znalostn%C3%AD-grafy-02-rdf
 %https://www.strafelda.cz/knowledge-graph
-RDF model umožňuje vyjadřovat tvrzení o věcech v podobě jednoduchých vět, které gramaticky sestávají z podmětu, přísudku a předmětu. Tyto věty nazýváme tvrzení. Tvrzení samozřejmě nevyjadřujeme jako věty v přirozeném jazyku, ale v počítačové notaci. RDF model zavádí následující strukturu zvanou trojice: \textit{subjekt predikát objekt}. Subjekt je obdobou podmětu, predikát je obdobou přísudku a objekt je obdobou předmětu. Každá věta popisuje hranu spojující vrcholy definované subjektem a objektem. Predikát je pak pojmenováním hrany. RDF model je známý ze sémantického webu, kde je použit pro odvození informací pomocí sémantického označení odkazů spojujících webové zdroje.\cite{rdf}
+\textit{RDF model} používá speciální strukturu nazývanou trojice. Tato struktura umožňuje uchovávat věty ve tvaru \textit{Podmět přísudek předmět}. V grafu pak podmět a předmět jsou reprezentovány dvěma vrcholy a přísudek představuje orientovanou hranu mezi nimi. \cite{rdf}
 
-Tento model též nachází využití v aplikacích využívajících znalostní grafy (anglicky knowledge graphs). Příkladem těchto grafů je například Google Knowledge Graph \footnote{https://blog.google/products/search/introducing-knowledge-graph-things-not/}. Google jej využívá například ve svém hlasovém ovládání Google Asistenta, nebo od května 2012 data získaná z tohoto grafu vizualizuje v tzv. Knowledge Graph panelu. \cite{knowledgeGraphs} Knowledge graph pro nizozemského informatika Edsgera Djikstru zobrazuje obrázek \ref{fig:Knowledge-Graph}.
+RDF model je využíván v sémantickém webu pro propojení dat. Dalším příkladem je využití v aplikacích využívajících \textit{znalostní grafy} (anglicky knowledge graphs). Jedním z těchto grafů je Google Knowledge Graph \footnote{\url{https://blog.google/products/search/introducing-knowledge-graph-things-not/}}. Google jej využívá například ve svém hlasovém ovládání Google Asistenta, nebo od května 2012 data získaná z tohoto grafu vizualizuje v tzv. Knowledge Graph panelu. \cite{knowledgeGraphs} Knowledge graph pro nizozemského informatika Edsgera Djikstru zobrazuje obrázek \ref{fig:Knowledge-Graph}.
 
 %https://www.semrush.com/blog/knowledge-graph/
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[width=\textwidth]{KnowledgeGraph-Example}
 	\caption{Knowledge graph.}
 	\label{fig:Knowledge-Graph}
 \end{figure}
 
 \subsubsection{Hypergrafy}
-Hypergraf vznikl zobecněním klasického grafového modelu. Hypergraf obsahuje speciální hrany zvané hyperhrany, které mohou spojovat více vrcholů. Narozdíl od klasické orientované hrany, hyperhrana může mít libovolné množství počátečních a koncových vrcholů. Hypergrafy mohou být užitečné v aplikacích, které zacházejí s vazbami o kardinalitě M:N. Vždy je možné reprezentovat informace v hypergrafu jako property graph. I když s použitím více vztahů a zprostředkujících vrcholů. Příklad hypergrafu je ukázán na obrázku \ref{fig:Hypergraph-Example}.
+\textit{Hypergraf} vznikl zobecněním klasického grafového modelu. Hypergraf obsahuje speciální hrany zvané hyperhrany, které mohou spojovat více vrcholů. Narozdíl od klasické orientované hrany, hyperhrana může mít libovolné množství počátečních a koncových vrcholů. Hypergrafy mohou být užitečné v aplikacích, které zacházejí s vazbami o kardinalitě M:N. Vždy je možné reprezentovat informace v hypergrafu jako property graph. I když s použitím více vztahů a zprostředkujících vrcholů. Příklad hypergrafu je ukázán na obrázku \ref{fig:Hypergraph-Example}.
 
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[width=\textwidth]{Hypergraph-Example}
 	\caption{Hypergraf.}
 	\label{fig:Hypergraph-Example}
@@ -361,10 +361,12 @@ Existuje spousta implementací grafových databází. Liší se například \"na
 \cite{neo4jDoc}, \cite{neo4jDev}
 Databázový systém Neo4j je nejrozšířenější open-source grafovou databází na trhu s největší uživatelskou základnou. Nabízí vysoký výkon při práci s grafy. Její první verze byla vyvinuta v roce 2002 a vznikla z důvodu nespokojenosti jejich zakladatelů s výkonem relačních databází. Implementována je v Javě. Jedná se o nativní grafovou databázi. Je využívána hromadou světoznámých společností jako je například Microsoft, eBay, nebo Linkedin. Klást dotazy můžeme prostřednictvím jazyka Cypher.
 
+Neo4j používá identifikátory s názvem \textit{elementId} pro vrcholy a hrany. Dle dokumentace však není bezpečné používat tyto identifikátory v jednotlivých transakcích a je doporučeno, pokud je jich potřeba, si vytvořit vlastní pomocí \textit{node key constraint} a \textit{relationships key constraint}.
+
 %https://neo4j.com/developer/graph-platform/
-Neo4j nabízí velké množství způsobů jak interagovat s grafovými daty. Každý z nich je určen pro jinou cílovou skupinu. Například v této práci je využita aplikace Neo4j Desktop, která slouží pro správu lokálních instancí Neo4j. Verze používané aplikace je 1.5.9.
-Dalším produktem je cloudový databázový servis pojmenovaný Neo4j AuraDB. Vznikl v roce 2019. Je také dostupný v bezplatné verzi, která je však omezená -- lze v ní spravovat nejvýše 200 tisíc vrcholů a 400 tisíc hran.
-Neo4j má též spoustu rozšiřujících knihoven a nástrojů, které lze do produktů doinstalovat (pokud již nejsou součástí). Například se jedná o nástroj pomáhající při migrování dat z relační databáze do Neo4j, standardní knihovna procedur a funkcí apod. V práci je pak ukázána knihovna s užitečnými grafovými algoritmy.
+Neo4j nabízí velké množství produktů. Každý z nich je určen pro jinou cílovou skupinu. Například v této práci je využita aplikace Neo4j Desktop, která slouží pro správu lokálních instancí Neo4j. Verze používané aplikace je 1.5.9. Dalším zajímavým produktem je cloudový databázový servis pojmenovaný Neo4j AuraDB. Vznikl v roce 2019. Je také dostupný v bezplatné verzi, která je však omezená -- lze v ní spravovat nejvýše 200 tisíc vrcholů a 400 tisíc hran.
+
+Neo4j má též spoustu rozšiřujících knihoven a nástrojů, které lze do produktů doinstalovat (pokud již nejsou součástí). Například se jedná o nástroj pomáhající při migrování dat z relační databáze do Neo4j, nebo o standardní knihovnu procedur a funkcí. V práci je pak ukázána knihovna s užitečnými grafovými algoritmy.
 
 \subsubsection{OrientDB}
 %How well a multi-model database performs against its single-model variants
@@ -401,7 +403,7 @@ Hrany v databázi jsou uloženy ve speciálních dokumentech a kolekcích, nazva
 \end{itemize}
 Další atributy jsou uživatelsky definovatelné. 
 
-Ačkoli je ArangoDB schema-less, umožňuje vynutit strukturu dokumentů v rámci kolekcí.  Toho lze dosáhnout pomocí definování JSON Schema\footnote{\url{https://json-schema.org/}} formátu.
+Ačkoli je ArangoDB schema-less, umožňuje vynutit strukturu dokumentů v rámci kolekcí.  Toho lze dosáhnout pomocí definování \textit{JSON Schema} \footnote{\url{https://json-schema.org/}} formátu.
 
 ArangoDB nabízí též placenou verzi, nabízející například vyšší výkonnost, zabezpečení a škálování grafů.
 
@@ -434,8 +436,7 @@ Pro úsporu paměti implementuje vždy, kde je to možné, \textit{líné vyhodn
 \subsubsection{Gremlin}
 %https://www.kelvinlawrence.net/book/PracticalGremlin.html#_introduction
 %https://tinkerpop.apache.org/docs/current/reference/#gremlin-console
-\cite{practicalGremlin}, \cite{tinkerPopDoc}
-
+\cite{practicalGremlin}, \cite{tinkerPopDoc}, \cite{orientDBDoc}
 Gremlin je dotazovací jazyk pro procházení grafů, který je součástí grafového výpočetního frameworku Apache TinkerPop\footnote{\url{http://tinkerpop.apache.org/}}. Gremlin lze použít pro všchna grafová uložiště, která tento framework podporují. Jedná se o imperativní jazyk s nějakými deklarativními prvky. Podobně jako Cypher ve většině případů vyhodnocuje dotazy líným způsobem.
 
 Apache TinkerPop mimo jiné obsahuje také Gremlin Console, což je textové REPL (Read-Eval-Print Loop) rozhraní pro práci s lokálními, či vzdálenými grafy. Je založená na Groovy konzoli. Groovy je programovací jazyk, který je označován jako nadmnožina Javy. Co funguje v Javě funguje i v Groovy. V konzoli tedy můžeme používat validní kód napsaný v tomto jazyce. Díky tomu lze například uložit do proměnné určitý vrchol a na něj se pak přes danou proměnnou odkazovat. Konzole je široce rozšiřitelná pomocí různých pluginů.
@@ -533,10 +534,10 @@ Aplikace je sociální sítí, a proto by měla jednotlivým uživatelům umož�
 
 \subsubsection{S jakými informacemi aplikace pracuje?}
 \begin{itemize}
-  \item Všechny základní informace o \textit{uživatelích}, aby se s nimi ostatní mohli spojit - jejich jméno, příjmení, unikátní identifikátor, oblíbené \textit{cestovatelské aktivity}.
-  \item Informace o \textit{cestách}, které uživatelé podnikli.
-  \item Informace o konkrétních \textit{destinacích} jako je jejich lokace, název, cestovatelské aktivity, které destinace nabízí.
-  \item Uživateli je umožněno psát \textit{hodnocení} jednotlivých \textit{cest}, které podniknul.
+  \item Všechny základní informace o \textbf{uživatelích}, aby se s nimi ostatní mohli spojit - jejich jméno, příjmení, unikátní identifikátor, oblíbené \textbf{cestovatelské aktivity}.
+  \item Informace o \textbf{cestách}, které uživatelé podnikli.
+  \item Informace o konkrétních \textbf{destinacích} jako je jejich lokace, název, cestovatelské aktivity, které destinace nabízí.
+  \item Uživateli je umožněno psát \textbf{hodnocení} jednotlivých \textbf{cest}, které podniknul.
 \end{itemize}
 V reálném scénáři by projekt pravděpodobně zahrnoval mnoho dalších informací, ale pro tuto ukázkovou aplikaci to ponecháme omezené. Pro zjednodušení se vyhneme přesným souřadnicovým informacím a vystačíme si s informací v rámci jakého státu se daná destinace nachází. Dále uživatelům aplikace bude dovolovat psát hodnocení na dané cesty, nikoliv na destinace, které v rámci cesty podnikli. Uživatelé cestující spolu se budou účastnit stejné cesty do destinací. 
 
@@ -545,12 +546,12 @@ Aplikace by tedy měla zacházet s pojmy jako jsou uživatel, destinace, stát, 
 \subsubsection{Jak spolu tyto informace vzájemně souvisí?}
 Následující seznam ukazuje, jakým způsobem jsou odopovědi na předchozí otázku mezi sebou propojeny. 
 \begin{itemize}
-  \item Uživatel \textit{sleduje} jiného uživatele.
-  \item Uživatel \textit{se zúčastnil} cesty \textit{vedoucí do} destinace.
-  \item Uživateli se \textit{líbí} cestovatelská aktivita.
-  \item Uživatel \textit{napsal} recenzi \textit{o} cestě.
-  \item Destinace \textit{nabízí} cestovatelskou aktivitu.
-  \item Destinace \textit{je ve} státě.
+  \item Uživatel \textbf{sleduje} jiného uživatele.
+  \item Uživatel \textbf{se zúčastnil} cesty \textit{vedoucí do} destinace.
+  \item Uživateli se \textbf{líbí} cestovatelská aktivita.
+  \item Uživatel \textbf{napsal} recenzi \textbf{o} cestě.
+  \item Destinace \textbf{nabízí} cestovatelskou aktivitu.
+  \item Destinace \textbf{je ve} státě.
 \end{itemize}
 
 \subsubsection{Na jaké otázky potřebujeme v aplikaci najít odpověď?}
@@ -562,11 +563,12 @@ Následující seznam ukazuje, jakým způsobem jsou odopovědi na předchozí o
   \item Najdi mi všechny uživatele v rámci skupiny, s kterou cestuje uživatel X do destinace Y.
   \item Najdi destinace nabízející některé z cestovatelských aktivit, které se uživateli líbí. Seřaď je na základě hodnocení.
   \item Pro konkrétní destinaci vrať měsíc v roce v kterém je nejlépe hodnocená.
+  \item Najdi uživatele, jejichž jméno nebo přijmení obsahuje řetězec XYZ. 
 \end{itemize}
 V reálném scénáři by otázek mohlo být mnohem více.
  
 \subsection{Konceptuální datový model}
-Dalším krokem je vyvinout konceptuální model. Výstupem by měl být přehledný diagram popisující typy dat v naší aplikaci. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data ruzných typů v rámci vyvíjené aplikace spolu souvisí. Tento proces vyžaduje identifikování, seskupení a propojení všech entit a vztahů, které se v naší aplikaci vyskytují. Nejedná se o jednoduchý úkol. Je možné, že jej navrhneme špatně a budeme muset jej předělat.
+Dalším krokem je vyvinout konceptuální model. Výstupem by měl být přehledný diagram popisující typy dat v naší aplikaci. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data ruzných typů v rámci vyvíjené aplikace spolu souvisí. Tento proces vyžaduje identifikování, seskupení a propojení všech entit a vztahů, které se v naší aplikaci vyskytují. Nejedná se o jednoduchý úkol. Je možné, že model navrhneme špatně a budeme ho muset předělat.
 
 Při vyvíjení datového modelu vývojáři často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími. Proto se konceptuální model v různých literaturách nazývá whiteboard model. 
 
@@ -722,7 +724,7 @@ Implementace jako je TinkerGraph poskytuje pouze globální indexy jedné hodnot
 \subsection{Příklad použití}
 Příkladem může být dotaz odpovídající na otázku \uv{Které destinace navštívil uživatel s identifikátorem X?}. Vidíme, že v dotazu budou jistě figurovat dvě entity, konkrétně: \textit{Uživatel} a \textit{Destinace}. Při pohledu na grafové schéma je zřejmé, že abychom dostali všechny navštívené destinace pro konkrétního uživatele, musíme v grafu projít i přes všechny vrcholy s labelem \textit{Cesta}, které uživatel podniknul. Tyto vrcholy spojují uživatele s destinacemi, které navštívil. Jedná se tedy o~known walk, neboť víme, že musíme provést cesty obsahující vrcholy s labely \textit{Uživatel}, \textit{Cesta} a \textit{Destinace}.
 
-Nyní je otázkou, v kterých vrcholech je dobré průchod začít. Volba počátečních vrcholů má často velký vliv na výsledný čas výpočtu. Jednou z možností je začít na vrcholech s labelem \textit{Destinace}. Grafový vzor by pak určoval cestu ze~všech vrcholů s labelem \textit{Destinace} přes hrany spojující tyto vrcholy s~vrcholy s~labelem \textit{Cesta}. Následně pro všechny vrcholy s labelem \textit{Cesta} zkontrolujeme, zda se jich vrchol s labelem \textit{Uživatel}, který má shodný identifikátor, zúčastnil. Destinace, které by takto nebyly s uživatelem spojeny, by byly vyfiltrovány. Vyhovující destinace by byly vráceny. Ačkoliv by tento výpočet vedl ke správnému výsledku, procházet přes všechny destinace a tedy i přes všechny cesty není nejvhodnější. Vrcholů, které bychom museli zkontrolovat, je zbytečně mnoho. Obdobně nevyhovující by bylo začínat ve vrcholech s labelem \textit{Cesta}. Nejvýhodnějším řešením je začít ve vrcholu představujícím konkrétního uživatele. Následně projít přes vrcholy s labelem \textit{Cesta}, kterých se uživatel zúčastnil a dostat se tak ke všem destinacím, které daný uživatel navštívil. Obecně je doporučeno začínat v co nejmenším počtu vrcholů. Výsledný dotaz v Cypheru ukazuje zdrojový kód \ref{kod:VisitedDestinations}. Do odpovědi je zahrnuta též informace, kolikrát daný uživatel destiance navštívil. Výsledky jsou podle toho seřazeny.
+Nyní je otázkou, v kterých vrcholech je dobré průchod začít. Volba počátečních vrcholů má často velký vliv na výsledný čas výpočtu. Jednou z možností je začít na vrcholech s labelem \textit{Destinace}. Grafový vzor by pak určoval cestu ze~všech vrcholů s labelem \textit{Destinace} přes hrany spojující tyto vrcholy s~vrcholy s~labelem \textit{Cesta}. Následně pro všechny vrcholy s labelem \textit{Cesta} zkontrolujeme, zda se jich vrchol s labelem \textit{Uživatel}, který má shodný identifikátor, zúčastnil. Destinace, které by takto nebyly s uživatelem spojeny, by byly vyfiltrovány. Vyhovující destinace by byly vráceny. Ačkoliv by tento výpočet vedl ke správnému výsledku, procházet přes všechny destinace a tedy i přes všechny cesty není nejvhodnější. Vrcholů, které bychom museli zkontrolovat, je zbytečně mnoho. Obdobně nevyhovující by bylo začínat ve vrcholech s labelem \textit{Cesta}. Nejvýhodnějším řešením je začít ve vrcholu představujícím konkrétního uživatele. Následně projít přes vrcholy s labelem \textit{Cesta}, kterých se uživatel zúčastnil a dostat se tak ke všem destinacím, které daný uživatel navštívil. Obecně je doporučeno začínat v co nejmenším počtu vrcholů. Výsledný dotaz v Cypheru ukazuje zdrojový kód \ref{kod:VisitedDestinations}. Do odpovědi je zahrnuta též informace, kolikrát daný uživatel destinace navštívil. Výsledky jsou podle toho seřazeny.
 
 \begin{kicode}{Cypher}{kod:VisitedDestinations}{Known walk.}[h]
 WITH 3 AS id

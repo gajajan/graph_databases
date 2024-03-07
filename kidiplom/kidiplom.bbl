@@ -161,6 +161,32 @@
       \verb https://www.influxdata.com/graph-database/
       \endverb
     \endentry
+    \entry{ionos}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=712b5363adce54e7c1daea15779b5287}{%
+           family={IONOS},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{fullhash}{712b5363adce54e7c1daea15779b5287}
+      \strng{bibnamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authorbibnamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authornamehash}{712b5363adce54e7c1daea15779b5287}
+      \strng{authorfullhash}{712b5363adce54e7c1daea15779b5287}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{IONOS Digital Guide}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
+      \endverb
+      \verb{url}
+      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
+      \endverb
+    \endentry
     \entry{indexFreeAdjacency}{misc}{}
       \name{author}{1}{}{%
         {{hash=b619ccc302aa27f70a1bb97879838234}{%
@@ -175,8 +201,8 @@
       \strng{authorbibnamehash}{b619ccc302aa27f70a1bb97879838234}
       \strng{authornamehash}{b619ccc302aa27f70a1bb97879838234}
       \strng{authorfullhash}{b619ccc302aa27f70a1bb97879838234}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{month}{02}
       \field{year}{2024}
@@ -188,8 +214,8 @@
       \endverb
     \endentry
     \entry{rdf}{misc}{}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Série Znalostní grafy: Díl 2: Datový model RDF}
@@ -215,8 +241,8 @@
       \strng{authorbibnamehash}{6f0ec40626e98c9792877e25ac381ca6}
       \strng{authornamehash}{6f0ec40626e98c9792877e25ac381ca6}
       \strng{authorfullhash}{6f0ec40626e98c9792877e25ac381ca6}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -239,32 +265,6 @@
       \endverb
       \verb{url}
       \verb http://langer.zam.slu.cz/teaching/dbaii/olap_oltp.pdf
-      \endverb
-    \endentry
-    \entry{ionos}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=712b5363adce54e7c1daea15779b5287}{%
-           family={IONOS},
-           familyi={I\bibinitperiod}}}%
-      }
-      \strng{namehash}{712b5363adce54e7c1daea15779b5287}
-      \strng{fullhash}{712b5363adce54e7c1daea15779b5287}
-      \strng{bibnamehash}{712b5363adce54e7c1daea15779b5287}
-      \strng{authorbibnamehash}{712b5363adce54e7c1daea15779b5287}
-      \strng{authornamehash}{712b5363adce54e7c1daea15779b5287}
-      \strng{authorfullhash}{712b5363adce54e7c1daea15779b5287}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{02}
-      \field{title}{IONOS Digital Guide}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
-      \endverb
-      \verb{url}
-      \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
       \endverb
     \endentry
     \entry{neo4jDoc}{misc}{}
@@ -337,8 +337,8 @@
       \strng{authorbibnamehash}{61e73b8ee0c5bcb2a059634709efae0a}
       \strng{authornamehash}{61e73b8ee0c5bcb2a059634709efae0a}
       \strng{authorfullhash}{61e73b8ee0c5bcb2a059634709efae0a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}

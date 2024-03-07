@@ -18,7 +18,8 @@ CALL {
 FROM 'file:///com-youtube.ungraph.tsv' AS row
 FIELDTERMINATOR '\t'
 CALL {
+    WITH row
     MATCH (u1:User {userId: toInteger(row.FromNodeId)})
     MATCH (u2:User {userId: toInteger(row.ToNodeId)})
-    MERGE (u1)-[:FRIENDS]->(u2);
+    MERGE (u1)-[:FRIENDS]->(u2)
 } IN TRANSACTIONS;
