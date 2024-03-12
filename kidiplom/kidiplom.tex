@@ -265,7 +265,10 @@ Vrchol $v$ nazýváme \textit{předchůdce} (rodič) vrcholu $u$, pokud v kořen
 \section{Grafové databáze}
 %Graph databases neo4j
 %https://www.influxdata.com/graph-database/
-Grafová databáze je specializovaná NoSQL databáze pro uchovávání a dotazování dat, které jsou mezi sebou provázány pomocí vztahů. Jedná se o systém, který rozšiřuje grafový model o operace CREATE, READ, UPDATE a DELETE (zkráceně CRUD). Data v databázi jsou uchovávána ve formě vrcholů  a hran, které spolu tvoří graf. Cílem této části je představit základní vlastnosti grafových databází, jejich výhody v porovnání s jinými typy databází a na závěr je nahlédnuto na některé implementace. Při psaní jsem čerpal z \cite{graphDatabases}, \cite{influxdata} a \cite{ionos}.
+%dbengines
+Grafová databáze je specializovaný typ NoSQL databáze určený pro ukládání a dotazování dat, která jsou propojena pomocí vztahů. Tento systém rozšiřuje grafový model o operace CREATE, READ, UPDATE a DELETE (CRUD). Data jsou v databázi uložena ve formě vrcholů a hran, které vytvářejí graf. Podle webové stránky \cite{dbEngines} rostla popularita grafových databází v posledním desetiletí nejrychleji ve srovnání s ostatními typy databází.
+
+Cílem této části je představit základní vlastnosti grafových databází, jejich výhody v porovnání s jinými typy databází a na závěr je nahlédnuto na některé implementace. Při psaní jsem čerpal z \cite{graphDatabases}, \cite{influxdata} a \cite{ionos}.
 
 \subsection{Nativní ukládání a zpracování dat}
 %https://neo4j.com/blog/native-vs-non-native-graph-technology/
@@ -478,9 +481,11 @@ Tato kapitola byla napsána s využitím knih \cite{inAction}, \cite{graphDataba
 V práci je použito  české slovo \uv{vlastnosti} přeložené z anglického slova \uv{properties}, se kterým se běžně uživatel setká při práci s gafovou databází. Slovo \uv{label} je z důvodu znělosti zachováno v původním znění.
 \end{remark}
 
-\textit{Modelování dat} je proces, který překládá entity reálného světa a vztahy mezi nimi do jejich softwarové reprezentace. Uživatel popisuje doménu jako graf skládající se z vrcholů a hran pomocí vlastností a labelů. Každý model je unikátní. Podoba výsledného modelu vždy závisí na případech použití a otázkách, které mají podobu dotazů, které budou na databázi kladeny. Dodržení základních principů modelování dat je důležité pro výslednou efektivitu. Když je graf přizpůsoben dotazům, dokáže velmi rychle nalézt potřebnou odpověď. Naopak špatně zvolený modelu grafu může ve výsledku aplikaci ublížit a být překážkou. Například tím, že zpracování dotazu bude trvat déle než u optimalizovaného modelu. Další důležitou věcí, na kterou je potřeba myslet, je budoucnost vyvíjené aplikace. Model by měl být připravený na změny, které po aplikaci budou její koncoví uživatelé požadovat. Správnému modelu je proto dobré věnovat dostatečné množství času a dodržovat obecná pravidla při jeho vytváření. 
+Při \textit{modelování grafových dat} se snažíme reprezentovat náš problém grafem. Jedná se o proces, ve kterém rozpoznáváme jednotlivé entity a vztahy mezi nimi, které v problému vystupují. Problém pak popisujeme jako graf skládající se z vrcholů a hran pomocí vlastností a labelů. Podoba výsledného modelu závisí na potřebách vyvíjené aplikace a otázkách, které mají podobu dotazů, které budou na databázi kladeny.
 
-Je potřeba také podotknout, že ne všechna data jsou vhodná pro uchovávání v grafové podobě. Rozhodnutí, zda pro naše účely je grafová databáze dobrým řešením, je ve spoustě případů náročné. Existují různé typy databází (například relační, dokumentové, nebo klíč-hodnota), kde každá má své silné a slabé stránky a je potřeba si dobře promyslet, kterou zvolit. Lze dohledat spoustu \uv{slovních návodů} pomáhajících s touto volbou. Na obrázku \ref{fig:GraphDatabase-DecisionTree} je ukázán rozhodovací strom převzatý z \cite{inAction}. Grafové databáze jsou výhodné pro aplikace, které mají vztahy mezi entitami na prvním místě. Tato vlastnost by měla být odrazovým můstkem při rozhodování, zda použít, či nepoužít grafovou databázi.
+Dodržení základních principů modelování dat je důležité pro výslednou efektivitu. Pro správné fungování je proto dobré věnovat dostatečné množství času. Když je graf přizpůsoben dotazům, dokáže velmi rychle nalézt potřebnou odpověď. Naopak špatně zvolený modelu grafu může ve výsledku aplikaci ublížit a být překážkou. Například tím, že zpracování dotazu bude trvat déle než u optimalizovaného modelu. Další důležitou věcí, na kterou je potřeba myslet, je budoucnost vyvíjené aplikace. Model by měl být připravený na možné změny, které po aplikaci budou její koncoví uživatelé požadovat.
+
+Je potřeba také podotknout, že ne všechna data jsou vhodná pro uchovávání v grafové podobě. Rozhodnutí, zda pro naše účely je grafová databáze dobrým řešením, je ve spoustě případů náročné. Existují různé typy databází (například relační, dokumentové, nebo klíč-hodnota) a každá má své silné a slabé stránky a je potřeba si dobře promyslet, kterou zvolit. Grafové databáze jsou výhodné pro aplikace, které mají vztahy mezi entitami na prvním místě. Tato vlastnost by měla být odrazovým můstkem při rozhodování, zda použít, či nepoužít grafovou databázi. Lze dohledat spoustu \uv{návodů} pomáhajících s touto volbou. Jeden z nich je ukázán na obrázku \ref{fig:GraphDatabase-DecisionTree}. Zobrazuje rozhodovací strom převzatý z knihy \cite{inAction}.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{GraphDatabase-DecisionTree}
@@ -488,7 +493,9 @@ Je potřeba také podotknout, že ne všechna data jsou vhodná pro uchováván�
 	\label{fig:GraphDatabase-DecisionTree}
 \end{figure}
 
-Pokud se pro požití grafové databáze rozhodneme, můžeme přistoupit k modelování dat. V této kapitole se tedy zaměříme na návrh grafového modelu. Zkusíme si to na příkladu sociální platformy pro nadšence cestování. Sociální sítě jsou totiž jedním z případů, kdy použití grafových databází pro ukládání dat dává smysl. Tato aplikace tedy bude umožňovat cestovatelům se propojit s ostatními. Dále bude zaznamenávat jejich výlety do různých destinací, hodnocení těchto cest, cestovatelské aktivity, které destinace nabízí a které se mohou uživatelům aplikace líbit. Na základě svých přátel a hodnocení cest do destinací aplikace dokáže uživateli doporučit jiné destinace, které dosud nenavštívil. Naše aplikace se tedy bude dotýkat i dalšího případu užití grafových databází, a to systémů pro doporučování, které jsou v praxi hojně využívány. Pro vyzkoušení dotazů můžeme využít csv souborů, obsahujících vygenerovaná data pro naši aplikaci. Seznam všech souborů, rozdělený na entity a vztahy mezi nimi a počet řádků (včetně hlavičky) jednotlivých souborů lze vyčíst z tabulky \ref{tab:TravelEnthusiastNetwork-csv}.
+Pokud se pro požití grafové databáze rozhodneme, můžeme přistoupit k modelování dat. V této kapitole se tedy zaměříme na návrh grafového modelu. Zkusíme si to na příkladu sociální platformy pro nadšence cestování. Sociální sítě jsou totiž jedním z případů, kdy použití grafových databází pro ukládání dat dává smysl. Tato aplikace tedy bude umožňovat cestovatelům se propojit s ostatními. Dále bude zaznamenávat jejich výlety do různých destinací, hodnocení těchto cest, cestovatelské aktivity, které destinace nabízí a které se mohou uživatelům aplikace líbit. Na základě svých přátel a hodnocení cest do destinací aplikace dokáže uživateli doporučit jiné destinace, které dosud nenavštívil. Naše aplikace se tedy bude dotýkat i dalšího případu užití grafových databází, a to systémů pro doporučování, které jsou v praxi hojně využívány.
+
+Pro vyzkoušení dotazů můžeme využít csv souborů, obsahujících vygenerovaná data pro naši aplikaci. Seznam všech souborů, rozdělený na entity a vztahy mezi nimi a počet řádků (včetně hlavičky) jednotlivých souborů lze vyčíst z tabulky \ref{tab:TravelEnthusiastNetwork-csv}.
 
 \begin{table}[h]
 \caption{Tabulka souborů pro aplikaci pro cestovní nadšence.}
@@ -518,36 +525,35 @@ Pokud se pro požití grafové databáze rozhodneme, můžeme přistoupit k mode
 
 Postup modelování se dá rozdělit do čtyř fází:
 \begin{enumerate}
-  \item Definice problému
-  \item Konceptuální datový model
-  \item Logický datový model
-  \item Testování modelu 
+  \item Definice problému,
+  \item Konceptuální datový model,
+  \item Logický datový model a
+  \item Testování modelu.
 \end{enumerate}
 
 V následujících částech se na jednotlivé fáze podíváme detailněji. 
 
 \subsection{Definice problému}
-V první fázi bychom měli zvážit co všechno by měla aplikace umět. Výsledkem by měl být její, co nejpřesnější, slovní popis. Pomoci nám může odpovědět na těchto pár otázek.
+V první fázi bychom měli zvážit co všechno by měla aplikace umět. Výsledkem by měl být její, co nejpřesnější, slovní popis. Pomoci nám může odpovědět na těchto pár otázek, převzaté z knihy \citep{inAction}.
 
 \subsubsection{Co od aplikace očekáváme?}
 Aplikace je sociální sítí, a proto by měla jednotlivým uživatelům umožňovat se propojit s ostaními uživateli aplikace. To je umožněno pomocí relace sledování. Uživatelům by pak na základě jimi sledovaných uživatelů, oblíbených aktivit a hodnocení destinací měly přicházet tipy na výlet. Aplikace by měla umožnit zazanamenat, že někteří uživatelé podnikli cestu společně. Uživatelé budou moci v rámci jedné cesty navštívit více destinací.
 
-\subsubsection{S jakými informacemi aplikace pracuje?}
+\subsubsection{Jaké informace budou v databázi uchovávány?}
 \begin{itemize}
-  \item Všechny základní informace o \textbf{uživatelích}, aby se s nimi ostatní mohli spojit - jejich jméno, příjmení, unikátní identifikátor, oblíbené \textbf{cestovatelské aktivity}.
-  \item Informace o \textbf{cestách}, které uživatelé podnikli.
-  \item Informace o konkrétních \textbf{destinacích} jako je jejich lokace, název, cestovatelské aktivity, které destinace nabízí.
-  \item Uživateli je umožněno psát \textbf{hodnocení} jednotlivých \textbf{cest}, které podniknul.
+  \item Potřebné údaje o uživatelích -- jejich jméno, příjmení, unikátní identifikátor, oblíbené cestovatelské aktivity.
+  \item Informace o cestách, které uživatelé podnikli -- název cesty, časové údaje, jejich recenze.
+  \item Informace o destinacích -- lokace, název, nabízené cestovatelské aktivity.
 \end{itemize}
 V reálném scénáři by projekt pravděpodobně zahrnoval mnoho dalších informací, ale pro tuto ukázkovou aplikaci to ponecháme omezené. Pro zjednodušení se vyhneme přesným souřadnicovým informacím a vystačíme si s informací v rámci jakého státu se daná destinace nachází. Dále uživatelům aplikace bude dovolovat psát hodnocení na dané cesty, nikoliv na destinace, které v rámci cesty podnikli. Uživatelé cestující spolu se budou účastnit stejné cesty do destinací. 
 
-Aplikace by tedy měla zacházet s pojmy jako jsou uživatel, destinace, stát, cesta, hodnocení a cestovní aktivita.
+Aplikace by tedy měla zacházet s pojmy jako je uživatel, destinace, stát, cesta, recenze a cestovatelská aktivita.
 
 \subsubsection{Jak spolu tyto informace vzájemně souvisí?}
-Následující seznam ukazuje, jakým způsobem jsou odopovědi na předchozí otázku mezi sebou propojeny. 
+Následující seznam ukazuje, jakým způsobem jsou odpovědi na předchozí otázku mezi sebou propojeny. 
 \begin{itemize}
   \item Uživatel \textbf{sleduje} jiného uživatele.
-  \item Uživatel \textbf{se zúčastnil} cesty \textit{vedoucí do} destinace.
+  \item Uživatel \textbf{se zúčastnil} cesty \textbf{vedoucí do} destinace.
   \item Uživateli se \textbf{líbí} cestovatelská aktivita.
   \item Uživatel \textbf{napsal} recenzi \textbf{o} cestě.
   \item Destinace \textbf{nabízí} cestovatelskou aktivitu.
@@ -565,12 +571,12 @@ Následující seznam ukazuje, jakým způsobem jsou odopovědi na předchozí o
   \item Pro konkrétní destinaci vrať měsíc v roce v kterém je nejlépe hodnocená.
   \item Najdi uživatele, jejichž jméno nebo přijmení obsahuje řetězec XYZ. 
 \end{itemize}
-V reálném scénáři by otázek mohlo být mnohem více.
+Tyto otázky po vytvoření modelu přeložíme pomocí dotazovacího jazyka na dotazy.
  
 \subsection{Konceptuální datový model}
-Dalším krokem je vyvinout konceptuální model. Výstupem by měl být přehledný diagram popisující typy dat v naší aplikaci. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data ruzných typů v rámci vyvíjené aplikace spolu souvisí. Tento proces vyžaduje identifikování, seskupení a propojení všech entit a vztahů, které se v naší aplikaci vyskytují. Nejedná se o jednoduchý úkol. Je možné, že model navrhneme špatně a budeme ho muset předělat.
+V této fázi vyvineme konceptuální model. Výstupem by měl být přehledný diagram popisující typy dat v naší aplikaci. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data ruzných typů v rámci vyvíjené aplikace spolu souvisí. Tento proces vyžaduje identifikování a seskupení všech entit a vztahů, které se v naší aplikaci vyskytují. Nejedná se o jednoduchý úkol. Je možné, že model navrhneme špatně a budeme jej muset předělat.
 
-Při vyvíjení datového modelu vývojáři často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími. Proto se konceptuální model v různých literaturách nazývá whiteboard model. 
+Při vyvíjení datového modelu vývojáři často kreslí na tabuli, jak jsou data v rámci projektu propojena s dalšími. Proto se konceptuální model v některých literaturách nazývá whiteboard model. 
 
 \subsubsection{Entity}
 Entity většinou představují objekty, jakými jsou například \textit{Uživatel}, \textit{Účet}, nebo \textit{Město}, které jsou v databázi uloženy a propojeny vzájemnými vztahy. 
@@ -580,9 +586,11 @@ Jedním z osvědčených postupů, jak z našich poznámek z minulé fáze vytá
 V naší aplikaci můžeme dohromady rozpoznat 6 různých entit: \textit{Uživatel}, \textit{Cesta}, \textit{Destinace}, \textit{Aktivita}, \textit{Stát} a \textit{Recenze}.
 
 \subsubsection{Vztahy}
-Nyní následuje propojení entit pomocí vztahů. Entity v rámci naší aplikace jsme identifikovali  zejména zaměřením se na podstatná jména z poznámek o aplikaci. Vztahy můžeme získat obdobně pomocí sloves. Zde bychom však měli být velmi opatrní. Ve slovese se často ukrývá podstatné jméno. V budoucím vývoji aplikace by pak mohlo dojít k problémům při rozšiřování funkcionality aplikace. Dobrým příkladem je sloveso \uv{recenzovat}. Pokud bychom při modelování zvolili větu \uv{Uživatel recenzoval X.} místo \uv{Uživatel napsal recenzi o X.}, tak bychom mohli v budoucím vývoji aplikace narazit na problém, že nemáme entitu představující recenzi, na kterou bychom mohli odkazovat. Snadno si jde domyslet komentování nebo jiný způsob reagování na recenze. Podobně, pokud bychom v naší aplikaci upřednostnili větu \uv{Uživatel navštívil destinaci.} před větou \uv{Uživatel podnikl cestu do destinace.}, uživatel by pak nemohl danou cestu hodnotit tak, jak to máme v popisu naší aplikace. Takové chyby mohou vést v budoucnosti k migrování databáze, což je velmi obtížný a zdlouhavý proces přesouvání dat z jedné databáze do druhé, kterému je lepší se vyhnout.
+Nyní následuje propojení entit pomocí vztahů. Entity v rámci naší aplikace jsme identifikovali  zejména zaměřením se na podstatná jména z poznámek o aplikaci. Vztahy můžeme získat obdobně zaměřením se na slovesa. Zde bychom však měli být velmi opatrní. Ve slovese se často ukrývá podstatné jméno. V budoucím vývoji aplikace by pak mohlo dojít k problémům při rozšiřování funkcionality aplikace. Dobrým příkladem je sloveso \uv{recenzovat}. Pokud bychom při modelování zvolili větu \uv{Uživatel recenzoval X.} místo \uv{Uživatel napsal recenzi o X.}, tak bychom mohli v budoucím vývoji aplikace narazit na problém, že nemáme entitu představující recenzi, na kterou bychom mohli odkazovat. Snadno si jde domyslet komentování nebo jiný způsob reagování na recenze. Podobně, pokud bychom v naší aplikaci upřednostnili větu \uv{Uživatel navštívil destinaci.} před větou \uv{Uživatel podnikl cestu do destinace.}, uživatel by pak nemohl danou cestu hodnotit tak, jak to máme v popisu naší aplikace. Takové chyby mohou vést v budoucnosti k migrování databáze, což je velmi obtížný a zdlouhavý proces přesouvání dat z jedné databáze do druhé, kterému je lepší se vyhnout.
 
-Hledáme tedy slovesa, které představují relaci mezi námi nalezenými entitami. Po aplikaci tohoto doporučení na větu \uv{Uživateli se líbí cestovatelská aktivita.} získáme vztah \textit{se líbí} mezi entitami \textit{Uživatel} a \textit{Cestovatelská aktivita}. Stejným způsobem postupujeme dál a hledáme všechny důležité vztahy. Může se stát, že při důkladném hledání vztahů nalezneme další entity, které jsme předtím nenalezli. Můžeme se dostat do situace, kdy váháme, zda určitý typ dat má tvořit entitu nebo relaci v našem modelu. V této situaci je obecně doporučeno se rozhodovat podle toho, zda některý dotaz na databázi dostane na vstupu informaci ve formě tohoto typu dat. Pokud ano, tato data bychom měli reprezentovat jako entitu. Například lze takto odvodit, že slovo Uživatel musí být entita, protože je vstupem (proměnnou) v dotazu odpovídajícím na otázku \uv{Které destinace navštívil uživatel X? Kolikrát je navštívil?}.
+Hledáme tedy slovesa, které představují relaci mezi námi nalezenými entitami. Po aplikaci tohoto doporučení na větu \uv{Uživateli se líbí cestovatelská aktivita.} získáme vztah \textit{líbí se} mezi entitami \textit{Uživatel} a \textit{Cestovatelská aktivita}. Stejným způsobem postupujeme dál a hledáme všechny důležité vztahy.
+
+Můžeme se dostat do situace, kdy váháme, zda určitý typ dat má tvořit entitu nebo relaci v našem modelu. V této situaci je obecně doporučeno se rozhodovat podle toho, zda některý dotaz na databázi dostane na vstupu informaci ve formě tohoto typu dat. Pokud ano, tato data bychom měli reprezentovat jako entitu. Například lze takto odvodit, že slovo Uživatel musí být entita, protože je vstupem (proměnnou) v dotazu odpovídajícím na otázku \uv{Které destinace navštívil uživatel X? Kolikrát je navštívil?}.
 
 \subsubsection{Konceptuální model}
 
@@ -594,23 +602,25 @@ Po důkladném rozmýšlení má naše tabule stejný obsah, jako na obrázku \r
 \end{figure}
 
 \subsection{Logický datový model}
-Pokud jsme s diagramem z předchozí fáze spokojeni, můžeme konečně přistoupit ke kroku, ve kterém definujeme základní schéma, které bude určovat podobu našich dat v databázi. V případě relačního modelování je konceptuální model přeformátován, aby mohl být ukládán do tabulek. V případě grafového modelování toto není potřeba. Stačí identifikovat vrcholy a hrany a přiřadit jim příslušný label a vlastnosti. Výstupem tedy bude opět diagram, který ale bude mnohem detailnější. Bude se zabývat detaily, kterými se zabývají vývojáři. Bude definovat tvar, ve kterém budou data v databázi uložena a podle něj budeme moci klást na databázi dotazy. Poté již můžeme do naší databáze vložit zkušební data a vyzkoušet dotazy, které budou odpovídat na naše otázky načrtnuté v první části modelování dat.
+V této fázi definujeme základní schéma, které bude určovat podobu našich dat v databázi. V případě relačního modelování je konceptuální model přeformátován, aby mohl být ukládán do tabulek. V případě grafového modelování toto není potřeba. Stačí identifikovat vrcholy a hrany a přiřadit jim příslušný label a vlastnosti. Výstupem tedy bude návrh schématu ve formě grafu, který bude mnohem detailnější než konceptuální model. Bude se zabývat detaily, kterými se zabývají vývojáři. Poté již můžeme do naší databáze vložit zkušební data a vyzkoušet dotazy, které budou odpovídat na naše otázky načrtnuté v první části modelování dat.
 
 Pro vytvoření grafového modelu jsou potřeba tyto 3 kroky:
 \begin{enumerate}
-  \item Převést entity na vrcholové labely
-  \item Převést relace na labely hran
-  \item Najít a přiřadit vlastnosti vrcholovým a hranovým labelům
+  \item převést entity na vrcholové labely,
+  \item převést relace na labely hran a
+  \item najít a přiřadit vlastnosti vrcholovým a hranovým labelům.
 \end{enumerate}
 
 \subsubsection{Vrcholové labely}
-Podstatnou část práce již máme za sebou, neboť můžeme využít dobře navrženého konceptuálního modelu a namapovat naše entity na vrcholové labely. Label vrcholu $u$ určuje, do které skupiny, nebo kategorie vrcholů vrchol $u$ patří. Všechny vrcholy se stejným labelem pak spadají do stejné kategorie. Label pak můžeme používat v dotazech na databázi a pracovat tak s různými skupinami vrcholů a dosáhnout tak lepšího výkonu při dotazování. Pro lepší pochopení je zde obrázek \ref{fig:VertexLabels}. Vymyšlení vrcholových labelů, tedy názvů jednotlivých skupin vrcholů, může být poněkud náročný úkol. Labely by měly být výstižné, krátké a přesné. Musíme mít na paměti budoucí rozšířitelnost a fakt, že s databází může pracovat jiný vývojář. Dobře zvolený label je tedy velmi žádaný.
+Podstatnou část práce již máme za sebou, neboť můžeme využít dobře navrženého konceptuálního modelu a namapovat naše entity na vrcholové labely. Label vrcholu $u$ určuje, do které skupiny, nebo kategorie vrcholů vrchol $u$ patří. Všechny vrcholy se stejným labelem pak spadají do stejné kategorie. Label pak můžeme používat v dotazech na databázi a pracovat tak s různými skupinami vrcholů a dosáhnout tak lepšího výkonu při dotazování. Pro lepší pochopení je zde obrázek \ref{fig:VertexLabels}.
 
-\begin{figure}
+\begin{figure}[h]
 	\includegraphics[width=\textwidth]{VertexLabels}
 	\caption{Label vrcholu definuje, do které kategorie vrchol spadá.}
 	\label{fig:VertexLabels}
 \end{figure}
+
+Vymyšlení vrcholových labelů, tedy názvů jednotlivých skupin vrcholů, může být poněkud náročný úkol. Labely by měly být výstižné, krátké a přesné. Musíme mít na paměti budoucí rozšířitelnost aplikace a fakt, že s databází může pracovat jiný vývojář. Dobře zvolený label je tedy velmi žádaný.
 
 Dobrým zvykem je zvolit label, který bude v jednotném čísle. Při přiřazování labelu je dobré myslet na jeho co největší obecnost, protože v budoucnu bychom mohli potřebovat reprezentovat jiný podobný koncept a tedy je užitečné volit co nejobecnější label. Povolený počet labelů pro jeden vrchol se u různých grafových databází liší. Bezpečným přístupem je každému vrcholu přiřadit jeden label. To je například přístup Apache TinkerPop. Často se ale také hodí mít labelů více a pomocí nich umět vyjádřit dědičnost. Vrcholy pak spadají do více skupin vrcholů naráz. 
 Příkladem může být systém pro správu zaměstnanců a klientů v nějaké firmě. Zde by se mohlo hodit kromě labelu \textit{Zaměstnanec} a \textit{Klient} mít label \textit{Osoba}. Neboť zaměstnanec, reprezentovaný vrcholem v databázi, jistě sdílí s klientem informace jako je jméno, datum narození apodobně, ale může mít nějaké dodatečné informace, jako je například plat, nebo identifikační číslo zaměstnance. Nyní jednoduše můžeme vybrat data týkající se pouze klientů, ale zároveň můžeme požádat databázi o informaci o všech lidech spravovaných v databázi. Příklad přiřazení více labelů jednomu vrcholu je znázorněn na obrázku \ref{fig:MoreVertexLabels}. To je důvod, proč databáze, jako Neo4j nebo Amazon Neptune umožňují vrcholům přiřadit žádný, jeden, ale i více labelů.
@@ -737,7 +747,7 @@ ORDER BY count DESC, d.destinationName ASC;
 %%https://opendata.infrabel.be/explore/dataset/station_to_station/information/?disjunctive.stationfrom_name&disjunctive.stationto_name&sort=stationfrom_name&basemap=jawg.light&location=8,50.51448,4.32709
 V této kapitole si odhalíme další velkou výhodu grafových databází a to hledání cest mezi vrcholy. Ne vždy platí, že cestu mezi dvěma vrcholy známe. Často máme pouze počáteční a cílový vrchol a chceme zjistit, zda je jeden z druhého dosažitelný, nebo hledáme nejkratší cestu mezi nimi. V první části si připomeneme dva základní algoritmy pro průchod grafem a následně této znalosti využijeme ve druhé části při zjišťování dosažitelnosti a hledání nejkratších cest ve smyslu počtu hran mezi dvěma vrcholy. Ve třetí části se podíváme na hledání cesty s nejmenším možným součtem ohodnocení hran na této cestě.
 
-Pro ukázkové příklady je použitý dataset\footnote{\url{https://opendata.infrabel.be/explore/dataset/station_to_station/information/?disjunctive.stationfrom_name&disjunctive.stationto_name&sort=stationfrom_name&basemap=jawg.light&location=8,50.51448,4.32709}} obsahující informace o belgických železničních stanicích a spojeních mezi nimi. Jednoduchý model znázorňuje obrázek \ref{fig:RailNetwork-Graph}. V databázi tedy budeme uchovávat tedy pouze vrcholy s labelem Station a hrany mezi nimi s labelem LEADS\_TO. Původní dataset je rozdělen do dvou csv souborů. Jeden uchovává informace o železničních stanicích a druhý spojení mezi nimi. Informace obsahující souřadnice pro jednotlivá spojení byly vypuštěny. Seznam souborů shrnuje tabulka \ref{tab:RailNetwork-csv}.
+Pro ukázkové příklady je použitý dataset \cite{railNetworkDataset} obsahující informace o belgických železničních stanicích a spojeních mezi nimi. Jednoduchý model znázorňuje obrázek \ref{fig:RailNetwork-Graph}. V databázi tedy budeme uchovávat tedy pouze vrcholy s labelem Station a hrany mezi nimi s labelem LEADS\_TO. Původní dataset je rozdělen do dvou csv souborů. Jeden uchovává informace o železničních stanicích a druhý spojení mezi nimi. Informace obsahující souřadnice pro jednotlivá spojení byly vypuštěny. Seznam souborů shrnuje tabulka \ref{tab:RailNetwork-csv}.
 
 \begin{table}[h]
 \caption{Tabulka souborů pro ukázku hledání cest.}
@@ -1099,7 +1109,7 @@ Podíl $\frac{k_u k_v}{2W}$ ve vzorci \ref{eq:louvain} odpovídá náhodnému gr
 
 Na začátku každý vrchol tvoří komunitu. V neohodnoceném grafu má každá hrana váhu 1. Algoritmus má dva kroky:
 \begin{enumerate}
-\item Každý vrchol v grafu je přiřazen do nějaké komunity. Následně dochází k vyhodnocování změny modularity, pokud vrchol přeřadíme do jiné komunity. Vyhodnocuje se pomocí vzorce \ref{eq:louvain}. Cílem je nejlepší rozřazení jednotlivých vrcholů do komunit.
+\item Každý vrchol v grafu je přiřazen do nějaké komunity. Následně dochází k vyhodnocování změny modularity, pokud vrchol přeřadíme do jiné komunity. Vyhodnocuje se pomocí vzorce \ref{eq:louvain}. Cílem je najít nejlepší rozřazení jednotlivých vrcholů do komunit.
 \item Každá komunita tvoří vrchol nového grafu. Ohodnocené hrany v novém grafu představují jak jsou komunity mezi sebou propojeny. Hrana má takovou váhu, kolik mezi komunitami existuje spojení. Tento nový graf bude vstupem v další iteraci.
 \end{enumerate}
 Algoritmus iteruje tak dlouho, dokud dochází ke zvyšování modularity ve vzniklých komunitách.
@@ -1121,7 +1131,7 @@ Pro ukázkový graf \ref{fig:example-graph} nám algoritmus rozdělil vrcholy do
 \end{table}
 
 \section{Experimenty}
-Zde budou experimenty se zvolenými databázemi.
+Zde budou experimenty se zvolenými databázemi. Pro testování byl použit dataset \cite{youtubeDataset}.
 
 %% Závěry práce. V jazyce práce a anglicky. Text pro jiný než
 %% nastavený jazyk práce (nepovinným parametrem language makra
@@ -1149,7 +1159,7 @@ Thesis conclusions in \uv{English}.
 
 %% Sazba i v textu necitovaných zdrojů, při použití
 %% BibLaTeXu. Volitelné.
-\nocite{*}
+%\nocite{*}
 %% Vlastní sazba bibliografie při použití BibLaTeXu.
 \printbibliography
 

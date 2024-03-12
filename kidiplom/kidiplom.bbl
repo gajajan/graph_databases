@@ -111,6 +111,30 @@
       \verb https://home.zcu.cz/~ryjacek/students/DMA/skripta/8.pdf
       \endverb
     \endentry
+    \entry{dbEngines}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=03784a7c5600d29113972955e602a944}{%
+           family={DB-Engines},
+           familyi={D\bibinithyphendelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{03784a7c5600d29113972955e602a944}
+      \strng{fullhash}{03784a7c5600d29113972955e602a944}
+      \strng{bibnamehash}{03784a7c5600d29113972955e602a944}
+      \strng{authorbibnamehash}{03784a7c5600d29113972955e602a944}
+      \strng{authornamehash}{03784a7c5600d29113972955e602a944}
+      \strng{authorfullhash}{03784a7c5600d29113972955e602a944}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{month}{2}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://db-engines.com/en
+      \endverb
+      \verb{url}
+      \verb https://db-engines.com/en
+      \endverb
+    \endentry
     \entry{graphDatabases}{book}{}
       \name{author}{3}{}{%
         {{hash=eaed36ba79bb2c6095773ccc079ca1d0}{%
@@ -138,8 +162,8 @@
       \strng{authorbibnamehash}{77edf458bcda3ac3061f8e216386c363}
       \strng{authornamehash}{77edf458bcda3ac3061f8e216386c363}
       \strng{authorfullhash}{77edf458bcda3ac3061f8e216386c363}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2nd Edition}
@@ -148,8 +172,8 @@
       \field{year}{2015}
     \endentry
     \entry{influxdata}{misc}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{A Guide to Graph Databases}
@@ -173,8 +197,8 @@
       \strng{authorbibnamehash}{712b5363adce54e7c1daea15779b5287}
       \strng{authornamehash}{712b5363adce54e7c1daea15779b5287}
       \strng{authorfullhash}{712b5363adce54e7c1daea15779b5287}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -201,8 +225,8 @@
       \strng{authorbibnamehash}{b619ccc302aa27f70a1bb97879838234}
       \strng{authornamehash}{b619ccc302aa27f70a1bb97879838234}
       \strng{authorfullhash}{b619ccc302aa27f70a1bb97879838234}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{month}{02}
       \field{year}{2024}
@@ -214,8 +238,8 @@
       \endverb
     \endentry
     \entry{rdf}{misc}{}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Série Znalostní grafy: Díl 2: Datový model RDF}
@@ -337,8 +361,8 @@
       \strng{authorbibnamehash}{61e73b8ee0c5bcb2a059634709efae0a}
       \strng{authornamehash}{61e73b8ee0c5bcb2a059634709efae0a}
       \strng{authorfullhash}{61e73b8ee0c5bcb2a059634709efae0a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -453,6 +477,35 @@
       \verb https://www.macrometa.com/docs/graphs/graph-concepts/graphs-and-indexes
       \endverb
     \endentry
+    \entry{railNetworkDataset}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=531e3176f9bd32d0db46dc703249692a}{%
+           family={Infrabel},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Assets Management}%
+      }
+      \strng{namehash}{531e3176f9bd32d0db46dc703249692a}
+      \strng{fullhash}{531e3176f9bd32d0db46dc703249692a}
+      \strng{bibnamehash}{531e3176f9bd32d0db46dc703249692a}
+      \strng{authorbibnamehash}{531e3176f9bd32d0db46dc703249692a}
+      \strng{authornamehash}{531e3176f9bd32d0db46dc703249692a}
+      \strng{authorfullhash}{531e3176f9bd32d0db46dc703249692a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{02}
+      \field{title}{Geographical layout of the distances between two adjacent stations on the rail network}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://opendata.infrabel.be/explore/dataset/station_to_station/information/?disjunctive.stationfrom_name&disjunctive.stationto_name&sort=stationfrom_name&basemap=jawg.light&location=8,50.51448,4.32709
+      \endverb
+      \verb{url}
+      \verb https://opendata.infrabel.be/explore/dataset/station_to_station/information/?disjunctive.stationfrom_name&disjunctive.stationto_name&sort=stationfrom_name&basemap=jawg.light&location=8,50.51448,4.32709
+      \endverb
+    \endentry
     \entry{graphAlgorithms}{book}{}
       \name{author}{2}{}{%
         {{hash=6ec5ddd69ddd6dcb80c48b037fff6b54}{%
@@ -494,6 +547,39 @@
       \endverb
       \verb{url}
       \verb https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf
+      \endverb
+    \endentry
+    \entry{youtubeDataset}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=900d107125ff0ca84698cb909e4f6c51}{%
+           family={Leskovec},
+           familyi={L\bibinitperiod},
+           given={Jure},
+           giveni={J\bibinitperiod}}}%
+        {{hash=767ff42ec330eeedea785558d350f6fa}{%
+           family={Krevl},
+           familyi={K\bibinitperiod},
+           given={Andrej},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b6c59a3c7880c51055cf3864633578b}
+      \strng{fullhash}{8b6c59a3c7880c51055cf3864633578b}
+      \strng{bibnamehash}{8b6c59a3c7880c51055cf3864633578b}
+      \strng{authorbibnamehash}{8b6c59a3c7880c51055cf3864633578b}
+      \strng{authornamehash}{8b6c59a3c7880c51055cf3864633578b}
+      \strng{authorfullhash}{8b6c59a3c7880c51055cf3864633578b}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{{SNAP Datasets}: {Stanford} Large Network Dataset Collection}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://snap.stanford.edu/data/com-Youtube.html
+      \endverb
+      \verb{url}
+      \verb https://snap.stanford.edu/data/com-Youtube.html
       \endverb
     \endentry
   \enddatalist
