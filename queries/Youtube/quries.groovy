@@ -13,8 +13,8 @@ g.V().project("v","degree").by(values("userId")).by(bothE().count()).
            limit(4)
            
 clockWithResult(1){
-    g.V().has("User", "userId", 12000).
+    g.V().has("User", "userId", 7357).
     repeat(out().simplePath()).
-    until(has("User", "userId", 7357)).
+    until(has("User", "userId", 12000)).
     limit(1).path().next()
 }

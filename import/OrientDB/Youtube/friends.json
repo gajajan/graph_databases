@@ -8,7 +8,6 @@
     },
     "transformers": [
       { "merge": { "joinFieldName": "FromNodeId", "lookup": "User.userId" } },
-      { "vertex": {"class": "User"} },
       { "edge": { "class": "FRIENDS",
                   "joinFieldName": "ToNodeId",
                   "lookup": "User.userId",
@@ -23,8 +22,9 @@
          "dbUser": "root",
          "dbPassword": "root",
          "dbType": "graph",
+         "tx": false,
+         "wal": false,
          "batchCommit": 1000,
-         "wal" : false,
          "classes": [
             {"name": "User", "extends": "V"},
             {"name": "FRIENDS", "extends": "E"}

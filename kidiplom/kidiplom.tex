@@ -364,7 +364,7 @@ Existuje spousta implementací grafových databází. Liší se například \"na
 \cite{neo4jDoc}, \cite{neo4jDev}
 Databázový systém Neo4j je nejrozšířenější open-source grafovou databází na trhu s největší uživatelskou základnou. Nabízí vysoký výkon při práci s grafy. Její první verze byla vyvinuta v roce 2002 a vznikla z důvodu nespokojenosti jejich zakladatelů s výkonem relačních databází. Implementována je v Javě. Jedná se o nativní grafovou databázi. Je využívána hromadou světoznámých společností jako je například Microsoft, eBay, nebo Linkedin. Klást dotazy můžeme prostřednictvím jazyka Cypher.
 
-Neo4j používá identifikátory s názvem \textit{elementId} pro vrcholy a hrany. Dle dokumentace však není bezpečné používat tyto identifikátory v jednotlivých transakcích a je doporučeno, pokud je jich potřeba, si vytvořit vlastní pomocí \textit{node key constraint} a \textit{relationships key constraint}.
+Neo4j používá identifikátory s názvem \textit{elementId} pro vrcholy a hrany. Dle dokumentace však není bezpečné používat tyto identifikátory v jednotlivých transakcích a je doporučeno, pokud je jich potřeba, si vytvořit vlastní pomocí \textit{node key constraint} a \textit{relationships key constraint}. Pro rychlý přístup k datům mají záznamy v databázi fixní délku. Jeden vrchol zabírá 15 bytů, jedna hrana 34 bytů. Na disku jsou ukládány ve spojových seznamech.
 
 %https://neo4j.com/developer/graph-platform/
 Neo4j nabízí velké množství produktů. Každý z nich je určen pro jinou cílovou skupinu. Například v této práci je využita aplikace Neo4j Desktop, která slouží pro správu lokálních instancí Neo4j. Verze používané aplikace je 1.5.9. Dalším zajímavým produktem je cloudový databázový servis pojmenovaný Neo4j AuraDB. Vznikl v roce 2019. Je také dostupný v bezplatné verzi, která je však omezená -- lze v ní spravovat nejvýše 200 tisíc vrcholů a 400 tisíc hran.
@@ -379,11 +379,13 @@ Neo4j má též spoustu rozšiřujících knihoven a nástrojů, které lze do p
 \cite{orientDBDoc}
 OrientDB je open-source NoSQL databázový systém implementovaný v Javě. Byl představen v roce 2010 (komerčně 2011). Jedná se o pokročilou multi-model databázi - podporuje grafový, dokumentový, klíč-hodnota a objektový model. Manipulovat s databází můžeme pomocí programovacího jazyka Java, speciálně upraveného SQL a dotazovacího jazyka Gremlin. Uživatelům je pak umožněno interagovat s databází skrze Java API, HTTP REST API, konzolu nebo prostřednictvím grafického uživatelského rozhraní -- OrientDB Studio. Pokud OrientDB Server běží lokálně, OrientDB Studio lze najít ve webovém prohlížeči na adrese \url{http://localhost:2480}. OrientDB je schématicky flexibilní. Umožňuje uchovávat schema-full, schema-less a schema-hybrid data.
 
-V databázi OrientDB jsou identifikátory řešeny následovně. Nejmenší jednotkou v databázi je záznam (record). Rozlišujeme 4 typy záznamů: Documents, Blobs, Vertices a Edges. Pro každý záznam pak je automaticky vygenerováno ID záznamu, označeno jako RID (Record ID). RID je uchováván ve formátu \textit{\#<cluster>:<position>}. 
+Nejmenší jednotkou v databázi je \textit{záznam} (record). Rozlišujeme 4 typy záznamů: Documents, Blobs, Vertices a Edges. Pro každý záznam pak je automaticky vygenerováno ID záznamu, označeno jako RID (Record ID). RID je uchováván ve formátu \textit{\#<cluster>:<position>}. 
 \begin{itemize}
 \item <cluster> označuje identifikátor clusteru, do kterého záznam patří. 
 \item <position> udává absolutní pozici záznamu v rámci clusteru.
 \end{itemize}
+
+Tyto záznamy jsou organizovány do \textit{tříd}, jako je tomu v objektově orientovaném programování. Každý záznam pak patří právě do jedné třídy. Třídy mohou dědit z jiných tříd. Pro vrcholy je výchozí třídou \texttt{V} pro hrany pak třída \texttt{E}. Je silně doporučené vytvářet vlastní definované třídy pro vrcholy a hrany dědící právě z těchto tříd. Každá třída má přidělené vlastní \textit{clustery}. Ty představují fyzický prostor kam OrientDB ukládá data. Vytvoří se při vytvoření třídy. Název clusteru je odvozen z názvu třídy. Pro zlepšení výkonu je vytvořeno tolik clusterů, kolik má CPU na serveru jader. 
 
 %https://orientdb.com/docs/3.2.x/ee/Enterprise-Edition.html
 V práci je využívána bezplatná verze OrientDB Community Edition ve verzi 3.2.23. OrientDB nabízí i placenou verzi Enterprise Edition, která poskytuje výhody jako správu zálohování, migrační nástroje, monitorování systému a CRUD operací v reálném čase a jiné.
@@ -393,7 +395,7 @@ V práci je využívána bezplatná verze OrientDB Community Edition ve verzi 3.
 \cite{arangoDBDoc}
 ArangoDB stejně jako předchozí dvě je open-source databáze. Je multi-model databáze. Lze ji použít jako plnohodnotné úložiště dokumentů, grafů a párů klíč-hodnota, full-text vyhledávací engine nebo jakoukoli kombinaci těchto technologií. První verze byla představena společností ArangoDB Inc. v roce 2012. S daty je možno pracovat prostřednictvím jazyka AQL (ArangoDB Query Language). Pokud server provozující ArangoDB běží lokálně je možno interagovat s databází skrze webové rozhraní na adrese \url{127.0.0.1:8529}, nebo prostřednictvím textového rozhraní \textit{arangosh}. Lze též komunikovat prostřednictvím HTTP API, nebo driveru.
 
-Data jsou ukládána ve známém formátu JSON. Nejmenší jednotkou v databázi je \textit{dokument} -- jeden záznam dat. Dokumenty jsou dále organizovány do kolekcí. Kolekce mohou obsahovat libovolné množství dokumentů. Tímto způsobem můžeme seskupovat dokumenty. Dokumenty jsou ukládány v binární podobě zvané \textit{VelocyPack}. Každý dokument má dále atributy, které slouží jako vlastnosti. Navíc obsahují 3 povinné atributy, nazývané \textit{systémové}, které začínají podtržítkem. Mají datový typ string a všechny jsou určené pouze ke čtení.
+Data jsou ukládána ve známém formátu JSON. Nejmenší jednotkou v databázi je \textit{dokument} -- jeden záznam dat. Dokumenty jsou dále organizovány do kolekcí. Kolekce mohou obsahovat libovolné množství dokumentů. Každý dokument patří právě do jedné kolekce. Dokumenty jsou ukládány v binární podobě zvané \textit{VelocyPack}. Každý dokument má dále atributy, které slouží jako vlastnosti. Navíc obsahují 3 povinné atributy, nazývané \textit{systémové}, které začínají podtržítkem. Mají datový typ string a všechny jsou určené pouze ke čtení.
 \begin{itemize}
 \item \textit{\_key} -- nazývá se \textit{dokumentový klíč}. Každý dokument v rámci kolekce má hodnotu tohoto atributu unikátní. Dokumentový klíč lze specifikovat při vytváření dokumentu. Pak již nelze změnit. Pokud není specifikován, je atributu přiřazena hodnota automaticky.
 \item \textit{\_id} -- nazývá se \textit{dokumentový identifikátor}. Identifikuje dokument v rámci databáze. Je ve formě \textit{<název-kolekce>/<klíč-dokumentu>}.
@@ -581,7 +583,7 @@ Při vyvíjení datového modelu vývojáři často kreslí na tabuli, jak jsou 
 \subsubsection{Entity}
 Entity většinou představují objekty, jakými jsou například \textit{Uživatel}, \textit{Účet}, nebo \textit{Město}, které jsou v databázi uloženy a propojeny vzájemnými vztahy. 
 
-Jedním z osvědčených postupů, jak z našich poznámek z minulé fáze vytáhnout entity, je dívat se po podstatných jménech. Pokud se budeme řídit tohoto postupu, tak z věty \uv{Uživateli se líbí cestovatelská aktivita.} získáme dvě entity, a to \textit{Uživatel} a \textit{Cestovatelská aktivita}. Avšak ne všechna podstatná jména jsou nutně enetity. Příkladem může být podstatné jméno \uv{příjmení}. Příjmení v naší aplikaci chápeme jako součást uživatele. A v této fázi se jedná o nepodstatný detail.
+Jedním z osvědčených postupů, jak v našich poznámkách z předchozí fáze identifikovat entity, je dívat se po podstatných jménech. Pokud se budeme řídit tohoto postupu, tak z věty \uv{Uživateli se líbí cestovatelská aktivita.} získáme dvě entity, a to \textit{Uživatel} a \textit{Cestovatelská aktivita}. Avšak ne všechna podstatná jména jsou nutně enetity. Příkladem může být podstatné jméno \uv{příjmení}. Příjmení v naší aplikaci chápeme jako součást uživatele. A v této fázi se jedná o nepodstatný detail.
 
 V naší aplikaci můžeme dohromady rozpoznat 6 různých entit: \textit{Uživatel}, \textit{Cesta}, \textit{Destinace}, \textit{Aktivita}, \textit{Stát} a \textit{Recenze}.
 
@@ -620,10 +622,9 @@ Podstatnou část práce již máme za sebou, neboť můžeme využít dobře na
 	\label{fig:VertexLabels}
 \end{figure}
 
-Vymyšlení vrcholových labelů, tedy názvů jednotlivých skupin vrcholů, může být poněkud náročný úkol. Labely by měly být výstižné, krátké a přesné. Musíme mít na paměti budoucí rozšířitelnost aplikace a fakt, že s databází může pracovat jiný vývojář. Dobře zvolený label je tedy velmi žádaný.
+Vymyšlení vrcholových labelů, tedy názvů jednotlivých skupin vrcholů, může být poněkud náročný úkol. Labely by měly být výstižné, krátké a přesné. Musíme mít na paměti budoucí rozšířitelnost aplikace a fakt, že s databází může pracovat jiný vývojář. Při přiřazování labelu je dobré myslet na jeho co největší obecnost, protože v budoucnu bychom mohli potřebovat reprezentovat jiný podobný koncept a tedy je užitečné volit co nejobecnější label.
 
-Dobrým zvykem je zvolit label, který bude v jednotném čísle. Při přiřazování labelu je dobré myslet na jeho co největší obecnost, protože v budoucnu bychom mohli potřebovat reprezentovat jiný podobný koncept a tedy je užitečné volit co nejobecnější label. Povolený počet labelů pro jeden vrchol se u různých grafových databází liší. Bezpečným přístupem je každému vrcholu přiřadit jeden label. To je například přístup Apache TinkerPop. Často se ale také hodí mít labelů více a pomocí nich umět vyjádřit dědičnost. Vrcholy pak spadají do více skupin vrcholů naráz. 
-Příkladem může být systém pro správu zaměstnanců a klientů v nějaké firmě. Zde by se mohlo hodit kromě labelu \textit{Zaměstnanec} a \textit{Klient} mít label \textit{Osoba}. Neboť zaměstnanec, reprezentovaný vrcholem v databázi, jistě sdílí s klientem informace jako je jméno, datum narození apodobně, ale může mít nějaké dodatečné informace, jako je například plat, nebo identifikační číslo zaměstnance. Nyní jednoduše můžeme vybrat data týkající se pouze klientů, ale zároveň můžeme požádat databázi o informaci o všech lidech spravovaných v databázi. Příklad přiřazení více labelů jednomu vrcholu je znázorněn na obrázku \ref{fig:MoreVertexLabels}. To je důvod, proč databáze, jako Neo4j nebo Amazon Neptune umožňují vrcholům přiřadit žádný, jeden, ale i více labelů.
+Povolený počet labelů pro jeden vrchol se u různých grafových databází liší. Jednou z možností je každému vrcholu přiřadit právě jeden label. To je například přístup ArangoDB databáze. Často se ale také hodí mít labelů více a pomocí nich umět vyjádřit dědičnost. Vrcholy pak spadají do více skupin vrcholů naráz. Tento přístup podporuje databáze Neo4j. Příkladem může být systém pro správu zaměstnanců a klientů ve firmě. Kromě vrcholových labelů \textit{Zaměstnanec} a \textit{Klient} použijeme také label \textit{Osoba}. Neboť zaměstnanec, reprezentovaný vrcholem v databázi, jistě sdílí s klientem informace jako je jméno, datum narození a podobně, ale může mít nějaké dodatečné informace, jako je například plat, nebo identifikační číslo zaměstnance. Nyní jednoduše můžeme vybrat data týkající se pouze klientů, ale zároveň můžeme požádat databázi o informaci o všech lidech spravovaných v databázi. Příklad přiřazení více labelů jednomu vrcholu je znázorněn na obrázku \ref{fig:MoreVertexLabels}.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{MoreVertexLabels}
@@ -651,24 +652,25 @@ Jedinečnost hran se dělí na dva typy:
 \end{itemize} 
 
 Jednoduchá jedinečnost odkazuje na žádnou, nebo právě jednu hranu zatímco vícenásobná povoluje hran se stejným labelem mezi dvěma vrcholy více. Na jednoduchou jedinečnost hrany s konkrétním hranovým labelem lze též nahlížet tak, že skupina sousedních vrcholů, do kterých se dostaneme přes hrany s tímto labelem, neobsahuje více instancí jednoho vrcholu, tedy tvoří množinu vrcholů. Zatímco u mnohonásobné jedinečnosti dostaneme kolekci sousedních vrcholů, kde se vrcholy mohou opakovat. 
-Co se týče jedinečnosti hran v naší aplikaci tak všechny hrany, až na hrany mezi vrcholy s labelem \textit{Cesta} a \textit{Destinace} budou mít jedinečnost jednoduchou. Například vztah mezi uživatelem a cestovní aktivitou s labelem \textit{LIKES} buď je nebo není a to lze vyjádřit pomocí existence jedné hrany mezi těmito dvěma vrcholy. Totéž platí pro ostatní hranové labely, až na hranu s labelem \textit{LED\_TO}. Jistě totiž může existovat situace, kdy v rámci cesty uživatel do dané destinace zavítá vícekrát a s touto možností by náš model měl také počítat. Tedy tato hrana bude mít vícenásobnou jedinečnost. Tyto hrany pak od sebe rozlišíme pomocí vlastností, které budou určovat období, kdy se daný uživatel v dané destinaci nacházel. Hrany s mnohonásobnou jedinečností bychom měli rozlišovat pomocí vlastností, aby byly unikátní, jinak tato jedinečnost postrádá smysl.
+
+Všechny hrany v naší aplikaci, až na hrany mezi vrcholy s labelem \textit{Cesta} a \textit{Destinace} budou mít jedinečnost jednoduchou. Například vztah mezi uživatelem a cestovní aktivitou s labelem \textit{LIKES} buď je nebo není a to lze vyjádřit pomocí existence jedné hrany mezi těmito dvěma vrcholy. Totéž platí pro ostatní hranové labely, až na hranu s labelem \textit{LED\_TO}. Jistě totiž může existovat situace, kdy v rámci cesty uživatel do dané destinace zavítá vícekrát a s touto možností by náš model měl také počítat. Tedy tato hrana bude mít vícenásobnou jedinečnost. Tyto hrany pak od sebe rozlišíme pomocí vlastností, které budou určovat období, kdy se daný uživatel v dané destinaci nacházel. Hrany s mnohonásobnou jedinečností bychom měli rozlišovat pomocí vlastností, aby byly unikátní, jinak tato jedinečnost postrádá smysl.
 
 Zvolení správné jedinečnosti hran je klíčové pro správné chování databáze. Pokud zvolíme jednoduchou jedinečnost tam, kde by měla být vícenásobná, databáze může vracet méně dat než očekáváme. Naopak, vícenásobná jedinečnost hran tam, kde by měla být jednoduchá, může vést k duplikátivním datům a sníženému výkonu dotazů. Každá hrana se stejným labelem mezi dvěma vrcholy zvyšuje čas výpočtu a komplikuje průchod grafem.
 
-U některých implementací grafových databází, jako například DataStax Graph nebo JanusGraph, lze tuto jedinečnost vynutit jako součást při definování schématu. U implementací bez schématického přístupu, jako je Neo4j, tuto jedinečnost lze ošetřit pouze v rámci aplikace.
+U některých implementací grafových databází, jako například DataStax Graph, lze tuto jedinečnost vynutit jako součást při definování schématu. U implementací bez schématického přístupu, jako je Neo4j, tuto jedinečnost lze ošetřit pouze v rámci aplikace.
 
 \subsubsection{Vlastnosti}
-Poslední zastávkou při konstruování logického modelu jsou vlastnosti. Základní kameny grafu vrcholy a hrany máme, ale chybí nám způsob jak rozlišit jednotlivé vrcholy se stejným labelem. K tomu nám slouží vlastnosti. V grafových databázích mohou mít vlastnosti jak hrany tak vrcholy, neboť hrany jsou pro nás stejně významné jak vrcholy.
+Poslední zastávkou při konstruování logického modelu jsou vlastnosti. Základní prvky grafu máme, ale chybí nám způsob jak rozlišit jednotlivé vrcholy (a někdy i hrany) se stejným labelem. K tomu nám slouží vlastnosti. V grafových databázích mohou mít vlastnosti jak hrany tak vrcholy, neboť hrany jsou pro nás stejně významné jak vrcholy.
 
 Vlastnosti v grafové databázi jsou páry klíč-hodnota a popisují konkrétní atributy hrany, či vrcholu. Hodnota vlastnosti může být různého datového typu, například řetězec, číslo, pravdivostní hodnota nebo datový typ pro uchování datumu a času. Někdy též může být hodnota typu pole nebo seznam.
-
-Pomocí vlastností následně můžeme rozlišovat jednotlivé uživatele například pomocí jejich křestního jména, příjmení, nebo uživatelské přezdívky. To se nám hodí při filtrování dat, když chceme vybrat pouze vrcholy s určitou vlastností. Jednou z vlastností bývá unikátní identifikátor každého vrcholu, díky kterým přistupujeme ke konkretním vrcholům.
+Jednou z vlastností bývá námi definovaný unikátní identifikátor každého vrcholu, díky kterému přistupujeme ke konkretním vrcholům.
 
 K dokončení logického modelu nám tedy zbývá najít a správně přiřadit potřebné vlastnosti konkrétním vrcholovým a hranovým labelům, rozumně je pojmenovat a určit jejich datový typ. K jejich nalezení nám opět mohou pomoci otázky, které chceme aby nám databáze zodpověděla. Z nich můžeme jednotlivé vlastnosti identifikovat a přiřadit.
 
+\subsubsection{Logický model}
 Naše výsledné grafové schéma popisuje obrázek \ref{fig:Schema}. Vrcholové labely jsou uvedeny v kroužcích. Hranové labely jsou vepsány do šipek. Vlastnosti vrcholů a hran jsou zobrazeny v obdélnících nacházejících se u vrcholů a na hranách.
 
-\begin{figure}
+\begin{figure} [h]
 	\includegraphics[width=\textwidth]{TravelEnthusiastNetwork-Graph}
 	\caption{Logický datový model pro sociální síť pro cestovní nadšence.}
 	\label{fig:Schema}
@@ -1130,8 +1132,86 @@ Pro ukázkový graf \ref{fig:example-graph} nám algoritmus rozdělil vrcholy do
 \end{center}
 \end{table}
 
-\section{Experimenty}
-Zde budou experimenty se zvolenými databázemi. Pro testování byl použit dataset \cite{youtubeDataset}.
+\section{Testování vybraných implementací}
+Pro testování byl použit dataset \cite{youtubeDataset}. Seznam souborů shrnuje tabulka \ref{tab:Youtube-csv}. Průměrný stupeň vrcholu je 5,2. Medián a modus je 1. První kvartil je roven 1 a třetí kvartil je roven 3. Největší stupeň ze všech vrcholů má vrchol s identifikátorem 1\,072, který má stupeň 28\,754. Distribuci stupně vrcholů zobrazuje obrázek \ref{fig:youtube-log}. Pro zvýšení přehlednosti bylo použito na vertikální ose logaritmické měřítko o základu 10, proto nejsou vrcholy se stupňem 1 zaznamenány.
+
+\begin{table}[h]
+\caption{Tabulka souborů pro experimentování s databázemi.}
+\label{tab:Youtube-csv}
+\begin{tabularx}{\textwidth}{ | l | c | c | X | }
+ \hline
+ \textbf{Typ} & \textbf{Název souboru} & \textbf{Počet} & \textbf{Informace o souboru} \\
+ \hline \hline
+ Entity & \texttt{users.csv} & 1\,134\,890 & Identifikátory uživatelů. \\
+ \hline
+ Vztahy & \texttt{com-youtube.ungraph.tsv} & 2\,987\,624 & Přátelství mezi uživateli.\\
+ \hline
+\end{tabularx}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{youtube-log}
+	\caption{Distribuce stupně vrcholů.}
+	\label{fig:youtube-log}
+\end{figure}
+
+\subsection{Výsledky}
+
+První jsem testoval vkládání a mazání vrcholů a hran v databázích. Data do databáze Neo4j byla vložena pomocí \texttt{LOAD CSV} v transakcích. Pro vložení dat do databáze ArangoDB byl použit nastroj \texttt{arangoimport}. Pro databázi OrientDB byl použit nástroj \texttt{oetl}. Výsledky testu zobrazuje obrázek \ref{fig:insertDelete}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{insertDelete}
+	\caption{Výsledky testů vkládání a mazání vrcholů a hran v databázích.}
+	\label{fig:insertDelete}
+\end{figure}
+
+Následně jsem otestoval výkon databází pomocí šesti dotazů. Tyto dotazy jsou shrnuty v tabulce \ref{tab:test-queries}. Obrázek \ref{fig:queryResults} ukazuje dobu trvání jednotlivých dotazů. Každý dotaz byl proveden desetkrát.
+
+\begin{table}[h]
+\caption{Tabulka použitých dotazů při testování databází.}
+\label{tab:test-queries}
+\begin{tabularx}{\textwidth}{ | l | X | r | }
+ \hline
+ \textbf{Značení} & \textbf{Dotaz} & \textbf{Výsledek} \\
+ \hline \hline
+ Q1 & Spočítá všechny sousedy vrcholu s id 1 do hloubky 2. & 7\,176 \\
+ \hline
+ Q2 & Spočítá všechny sousedy vrcholu s id 1 do hloubky 3. & 240\,249\\
+ \hline
+ Q3 & Spočítá všechny sousedy vrcholu s id 1 do hloubky 4. & 814\,122 \\
+ \hline
+ Q4 & Spočítá všechny sousedy vrcholu s id 1 do hloubky 5. & 1\,051\,030\\
+ \hline
+ Q5 & Najde nejkratší vzdálenost mezi 2 vrcholy. & 3 \\
+ \hline
+ Q6 & Najde nejkratší vzdálenost mezi 2 nedosažitelnými vrcholy. & neexistuje \\
+ \hline
+\end{tabularx}
+\end{table}
+
+\begin{figure}
+\centering
+\begin{tabular}{cc}
+  \includegraphics[width=65mm]{q1} &   \includegraphics[width=65mm]{q1} \\
+(a) Q1 & (b) Q2 \\[6pt]
+ \includegraphics[width=65mm]{q1} &   \includegraphics[width=65mm]{q1} \\
+(c) Q3 & (d) Q4 \\[6pt]
+\includegraphics[width=65mm]{q1} &   \includegraphics[width=65mm]{q1} \\
+(c) Q5 & (d) Q6 \\[6pt]
+\end{tabular}
+\caption{Výsledky dotazů Q1-Q6.}
+\label{fig:queryResults}
+\end{figure}
+
+\subsection{Shrnutí}
+Ze všech databází si nejhůře vedla OrientDB. Výsledky byly v porovnání s ostatními až překvapivě špatné. Pro porovnání výkonu zpracování dotazů jsem dotazy zadával jak v jazyce SQL pro OrientDB databázi tak v jazyce Gremlin.
+
+ArangoDB
+
+Neo4j
+
 
 %% Závěry práce. V jazyce práce a anglicky. Text pro jiný než
 %% nastavený jazyk práce (nepovinným parametrem language makra

@@ -13,13 +13,15 @@
         "dbType": "graph",
         "dbUser": "root",
         "dbPassword": "root",
+        "tx": false,
+        "wal": false,
         "batchCommit": 1000,
-        "wal" : false,
         "classes": [
           {"name": "User", "extends": "V"}
-        ], "indexes": [
-            {"class":"User", "fields":["userId:integer"], "type":"UNIQUE" }
-          ]
+        ],
+        "indexes": [
+          {"class":"User", "fields":["userId:integer"], "type":"UNIQUE" }
+        ]
       }
     }
   }
