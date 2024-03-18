@@ -1,4 +1,5 @@
 {
+  "config": {"parallel": true},
     "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/Youtube/users.csv" } },
     "extractor": { "csv": {
       "columns": ["userId:integer"]
@@ -18,9 +19,6 @@
         "batchCommit": 1000,
         "classes": [
           {"name": "User", "extends": "V"}
-        ],
-        "indexes": [
-          {"class":"User", "fields":["userId:integer"], "type":"UNIQUE" }
         ]
       }
     }

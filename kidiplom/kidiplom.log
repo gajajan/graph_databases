@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  14 MAR 2024 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  18 MAR 2024 21:28
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1294,7 +1294,7 @@ Package biblatex Warning: Attempt to redefine deprecated '\mkbibnamelast'.
 
 Package biblatex Warning: Conflicting options.
 (biblatex)                'urldate=iso' requires 'seconds=true'.
-(biblatex)                Setting 'seconds=true' on input line 127.
+(biblatex)                Setting 'seconds=true' on input line 129.
 
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > ki
 diplom.aex <nul: /p x=^%~$PATH:i>> kidiplom.aex)...executed.
@@ -1304,24 +1304,24 @@ runsystem(del kidiplom.aex)...executed.
 (kidiplom.aux)
 \openout1 = `kidiplom.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1348,7 +1348,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 127.
+Package hyperref Info: Link coloring ON on input line 129.
 \c@lstlisting=\count518
  (kidiplom.glsdefs)
 Package biblatex Info: Trying to load language 'czech' -> 'czech-iso'...
@@ -1411,8 +1411,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'kidiplom.bbl' found.
  (kidiplom.bbl)
-Package biblatex Info: Reference section=0 on input line 127.
-Package biblatex Info: Reference segment=0 on input line 127.
+Package biblatex Info: Reference section=0 on input line 129.
+Package biblatex Info: Reference segment=0 on input line 129.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1450,50 +1450,50 @@ Package biblatex Info: Reference segment=0 on input line 127.
 <graphics/kititle-cz-nofont.pdf, id=3, 375.4025pt x 72.27pt>
 File: graphics/kititle-cz-nofont.pdf Graphic file (type pdf)
 <use graphics/kititle-cz-nofont.pdf>
-Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 132
+Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 134
 .
 (pdftex.def)             Requested size: 225.24323pt x 43.36232pt.
 <graphics/UP_znak.pdf, id=4, 101.59215pt x 101.59215pt>
 File: graphics/UP_znak.pdf Graphic file (type pdf)
 <use graphics/UP_znak.pdf>
-Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 132.
+Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 134.
 (pdftex.def)             Requested size: 101.59187pt x 101.59187pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-32.
+34.
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-32.
+34.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-132.
+134.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-132.
+134.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 132.
+(Font)              <12> on input line 134.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 132.
+(Font)              <8> on input line 134.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 132.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 132
+(Font)              <6> on input line 134.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 134
 .
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 132
+LaTeX Font Info:    Trying to load font information for U+msb on input line 134
 .
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1504,9 +1504,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/gajaj/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./graphics/k
 ititle-cz-nofont.pdf> <./graphics/UP_znak.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 132.
+(Font)              <10.95> on input line 134.
 
-Underfull \hbox (badness 6758) in paragraph at lines 132--132
+Underfull \hbox (badness 6758) in paragraph at lines 134--134
 []|\T1/lmr/m/n/10.95 Computer Science, Spe-ci-a-li-zation: Ge-ne-ral Com-pu-ter
 
  []
@@ -1529,75 +1529,71 @@ Underfull \hbox (badness 6758) in paragraph at lines 132--132
 \tf@lot=\write9
 \openout9 = `kidiplom.lot'.
 
- (kidiplom.lol)
-\tf@lol=\write10
-\openout10 = `kidiplom.lol'.
-
-[7
+ [7
 
 ] [8
 
 ]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 171.
+nput line 173.
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 177.
- [9]
-Overfull \hbox (2.60188pt too wide) in paragraph at lines 199--200
+ line 179.
+
+Overfull \hbox (2.60188pt too wide) in paragraph at lines 201--202
 \T1/lmr/m/n/12 hran, od-stra-nÌme smy£ky a vÌ-ce-n·-sobnÈ hrany na-hra-dÌme jed
 -no-du-ch˝mi a vznikne
  []
 
-
-Overfull \hbox (10.30284pt too wide) in paragraph at lines 222--223
+[9]
+Overfull \hbox (27.34158pt too wide) in paragraph at lines 224--225
 [] []\T1/lmr/m/it/12 Sled \T1/lmr/m/n/12 v grafu $\OML/lmm/m/it/12 G \OT1/lmr/m
 /n/12 = \OMS/lmsy/m/n/12 h\OML/lmm/m/it/12 V; E\OMS/lmsy/m/n/12 i$ \T1/lmr/m/n/
-12 je sek-vence vr-chol∑ a hran tvaru $\OML/lmm/m/it/12 v[]; e[]; v[]; e[]; [] 
-; e[]; v[]$\T1/lmr/m/n/12 ,
+12 je po-sloup-nost vr-chol∑ a hran tvaru $\OML/lmm/m/it/12 v[]; e[]; v[]; e[];
+ [] ; e[]; v[]$\T1/lmr/m/n/12 ,
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-24.
-(C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [10]
-[11] [12]
+[10] [11] [12]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 296.
+(Font)              <10> on input line 294.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 296.
+(Font)              <7> on input line 294.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 296.
+(Font)              <5> on input line 294.
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 29
-6.
+4.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (60.49884pt too wide) in paragraph at lines 296--296
+Overfull \hbox (60.49884pt too wide) in paragraph at lines 294--294
 [][][][][]$\T1/pcr/m/n/10 https : / / blog . google / products / search / intro
 ducing-[]knowledge-[]graph-[]things-[]not/$[][]| 
  []
 
-<./graphics//KnowledgeGraph-Example.png, id=340, 610.1997pt x 410.2527pt>
+<./graphics//KnowledgeGraph-Example.png, id=337, 610.1997pt x 410.2527pt>
 File: ./graphics//KnowledgeGraph-Example.png Graphic file (type png)
 <use ./graphics//KnowledgeGraph-Example.png>
 Package pdftex.def Info: ./graphics//KnowledgeGraph-Example.png  used on input 
-line 300.
+line 298.
 (pdftex.def)             Requested size: 409.50119pt x 275.31859pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./graphics//Hypergraph-Example.png, id=343, 527.8119pt x 272.9397pt>
+<./graphics//Hypergraph-Example.png, id=340, 527.8119pt x 272.9397pt>
 File: ./graphics//Hypergraph-Example.png Graphic file (type png)
 <use ./graphics//Hypergraph-Example.png>
 Package pdftex.def Info: ./graphics//Hypergraph-Example.png  used on input line
- 309.
+ 307.
 (pdftex.def)             Requested size: 409.50119pt x 211.76761pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+19.
+(C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [13]
+[14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1608,298 +1604,295 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.339 
-       <./graphics//Hypergraph-Example.png>]
-Overfull \hbox (9.7637pt too wide) in paragraph at lines 353--354
+l.339 D
+       ata v podobƒõ grafu nejsou dobrou volbou pro aplikace vyu≈æ√≠vaj√≠c√≠...
+ <./graphics//Hypergraph-Example.png>]
+Overfull \hbox (9.7637pt too wide) in paragraph at lines 347--348
 \T1/lmr/m/n/12 do-ta-zo-va-cÌm ja-zy-kem, ≤k·-lo-va-tel-nostÌ a pod-po-rou ACID
  trans-akcÌ. ACID je zkratka
  []
 
-[16] [17] [18] [19] [20]
-Overfull \hbox (21.16876pt too wide) in paragraph at lines 449--450
+[16] [17] [18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
 []\T1/lmr/m/n/12 Pro na-po-jenÌ na da-ta-b·zi Ori-en-tDB bu-deme po-t∞e-bo-vat 
-plu-gin \T1/lmr/m/it/12 tin-ker-pop.orientdb\T1/lmr/m/n/12 .
+plu-gin
  []
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 453.
+[20]
+\openout5 = `kidiplom.pyg'.
 
-Package Listings Warning: Text dropped after begin of listing on input line 453
-.
-
-[21] [22]
-<./graphics//GraphDatabase-DecisionTree.png, id=455, 758.3532pt x 1039.2426pt>
+ (_minted-kidiplom/xcode.pygstyle)
+(_minted-kidiplom/DEE7AA807BCD04CF3897C1D98434DC6FAC246E0C616A16DF68E7542FFE210
+1B0.pygtex)
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
+t line 457.
+ [21]
+<./graphics//GraphDatabase-DecisionTree.png, id=445, 758.3532pt x 1039.2426pt>
 File: ./graphics//GraphDatabase-DecisionTree.png Graphic file (type png)
 <use ./graphics//GraphDatabase-DecisionTree.png>
 Package pdftex.def Info: ./graphics//GraphDatabase-DecisionTree.png  used on in
 put line 493.
 (pdftex.def)             Requested size: 409.50119pt x 561.18265pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--525
-[]|\T1/lmr/m/n/12 Aktivity, kterÈ mo-hou
- []
-
-
-Underfull \hbox (badness 5939) in paragraph at lines 525--525
-[]|\T1/lmr/m/n/12 Destinace, kterÈ mo-hou
- []
-
-
-Underfull \hbox (badness 4144) in paragraph at lines 525--525
-[]|\T1/lmr/m/n/12 Cesty, v r·mci kte-r˝ch
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 525--525
-[]|\T1/lmr/m/n/12 HodnocenÌ jed-not-li-v˝ch
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 525--525
-[]|\T1/lmr/m/n/12 Vztah mezi cestami a
- []
-
-
-Underfull \hbox (badness 5519) in paragraph at lines 525--525
-[]|\T1/lmr/m/n/12 Vztah mezi u∫i-va-teli a
+Underfull \hbox (badness 2547) in paragraph at lines 524--524
+[]|\T1/lmr/m/n/12 HodnocenÌ jed-not-li-v˝ch cest
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24
+[22] [23
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.547   \item I
-               nformace o cest√°ch, kter√© u≈æivatel√© podnikli -- n√°zev ce...
- <./graphics//GraphDatabase-DecisionTree.png>] [25
+l.530   \item K
+               onceptu√°ln√≠ datov√Ω model, <./graphics//GraphDatabase-Decision
+Tree.png>] [24
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.551 
-      ] [26] [27]
-<./graphics//TravelEnthusiastNetwork-Conceptual.png, id=485, 751.3671pt x 487.8
-225pt>
+l.542 
+      ] [25] [26]
+<./graphics//TravelEnthusiastNetwork-Conceptual.png, id=476, 751.3671pt x 413.3
+844pt>
 File: ./graphics//TravelEnthusiastNetwork-Conceptual.png Graphic file (type png
 )
 <use ./graphics//TravelEnthusiastNetwork-Conceptual.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Conceptual.png  us
-ed on input line 601.
-(pdftex.def)             Requested size: 409.50119pt x 265.86916pt.
- [28
+ed on input line 600.
+(pdftex.def)             Requested size: 409.50119pt x 225.29948pt.
+ [27
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.608 
+l.607 
        <./graphics//TravelEnthusiastNetwork-Conceptual.png>]
-<./graphics//VertexLabels.png, id=492, 816.4101pt x 328.8285pt>
+<./graphics//VertexLabels.png, id=483, 816.4101pt x 328.8285pt>
 File: ./graphics//VertexLabels.png Graphic file (type png)
 <use ./graphics//VertexLabels.png>
-Package pdftex.def Info: ./graphics//VertexLabels.png  used on input line 620.
+Package pdftex.def Info: ./graphics//VertexLabels.png  used on input line 619.
 (pdftex.def)             Requested size: 409.50119pt x 164.93567pt.
- [29
+ [28
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.628 
+l.625 
        <./graphics//VertexLabels.png>]
-<./graphics//MoreVertexLabels.png, id=502, 514.42188pt x 152.06813pt>
+<./graphics//MoreVertexLabels.png, id=493, 514.42188pt x 152.06813pt>
 File: ./graphics//MoreVertexLabels.png Graphic file (type png)
 <use ./graphics//MoreVertexLabels.png>
 Package pdftex.def Info: ./graphics//MoreVertexLabels.png  used on input line 6
-30.
+29.
 (pdftex.def)             Requested size: 409.50119pt x 121.05368pt.
- [30
+ [29
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.645 
-       <./graphics//MoreVertexLabels.png>]
-Overfull \hbox (6.55664pt too wide) in paragraph at lines 660--661
+l.642 
+       <./graphics//MoreVertexLabels.png>] [30]
+Overfull \hbox (6.55664pt too wide) in paragraph at lines 659--660
 []\T1/lmr/m/n/12 U n•-kte-r˝ch im-ple-men-tacÌ gra-fo-v˝ch da-ta-b·zÌ, jako na-
 p∞Ì-klad Da-taStax Graph,
  []
 
-[31]
-<./graphics//TravelEnthusiastNetwork-Graph.png, id=516, 550.9383pt x 375.3222pt
->
+<./graphics//TravelEnthusiastNetwork-Graph.png, id=506, 550.9383pt x 322.806pt>
+
 File: ./graphics//TravelEnthusiastNetwork-Graph.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork-Graph.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Graph.png  used on
- input line 674.
-(pdftex.def)             Requested size: 409.50119pt x 278.98256pt.
-
+ input line 673.
+(pdftex.def)             Requested size: 409.50119pt x 239.94647pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[31]
+\openout5 = `kidiplom.pyg'.
 
-Package Listings Warning: Text dropped after begin of listing on input line 685
-.
 
-<./graphics//UnitTest-Graph.png, id=519, 479.6319pt x 236.8047pt>
+(_minted-kidiplom/393A9CB96C9040CC975025ED9D24A4D423674229D5C4763087A643D1F0E0A
+92D.pygtex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./graphics//UnitTest-Graph.png, id=514, 479.6319pt x 236.8047pt>
 File: ./graphics//UnitTest-Graph.png Graphic file (type png)
 <use ./graphics//UnitTest-Graph.png>
-Package pdftex.def Info: ./graphics//UnitTest-Graph.png  used on input line 710
+Package pdftex.def Info: ./graphics//UnitTest-Graph.png  used on input line 713
 .
 (pdftex.def)             Requested size: 409.50119pt x 202.18105pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[32] [33
+[32
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.725 
-       <./graphics//TravelEnthusiastNetwork-Graph.png>] [34] [35
+l.721 P
+       rvn√≠ z nich se naz√Ωv√° \textit{explain} a slou≈æ√≠ pro vysvƒõtlen√≠...
+
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.740 
-       <./graphics//UnitTest-Graph.png>]
+l.721 P
+       rvn√≠ z nich se naz√Ωv√° \textit{explain} a slou≈æ√≠ pro vysvƒõtlen√≠...
+ <./graphics//TravelEnthusiastNetwork-Graph.png> <./graphics//UnitTest-Graph.pn
+g>] [33] [34]
+\openout5 = `kidiplom.pyg'.
 
-Package Listings Warning: Text dropped after begin of listing on input line 741
-.
 
-<./graphics//RailNetwork-Graph.png, id=567, 218.7372pt x 130.3269pt>
+(_minted-kidiplom/1F9638B74CC791E9586D96C1A240BAB823674229D5C4763087A643D1F0E0A
+92D.pygtex)
+<./graphics//RailNetwork-Graph.png, id=536, 218.7372pt x 130.3269pt>
 File: ./graphics//RailNetwork-Graph.png Graphic file (type png)
 <use ./graphics//RailNetwork-Graph.png>
 Package pdftex.def Info: ./graphics//RailNetwork-Graph.png  used on input line 
-770.
+778.
 (pdftex.def)             Requested size: 164.05247pt x 97.74492pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[36
+[35
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.780   \item \textit
-                     {Prohled√°v√°n√≠ do hloubky}, oznaƒçovan√© jako DFS (z ...
+l.787   \item \textit
+                     {Prohled√°v√°n√≠ do ≈°√≠≈ôky}, oznaƒçovan√© jako BFS (z...
 ]
-<./graphics//Bfs.png, id=578, 1079.53313pt x 454.69875pt>
+<./graphics//Bfs.png, id=544, 1079.53313pt x 454.69875pt>
 File: ./graphics//Bfs.png Graphic file (type png)
 <use ./graphics//Bfs.png>
-Package pdftex.def Info: ./graphics//Bfs.png  used on input line 787.
+Package pdftex.def Info: ./graphics//Bfs.png  used on input line 795.
 (pdftex.def)             Requested size: 409.50119pt x 172.48204pt.
- [37
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./graphics//Dfs.png, id=546, 1090.0725pt x 466.24188pt>
+File: ./graphics//Dfs.png Graphic file (type png)
+<use ./graphics//Dfs.png>
+Package pdftex.def Info: ./graphics//Dfs.png  used on input line 803.
+(pdftex.def)             Requested size: 409.50119pt x 175.14618pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[36
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.793 
-      
+l.810 
+       <./graphics//RailNetwork-Graph.png>] [37
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.793 
-       <./graphics//RailNetwork-Graph.png> <./graphics//Bfs.png>]
-<./graphics//Dfs.png, id=589, 1090.0725pt x 466.24188pt>
-File: ./graphics//Dfs.png Graphic file (type png)
-<use ./graphics//Dfs.png>
-Package pdftex.def Info: ./graphics//Dfs.png  used on input line 795.
-(pdftex.def)             Requested size: 409.50119pt x 175.14618pt.
- [38
+l.812 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.806 
-       <./graphics//Dfs.png>]
+l.812 
+       <./graphics//Bfs.png> <./graphics//Dfs.png>]
+\openout5 = `kidiplom.pyg'.
 
-Package Listings Warning: Text dropped after begin of listing on input line 811
+
+(_minted-kidiplom/E217388E678A65DB1211176BA08449EA5AC2F235699FA53C0E8B86CC92D7C
+349.pygtex
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 2
 .
 
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 8
-12.
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)
-<./graphics//ShortestPath-Unweighted-Example.png, id=599, 716.6775pt x 478.7887
+))
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./graphics//ShortestPath-Unweighted-Example.png, id=565, 716.6775pt x 478.7887
 6pt>
 File: ./graphics//ShortestPath-Unweighted-Example.png Graphic file (type png)
 <use ./graphics//ShortestPath-Unweighted-Example.png>
 Package pdftex.def Info: ./graphics//ShortestPath-Unweighted-Example.png  used 
-on input line 844.
+on input line 856.
 (pdftex.def)             Requested size: 286.66592pt x 191.5121pt.
+[38]
+\openout5 = `kidiplom.pyg'.
+
+
+(_minted-kidiplom/E9714375C3EF0B4887915AB62B3428705183FC08CDC48DAF93A0C22550665
+4BB.pygtex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 5133) in paragraph at lines 911--911
+[]|\T1/lmr/m/n/12 SCHAERBEEK, BUDA, VIL-VO-ORDE,
+ []
+
+
+Underfull \hbox (badness 7486) in paragraph at lines 911--911
+[]|\T1/lmr/m/n/12 SCHAERBEEK, VIL-VO-ORDE, EP-PE-
+ []
+
+
+Overfull \hbox (20.86128pt too wide) in paragraph at lines 914--915
+[]\T1/lmr/m/n/12 Z vr·-ce-n˝ch v˝-sledk∑ vi-dÌme, ∫e nej-krat≤Ì dÈlka ∫e-lez-ni
+c mezi sta-ni-cemi SCHAER-
+ []
 
 [39
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.851 
-      ]
-
-Package Listings Warning: Text dropped after begin of listing on input line 854
-.
-
-
-Underfull \hbox (badness 5133) in paragraph at lines 895--895
-[]|\T1/lmr/m/n/12 SCHAERBEEK, BUDA, VIL-VO-ORDE,
- []
-
-
-Underfull \hbox (badness 7486) in paragraph at lines 895--895
-[]|\T1/lmr/m/n/12 SCHAERBEEK, VIL-VO-ORDE, EP-PE-
- []
-
-
-Overfull \hbox (20.86128pt too wide) in paragraph at lines 898--899
-[]\T1/lmr/m/n/12 Z vr·-ce-n˝ch v˝-sledk∑ vi-dÌme, ∫e nej-krat≤Ì dÈlka ∫e-lez-ni
-c mezi sta-ni-cemi SCHAER-
- []
-
-[40
+l.917 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.901 
+l.917 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.901 
-       <./graphics//ShortestPath-Unweighted-Example.png>] [41] [42]
-<./graphics//Minimum-Spanning-Tree.png, id=664, 1080.035pt x 422.07687pt>
+l.917 
+       <./graphics//ShortestPath-Unweighted-Example.png>] [40] [41]
+<./graphics//Minimum-Spanning-Tree.png, id=595, 1080.035pt x 422.07687pt>
 File: ./graphics//Minimum-Spanning-Tree.png Graphic file (type png)
 <use ./graphics//Minimum-Spanning-Tree.png>
 Package pdftex.def Info: ./graphics//Minimum-Spanning-Tree.png  used on input l
-ine 949.
+ine 965.
 (pdftex.def)             Requested size: 409.50119pt x 160.03021pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[43] [44
+[42] [43
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.971 
-       <./graphics//Minimum-Spanning-Tree.png>] [45
+l.987 
+       <./graphics//Minimum-Spanning-Tree.png>] [44
 pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1001 S
+l.1017 S
         k√≥re vrcholu $ u \in V $ v grafu $G = \langle V,E\rangle$ se pak po...
 ]
-<./graphics//ExampleGraph.png, id=683, 570.2103pt x 380.3811pt>
+<./graphics//ExampleGraph.png, id=614, 570.2103pt x 380.3811pt>
 File: ./graphics//ExampleGraph.png Graphic file (type png)
 <use ./graphics//ExampleGraph.png>
-Package pdftex.def Info: ./graphics//ExampleGraph.png  used on input line 1026.
+Package pdftex.def Info: ./graphics//ExampleGraph.png  used on input line 1042.
 
 (pdftex.def)             Requested size: 171.0644pt x 114.1152pt.
 
@@ -1909,125 +1902,124 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[46] [47
+[45] [46
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1064 \end{equation}
+l.1080 \end{equation}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1064 \end{equation}
-                      <./graphics//ExampleGraph.png>] [48
+l.1080 \end{equation}
+                      <./graphics//ExampleGraph.png>] [47
 pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1111 
+l.1127 
        ]
-Underfull \hbox (badness 3168) in paragraph at lines 1149--1149
+Underfull \hbox (badness 3168) in paragraph at lines 1165--1165
 []|\T1/lmr/bx/n/12 Informace o sou-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1149--1149
+Underfull \hbox (badness 10000) in paragraph at lines 1165--1165
 []|\T1/lmr/m/n/12 Identifik·tory u∫i-va-
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./graphics//youtube-log.png, id=713, 719.853pt x 359.817pt>
+<./graphics//youtube-log.png, id=644, 719.853pt x 359.817pt>
 File: ./graphics//youtube-log.png Graphic file (type png)
 <use ./graphics//youtube-log.png>
-Package pdftex.def Info: ./graphics//youtube-log.png  used on input line 1154.
+Package pdftex.def Info: ./graphics//youtube-log.png  used on input line 1170.
 (pdftex.def)             Requested size: 409.50119pt x 204.68604pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./graphics//insertDelete.png, id=715, 362.007pt x 217.467pt>
+<./graphics//insertDelete.png, id=646, 362.007pt x 217.467pt>
 File: ./graphics//insertDelete.png Graphic file (type png)
 <use ./graphics//insertDelete.png>
-Package pdftex.def Info: ./graphics//insertDelete.png  used on input line 1165.
+Package pdftex.def Info: ./graphics//insertDelete.png  used on input line 1181.
 
 (pdftex.def)             Requested size: 409.50119pt x 246.00027pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[49
+[48
 pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1192 \end{table}
-                  ]
+l.1187 
+       ]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./graphics//q1.png, id=727, 362.007pt x 216.81pt>
+<./graphics//q1.png, id=658, 362.007pt x 216.81pt>
 File: ./graphics//q1.png Graphic file (type png)
 <use ./graphics//q1.png>
-Package pdftex.def Info: ./graphics//q1.png  used on input line 1197.
+Package pdftex.def Info: ./graphics//q1.png  used on input line 1213.
 (pdftex.def)             Requested size: 184.9429pt x 110.7635pt.
 File: ./graphics//q1.png Graphic file (type png)
 <use ./graphics//q1.png>
-Package pdftex.def Info: ./graphics//q1.png  used on input line 1197.
+Package pdftex.def Info: ./graphics//q1.png  used on input line 1213.
 (pdftex.def)             Requested size: 184.9429pt x 110.7635pt.
 File: ./graphics//q1.png Graphic file (type png)
 <use ./graphics//q1.png>
-Package pdftex.def Info: ./graphics//q1.png  used on input line 1199.
+Package pdftex.def Info: ./graphics//q1.png  used on input line 1215.
 (pdftex.def)             Requested size: 184.9429pt x 110.7635pt.
 File: ./graphics//q1.png Graphic file (type png)
 <use ./graphics//q1.png>
-Package pdftex.def Info: ./graphics//q1.png  used on input line 1199.
+Package pdftex.def Info: ./graphics//q1.png  used on input line 1215.
 (pdftex.def)             Requested size: 184.9429pt x 110.7635pt.
 File: ./graphics//q1.png Graphic file (type png)
 <use ./graphics//q1.png>
-Package pdftex.def Info: ./graphics//q1.png  used on input line 1201.
+Package pdftex.def Info: ./graphics//q1.png  used on input line 1217.
 (pdftex.def)             Requested size: 184.9429pt x 110.7635pt.
 File: ./graphics//q1.png Graphic file (type png)
 <use ./graphics//q1.png>
-Package pdftex.def Info: ./graphics//q1.png  used on input line 1201.
+Package pdftex.def Info: ./graphics//q1.png  used on input line 1217.
 (pdftex.def)             Requested size: 184.9429pt x 110.7635pt.
-[50
+[49
 pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1221 Z
-        √°vƒõr pr√°ce v \uv{ƒçesk√©m} jazyce.
+l.1231 
+       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1221 Z
-        √°vƒõr pr√°ce v \uv{ƒçesk√©m} jazyce. <./graphics//youtube-log.png>]
-[51
+l.1231 
+        <./graphics//youtube-log.png>] [50
 pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1221 Z
+l.1245 Z
         √°vƒõr pr√°ce v \uv{ƒçesk√©m} jazyce.
 pdfTeX warning (ext4): destination with the same identifier (name{table.10}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1221 Z
+l.1245 Z
         √°vƒõr pr√°ce v \uv{ƒçesk√©m} jazyce. <./graphics//insertDelete.png>]
-[52
+[51
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1221 Z
-        √°vƒõr pr√°ce v \uv{ƒçesk√©m} jazyce. <./graphics//q1.png>] [53
+l.1245 Z
+        √°vƒõr pr√°ce v \uv{ƒçesk√©m} jazyce. <./graphics//q1.png>] [52]
+[53
 
-]
-[54
+] [54
 
 ]
 
@@ -2038,7 +2030,7 @@ Package biblatex Warning: Name format 'last-first' deprecated.
 [55
 
 ]
-Overfull \hbox (4.48375pt too wide) in paragraph at lines 1245--1245
+Overfull \hbox (4.48375pt too wide) in paragraph at lines 1269--1269
 []\T1/lmr/m/n/12 Needham, Mark; Hod-ler, Amy E. \T1/lmr/m/it/12 Graph Al-go-ri-
 thms: Practi-cal Exam-ples in Apache
  []
@@ -2048,22 +2040,24 @@ No file kidiplom.ind.
 
 AED: lastpage setting LastPage
 (kidiplom.aux)
+runsystem(del kidiplom.pyg)...executed.
+
 Package logreq Info: Writing requests to 'kidiplom.run.xml'.
 \openout1 = `kidiplom.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34381 strings out of 475385
- 636729 string characters out of 2776907
- 1711584 words of memory out of 3000000
- 54818 multiletter control sequences out of 15000+600000
- 550037 words of font info for 91 fonts, out of 8000000 for 9000
+ 34151 strings out of 475385
+ 637901 string characters out of 2776907
+ 1595927 words of memory out of 3000000
+ 54635 multiletter control sequences out of 15000+600000
+ 548795 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,16n,121p,2608b,2629s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 123i,16n,121p,2608b,2648s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
 c}{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
-c}{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:
-/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Use
+c}{C:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
+:/Users/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Use
 rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Users/
 gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/
 gajaj/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C:/Users/gaja
@@ -2077,17 +2071,17 @@ j/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/gajaj
 /AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/gajaj/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/gajaj/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/gajaj/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/gajaj/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/gajaj/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gajaj/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gajaj/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gajaj/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users
-/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Use
-rs/gajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on kidiplom.pdf (56 pages, 2268254 bytes).
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/gajaj/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/gajaj/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/gajaj/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/gajaj/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gajaj/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gajaj/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/g
+ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on kidiplom.pdf (56 pages, 2255488 bytes).
 PDF statistics:
- 1174 PDF objects out of 1200 (max. 8388607)
- 316 named destinations out of 1000 (max. 500000)
- 656 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1112 PDF objects out of 1200 (max. 8388607)
+ 254 named destinations out of 1000 (max. 500000)
+ 680 words of extra memory for PDF output out of 10000 (max. 10000000)
 

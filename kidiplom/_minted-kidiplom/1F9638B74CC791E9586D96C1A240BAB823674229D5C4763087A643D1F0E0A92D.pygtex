@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{WITH}\PYG{+w}{ }\PYG{l+m}{3}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{n}{id}
+\PYG{k}{MATCH}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u}\PYG{p}{:}\PYG{n}{User}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{n}{id}\PYG{p}{\PYGZcb{})}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{PARTICIPATED}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(:}\PYG{n}{Journey}\PYG{p}{)}
+\PYG{+w}{	}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{LED\PYGZus{}TO}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{d}\PYG{p}{:}\PYG{n}{Destination}\PYG{p}{)}
+\PYG{k}{RETURN}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{.}\PYG{n}{destinationName}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{COUNT}\PYG{p}{(}\PYG{n}{d}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{n}{count}
+\PYG{k}{ORDER}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{count}\PYG{+w}{ }\PYG{k}{DESC}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{.}\PYG{n}{destinationName}\PYG{+w}{ }\PYG{k}{ASC}\PYG{p}{;}
+\end{Verbatim}

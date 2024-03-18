@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{FOR}\PYG{+w}{ }\PYG{n}{v}\PYG{p}{,}\PYG{n}{e}\PYG{p}{,}\PYG{n}{p}\PYG{+w}{ }\PYG{k}{IN}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{..}\PYG{l+m+mi}{4}\PYG{+w}{ }\PYG{n}{OUTBOUND}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Station/157\PYGZsq{}}\PYG{+w}{ }\PYG{n}{LEADS\PYGZus{}TO}
+\PYG{k}{OPTIONS}\PYG{+w}{ }\PYG{err}{\PYGZob{}}\PYG{n}{uniqueVertices}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}path\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{order}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}bfs\PYGZsq{}}\PYG{err}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{n}{FILTER}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{vertices}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{\PYGZus{}id}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}Station/1061\PYGZsq{}}
+\PYG{+w}{    }\PYG{n}{LET}\PYG{+w}{ }\PYG{n}{distance}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{LENGTH}\PYG{p}{(}\PYG{n}{p}\PYG{p}{.}\PYG{n}{edges}\PYG{p}{[}\PYG{o}{*}\PYG{p}{])}
+\PYG{+w}{    }\PYG{n}{LET}\PYG{+w}{ }\PYG{n}{stations}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{vertices}\PYG{p}{[}\PYG{o}{*}\PYG{p}{].}\PYG{n}{stationName}
+\PYG{+w}{    }\PYG{n}{SORT}\PYG{+w}{ }\PYG{n}{distance}
+\PYG{+w}{    }\PYG{k}{RETURN}\PYG{+w}{ }\PYG{err}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{stations}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n}{distance}
+\PYG{+w}{    }\PYG{err}{\PYGZcb{}}
+\end{Verbatim}

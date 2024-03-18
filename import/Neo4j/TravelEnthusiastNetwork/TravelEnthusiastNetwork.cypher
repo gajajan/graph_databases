@@ -107,12 +107,6 @@ MATCH (a:TravelActivity {activityId: toInteger(row.activityId)})
 MERGE (u)-[:LIKES]->(a);
 
 LOAD CSV WITH HEADERS
-FROM 'file:///lives_in.csv' AS row
-MATCH (u:User {userId: toInteger(row.userId)})
-MATCH (d:Destination {destinationId: toInteger(row.destinationId)})
-MERGE (u)-[:LIVES_IN]->(c);
-
-LOAD CSV WITH HEADERS
 FROM 'file:///offers.csv' AS row
 MATCH (d:Destination {destinationId: toInteger(row.destinationId)})
 MATCH (a:TravelActivity {activityId: toInteger(row.activityId)})

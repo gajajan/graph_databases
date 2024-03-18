@@ -582,6 +582,58 @@
       \verb https://snap.stanford.edu/data/com-Youtube.html
       \endverb
     \endentry
+    \entry{benchmark}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=095ad66634f28e80a7dad2202b95edc1}{%
+           family={Macak},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a14125c7f7a516029ef4998169c78c36}{%
+           family={Stovcik},
+           familyi={S\bibinitperiod},
+           given={Matus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d93cb885e90555f831b531662f5fc209}{%
+           family={Buhnova},
+           familyi={B\bibinitperiod},
+           given={Barbora},
+           giveni={B\bibinitperiod}}}%
+        {{hash=edda635d675189d11bbb544b3cfc27d7}{%
+           family={Merjavy},
+           familyi={M\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{fullhash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{bibnamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{authorbibnamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{authornamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{authorfullhash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Annals of Computer Science and Information Systems}
+      \field{issn}{2300-5963}
+      \field{month}{9}
+      \field{series}{FedCSIS 2020}
+      \field{title}{How well a multi-model database performs against its single-model variants: Benchmarking OrientDB with Neo4j and MongoDB}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.15439/2020f76
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.15439/2020F76
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.15439/2020F76
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

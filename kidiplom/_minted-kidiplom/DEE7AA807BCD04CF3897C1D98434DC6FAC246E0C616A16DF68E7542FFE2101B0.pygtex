@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//OrientDb database connector}
+\PYG{n}{graph}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{OrientGraph}\PYG{o}{.}\PYG{n+na}{open}\PYG{o}{(}\PYG{n}{url}\PYG{o}{,}\PYG{+w}{ }\PYG{n}{user}\PYG{o}{,}\PYG{+w}{ }\PYG{n}{password}\PYG{o}{);}
+
+\PYG{c+c1}{//establishing a graph traversal source object}
+\PYG{n}{g}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{graph}\PYG{o}{.}\PYG{n+na}{traversal}\PYG{o}{();}
+\end{Verbatim}

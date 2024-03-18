@@ -11,7 +11,7 @@ def make_json_file_path (file_name):
 
 vertex_file_names = ["activities", "countries", "destinations", "journeys", "ratings", "users"]
 
-edge_file_names = ["follows", "is_within", "led_to", "likes", "lives_in", "offers", "participated", "wrote_about"]
+edge_file_names = ["follows", "is_within", "led_to", "likes", "offers", "participated", "wrote_about"]
 
 
 print("\n---VERTICES IMPORT---\n")

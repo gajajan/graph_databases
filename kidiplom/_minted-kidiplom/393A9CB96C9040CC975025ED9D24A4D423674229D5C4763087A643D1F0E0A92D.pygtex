@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Vytvoření testovacích dat}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u1}\PYG{p}{:}\PYG{n}{User}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{firstName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}John\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Doe\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u2}\PYG{p}{:}\PYG{n}{User}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{firstName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Lisa\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Fog\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u3}\PYG{p}{:}\PYG{n}{User}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{firstName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Bob\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}John\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u4}\PYG{p}{:}\PYG{n}{User}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m}{4}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{firstName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Jane\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Doe\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u5}\PYG{p}{:}\PYG{n}{User}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m}{5}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{firstName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Paul\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lastName}\PYG{p}{:}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Bae\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u1}\PYG{p}{)}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{FOLLOWS}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{u2}\PYG{p}{)}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u2}\PYG{p}{)}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{FOLLOWS}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{u3}\PYG{p}{)}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u1}\PYG{p}{)}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{FOLLOWS}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{u3}\PYG{p}{)}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u2}\PYG{p}{)}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{FOLLOWS}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{u4}\PYG{p}{)}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u3}\PYG{p}{)}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{FOLLOWS}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{u5}\PYG{p}{)}
+
+\PYG{c+c1}{// Spuštění testu}
+\PYG{k}{MATCH}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u}\PYG{p}{:}\PYG{n}{User}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m}{1}\PYG{p}{\PYGZcb{})}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{FOLLOWS}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{u2}\PYG{p}{)}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{FOLLOWS}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{u3}\PYG{p}{)}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{k}{NOT}\PYG{+w}{ }\PYG{n}{EXISTS}\PYG{p}{((}\PYG{n}{u}\PYG{p}{)}\PYG{o}{\PYGZhy{}[}\PYG{p}{:}\PYG{n}{FOLLOWS}\PYG{o}{]\PYGZhy{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{u3}\PYG{p}{))}\PYG{+w}{ }\PYG{n}{AND}\PYG{+w}{ }\PYG{n}{u3}\PYG{+w}{ }\PYG{p}{\PYGZlt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n}{u}
+\PYG{k}{RETURN}\PYG{+w}{ }\PYG{n}{u3}\PYG{p}{;}
+
+\PYG{c+c1}{// Smazání testovacích dat}
+\PYG{k}{MATCH}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{u}\PYG{p}{:}\PYG{n}{User}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{userId}\PYG{+w}{ }\PYG{k}{IN}\PYG{+w}{ }\PYG{o}{[}\PYG{l+m}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m}{5}\PYG{o}{]}
+\PYG{n}{DETACH}\PYG{+w}{ }\PYG{k}{DELETE}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{;}
+\end{Verbatim}

@@ -1,5 +1,5 @@
-\contentsline {lstlisting}{\numberline {1}Připojení se k databázi OrientDB v Gremlin Console.}{21}{lstlisting.1}%
-\contentsline {lstlisting}{\numberline {2}Unit test.}{34}{lstlisting.2}%
-\contentsline {lstlisting}{\numberline {3}Known walk.}{36}{lstlisting.3}%
-\contentsline {lstlisting}{\numberline {4}Cesty v neohodnoceném grafu.}{39}{lstlisting.4}%
-\contentsline {lstlisting}{\numberline {5}Hledání nejkratší cesty v ohodnoceném grafu.}{41}{lstlisting.5}%
+\contentsline {listing}{\numberline {1}{\ignorespaces Připojení se k databázi OrientDB v Gremlin Console.}}{21}{listing.1}%
+\contentsline {listing}{\numberline {2}{\ignorespaces Unit test.}}{33}{listing.2}%
+\contentsline {listing}{\numberline {3}{\ignorespaces Known walk.}}{35}{listing.3}%
+\contentsline {listing}{\numberline {4}{\ignorespaces Cesty v neohodnoceném grafu.}}{39}{listing.4}%
+\contentsline {listing}{\numberline {5}{\ignorespaces Hledání nejkratší cesty v ohodnoceném grafu.}}{41}{listing.5}%
