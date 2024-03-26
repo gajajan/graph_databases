@@ -19,17 +19,14 @@
     ],
     "loader": {
       "orientdb": {
-         "dbURL": "plocal:../databases/Youtube",
+         "dbURL": "plocal:../databases/YoutubeII",
          "dbUser": "root",
          "dbPassword": "root",
          "dbType": "graph",
          "tx": false,
          "wal": false,
          "batchCommit": 1000,
-         "classes": [
-            {"name": "User", "extends": "V"},
-            {"name": "FRIENDS", "extends": "E"}
-         ]
+         "useLightweightEdges":false
       }
     }
 }

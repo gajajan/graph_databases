@@ -23,3 +23,14 @@ CALL {
     MATCH (u2:User {userId: toInteger(row.ToNodeId)})
     MERGE (u1)-[:FRIENDS]->(u2)
 } IN TRANSACTIONS;
+
+//properties
+:auto LOAD CSV WITH HEADERS
+FROM 'file:///properties.csv' AS row
+CALL {
+    WITH row
+    MATCH (u:User {userId: toInteger(row.userId)})
+    SET
+    u.firstName = row.firstName,
+    u.age = toInteger(row.age)
+} IN TRANSACTIONS;

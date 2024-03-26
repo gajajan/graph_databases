@@ -83,3 +83,10 @@ WITH d, j.journeyStart.month AS month, coalesce(avg(r.rating), 'Not rated.') as 
 ORDER BY rate DESC
 LIMIT 1
 RETURN month, rate;
+
+//TEXT SEARCH
+
+MATCH (u:User)
+WHERE toUpper(u.firstName) CONTAINS toUpper($substr)
+OR toUpper(u.lastName) CONTAINS toUpper($substr)
+RETURN u

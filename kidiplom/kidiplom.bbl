@@ -19,6 +19,30 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{dbEngines}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=03784a7c5600d29113972955e602a944}{%
+           family={DB-Engines},
+           familyi={D\bibinithyphendelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{03784a7c5600d29113972955e602a944}
+      \strng{fullhash}{03784a7c5600d29113972955e602a944}
+      \strng{bibnamehash}{03784a7c5600d29113972955e602a944}
+      \strng{authorbibnamehash}{03784a7c5600d29113972955e602a944}
+      \strng{authornamehash}{03784a7c5600d29113972955e602a944}
+      \strng{authorfullhash}{03784a7c5600d29113972955e602a944}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{month}{2}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://db-engines.com/en
+      \endverb
+      \verb{url}
+      \verb https://db-engines.com/en
+      \endverb
+    \endentry
     \entry{graphIntroduction}{book}{}
       \name{author}{1}{}{%
         {{hash=fe1b56b5024e175361f5c726be88539a}{%
@@ -36,8 +60,8 @@
       \strng{authorbibnamehash}{fe1b56b5024e175361f5c726be88539a}
       \strng{authornamehash}{fe1b56b5024e175361f5c726be88539a}
       \strng{authorfullhash}{fe1b56b5024e175361f5c726be88539a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{4th Edition}
@@ -59,8 +83,8 @@
       \strng{authorbibnamehash}{b6520a2c04b83aad878a28e3fd8549dd}
       \strng{authornamehash}{b6520a2c04b83aad878a28e3fd8549dd}
       \strng{authorfullhash}{b6520a2c04b83aad878a28e3fd8549dd}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -87,8 +111,8 @@
       \strng{authorbibnamehash}{1d723876381eea4e518f2ff3b9a6cb81}
       \strng{authornamehash}{1d723876381eea4e518f2ff3b9a6cb81}
       \strng{authorfullhash}{1d723876381eea4e518f2ff3b9a6cb81}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{month}{02}
       \field{year}{2024}
@@ -100,8 +124,8 @@
       \endverb
     \endentry
     \entry{directedGraph}{misc}{}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{month}{02}
       \field{year}{2024}
       \verb{urlraw}
@@ -109,30 +133,6 @@
       \endverb
       \verb{url}
       \verb https://home.zcu.cz/~ryjacek/students/DMA/skripta/8.pdf
-      \endverb
-    \endentry
-    \entry{dbEngines}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=03784a7c5600d29113972955e602a944}{%
-           family={DB-Engines},
-           familyi={D\bibinithyphendelim E\bibinitperiod}}}%
-      }
-      \strng{namehash}{03784a7c5600d29113972955e602a944}
-      \strng{fullhash}{03784a7c5600d29113972955e602a944}
-      \strng{bibnamehash}{03784a7c5600d29113972955e602a944}
-      \strng{authorbibnamehash}{03784a7c5600d29113972955e602a944}
-      \strng{authornamehash}{03784a7c5600d29113972955e602a944}
-      \strng{authorfullhash}{03784a7c5600d29113972955e602a944}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{month}{2}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://db-engines.com/en
-      \endverb
-      \verb{url}
-      \verb https://db-engines.com/en
       \endverb
     \endentry
     \entry{graphDatabases}{book}{}
@@ -185,6 +185,81 @@
       \verb https://www.influxdata.com/graph-database/
       \endverb
     \endentry
+    \entry{Besta_2023}{article}{}
+      \name{author}{8}{}{%
+        {{hash=58566d6ca370307a2328ff44cfd55887}{%
+           family={Besta},
+           familyi={B\bibinitperiod},
+           given={Maciej},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9b42a75da135e6be3ca5122e0ebd7e57}{%
+           family={Gerstenberger},
+           familyi={G\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=58ba185f9961f82e4905365ef623d80c}{%
+           family={Peter},
+           familyi={P\bibinitperiod},
+           given={Emanuel},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2ce2eec255973caabdf17141d0bc5e66}{%
+           family={Fischer},
+           familyi={F\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fe0af4d9da06b44a3a7b24a48a29860d}{%
+           family={Podstawski},
+           familyi={P\bibinitperiod},
+           given={Michał},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b3945cb18901c6c1c182fd51b4a3902a}{%
+           family={Barthels},
+           familyi={B\bibinitperiod},
+           given={Claude},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f1ee668aff7c15cdfccbd6a260a0317a}{%
+           family={Alonso},
+           familyi={A\bibinitperiod},
+           given={Gustavo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=76ec76312292adb42427d46f3efb852b}{%
+           family={Hoefler},
+           familyi={H\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery (ACM)}%
+      }
+      \strng{namehash}{61ef103800c9e5d940f21d1515553230}
+      \strng{fullhash}{b40ac1ea52ccb523ead4877bc3ff2e10}
+      \strng{bibnamehash}{61ef103800c9e5d940f21d1515553230}
+      \strng{authorbibnamehash}{61ef103800c9e5d940f21d1515553230}
+      \strng{authornamehash}{61ef103800c9e5d940f21d1515553230}
+      \strng{authorfullhash}{b40ac1ea52ccb523ead4877bc3ff2e10}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1557-7341}
+      \field{journaltitle}{ACM Computing Surveys}
+      \field{month}{9}
+      \field{number}{2}
+      \field{title}{Demystifying Graph Databases: Analysis and Taxonomy of Data Organization, System Designs, and Graph Queries}
+      \field{volume}{56}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 40}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1145/3604932
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1145/3604932
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1145/3604932
+      \endverb
+    \endentry
     \entry{ionos}{misc}{}
       \name{author}{1}{}{%
         {{hash=712b5363adce54e7c1daea15779b5287}{%
@@ -197,8 +272,8 @@
       \strng{authorbibnamehash}{712b5363adce54e7c1daea15779b5287}
       \strng{authornamehash}{712b5363adce54e7c1daea15779b5287}
       \strng{authorfullhash}{712b5363adce54e7c1daea15779b5287}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -225,8 +300,8 @@
       \strng{authorbibnamehash}{b619ccc302aa27f70a1bb97879838234}
       \strng{authornamehash}{b619ccc302aa27f70a1bb97879838234}
       \strng{authorfullhash}{b619ccc302aa27f70a1bb97879838234}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{month}{02}
       \field{year}{2024}
@@ -235,6 +310,32 @@
       \endverb
       \verb{url}
       \verb https://dmccreary.medium.com/how-to-explain-index-free-adjacency-to-your-manager-1a8e68ec664a
+      \endverb
+    \endentry
+    \entry{graphModels}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=17b5fba87c87580e625e8a70c80a2194}{%
+           family={graph.build},
+           familyi={g\bibinitperiod}}}%
+      }
+      \strng{namehash}{17b5fba87c87580e625e8a70c80a2194}
+      \strng{fullhash}{17b5fba87c87580e625e8a70c80a2194}
+      \strng{bibnamehash}{17b5fba87c87580e625e8a70c80a2194}
+      \strng{authorbibnamehash}{17b5fba87c87580e625e8a70c80a2194}
+      \strng{authornamehash}{17b5fba87c87580e625e8a70c80a2194}
+      \strng{authorfullhash}{17b5fba87c87580e625e8a70c80a2194}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Graph Models, Structures and Knowledge Graphs}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://graph.build/resources/graph-models
+      \endverb
+      \verb{url}
+      \verb https://graph.build/resources/graph-models
       \endverb
     \endentry
     \entry{rdf}{misc}{}
@@ -291,9 +392,106 @@
       \verb http://langer.zam.slu.cz/teaching/dbaii/olap_oltp.pdf
       \endverb
     \endentry
-    \entry{neo4jDoc}{misc}{}
+    \entry{amazonNeptune}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9a9b96cb6dfbff10e6a4edd142c58a3e}{%
+           family={Amazon\bibnamedelimb Web\bibnamedelima Services},
+           familyi={A\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Inc.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a9b96cb6dfbff10e6a4edd142c58a3e}
+      \strng{fullhash}{9a9b96cb6dfbff10e6a4edd142c58a3e}
+      \strng{bibnamehash}{9a9b96cb6dfbff10e6a4edd142c58a3e}
+      \strng{authorbibnamehash}{9a9b96cb6dfbff10e6a4edd142c58a3e}
+      \strng{authornamehash}{9a9b96cb6dfbff10e6a4edd142c58a3e}
+      \strng{authorfullhash}{9a9b96cb6dfbff10e6a4edd142c58a3e}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{month}{2}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://aws.amazon.com/neptune
+      \endverb
+      \verb{url}
+      \verb https://aws.amazon.com/neptune
+      \endverb
+    \endentry
+    \entry{tigerGraph}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=611274d5c57db275351b94caee551578}{%
+           family={TigerGraph},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{611274d5c57db275351b94caee551578}
+      \strng{fullhash}{611274d5c57db275351b94caee551578}
+      \strng{bibnamehash}{611274d5c57db275351b94caee551578}
+      \strng{authorbibnamehash}{611274d5c57db275351b94caee551578}
+      \strng{authornamehash}{611274d5c57db275351b94caee551578}
+      \strng{authorfullhash}{611274d5c57db275351b94caee551578}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{month}{3}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.tigergraph.com
+      \endverb
+      \verb{url}
+      \verb https://www.tigergraph.com
+      \endverb
+    \endentry
+    \entry{allegroGraph}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=54b50b84031ef09256008a7541557b35}{%
+           family={Allegrograph.com},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{54b50b84031ef09256008a7541557b35}
+      \strng{fullhash}{54b50b84031ef09256008a7541557b35}
+      \strng{bibnamehash}{54b50b84031ef09256008a7541557b35}
+      \strng{authorbibnamehash}{54b50b84031ef09256008a7541557b35}
+      \strng{authornamehash}{54b50b84031ef09256008a7541557b35}
+      \strng{authorfullhash}{54b50b84031ef09256008a7541557b35}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://allegrograph.com/
+      \endverb
+      \verb{url}
+      \verb https://allegrograph.com/
+      \endverb
+    \endentry
+    \entry{janusGraph}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b1f884d4e95665c3671adebb6b701782}{%
+           family={janusgraph.org},
+           familyi={j\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1f884d4e95665c3671adebb6b701782}
+      \strng{fullhash}{b1f884d4e95665c3671adebb6b701782}
+      \strng{bibnamehash}{b1f884d4e95665c3671adebb6b701782}
+      \strng{authorbibnamehash}{b1f884d4e95665c3671adebb6b701782}
+      \strng{authornamehash}{b1f884d4e95665c3671adebb6b701782}
+      \strng{authorfullhash}{b1f884d4e95665c3671adebb6b701782}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{month}{2}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://janusgraph.org
+      \endverb
+      \verb{url}
+      \verb https://janusgraph.org
+      \endverb
+    \endentry
+    \entry{neo4jDoc}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Neo4j Documentation}
@@ -306,8 +504,8 @@
       \endverb
     \endentry
     \entry{neo4jDev}{misc}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Neo4j Developer Center}
@@ -320,8 +518,8 @@
       \endverb
     \endentry
     \entry{orientDBDoc}{misc}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{OrientDB Documentation}
@@ -334,8 +532,8 @@
       \endverb
     \endentry
     \entry{arangoDBDoc}{misc}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{ArangoDB Documentation}
@@ -345,6 +543,114 @@
       \endverb
       \verb{url}
       \verb https://docs.arangodb.com
+      \endverb
+    \endentry
+    \entry{hybridIndex}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f18b7acb81fca3cc0da2a24d5ff91378}{%
+           family={ArangoDB},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f18b7acb81fca3cc0da2a24d5ff91378}
+      \strng{fullhash}{f18b7acb81fca3cc0da2a24d5ff91378}
+      \strng{bibnamehash}{f18b7acb81fca3cc0da2a24d5ff91378}
+      \strng{authorbibnamehash}{f18b7acb81fca3cc0da2a24d5ff91378}
+      \strng{authornamehash}{f18b7acb81fca3cc0da2a24d5ff91378}
+      \strng{authorfullhash}{f18b7acb81fca3cc0da2a24d5ff91378}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Index Free Adjacency or Hybrid Indexes for Graph Databases}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://arangodb.com/2016/04/index-free-adjacency-hybrid-indexes-graph-databases/
+      \endverb
+      \verb{url}
+      \verb https://arangodb.com/2016/04/index-free-adjacency-hybrid-indexes-graph-databases/
+      \endverb
+    \endentry
+    \entry{sparql}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=41d54e9cc95f6d9dbd108993455e7477}{%
+           family={W3.org},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{41d54e9cc95f6d9dbd108993455e7477}
+      \strng{fullhash}{41d54e9cc95f6d9dbd108993455e7477}
+      \strng{bibnamehash}{41d54e9cc95f6d9dbd108993455e7477}
+      \strng{authorbibnamehash}{41d54e9cc95f6d9dbd108993455e7477}
+      \strng{authornamehash}{41d54e9cc95f6d9dbd108993455e7477}
+      \strng{authorfullhash}{41d54e9cc95f6d9dbd108993455e7477}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{SPARQL Query Language for RDF}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.w3.org/TR/rdf-sparql-query/
+      \endverb
+      \verb{url}
+      \verb https://www.w3.org/TR/rdf-sparql-query/
+      \endverb
+    \endentry
+    \entry{pgql}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{PGQL | Property Graph Query Language}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://pgql-lang.org/
+      \endverb
+      \verb{url}
+      \verb https://pgql-lang.org/
+      \endverb
+    \endentry
+    \entry{gsql}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{GSQL: Graph Query Language}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.tigergraph.com/gsql/
+      \endverb
+      \verb{url}
+      \verb https://www.tigergraph.com/gsql/
+      \endverb
+    \endentry
+    \entry{graphql}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=35fb186dd6ecf3e75ea2ede3109bd906}{%
+           family={Foundation},
+           familyi={F\bibinitperiod},
+           given={The\bibnamedelima GraphQL},
+           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{35fb186dd6ecf3e75ea2ede3109bd906}
+      \strng{fullhash}{35fb186dd6ecf3e75ea2ede3109bd906}
+      \strng{bibnamehash}{35fb186dd6ecf3e75ea2ede3109bd906}
+      \strng{authorbibnamehash}{35fb186dd6ecf3e75ea2ede3109bd906}
+      \strng{authornamehash}{35fb186dd6ecf3e75ea2ede3109bd906}
+      \strng{authorfullhash}{35fb186dd6ecf3e75ea2ede3109bd906}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{GraphQL: A query language for APIs}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://graphql.org/
+      \endverb
+      \verb{url}
+      \verb https://graphql.org/
       \endverb
     \endentry
     \entry{practicalGremlin}{misc}{}
@@ -361,8 +667,8 @@
       \strng{authorbibnamehash}{61e73b8ee0c5bcb2a059634709efae0a}
       \strng{authornamehash}{61e73b8ee0c5bcb2a059634709efae0a}
       \strng{authorfullhash}{61e73b8ee0c5bcb2a059634709efae0a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -376,8 +682,8 @@
       \endverb
     \endentry
     \entry{tinkerPopDoc}{misc}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{TinkerPop Documentation}
@@ -411,8 +717,8 @@
       \strng{authorbibnamehash}{1a5fa5eb175563cee2deda98ed13f388}
       \strng{authornamehash}{1a5fa5eb175563cee2deda98ed13f388}
       \strng{authorfullhash}{1a5fa5eb175563cee2deda98ed13f388}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
@@ -442,8 +748,8 @@
       \strng{authorbibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
       \strng{authornamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
       \strng{authorfullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
@@ -463,8 +769,8 @@
       \strng{authorbibnamehash}{feacd4d82692591f68b105d87e24e41f}
       \strng{authornamehash}{feacd4d82692591f68b105d87e24e41f}
       \strng{authorfullhash}{feacd4d82692591f68b105d87e24e41f}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -492,8 +798,8 @@
       \strng{authorbibnamehash}{531e3176f9bd32d0db46dc703249692a}
       \strng{authornamehash}{531e3176f9bd32d0db46dc703249692a}
       \strng{authorfullhash}{531e3176f9bd32d0db46dc703249692a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
@@ -528,8 +834,8 @@
       \strng{authorbibnamehash}{e3a7806cabc758a58d3db2789774e36e}
       \strng{authornamehash}{e3a7806cabc758a58d3db2789774e36e}
       \strng{authorfullhash}{e3a7806cabc758a58d3db2789774e36e}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
@@ -538,8 +844,8 @@
       \field{year}{2019}
     \endentry
     \entry{astar}{misc}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{month}{02}
       \field{year}{2024}
       \verb{urlraw}
@@ -568,8 +874,8 @@
       \strng{authorbibnamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authornamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authorfullhash}{8b6c59a3c7880c51055cf3864633578b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{2}
@@ -614,8 +920,8 @@
       \strng{authorbibnamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
       \strng{authornamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
       \strng{authorfullhash}{a73a5f52a90e11d707cad2bd0035c1c9}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Annals of Computer Science and Information Systems}

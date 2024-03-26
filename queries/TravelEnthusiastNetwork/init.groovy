@@ -1,4 +1,3 @@
-import groovy.transform.Field
 
 //parameters for connector
 url = "embedded:/Users/gajaj/orientdb-tp3-3.2.23/databases/TravelEnthusiastNetwork";

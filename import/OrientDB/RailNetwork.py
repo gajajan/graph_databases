@@ -10,9 +10,9 @@ os.chdir(OETL_DIR)
 def make_json_file_path (file_name):
     return IMPORT_DIR + "\\" + file_name + ".json"
 
-vertex_file_names = []
+vertex_file_names = ["properties"]
 
-edge_file_names = ["friends"]
+edge_file_names = []
 
 
 print("\n---VERTICES IMPORT---\n")

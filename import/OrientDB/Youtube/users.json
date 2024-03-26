@@ -19,6 +19,9 @@
         "batchCommit": 1000,
         "classes": [
           {"name": "User", "extends": "V"}
+        ],
+        "indexes": [
+          {"class":"V", "fields":["userId:integer"], "type":"UNIQUE" }
         ]
       }
     }
