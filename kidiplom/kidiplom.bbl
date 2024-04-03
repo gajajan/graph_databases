@@ -874,8 +874,8 @@
       \strng{authorbibnamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authornamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authorfullhash}{8b6c59a3c7880c51055cf3864633578b}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{2}
@@ -938,6 +938,41 @@
       \endverb
       \verb{url}
       \verb http://dx.doi.org/10.15439/2020F76
+      \endverb
+    \endentry
+    \entry{experimentalComparision}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1622280b3ba505e7047d085130c54d21}{%
+           family={Kolomičenko},
+           familyi={K\bibinitperiod},
+           given={Vojtěch},
+           giveni={V\bibinitperiod}}}%
+        {{hash=088c0038efe245a20624aeaf6bed532d}{%
+           family={Svoboda},
+           familyi={S\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7b7708e3adb4acd5ca1371f9ebc1b621}{%
+           family={Mlýnková},
+           familyi={M\bibinitperiod},
+           given={Irena\bibnamedelima Holubová},
+           giveni={I\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{f4ce85f39265e8336e7d030faaa9b63a}
+      \strng{fullhash}{f4ce85f39265e8336e7d030faaa9b63a}
+      \strng{bibnamehash}{f4ce85f39265e8336e7d030faaa9b63a}
+      \strng{authorbibnamehash}{f4ce85f39265e8336e7d030faaa9b63a}
+      \strng{authornamehash}{f4ce85f39265e8336e7d030faaa9b63a}
+      \strng{authorfullhash}{f4ce85f39265e8336e7d030faaa9b63a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Experimental comparison of graph databases}
+      \field{year}{2013}
+      \verb{doi}
+      \verb 10.1145/2539150.2539155
       \endverb
     \endentry
   \enddatalist

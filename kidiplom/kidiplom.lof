@@ -7,14 +7,15 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces Ukázka více labelů pro jeden vrchol.}}{30}{figure.6}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Logický datový model pro sociální síť pro cestovní nadšence.}}{32}{figure.7}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Graf vytvořený pomocí zdrojového kódu \ref {kod:UnitTest}.}}{33}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Model grafové databáze pro ukázkové příklady v této kapitole.}}{36}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Průchod algoritmu BFS grafem.}}{37}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Průchod algoritmu DFS grafem.}}{38}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Minimální kostra grafu.}}{43}{figure.12}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Model grafové databáze pro ukázkové příklady v této kapitole.}}{35}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Průchod algoritmu BFS grafem.}}{36}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Průchod algoritmu DFS grafem.}}{37}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Minimální kostra grafu.}}{42}{figure.12}%
 \contentsline {figure}{\numberline {13}{\ignorespaces Příklad grafu, na kterém jsou prováděny algoritmy.}}{46}{figure.13}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Distribuce stupně vrcholů.}}{49}{figure.14}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Průměrné výsledky dotazů vkládání a mazání.}}{50}{figure.15}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Průměrné výsledky dotazů Q1-Q6.}}{51}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Průměrné výsledky dotazů Q7 a Q8.}}{52}{figure.17}%
 \babel@toc {czech}{}\relax 
 \babel@toc {czech}{}\relax 
 \babel@toc {english}{}\relax 

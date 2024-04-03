@@ -1,0 +1,22 @@
+{
+    "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/ratings.csv" } },
+    "extractor": {
+      "csv": {
+        "columns": ["ratingId:integer","body:string","rating:integer"]
+      }
+    },
+    "transformers": [
+      { "vertex": { "class": "Rating" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+           {"name": "Rating", "extends": "V"}
+         ]
+      }
+    }
+  }

@@ -1,0 +1,31 @@
+{
+    "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/follows.csv" } },
+    "extractor": { 
+      "csv": {
+        "columns": ["user1Id:integer","user2Id:integer"]
+      } 
+    },
+    "transformers": [
+      { "merge": { "joinFieldName": "user1Id", "lookup": "User.userId" } },
+      { "vertex": {"class": "User"} },
+      { "edge": { "class": "FOLLOWS",
+                  "joinFieldName": "user2Id",
+                  "lookup": "User.userId",
+                  "direction": "out" 
+                }
+      },
+      { "field": { "fieldNames": ["user1Id", "user2Id"], "operation": "remove" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "User", "extends": "V"},
+            {"name": "FOLLOWS", "extends": "E"}
+         ]
+      }
+    }
+  }

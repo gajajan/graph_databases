@@ -11,3 +11,13 @@ SELECT expand(path) FROM (
     $to = (SELECT FROM User WHERE userId=7357) 
   UNWIND path
 )
+
+--Q7
+SELECT COUNT(*)
+FROM User
+WHERE firstName LIKE 'Ma%' AND age > 75
+
+--Q8
+SELECT AVG(age.asFloat())
+FROM User
+WHERE firstName == "James"

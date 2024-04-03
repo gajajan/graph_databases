@@ -1,0 +1,22 @@
+{
+    "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/journeys.csv" } },
+    "extractor": { 
+      "csv": {
+        "columns": ["journeyId:integer","journeyName:string","journeyStart:date","journeyEnd:date"]
+      } 
+    },
+    "transformers": [
+      { "vertex": { "class": "Journey" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+           {"name": "Journey", "extends": "V"}
+         ]
+      }
+    }
+  }

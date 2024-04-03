@@ -27,9 +27,9 @@ clockWithResult(1){
 }
 
 clockWithResult(1){
-    g.V().hasLabel('User').has('firstName', TextP.startingWith('Ma')).has('age', gt(75)).count().next()
+    g.V().filter{ it.get().value('firstName').startsWith('Ma') && it.get().value('age') > 75 }.count().next()
 }
 
 clockWithResult(1){
-    g.V().filter{ it.get().value('firstName').startsWith('Ma') && it.get().value('age') > 75 }.count().next()
+    g.V().has("User", "firstName", "James").values("age").mean().next()
 }

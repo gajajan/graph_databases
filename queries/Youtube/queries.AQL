@@ -1,0 +1,24 @@
+//Q1-4
+LET friends = (
+    FOR f IN 1..2 ANY @user FRIENDS
+    OPTIONS { uniqueVertices: "global", order: "bfs" }
+        RETURN f
+)
+
+RETURN COUNT_DISTINCT(friends)
+
+//Q5-6
+FOR p IN OUTBOUND SHORTEST_PATH
+@start TO @target GRAPH Youtube
+    RETURN p
+
+//Q7
+FOR u IN users
+    FILTER u.age > 75 AND STARTS_WITH(u.firstName, "Ma")
+    COLLECT WITH COUNT INTO c
+    RETURN c
+
+FOR u IN users
+    FILTER u.firstName == "James"
+    COLLECT AGGREGATE a=AVG(u.age)
+    RETURN a

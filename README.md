@@ -1,12 +1,65 @@
-# Graph databases
-Repository for a bachelor's thesis dealing with graph databases.
+# Graph Databases
+Repository for a bachelor's thesis focusing on graph databases.
 
 ## Content
-* In csv folder you can find csv files which contain test data.
-* In import_scripts folder you can find scripts which import csv files to graph databases Neo4j and OrientDB.
-* In kidiplom folder you can find current version of text document.
-* In queries folder you can find some queries, which are mentioned in text document.
+* The `*-docker` folders contain the necessary files for building Docker images.
+* The `obhajoba` folder contains files for the presentation of the bachelor's thesis.
+* The `kidiplom` folder contains the current version of the text document.
+* The `queries` folder includes queries for different datasets mentioned in the text document.
   - Files with Cypher queries
   - Files with Gremlin queries
+  - Files with AQL queries
+  - Files with OrientDB SQL queries
+  - Files with queries for Neo4j algorithms
 
-In example RailNetwork in Neo4j is used Neo4j Graph Data Science library.
+## Running Docker
+
+### OrientDB
+```bash
+docker build -t orientdb-database:1.0 .
+docker run -p 2480:2480 orientdb-database:1.0
+```
+
+OrientDB Studio is available at the IP address _localhost:2480_. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use 
+```bash
+sh import-test.sh
+```
+
+The Gremlin Console is located in the `/orientdb/bin/` folder. You can use initialization files to connect to databases, which are located in the `/init-files-gremlin/` folder. The command for this is in the form 
+```bash
+/orientdb/bin/gremlin.sh -i /init-files-gremlin/<SELECTED_DATABASE>.
+```
+
+### Neo4j
+```bash
+docker build -t neo4j-database:1.0 .
+docker run -p 7474:7474 -p 7687:7687 neo4j-database:1.0
+```
+
+The Neo4j Browser is available at the IP address _localhost:7474_. Create a database in the Neo4j Browser with the command 
+```cypher
+CREATE DATABASE <DATABASE_NAME>
+```
+
+Then select this database with the 
+
+```bash
+:use <DATABASE_NAME>
+```
+
+Import data using the Cypher files located in the `/import/` folder. This method was also used for testing the import in Neo4j.
+
+### ArangoDB
+```bash
+docker build -t arangodb-database:1.0 . 
+docker run -p 8529:8529 arangodb-database:1.0
+```
+
+The ArangoDB Web Interface is available at the IP address _localhost:8529_. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ can be imported using the
+```bash
+sh import.sh
+```
+For testing the import in ArangoDB, use the
+```bash
+sh import-test.sh
+```

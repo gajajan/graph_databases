@@ -1,0 +1,18 @@
+{
+  "source": { "file": { "path": "/csv/RailNetwork/stations.csv" } },
+  "extractor": { "csv": {} },
+  "transformers": [
+    { "vertex": { "class": "Station" } }
+  ],
+  "loader": {
+    "orientdb": {
+      "dbURL": "plocal:../databases/RailNetwork",
+      "dbType": "graph",
+      "dbUser": "root",
+      "dbPassword": "root",
+      "classes": [
+        {"name": "Station", "extends": "V"}
+      ]
+    }
+  }
+}

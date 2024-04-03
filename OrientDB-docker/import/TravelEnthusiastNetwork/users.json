@@ -1,0 +1,24 @@
+{
+  "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/users.csv" } },
+  "extractor": {
+    "csv": {
+      "columns": ["userId:integer","firstName:string","lastName:string"]
+    }
+  },
+  "transformers": [
+    { "vertex": { "class": "User" } }
+  ],
+  "loader": {
+    "orientdb": {
+        "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+        "dbUser": "root",
+        "dbPassword": "root",
+        "dbType": "graph",
+        "classes": [
+          {"name": "User", "extends": "V"}
+        ], "indexes": [
+          {"class":"User", "fields":["userId:integer"], "type":"UNIQUE" }
+        ]
+    }
+  }
+}

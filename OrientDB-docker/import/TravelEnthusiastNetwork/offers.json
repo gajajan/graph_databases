@@ -1,0 +1,31 @@
+{
+    "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/offers.csv" } },
+    "extractor": {
+      "csv": {
+        "columns": ["destinationId:integer","activityId:integer"]
+      }
+    },
+    "transformers": [
+      { "merge": { "joinFieldName": "destinationId", "lookup": "Destination.destinationId" } },
+      { "edge": { "class": "OFFERS",
+                    "joinFieldName": "activityId",
+                    "lookup": "TravelActivity.activityId",
+                    "direction": "out" 
+                }
+      },
+      { "field": { "fieldNames": ["activityId"], "operation": "remove" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "Destination", "extends": "V"},
+            {"name": "TravelActivity", "extends": "V"},
+            {"name": "OFFERS", "extends": "E"}
+         ]
+      }
+    }
+  }

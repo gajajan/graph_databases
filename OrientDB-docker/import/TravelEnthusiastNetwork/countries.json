@@ -1,0 +1,22 @@
+{
+    "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/countries.csv" } },
+    "extractor": { 
+      "csv": {
+        "columns": ["countryName:string","countryCode:string"]
+      } 
+    },
+    "transformers": [
+      { "vertex": { "class": "Country" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+           {"name": "Country", "extends": "V"}
+         ]
+      }
+    }
+  }

@@ -1,0 +1,31 @@
+{
+    "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/is_within.csv" } },
+    "extractor": { 
+      "csv": {
+        "columns": ["destinationId:integer","countryCode:string"]
+      } 
+    },
+    "transformers": [
+      { "merge": { "joinFieldName": "destinationId", "lookup": "Destination.destinationId" } },
+      { "edge": { "class": "IS_WITHIN",
+                  "joinFieldName": "countryCode",
+                  "lookup": "Country.countryCode",
+                  "direction": "out" 
+                }
+      },
+      { "field": { "fieldNames": ["countryCode"], "operation": "remove" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+            {"name": "Destination", "extends": "V"},
+            {"name": "Country", "extends": "V"},
+            {"name": "IS_WITHIN", "extends": "E"}
+         ]
+      }
+    }
+  }

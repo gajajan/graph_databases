@@ -1,0 +1,25 @@
+{
+  "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/destinations.csv" } },
+  "extractor": { 
+    "csv": {
+      "columns": ["destinationId:integer", "destinationName:string"]
+    } 
+  },
+  "transformers": [
+    { "vertex": { "class": "Destination" } }
+  ],
+  "loader": {
+    "orientdb": {
+       "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+       "dbUser": "root",
+       "dbPassword": "root",
+       "dbType": "graph",
+       "classes": [
+         {"name": "Destination", "extends": "V"}
+       ],
+       "indexes": [
+        {"class":"Destination", "fields":["destinationId:integer"], "type":"UNIQUE" }
+       ]
+    }
+  }
+}

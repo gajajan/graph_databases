@@ -1,10 +1,10 @@
 \babel@toc {czech}{}\relax 
 \contentsline {table}{\numberline {1}{\ignorespaces Tabulka souborů pro aplikaci pro cestovní nadšence.}}{25}{table.1}%
-\contentsline {table}{\numberline {2}{\ignorespaces Tabulka souborů pro ukázku hledání cest.}}{36}{table.2}%
+\contentsline {table}{\numberline {2}{\ignorespaces Tabulka souborů pro ukázku hledání cest.}}{35}{table.2}%
 \contentsline {table}{\numberline {3}{\ignorespaces Výsledná tabulka pro dotaz ve zdrojovém kódu \ref {kod:unweightedPath}.}}{39}{table.3}%
 \contentsline {table}{\numberline {4}{\ignorespaces Výsledná tabulka pro dotaz ve zdrojovém kódu \ref {kod:ShortestPath-Weighted-Example}.}}{39}{table.4}%
 \contentsline {table}{\numberline {5}{\ignorespaces Random walk.}}{44}{table.5}%
-\contentsline {table}{\numberline {6}{\ignorespaces Výsledky měření centrality.}}{46}{table.6}%
+\contentsline {table}{\numberline {6}{\ignorespaces Výsledky měření centrality.}}{45}{table.6}%
 \contentsline {table}{\numberline {7}{\ignorespaces Počet trojúhelníků a shlukovací koeficient.}}{47}{table.7}%
 \contentsline {table}{\numberline {8}{\ignorespaces Algoritmus Louvain.}}{48}{table.8}%
 \contentsline {table}{\numberline {9}{\ignorespaces Tabulka souborů pro experimentování s databázemi.}}{49}{table.9}%

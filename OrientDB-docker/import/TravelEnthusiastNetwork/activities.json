@@ -1,0 +1,22 @@
+{
+    "source": { "file": { "path": "/csv/TravelEnthusiastNetwork/activities.csv" } },
+    "extractor": { 
+      "csv": {
+        "columns": ["activityId:integer", "activityName:string"]
+      } 
+    },
+    "transformers": [
+      { "vertex": { "class": "TravelActivity" } }
+    ],
+    "loader": {
+      "orientdb": {
+         "dbURL": "plocal:../databases/TravelEnthusiastNetwork",
+         "dbUser": "root",
+         "dbPassword": "root",
+         "dbType": "graph",
+         "classes": [
+           {"name": "TravelActivity", "extends": "V"}
+         ]
+      }
+    }
+  }
