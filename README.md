@@ -21,12 +21,12 @@ docker build -t orientdb-database:1.0 .
 docker run -p 2480:2480 orientdb-database:1.0
 ```
 
-OrientDB Studio is available at the IP address _localhost:2480_. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use 
+OrientDB Studio is available at the IP address _localhost:2480_. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use in the interactive shell
 ```bash
 sh import-test.sh
 ```
 
-The Gremlin Console is located in the `/orientdb/bin/` folder. You can use initialization files to connect to databases, which are located in the `/init-files-gremlin/` folder. The command for this is in the form 
+The Gremlin Console is located in the `/orientdb/bin/` folder. You can use initialization files to connect to databases, which are located in the `/init-files-gremlin/` folder. The command for this in the interactive shell is in the form 
 ```bash
 /orientdb/bin/gremlin.sh -i /init-files-gremlin/<SELECTED_DATABASE>.
 ```
@@ -44,7 +44,7 @@ CREATE DATABASE <DATABASE_NAME>
 
 Then select this database with the 
 
-```bash
+```cypher
 :use <DATABASE_NAME>
 ```
 
@@ -56,11 +56,11 @@ docker build -t arangodb-database:1.0 .
 docker run -p 8529:8529 arangodb-database:1.0
 ```
 
-The ArangoDB Web Interface is available at the IP address _localhost:8529_. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ can be imported using the
+The ArangoDB Web Interface is available at the IP address _localhost:8529_. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ can be imported via the interactive shell using
 ```bash
 sh import.sh
 ```
-For testing the import in ArangoDB, use the
+For testing the import in ArangoDB, use in the interactive shell
 ```bash
 sh import-test.sh
 ```
