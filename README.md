@@ -11,6 +11,7 @@ Repository for a bachelor's thesis focusing on graph databases.
   - Files with AQL queries
   - Files with OrientDB SQL queries
   - Files with queries for Neo4j algorithms
+* The `plot-result` folder contains Python files for plotting results.
 
 ## Running Docker
 
