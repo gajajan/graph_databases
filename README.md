@@ -25,6 +25,7 @@ OrientDB Studio is available at the IP address http://localhost:2480. The databa
 ```bash
 sh import-test.sh
 ```
+Initial password and username are set to `root`.
 
 The Gremlin Console is located in the `/orientdb/bin/` folder. You can use initialization files to connect to databases, which are located in the `/init-files-gremlin/` folder. The command for this in the interactive shell is in the form 
 ```bash
@@ -37,7 +38,7 @@ docker build -t neo4j-database:1.0 .
 docker run -p 7474:7474 -p 7687:7687 neo4j-database:1.0
 ```
 
-The Neo4j Browser is available at the IP address http://localhost:7474. Create a database in the Neo4j Browser with the command 
+The Neo4j Browser is available at the IP address http://localhost:7474. There is __no__ initial password and username because authentification in docker file is set to `none`. Create a database in the Neo4j Browser with the command 
 ```cypher
 CREATE DATABASE <DATABASE_NAME>
 ```
@@ -56,7 +57,9 @@ docker build -t arangodb-database:1.0 .
 docker run -p 8529:8529 arangodb-database:1.0
 ```
 
-The ArangoDB Web Interface is available at the IP address http://localhost:8529. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ can be imported via the interactive shell using
+The ArangoDB Web Interface is available at the IP address http://localhost:8529. Initial password and username are set to `root`.
+
+The databases __TravelEnthusiastNetwork__ and __RailNetwork__ can be imported via the interactive shell using
 ```bash
 sh import.sh
 ```
