@@ -37,7 +37,7 @@ docker build -t neo4j-database:1.0 .
 docker run -p 7474:7474 -p 7687:7687 neo4j-database:1.0
 ```
 
-The Neo4j Browser is available at the IP address https://localhost:7687/browser/. Create a database in the Neo4j Browser with the command 
+The Neo4j Browser is available at the IP address https://localhost:7474. Create a database in the Neo4j Browser with the command 
 ```cypher
 CREATE DATABASE <DATABASE_NAME>
 ```
