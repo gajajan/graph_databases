@@ -21,11 +21,11 @@ docker build -t orientdb-database:1.0 .
 docker run -p 2480:2480 orientdb-database:1.0
 ```
 
-OrientDB Studio is available at the IP address http://localhost:2480. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use in the interactive shell
+OrientDB Studio is available at the IP address http://localhost:2480. Initial password and username are set to `root`. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use in the interactive shell
 ```bash
 sh import-test.sh
 ```
-Initial password and username are set to `root`.
+
 
 The Gremlin Console is located in the `/orientdb/bin/` folder. You can use initialization files to connect to databases, which are located in the `/init-files-gremlin/` folder. The command for this in the interactive shell is in the form 
 ```bash
