@@ -28,7 +28,7 @@ sh import-test.sh
 
 The Gremlin Console is located in the `/orientdb/bin/` folder. You can use initialization files to connect to databases, which are located in the `/init-files-gremlin/` folder. The command for this in the interactive shell is in the form 
 ```bash
-/orientdb/bin/gremlin.sh -i /init-files-gremlin/<SELECTED_DATABASE>.
+/orientdb/bin/gremlin.sh -i /init-files-gremlin/<SELECTED_DATABASE>.groovy
 ```
 
 ### Neo4j
