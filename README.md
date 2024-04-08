@@ -21,7 +21,7 @@ docker build -t orientdb-database:1.0 .
 docker run -p 2480:2480 orientdb-database:1.0
 ```
 
-OrientDB Studio is available at the IP address _localhost:2480_. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use in the interactive shell
+OrientDB Studio is available at the IP address (https://localhost:2480). The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use in the interactive shell
 ```bash
 sh import-test.sh
 ```
