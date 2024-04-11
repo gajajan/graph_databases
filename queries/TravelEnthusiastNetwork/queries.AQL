@@ -84,6 +84,7 @@ FOR d IN filteredDestinations
     SORT averageRating DESC
     LIMIT 3
     LET destination = DOCUMENT(d)
+    RETURN {destination, averageRating: averageRating ? : 'not rated'}
 
 //DESTINATION RECOMMENDATION BASED ON USER'S FAVOURITE ACTIVITIES
 
