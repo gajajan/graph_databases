@@ -4,7 +4,7 @@ START_TIME=$(date +%s)
 
 echo "Youtube vertices import started."
 
-/usr/bin/arangoimport --file "/csv/Youtube/users.csv" --type csv --server.database "Youtube" --create-database true --collection "users" --create-collection true --translate "userId=_key" --server.password "root" --on-duplicate "ignore"
+/usr/bin/arangoimport --file "/csv/Youtube/users.csv" --type csv --server.database "Youtube" --create-database true --collection "User" --create-collection true --translate "userId=_key" --server.password "root" --on-duplicate "ignore"
 
 END_TIME=$(date +%s)
 ELAPSED_TIME=$((END_TIME - START_TIME))
@@ -18,7 +18,7 @@ START_TIME=$(date +%s)
 
 echo "Youtube edges import started."
 
-/usr/bin/arangoimport --file "/csv/Youtube/com-youtube.ungraph.tsv" --type tsv --server.database "Youtube" --collection "FRIENDS"  --create-collection true --create-collection-type "edge" --from-collection-prefix "users" --to-collection-prefix "users" --translate "FromNodeId=_from" --translate "ToNodeId=_to" --server.password "root"
+/usr/bin/arangoimport --file "/csv/Youtube/com-youtube.ungraph.tsv" --type tsv --server.database "Youtube" --collection "FRIENDS"  --create-collection true --create-collection-type "edge" --from-collection-prefix "User" --to-collection-prefix "User" --translate "FromNodeId=_from" --translate "ToNodeId=_to" --server.password "root"
 
 END_TIME=$(date +%s)
 ELAPSED_TIME=$((END_TIME - START_TIME))

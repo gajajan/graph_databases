@@ -5,16 +5,14 @@
 \PYG{+w}{            }\PYG{n}{sack}\PYG{o}{(}\PYG{n}{sum}\PYG{o}{).}\PYG{n+na}{by}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}length\PYGZdq{}}\PYG{o}{).}
 \PYG{+w}{            }\PYG{n}{inV}\PYG{o}{().}\PYG{n+na}{as}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}visited\PYGZdq{}}\PYG{o}{).}
 \PYG{+w}{            }\PYG{n}{simplePath}\PYG{o}{().}
-\PYG{+w}{            }\PYG{n}{group}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}minDist\PYGZdq{}}\PYG{o}{).}
-\PYG{+w}{                }\PYG{n}{by}\PYG{o}{().}\PYG{n+na}{by}\PYG{o}{(}\PYG{n}{sack}\PYG{o}{().}\PYG{n+na}{min}\PYG{o}{()).}
+\PYG{+w}{            }\PYG{n}{group}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}minDist\PYGZdq{}}\PYG{o}{).}\PYG{n+na}{by}\PYG{o}{().}\PYG{n+na}{by}\PYG{o}{(}\PYG{n}{sack}\PYG{o}{().}\PYG{n+na}{min}\PYG{o}{()).}
 \PYG{+w}{            }\PYG{n}{filter}\PYG{o}{(}\PYG{n}{project}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}currMinDist\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}sackDist\PYGZdq{}}\PYG{o}{).}
 \PYG{+w}{                    }\PYG{n}{by}\PYG{o}{(}\PYG{n}{select}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}minDist\PYGZdq{}}\PYG{o}{).}\PYG{n+na}{select}\PYG{o}{(}\PYG{n}{select}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}visited\PYGZdq{}}\PYG{o}{))).}
 \PYG{+w}{                    }\PYG{n}{by}\PYG{o}{(}\PYG{n}{sack}\PYG{o}{()).}
 \PYG{+w}{                }\PYG{n}{where}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}currMinDist\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{n}{eq}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}sackDist\PYGZdq{}}\PYG{o}{)))).}
 \PYG{+w}{    }\PYG{n}{until}\PYG{o}{(}\PYG{n}{has}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}Station\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}stationId\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{l+m+mi}{810}\PYG{o}{)).}
-\PYG{+w}{    }\PYG{n}{order}\PYG{o}{().}
-\PYG{+w}{        }\PYG{n}{by}\PYG{o}{(}\PYG{n}{sack}\PYG{o}{(),}\PYG{+w}{ }\PYG{n}{asc}\PYG{o}{).}
-\PYG{+w}{    }\PYG{n}{limit}\PYG{o}{(}\PYG{l+m+mi}{3}\PYG{o}{).}
+\PYG{+w}{    }\PYG{n}{order}\PYG{o}{().}\PYG{n+na}{by}\PYG{o}{(}\PYG{n}{sack}\PYG{o}{(),}\PYG{+w}{ }\PYG{n}{asc}\PYG{o}{).}
+\PYG{+w}{    }\PYG{n}{limit}\PYG{o}{(}\PYG{l+m+mi}{1}\PYG{o}{).}
 \PYG{+w}{    }\PYG{n}{project}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}stations\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}stationsCount\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}totalLength\PYGZdq{}}\PYG{o}{).}
 \PYG{+w}{        }\PYG{n}{by}\PYG{o}{(}\PYG{n}{path}\PYG{o}{().}
 \PYG{+w}{            }\PYG{n}{unfold}\PYG{o}{().}

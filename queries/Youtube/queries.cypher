@@ -1,5 +1,5 @@
-
 //Q1-Q4
+//depth x is specified by [FRIENDS*1..x]
 MATCH (u:User {userId: 1})-[:FRIENDS*1..2]-(f)
 WHERE u <> f
 RETURN COUNT(DISTINCT(f))

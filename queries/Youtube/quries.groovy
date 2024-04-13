@@ -1,35 +1,30 @@
-clockWithResult(1){
-    g.V().has("User", "userId", 1).as('me').
-        repeat(both()).
-        emit().times(2).
-        where(neq('me')).
-        dedup().count().
-        next()
-} 
+//Q1 - Q4
+//depth x is specified in times(x)
+g.V().has("User", "userId", 1).as('me').
+    repeat(both()).
+    emit().times(3).
+    where(neq('me')).
+    dedup().count().
            
-clockWithResult(1){
-    g.V().has("User", "userId", 12000).
+//Q5
+g.V().has("User", "userId", 12000).
+    repeat(both().simplePath()).
+    until(has("User", "userId", 1047)).
+    limit(1).path()
+
+//Q6
+g.V().has("User", "userId", 12000).
     repeat(out().simplePath()).
     until(has("User", "userId", 1047)).
-    limit(1).path().next()
-}
+    limit(1).path()
 
-clockWithResult(1){
-    def iterator = g.V().has("User", "userId", 12000).
-        repeat(out().simplePath()).
-        until(has("User", "userId", 1047).or().loops().is(10)).
-        has("User", "userId", 1047).
-        limit(1).
-        path()
+//Q7
+g.V().filter{
+    it.get().value('firstName').startsWith('Ma') && 
+    it.get().value('age') > 75 }.
+    count()
 
-    def result = iterator.hasNext() ? iterator.next() : 'path doesnt exist'
-    result
-}
-
-clockWithResult(1){
-    g.V().filter{ it.get().value('firstName').startsWith('Ma') && it.get().value('age') > 75 }.count().next()
-}
-
-clockWithResult(1){
-    g.V().has("User", "firstName", "James").values("age").mean().next()
-}
+//Q8
+g.V().has("User", "firstName", "James").
+    values("age").
+    mean()

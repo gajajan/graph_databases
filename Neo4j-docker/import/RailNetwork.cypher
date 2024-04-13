@@ -1,6 +1,3 @@
-CREATE DATABASE RailNetwork IF NOT EXISTS
-:use railnetwork
-
 // clear all data
 MATCH (n)
 DETACH DELETE n;

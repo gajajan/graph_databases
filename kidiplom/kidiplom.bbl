@@ -35,7 +35,11 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{month}{2}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://db-engines.com/en
       \endverb
@@ -115,7 +119,11 @@
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{month}{02}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb http://belohlavek.inf.upol.cz/vyuka/DiskretniStruktury-2020.pdf
       \endverb
@@ -124,10 +132,28 @@
       \endverb
     \endentry
     \entry{directedGraph}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f66f45d227470cc6b0f217a4ed752902}{%
+           family={Ryjáček},
+           familyi={R\bibinitperiod},
+           given={Zdeněk},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{f66f45d227470cc6b0f217a4ed752902}
+      \strng{fullhash}{f66f45d227470cc6b0f217a4ed752902}
+      \strng{bibnamehash}{f66f45d227470cc6b0f217a4ed752902}
+      \strng{authorbibnamehash}{f66f45d227470cc6b0f217a4ed752902}
+      \strng{authornamehash}{f66f45d227470cc6b0f217a4ed752902}
+      \strng{authorfullhash}{f66f45d227470cc6b0f217a4ed752902}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
       \field{month}{02}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://home.zcu.cz/~ryjacek/students/DMA/skripta/8.pdf
       \endverb
@@ -177,7 +203,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{A Guide to Graph Databases}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.influxdata.com/graph-database/
       \endverb
@@ -278,7 +308,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{IONOS Digital Guide}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.ionos.com/digitalguide/hosting/technical-matters/graph-database/
       \endverb
@@ -304,12 +338,48 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{month}{02}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://dmccreary.medium.com/how-to-explain-index-free-adjacency-to-your-manager-1a8e68ec664a
       \endverb
       \verb{url}
       \verb https://dmccreary.medium.com/how-to-explain-index-free-adjacency-to-your-manager-1a8e68ec664a
+      \endverb
+    \endentry
+    \entry{neo4jNative}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c21978c0a23c79ccc7d739026aa9b4f4}{%
+           family={Stegeman},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c21978c0a23c79ccc7d739026aa9b4f4}
+      \strng{fullhash}{c21978c0a23c79ccc7d739026aa9b4f4}
+      \strng{bibnamehash}{c21978c0a23c79ccc7d739026aa9b4f4}
+      \strng{authorbibnamehash}{c21978c0a23c79ccc7d739026aa9b4f4}
+      \strng{authornamehash}{c21978c0a23c79ccc7d739026aa9b4f4}
+      \strng{authorfullhash}{c21978c0a23c79ccc7d739026aa9b4f4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{Native vs. Non-Native Graph Database}
+      \field{urlday}{13}
+      \field{urlmonth}{4}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://neo4j.com/blog/native-vs-non-native-graph-technology/
+      \endverb
+      \verb{url}
+      \verb https://neo4j.com/blog/native-vs-non-native-graph-technology/
       \endverb
     \endentry
     \entry{graphModels}{misc}{}
@@ -330,7 +400,11 @@
       \field{labeltitlesource}{title}
       \field{month}{3}
       \field{title}{Graph Models, Structures and Knowledge Graphs}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://graph.build/resources/graph-models
       \endverb
@@ -344,7 +418,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Série Znalostní grafy: Díl 2: Datový model RDF}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://data.gov.cz/%C4%8Dl%C3%A1nky/znalostn%C3%AD-grafy-02-rdf
       \endverb
@@ -372,7 +450,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Knowledge Graph}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.strafelda.cz/knowledge-graph
       \endverb
@@ -381,15 +463,63 @@
       \endverb
     \endentry
     \entry{oltpOlap}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=855cf82490a9619c53632b08b3c3cb52}{%
+           family={Langer},
+           familyi={L\bibinitperiod},
+           given={Miroslav},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{855cf82490a9619c53632b08b3c3cb52}
+      \strng{fullhash}{855cf82490a9619c53632b08b3c3cb52}
+      \strng{bibnamehash}{855cf82490a9619c53632b08b3c3cb52}
+      \strng{authorbibnamehash}{855cf82490a9619c53632b08b3c3cb52}
+      \strng{authornamehash}{855cf82490a9619c53632b08b3c3cb52}
+      \strng{authorfullhash}{855cf82490a9619c53632b08b3c3cb52}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
       \field{month}{02}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb http://langer.zam.slu.cz/teaching/dbaii/olap_oltp.pdf
       \endverb
       \verb{url}
       \verb http://langer.zam.slu.cz/teaching/dbaii/olap_oltp.pdf
+      \endverb
+    \endentry
+    \entry{cambridge-intelligence}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=16fb5fa7a57dfe4ce0e6f4f1134ce2ea}{%
+           family={Disney},
+           familyi={D\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{16fb5fa7a57dfe4ce0e6f4f1134ce2ea}
+      \strng{fullhash}{16fb5fa7a57dfe4ce0e6f4f1134ce2ea}
+      \strng{bibnamehash}{16fb5fa7a57dfe4ce0e6f4f1134ce2ea}
+      \strng{authorbibnamehash}{16fb5fa7a57dfe4ce0e6f4f1134ce2ea}
+      \strng{authornamehash}{16fb5fa7a57dfe4ce0e6f4f1134ce2ea}
+      \strng{authorfullhash}{16fb5fa7a57dfe4ce0e6f4f1134ce2ea}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{month}{10}
+      \field{urlday}{13}
+      \field{urlmonth}{4}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cambridge-intelligence.com/choosing-graph-database/#:~:text=Scalability%20of%20graph,in%20their%20data.
+      \endverb
+      \verb{url}
+      \verb https://cambridge-intelligence.com/choosing-graph-database/#:~:text=Scalability%20of%20graph,in%20their%20data.
       \endverb
     \endentry
     \entry{amazonNeptune}{misc}{}
@@ -410,7 +540,11 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{month}{2}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://aws.amazon.com/neptune
       \endverb
@@ -434,7 +568,11 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{month}{3}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.tigergraph.com
       \endverb
@@ -454,10 +592,14 @@
       \strng{authorbibnamehash}{54b50b84031ef09256008a7541557b35}
       \strng{authornamehash}{54b50b84031ef09256008a7541557b35}
       \strng{authorfullhash}{54b50b84031ef09256008a7541557b35}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://allegrograph.com/
       \endverb
@@ -477,11 +619,15 @@
       \strng{authorbibnamehash}{b1f884d4e95665c3671adebb6b701782}
       \strng{authornamehash}{b1f884d4e95665c3671adebb6b701782}
       \strng{authorfullhash}{b1f884d4e95665c3671adebb6b701782}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{month}{2}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://janusgraph.org
       \endverb
@@ -495,7 +641,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Neo4j Documentation}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://neo4j.com/docs
       \endverb
@@ -509,7 +659,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Neo4j Developer Center}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://neo4j.com/developer
       \endverb
@@ -523,7 +677,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{OrientDB Documentation}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.orientdb.com/docs/last/index.html
       \endverb
@@ -537,7 +695,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{ArangoDB Documentation}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://docs.arangodb.com
       \endverb
@@ -563,7 +725,11 @@
       \field{labeltitlesource}{title}
       \field{month}{3}
       \field{title}{Index Free Adjacency or Hybrid Indexes for Graph Databases}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://arangodb.com/2016/04/index-free-adjacency-hybrid-indexes-graph-databases/
       \endverb
@@ -589,7 +755,11 @@
       \field{labeltitlesource}{title}
       \field{month}{3}
       \field{title}{SPARQL Query Language for RDF}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.w3.org/TR/rdf-sparql-query/
       \endverb
@@ -603,7 +773,11 @@
       \field{labeltitlesource}{title}
       \field{month}{3}
       \field{title}{PGQL | Property Graph Query Language}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://pgql-lang.org/
       \endverb
@@ -617,7 +791,11 @@
       \field{labeltitlesource}{title}
       \field{month}{3}
       \field{title}{GSQL: Graph Query Language}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.tigergraph.com/gsql/
       \endverb
@@ -639,13 +817,17 @@
       \strng{authorbibnamehash}{35fb186dd6ecf3e75ea2ede3109bd906}
       \strng{authornamehash}{35fb186dd6ecf3e75ea2ede3109bd906}
       \strng{authorfullhash}{35fb186dd6ecf3e75ea2ede3109bd906}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{3}
       \field{title}{GraphQL: A query language for APIs}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://graphql.org/
       \endverb
@@ -673,7 +855,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Practical gremlin: An apache tinkerpop tutorial}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://kelvinlawrence.net/book/PracticalGremlin.html
       \endverb
@@ -687,7 +873,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{TinkerPop Documentation}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://tinkerpop.apache.org/docs
       \endverb
@@ -769,13 +959,17 @@
       \strng{authorbibnamehash}{feacd4d82692591f68b105d87e24e41f}
       \strng{authornamehash}{feacd4d82692591f68b105d87e24e41f}
       \strng{authorfullhash}{feacd4d82692591f68b105d87e24e41f}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Macrometa}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.macrometa.com/docs/graphs/graph-concepts/graphs-and-indexes
       \endverb
@@ -804,7 +998,11 @@
       \field{labeltitlesource}{title}
       \field{month}{02}
       \field{title}{Geographical layout of the distances between two adjacent stations on the rail network}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://opendata.infrabel.be/explore/dataset/station_to_station/information/?disjunctive.stationfrom_name&disjunctive.stationto_name&sort=stationfrom_name&basemap=jawg.light&location=8,50.51448,4.32709
       \endverb
@@ -844,10 +1042,28 @@
       \field{year}{2019}
     \endentry
     \entry{astar}{misc}{}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \name{author}{1}{}{%
+        {{hash=78d7c16520476bac6552a11c3cd01e99}{%
+           family={Bajer},
+           familyi={B\bibinitperiod},
+           given={Lukáš},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{78d7c16520476bac6552a11c3cd01e99}
+      \strng{fullhash}{78d7c16520476bac6552a11c3cd01e99}
+      \strng{bibnamehash}{78d7c16520476bac6552a11c3cd01e99}
+      \strng{authorbibnamehash}{78d7c16520476bac6552a11c3cd01e99}
+      \strng{authornamehash}{78d7c16520476bac6552a11c3cd01e99}
+      \strng{authorfullhash}{78d7c16520476bac6552a11c3cd01e99}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
       \field{month}{02}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
       \field{year}{2024}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf
       \endverb
@@ -874,8 +1090,8 @@
       \strng{authorbibnamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authornamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authorfullhash}{8b6c59a3c7880c51055cf3864633578b}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{2}

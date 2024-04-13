@@ -1,4 +1,5 @@
 //Q1-4
+//depth x is specified by FOR f IN 1..x
 LET friends = (
     FOR f IN 1..2 ANY @user FRIENDS
     OPTIONS { uniqueVertices: "global", order: "bfs" }
@@ -7,10 +8,18 @@ LET friends = (
 
 RETURN COUNT_DISTINCT(friends)
 
-//Q5-6
-FOR p IN OUTBOUND SHORTEST_PATH
-@start TO @target GRAPH Youtube
+
+//Q5
+FOR p IN ANY SHORTEST_PATH
+@start TO @target FRIENDS
     RETURN p
+
+
+//Q5
+FOR p IN OUTBOUND SHORTEST_PATH
+@start TO @target FRIENDS
+    RETURN p
+
 
 //Q7
 FOR u IN users
@@ -18,6 +27,8 @@ FOR u IN users
     COLLECT WITH COUNT INTO c
     RETURN c
 
+
+//Q8
 FOR u IN users
     FILTER u.firstName == "James"
     COLLECT AGGREGATE a=AVG(u.age)

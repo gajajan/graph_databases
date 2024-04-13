@@ -1,5 +1,5 @@
 //parameters for connector
-url = "embedded:/Users/gajaj/orientdb-tp3-3.2.23/databases/RailNetwork";
+url = "plocal:/orientdb/databases/RailNetwork";
 user = "root";
 password = "root";
 
@@ -10,7 +10,21 @@ graph = OrientGraph.open(url, user, password);
 //for example we can retrieve graph vertices with g.V().valueMap()
 g = graph.traversal();
 
-def unweightedShortestPath(g, start, target, limit=1) {
+//setting colors
+:set string.color white
+:set number.color cyan
+:set vertex.color yellow
+:set edge.color green
+
+def help() {
+    println "unweightedShortestPath(g, start=1048, target=319, limit=1)"
+    println "\tFinds the unweighted shortest path between two railway stations."
+    println "--------------------------------------------------------------------------------"
+    println "weightedShortestPath(g, start=1048, target=319)"
+    println "\tFinds the weighted shortest path between two railway stations."
+}
+
+def unweightedShortestPath(g, start=1048, target=319, limit=1) {
     return g.withSack(0.0).
             V().
             has("Station", "stationId", start).
@@ -33,8 +47,9 @@ def unweightedShortestPath(g, start, target, limit=1) {
                 by(sack())
 }
 
-def weightedShortestPath(g, start, target, limit=1) {
-    return g.withSack(0.0).V().
+def weightedShortestPath(g, start=1048, target=319) {
+    return g.withSack(0.0).
+            V().
             has("Station", "stationId", start).
             repeat(outE("LEADS_TO").
                     sack(sum).by("length").
@@ -49,7 +64,7 @@ def weightedShortestPath(g, start, target, limit=1) {
             until(has("Station", "stationId", target)).
             order().
                 by(sack(), asc).
-            limit(limit).
+            limit(1).
             project("stations", "stationsCount", "totalLength").
                 by(path().
                     unfold().
@@ -57,5 +72,6 @@ def weightedShortestPath(g, start, target, limit=1) {
                     values("stationName").
                     fold()).
                 by(path().count(local).math('(_+1)/2')).
-                by(sack())
+                by(sack()).
+            fold()
 }

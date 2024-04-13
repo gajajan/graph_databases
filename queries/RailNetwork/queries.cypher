@@ -1,41 +1,47 @@
-MATCH (src:Station {stationId: 1048}),
-      (dst:Station {stationId: 319})
-MATCH p = (src)-[:LEADS_TO]-+(dst)
-RETURN reduce(acc = 0, r in relationships(p) | acc + r.length)
-  AS distance
-ORDER BY distance LIMIT 1
+//QUERIES SEPARATED BY NAMES WITH CAPITAL LETTERS
 
-//shortest path - the smallest vertices count
-MATCH (source:Station {stationId: 1048}), (dest:Station {stationId: 319})
+
+//PARAMS SETTING
+:params 
+{
+    "src": 1048,
+    "dst": 319
+}
+
+
+//UNWEIGHTED SHORTEST PATH
+MATCH (source:Station {stationId: $src}), (dest:Station {stationId: $dst})
 MATCH path = shortestPath((source)-[:LEADS_TO*]-(dest))
 RETURN nodes(path) AS stations, length(path) AS pathLength;
 
-//shortest path by property length
+
+//WEIGHTED SHORTEST PATH
+//not working! - very computationally expensive
+MATCH (src:Station {stationId: $src}),
+      (dst:Station {stationId: $dst})
+MATCH p = (src)-[:LEADS_TO]-+(dst)
+RETURN reduce(acc = 0, r in relationships(p) | acc + r.length)
+  AS distance
+ORDER BY distance ASC
+LIMIT 1
+
+
+//WEIGHTED SHORTEST PATH
+//the shortest path of all paths having 1 - 8 edges
 //computationally expensive - it tries every path of length 1 - 8 and takes minimum of them
-//the shortest path has 11 edges
-//there is no need to check cycles in path -> it takes minimum distance
-MATCH (source:Station {stationId: 1048}), (dest:Station {stationId: 1066})
+//there is no need to check cycles in path
+MATCH (source:Station {stationId: $src}), (dest:Station {stationId: $dst})
 MATCH path = (source)-[:LEADS_TO*1..8]-(dest)
 WITH path,
-reduce(l=0, r in relationships(path) | l+r.length) AS length
-ORDER BY length ASC
+reduce(l=0, r in relationships(path) | l+r.length) AS distance
+ORDER BY distance ASC
 LIMIT 1
 RETURN [node IN nodes(path) | node.stationName] AS stations, length(path) AS pathLength, length;
 
 
-//gds library
+//GRAPH PROJECTION
 CALL gds.graph.project(
     'stations',
-    'Station',
-    'LEADS_TO',
-    {
-        relationshipProperties: 'length'
-    }
-);
-
-//a* graph projection
-CALL gds.graph.project(
-    'a*',
     'Station',
     'LEADS_TO',
     {
@@ -44,11 +50,9 @@ CALL gds.graph.project(
     }
 )
 
-//PATHS
 
-//dijkstra algorithm
-
-MATCH (source:Station {stationId: 1048}), (target:Station {stationId: 319})
+//DIJKSTRA'S ALGORITHM
+MATCH (source:Station {stationId: $src}), (target:Station {stationId: $dst})
 CALL gds.shortestPath.dijkstra.stream('stations', {
     sourceNode: source,
     targetNode: target,
@@ -57,24 +61,10 @@ CALL gds.shortestPath.dijkstra.stream('stations', {
 YIELD totalCost, nodeIds
 RETURN  [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS stations, totalCost
 
-//random walk
-MATCH (src:Station )
-WHERE src.stationId < 10
-WITH COLLECT(src) as sourceNodes
-CALL gds.randomWalk.stream(
-  'stations',
-  {
-    sourceNodes: sourceNodes,
-    walkLength: 8,
-    walksPerNode: 1,
-    inOutFactor: 0.2
-  }
-)
-YIELD path
-RETURN [node IN nodes(path) | [node.stationName, node.stationId] ] AS stations
 
-//a*
-MATCH (source:Station {stationId: 1048}), (target:Station {stationId: 319})
+//A*
+//uses latitude and longitude like heuristic
+MATCH (source:Station {stationId: $src}), (target:Station {stationId: $dst})
 CALL gds.shortestPath.astar.stream('a*',{
     sourceNode: source,
     targetNode: target,
@@ -85,35 +75,25 @@ CALL gds.shortestPath.astar.stream('a*',{
 YIELD nodeIds, totalCost
 RETURN  [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS stations, totalCost
 
-//CENTRALITY ALGORITHMS
 
-//pageRank
-
-CALL gds.pageRank.stream('stations')
-YIELD nodeId, score
-RETURN gds.util.asNode(nodeId).stationName AS name, score
-ORDER BY score DESC, name ASC
-LIMIT 10;
-
-//degree centrality
-
-CALL gds.degree.stream('stations')
-YIELD nodeId, score
-WHERE score>8
-RETURN gds.util.asNode(nodeId).stationName AS name, score AS neighboors
-ORDER BY neighboors DESC, name DESC
-
-//betweenness centrality
-
-CALL gds.betweenness.stream('stations')
-YIELD nodeId, score
-RETURN gds.util.asNode(nodeId).stationName AS name, score
-ORDER BY score DESC
-LIMIT 10;
-
-//eigenvector centrality
-
-CALL gds.eigenvector.stream('stations')
-YIELD nodeId, score
-RETURN gds.util.asNode(nodeId).stationName AS name, score
-ORDER BY score DESC, name ASC
+//RANDOM WALK
+//from vertex with id 9 with point distance
+MATCH (src:Station {stationId: 9})
+WITH src
+CALL gds.randomWalk.stream(
+  'stations',
+  {
+    sourceNodes: src,
+    walkLength: 8,
+    walksPerNode: 3,
+    inOutFactor: 0.2,
+    returnFactor: 20
+  }
+)
+YIELD path
+WITH path, src, nodes(path)[-1] AS dst
+RETURN [node IN nodes(path) | node.stationId ] AS stations,
+point.distance(
+    point({longitude: src.longitude, latitude: src.latitude}),
+    point({longitude: dst.longitude, latitude: dst.latitude})
+)

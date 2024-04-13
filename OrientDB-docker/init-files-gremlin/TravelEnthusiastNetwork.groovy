@@ -1,6 +1,6 @@
 
 //parameters for connector
-url = "embedded:/Users/gajaj/orientdb-tp3-3.2.23/databases/TravelEnthusiastNetwork";
+url = "plocal:/orientdb/databases/TravelEnthusiastNetwork";
 user = "root";
 password = "root";
 
@@ -11,11 +11,52 @@ graph = OrientGraph.open(url, user, password);
 //for example we can retrieve graph vertices with g.V().valueMap()
 g = graph.traversal();
 
-def getFirstNeighborhood(g, userId) {
+//setting colors
+:set string.color white
+:set number.color cyan
+:set vertex.color yellow
+:set edge.color green
+
+def help() {
+    println "firstNeighborhood(g, userId=10)"
+    println "\tReturns the first neighborhood of a user with specified userId."
+    println "--------------------------------------------------------------------------------"
+    println "secondNeighborhood(g, userId=10)"
+    println "\tReturns the second neighborhood of a user with specified userId."
+    println "--------------------------------------------------------------------------------"
+    println "secondNeighborhoodWithoutFirst(g, userId=10)"
+    println "\tReturns the second neighborhood of a user with specified userId, excluding the first neighborhood."
+    println "--------------------------------------------------------------------------------"
+    println "coTravelers(g, userId=10)"
+    println "\tReturns co-travelers of a user with specified userId."
+    println "--------------------------------------------------------------------------------"
+    println "visitedDestinations(g, userId=10)"
+    println "\tReturns visited destinations of a user with specified userId and the count of visits."
+    println "--------------------------------------------------------------------------------"
+    println "destinationsByFavouriteActivities(g, userId=10)"
+    println "\tReturns destinations based on activities liked by the user."
+    println "--------------------------------------------------------------------------------"
+    println "destinationsByActivityList(g, activityList=['Sightseeing', 'Water Sports'])"
+    println "\tReturns destinations based on a list of activities."
+    println "--------------------------------------------------------------------------------"
+    println "recommendDestinationsByActivityList(g, userId=10, activityList)"
+    println "\tRecommends destinations to a user based on a list of activities and ratings."
+     println "--------------------------------------------------------------------------------"
+    println "recommendDestinationsByFavouriteActivities(g, userId=10)"
+    println "\tRecommends destinations to a user based on activities liked by the user and ratings."
+    println "--------------------------------------------------------------------------------"
+    println "favouriteMonth(g, destinationId=56)"
+    println "\tReturns the favorite month for a given destination based on ratings."
+    println "--------------------------------------------------------------------------------"
+    println "searchUsers(g, substr='RoB')"
+    println "\tSearches for users based on a substring of their first name or last name."
+}
+
+def firstNeighborhood(g, userId=10) {
     return g.V().has('User', 'userId', userId).out('FOLLOWS').valueMap()
 }
 
-def getSecondNeighborhood(g, userId) {
+def secondNeighborhood(g, userId=10) {
     return g.V().has("User", "userId", userId).
             out("FOLLOWS").
             out("FOLLOWS").
@@ -23,7 +64,7 @@ def getSecondNeighborhood(g, userId) {
             valueMap();
 }
 
-def getSecondNeighborhoodWithoutFirst(g, userId) {
+def secondNeighborhoodWithoutFirst(g, userId=10) {
     return g.V().has("User", "userId", userId).
             match(__.as('me').out('FOLLOWS').as('f'), 
                 __.as('f').out('FOLLOWS').where(neq('me')).as('fof'),
@@ -33,7 +74,7 @@ def getSecondNeighborhoodWithoutFirst(g, userId) {
             valueMap()
 }
 
-def getTravelBuddies(g, userId){
+def coTravelers(g, userId=10){
     return g.V().has("User", "userId", userId).as("me").
             out("PARTICIPATED").
             in("PARTICIPATED").
@@ -42,7 +83,7 @@ def getTravelBuddies(g, userId){
             valueMap()
 }
 
-def getVisitedDestinations(g, userId){
+def visitedDestinations(g, userId=10){
     return g.V().has("User", "userId", userId).
             out("PARTICIPATED").
             out("LED_TO").
@@ -52,12 +93,12 @@ def getVisitedDestinations(g, userId){
             order().
                 by(values, desc).
                 by(keys).
-            project("destinationName", "count").
+            project("name", "count").
                 by(keys).
                 by(values)
 }
 
-def getDestinationsByActivities(g, userId) {
+def destinationsByFavouriteActivities(g, userId=10) {
     return g.V().has('User', 'userId', userId).as('u').
             out('LIKES').as('a').
             in('OFFERS').as('d').
@@ -68,12 +109,12 @@ def getDestinationsByActivities(g, userId) {
             order().
                 by(values, desc).
                 by(keys).
-            project("destinationName", "count").
+            project("name", "count").
                 by(keys).
                 by(values)
 }
 
-def getDestinationsByActivityList(g, activityList) {
+def destinationsByActivityList(g, activityList=["Sightseeing", "Water Sports"]) {
     return g.V().hasLabel('Destination').as('d').
             where(
                 out('OFFERS').
@@ -84,7 +125,7 @@ def getDestinationsByActivityList(g, activityList) {
             valueMap()
 }
 
-def recommendDestinationsByActivityList(g, userId, activityList) {
+def recommendDestinationsByActivityList(g, userId=10, activityList=["Sightseeing", "Water Sports"]) {
     return g.V().has('User', 'userId', userId).as('u').
             V().hasLabel('Destination').as('d').
             where(
@@ -112,7 +153,29 @@ def recommendDestinationsByActivityList(g, userId, activityList) {
                     option(0, constant('Not rated.')))
 }
 
-def favouriteMonth(g, destinationId) {
+def recommendDestinationsByFavouriteActivities(g, userId=10) {
+    return g.V().has('User', 'userId', userId).as('u').
+            out('LIKES').
+            in('OFFERS').as('d').
+            not(where(__.in('LED_TO').in('PARTICIPATED').as('u'))).
+            group().
+                by(identity()).
+                by(coalesce(__.in('LED_TO').
+                                in('ABOUT').
+                                values('rating').mean(), 
+                                constant(0))).
+            unfold().
+            order().
+                by(values, desc).
+            limit(3).
+            project('name', 'rating').
+                by(select(keys).values('destinationName')).
+                by(choose(select(values)).
+                    option(gt(0), (select(values))).
+                    option(0, constant('Not rated.')));
+}
+
+def favouriteMonth(g, destinationId=56) {
     return g.V().has("Destination", "destinationId", destinationId).
             in("LED_TO").
             group().
@@ -132,7 +195,7 @@ def favouriteMonth(g, destinationId) {
                     option(0, constant('Not rated.')))
 }
 
-def searchUsers(g, substr) {
+def searchUsers(g, substr="RoB") {
     return g.V().hasLabel("User").
             or(
                 has("firstName", TextP.regex("(?i)" + substr)),

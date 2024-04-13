@@ -12,6 +12,9 @@
       "dbPassword": "root",
       "classes": [
         {"name": "Station", "extends": "V"}
+      ],
+      "indexes": [
+        {"class":"Station", "fields":["stationId:integer"], "type":"UNIQUE" }
       ]
     }
   }

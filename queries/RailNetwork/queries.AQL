@@ -1,4 +1,7 @@
-//unweighted shortest path
+//QUERIES SEPARATED BY NAMES WITH CAPITAL LETTERS
+
+
+//UNWEIGHTED SHORTEST PATH
 LET shortestPath = (
     FOR v, e IN OUTBOUND SHORTEST_PATH @from TO @to 
         GRAPH 'Graph'
@@ -11,7 +14,8 @@ LET stationsCount = LENGTH(stations)
 
 RETURN { stations, totalLength, stationsCount }
 
-//weighted shortest path
+
+//WEIGHTED SHORTEST PATH
 LET shortestPath = (
     FOR v, e IN OUTBOUND SHORTEST_PATH @from TO @to 
         GRAPH 'Graph'
@@ -24,14 +28,3 @@ LET totalLength = SUM(FOR path IN shortestPath RETURN path.edge_length)
 LET stationsCount = LENGTH (stations)
 
 RETURN { stations, totalLength, stationsCount }
-
-//k-paths algorithm with max depth sorted by sum of weights
-
-FOR p IN 1..10 OUTBOUND K_PATHS @from TO @to
-GRAPH 'Graph'
-    SORT SUM(p.edges[*].length), LENGTH(p.vertices[*].stationName)
-    RETURN {
-        places: p.vertices[*].stationName,
-        depth: LENGTH(p.vertices[*].stationName) - 1,
-        totalLength: SUM(p.edges[*].length)
-    }

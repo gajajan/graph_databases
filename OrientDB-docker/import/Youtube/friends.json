@@ -1,6 +1,6 @@
 {
   "configuration": {"psrsllel": true},
-    "source": { "file": { "path": "C:/Users/gajaj/Desktop/School/Bachelor/graph_databases/csv/Youtube/com-youtube.ungraph.tsv" } },
+    "source": { "file": { "path": "/csv/Youtube/com-youtube.ungraph.tsv" } },
     "extractor": { 
       "csv": {
         "columns": ["FromNodeId:integer","ToNodeId:integer"],
@@ -19,7 +19,7 @@
     ],
     "loader": {
       "orientdb": {
-         "dbURL": "plocal:../databases/YoutubeII",
+         "dbURL": "plocal:../databases/Youtube",
          "dbUser": "root",
          "dbPassword": "root",
          "dbType": "graph",

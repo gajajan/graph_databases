@@ -8,6 +8,8 @@ COPY import /import/
 
 COPY youtube-test.sh /import-test.sh
 
+COPY init-files-gremlin /init-files-gremlin/
+
 RUN /orientdb/bin/oetl.sh /import/RailNetwork/stations.json
 RUN /orientdb/bin/oetl.sh /import/RailNetwork/leads_to.json
 RUN /orientdb/bin/oetl.sh /import/TravelEnthusiastNetwork/activities.json

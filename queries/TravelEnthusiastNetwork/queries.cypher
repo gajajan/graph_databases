@@ -1,53 +1,81 @@
-//USERS'S NEIGHBORHOOD
+//QUERIES SEPARATED BY NAMES WITH CAPITAL LETTERS
 
+
+//PARAMS SETTING
 :params 
 {
     "user": 10,
     "activity_list": ["Sightseeing", "Water Sports"],
-    "destId": 56
+    "destId": 56,
+    "substr": "RoB"
 }
 
-//first neighborhood
+
+//FIRST NEIGHBORHOOD
 MATCH (:User {userId:$user})-[:FOLLOWS]->(f)
 RETURN f.userId, f.firstName, f.lastName;
 
-//second neighborhood
+
+//SECOND NEIGHBORHOOD
 MATCH (u:User {userId:$user})-[:FOLLOWS*2]->(fof)
 RETURN DISTINCT fof.userId, fof.firstName, fof.lastName;
 
-//second neighborhood without first neighborhood
+
+//SECOND NEIGHBORHOOD WITHOUT FIRST
 MATCH (u:User {userId:$user})-[:FOLLOWS*2]->(fof)
 WHERE NOT exists((u)-[:FOLLOWS]->(fof))  AND fof <> u
 RETURN DISTINCT fof;
 
 
-// DESTINATION RECOMMENDATION
+//VISITED DESTINATIONS
+//returns a destination name and
+// a number indicating how many times user visited specific destination
+MATCH (u:User {userId:$user})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d:Destination)
+RETURN d.destinationName, COUNT(d) AS count
+ORDER BY count DESC, d.destinationName ASC;
 
-//returns destinations which offers activities in list
 
+//CO-TRAVELERS
+//returns user's id and name
+MATCH (u:User {userId:$user})-[:PARTICIPATED]->(:Journey)<-[:PARTICIPATED]-(f:User)
+WHERE NOT f IS u
+RETURN DISTINCT f.userId AS userId, f.firstName AS firstName, f.lastName AS lastName, COUNT (f) AS count
+ORDER BY firstName, lastName
+
+
+//DESTINATIONS OFFERING ALL ACTIVITIES IN LIST
 MATCH (a:TravelActivity) WHERE a.activityName IN $activity_list
 WITH collect(a) AS activities
 MATCH (d:Destination)
 WHERE ALL(x IN activities WHERE (d)-[:OFFERS]->(x))
-RETURN d.destinationName;
+RETURN d;
 
-//offers 3 destinations that the user hasnt visited
-//destinations has to offer all activities in list
-//returns destination's properties and
-// rating of this destination
-//order by rating average
 
+//DESTINATION RECOMMENDATION BASED ON ACTIVITY LIST
+//offers 3 destinations that the user has not visited
+//the destination must offer all activities whose name is in the input list
+//returns the destination names and their rating sorted by average rating
 MATCH (a:TravelActivity) WHERE a.activityName IN $activity_list
 WITH collect(a) AS activities
 MATCH (d:Destination)
 WHERE ALL(a IN activities WHERE (d)-[:OFFERS]->(a))
 AND NOT exists ( (:User {userId: $user})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d) )
 OPTIONAL MATCH (d)<-[:LED_TO]-()<-[:ABOUT]-(r:Rating)
-WITH d, coalesce(avg(r.rating), "Not rated.") as rate
-RETURN d.destinationName AS name, rate
-ORDER BY rate DESC;
+WITH d, coalesce(avg(r.rating), "Not rated.") as rating
+RETURN d.destinationName AS name, rating
+ORDER BY rating DESC
+LIMIT 3;
 
-//3 unvisited destinations offering activities, that user likes
+
+//DESTINATIONS OFFERING ACTIVITIES THAT USER LIKES
+MATCH (:User {userId: $user})-[:LIKES]->(a:TravelActivity)<-[:OFFERS]-(d:Destination)
+RETURN d.destinationName AS name, COUNT(a) AS count
+ORDER BY count DESC, name;
+
+
+//DESTINATION RECOMMENDATION BASED ON USER'S FAVOURITE ACTIVITIES
+// returns a a destinations and
+// number indicating how many activities has the destination with specific user in common 
 MATCH (u:User {userId: $user})-[:LIKES]->(a:TravelActivity)<-[:OFFERS]-(d:Destination)
 WHERE NOT (u)-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d)
 OPTIONAL MATCH (d)<-[:LED_TO]-()<-[:ABOUT]-(r:Rating)
@@ -56,36 +84,19 @@ RETURN d.destinationName AS name, rate
 ORDER BY rate DESC
 LIMIT 3;
 
-//USER'S VISITED DESTINATIONS
-
-//returns a destination and
-// a number indicating how many times user visited specific destination
-
-MATCH (u:User {userId:$user})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d:Destination)
-RETURN d.destinationName, COUNT(d) AS count
-ORDER BY count DESC, d.destinationName ASC;
-
-
-//USER'S TRAVEL BUDDIES
-
-//returns users
-MATCH (u:User {userId:$user})-[:PARTICIPATED]->(:Journey)<-[:PARTICIPATED]-(f:User)
-WHERE NOT f IS u
-RETURN DISTINCT f.userId AS userId, f.firstName AS firstName, f.lastName AS lastName, COUNT (f) AS count
-ORDER BY firstName, lastName
-
 
 //THE MOST FAVOURITE MONTH FOR VISITING SPECIFIC DESTINATION
-
-//returns number indicating month in year
+//returns a number indicating the month of the year
+//and the input destination rating for that month
 MATCH (d:Destination {destinationId: $destId})<-[:LED_TO]-(j:Journey)<-[:ABOUT]-(r:Rating)
 WITH d, j.journeyStart.month AS month, coalesce(avg(r.rating), 'Not rated.') as rate
 ORDER BY rate DESC
 LIMIT 1
 RETURN month, rate;
 
-//TEXT SEARCH
 
+//TEXT SEARCH
+//returns users whose name contains the input substring
 MATCH (u:User)
 WHERE toUpper(u.firstName) CONTAINS toUpper($substr)
 OR toUpper(u.lastName) CONTAINS toUpper($substr)

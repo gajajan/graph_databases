@@ -1,16 +1,14 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'kidiplom.blg'
-[153] biber-MSWIN64:340> INFO - === 
-[202] Biber.pm:418> INFO - Reading 'kidiplom.bcf'
-[346] Biber.pm:978> INFO - Found 38 citekeys in bib section 0
-[374] Biber.pm:4401> INFO - Processing section 0
-[395] Biber.pm:4592> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
-[459] bibtex.pm:1713> INFO - LaTeX decoding ...
-[517] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
-[711] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
-[711] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[711] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
-[746] bbl.pm:654> INFO - Writing 'kidiplom.bbl' with encoding 'UTF-8'
-[764] bbl.pm:757> INFO - Output to kidiplom.bbl
-[764] Biber.pm:130> WARN - legacy month field 'Dec' in entry 'experimentalComparision' is not an integer - this will probably not sort properly.
-[764] Biber.pm:132> INFO - WARNINGS: 1
+[130] biber-MSWIN64:340> INFO - === 
+[168] Biber.pm:418> INFO - Reading 'kidiplom.bcf'
+[276] Biber.pm:978> INFO - Found 40 citekeys in bib section 0
+[294] Biber.pm:4401> INFO - Processing section 0
+[307] Biber.pm:4592> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
+[357] bibtex.pm:1713> INFO - LaTeX decoding ...
+[411] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
+[594] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
+[595] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[595] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
+[621] bbl.pm:654> INFO - Writing 'kidiplom.bbl' with encoding 'UTF-8'
+[635] bbl.pm:757> INFO - Output to kidiplom.bbl
