@@ -3,7 +3,6 @@ Repository for a bachelor's thesis focusing on graph databases.
 
 ## Content
 * The `*-docker` folders contain the necessary files for building Docker images.
-* The `obhajoba` folder contains files for the presentation of the bachelor's thesis.
 * The `kidiplom` folder contains the current version of the text document.
 * The `queries` folder includes queries for different datasets mentioned in the text document.
   - Files with Cypher queries
