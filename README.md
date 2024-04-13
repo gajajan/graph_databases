@@ -49,12 +49,13 @@ docker run -p 7474:7474 -p 7687:7687 neo4j-database:1.0
 
 The Neo4j Browser is available at the IP address http://localhost:7474. There is __no__ initial password and username because authentification in docker file is set to `none`.
 
-Create a database in the Neo4j Browser with the command:
+Create a database with the name _<DATABASE_NAME>_ in the Neo4j Browser with the command:
 ```cypher
 CREATE DATABASE <DATABASE_NAME>
 ```
+You need four databases __travelenthusiastnetwork__, __railnetwork__, __youtube__ and one for testing algorithms.
 
-Then select this database with the command:
+Then you can select database with the name _<DATABASE_NAME>_ with the command:
 ```cypher
 :use <DATABASE_NAME>
 ```
