@@ -22,7 +22,8 @@ docker run -p 2480:2480 orientdb-database:1.0
 
 OrientDB Studio is available at the IP address http://localhost:2480. Initial password and username are set to `root`. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use in the interactive shell
 ```bash
-sh import-test.sh
+sh youtube-import-test.sh
+sh youtube-properties-import.sh
 ```
 
 The Gremlin Console is located in the `/orientdb/bin/` folder. You can connect to the database with the name _<SELECTED_DATABASE>_ using `/orientdb/bin/gremlin.sh` with the following commands:
@@ -38,7 +39,7 @@ Alternatively, you can use initialization files to connect to the database with 
 ```bash
 /orientdb/bin/gremlin.sh -i /init-files-gremlin/<SELECTED_DATABASE>.groovy -Xmx4g
 ```
-These files also contain functions with prepared queries, which are more convenient to use. List of these functions is printed by `help()` function. :warning: Every function has first parameter `g`.
+These files also contain functions with prepared queries, which are more convenient to use. List of these functions is printed by `help()` function. :warning: Every function has first parameter `g`. For __Youtube__ database functions return measured time and result.
 
 ### Neo4j
 ```bash
@@ -75,5 +76,8 @@ sh import.sh
 ```
 For testing the import in ArangoDB, use in the interactive shell
 ```bash
-sh import-test.sh
+sh youtube-import-test.sh
+sh youtube-properties-import.sh
 ```
+
+In AQL queries, bind parameters are used. More information about them can be found at https://docs.arangodb.com/3.12/aql/fundamentals/bind-parameters/.

@@ -1,7 +1,7 @@
 //Q1-4
 //depth x is specified by FOR f IN 1..x
 LET friends = (
-    FOR f IN 1..2 ANY @user FRIENDS
+    FOR f IN 1..2 ANY "User/1" FRIENDS
     OPTIONS { uniqueVertices: "global", order: "bfs" }
         RETURN f
 )
@@ -11,13 +11,13 @@ RETURN COUNT_DISTINCT(friends)
 
 //Q5
 FOR p IN ANY SHORTEST_PATH
-@start TO @target FRIENDS
+"User/12000" TO "User/1047" FRIENDS
     RETURN p
 
 
 //Q5
 FOR p IN OUTBOUND SHORTEST_PATH
-@start TO @target FRIENDS
+"User/12000" TO "User/1047" FRIENDS
     RETURN p
 
 
