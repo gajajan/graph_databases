@@ -62,6 +62,16 @@ Then you can select database with the name _<DATABASE_NAME>_ with the command:
 
 Import data into the selected database in the Neo4j Browser using the Cypher files located in the `/import/` folder. This method was also used to test the import in Neo4j.
 
+In Cypher queries, parameters are used. Values _y1,...,yn_ of parameters _x1,...,xn_ can be specified with command:
+```cypher
+:params 
+{
+    "x1": y1,
+    ...,
+    "xn": yn
+}
+```
+
 ### ArangoDB
 ```bash
 docker build -t arangodb-database:1.0 . 

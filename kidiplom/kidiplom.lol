@@ -1,5 +1,5 @@
 \contentsline {listing}{\numberline {1}{\ignorespaces Připojení se k databázi OrientDB v Gremlin Console.}}{22}{listing.1}%
-\contentsline {listing}{\numberline {2}{\ignorespaces Unit test.}}{33}{listing.2}%
+\contentsline {listing}{\numberline {2}{\ignorespaces Unit test}}{33}{listing.2}%
 \contentsline {listing}{\numberline {3}{\ignorespaces Předdefinovaná cesta.}}{38}{listing.3}%
 \contentsline {listing}{\numberline {4}{\ignorespaces Cesty v neohodnoceném grafu.}}{39}{listing.4}%
 \contentsline {listing}{\numberline {5}{\ignorespaces Nejkratší cesta v ohodnoceném grafu.}}{40}{listing.5}%

@@ -592,8 +592,8 @@
       \strng{authorbibnamehash}{54b50b84031ef09256008a7541557b35}
       \strng{authornamehash}{54b50b84031ef09256008a7541557b35}
       \strng{authorfullhash}{54b50b84031ef09256008a7541557b35}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{urlday}{12}
       \field{urlmonth}{3}
@@ -687,6 +687,58 @@
       \endverb
       \verb{url}
       \verb https://www.orientdb.com/docs/last/index.html
+      \endverb
+    \endentry
+    \entry{benchmark}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=095ad66634f28e80a7dad2202b95edc1}{%
+           family={Macak},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a14125c7f7a516029ef4998169c78c36}{%
+           family={Stovcik},
+           familyi={S\bibinitperiod},
+           given={Matus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d93cb885e90555f831b531662f5fc209}{%
+           family={Buhnova},
+           familyi={B\bibinitperiod},
+           given={Barbora},
+           giveni={B\bibinitperiod}}}%
+        {{hash=edda635d675189d11bbb544b3cfc27d7}{%
+           family={Merjavy},
+           familyi={M\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{fullhash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{bibnamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{authorbibnamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{authornamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \strng{authorfullhash}{a73a5f52a90e11d707cad2bd0035c1c9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Annals of Computer Science and Information Systems}
+      \field{issn}{2300-5963}
+      \field{month}{9}
+      \field{series}{FedCSIS 2020}
+      \field{title}{How well a multi-model database performs against its single-model variants: Benchmarking OrientDB with Neo4j and MongoDB}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.15439/2020f76
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.15439/2020F76
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.15439/2020F76
       \endverb
     \endentry
     \entry{arangoDBDoc}{misc}{}
@@ -786,8 +838,8 @@
       \endverb
     \endentry
     \entry{gsql}{misc}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{month}{3}
       \field{title}{GSQL: Graph Query Language}
@@ -938,8 +990,8 @@
       \strng{authorbibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
       \strng{authornamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
       \strng{authorfullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
@@ -1071,6 +1123,49 @@
       \verb https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf
       \endverb
     \endentry
+    \entry{louvain}{article}{}
+      \name{author}{3}{}{%
+        {{hash=b61c7b6eeaa58572d109f9c87e5a61b0}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c1c353099ba8159299511ad1ce163dcb}{%
+           family={Halappanavar},
+           familyi={H\bibinitperiod},
+           given={Mahantesh},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6019de79ff3a0c0a0284d54094dc3e5c}{%
+           family={Kalyanaraman},
+           familyi={K\bibinitperiod},
+           given={Ananth},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{397740ae110f9a9caed4e1c37e7e429f}
+      \strng{fullhash}{397740ae110f9a9caed4e1c37e7e429f}
+      \strng{bibnamehash}{397740ae110f9a9caed4e1c37e7e429f}
+      \strng{authorbibnamehash}{397740ae110f9a9caed4e1c37e7e429f}
+      \strng{authornamehash}{397740ae110f9a9caed4e1c37e7e429f}
+      \strng{authorfullhash}{397740ae110f9a9caed4e1c37e7e429f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Parallel Heuristics for Scalable Community Detection}
+      \field{volume}{abs/1410.1237}
+      \field{year}{2014}
+      \verb{eprint}
+      \verb 1410.1237
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1410.1237
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1410.1237
+      \endverb
+    \endentry
     \entry{youtubeDataset}{misc}{}
       \name{author}{2}{}{%
         {{hash=900d107125ff0ca84698cb909e4f6c51}{%
@@ -1090,8 +1185,8 @@
       \strng{authorbibnamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authornamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authorfullhash}{8b6c59a3c7880c51055cf3864633578b}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{2}
@@ -1102,58 +1197,6 @@
       \endverb
       \verb{url}
       \verb https://snap.stanford.edu/data/com-Youtube.html
-      \endverb
-    \endentry
-    \entry{benchmark}{inproceedings}{}
-      \name{author}{4}{}{%
-        {{hash=095ad66634f28e80a7dad2202b95edc1}{%
-           family={Macak},
-           familyi={M\bibinitperiod},
-           given={Martin},
-           giveni={M\bibinitperiod}}}%
-        {{hash=a14125c7f7a516029ef4998169c78c36}{%
-           family={Stovcik},
-           familyi={S\bibinitperiod},
-           given={Matus},
-           giveni={M\bibinitperiod}}}%
-        {{hash=d93cb885e90555f831b531662f5fc209}{%
-           family={Buhnova},
-           familyi={B\bibinitperiod},
-           given={Barbora},
-           giveni={B\bibinitperiod}}}%
-        {{hash=edda635d675189d11bbb544b3cfc27d7}{%
-           family={Merjavy},
-           familyi={M\bibinitperiod},
-           given={Michal},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{a73a5f52a90e11d707cad2bd0035c1c9}
-      \strng{fullhash}{a73a5f52a90e11d707cad2bd0035c1c9}
-      \strng{bibnamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
-      \strng{authorbibnamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
-      \strng{authornamehash}{a73a5f52a90e11d707cad2bd0035c1c9}
-      \strng{authorfullhash}{a73a5f52a90e11d707cad2bd0035c1c9}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Annals of Computer Science and Information Systems}
-      \field{issn}{2300-5963}
-      \field{month}{9}
-      \field{series}{FedCSIS 2020}
-      \field{title}{How well a multi-model database performs against its single-model variants: Benchmarking OrientDB with Neo4j and MongoDB}
-      \field{year}{2020}
-      \verb{doi}
-      \verb 10.15439/2020f76
-      \endverb
-      \verb{urlraw}
-      \verb http://dx.doi.org/10.15439/2020F76
-      \endverb
-      \verb{url}
-      \verb http://dx.doi.org/10.15439/2020F76
       \endverb
     \endentry
     \entry{experimentalComparision}{article}{}
@@ -1180,8 +1223,8 @@
       \strng{authorbibnamehash}{f4ce85f39265e8336e7d030faaa9b63a}
       \strng{authornamehash}{f4ce85f39265e8336e7d030faaa9b63a}
       \strng{authorfullhash}{f4ce85f39265e8336e7d030faaa9b63a}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{12}
