@@ -4,7 +4,7 @@
 //VARIABLES SETTING
 user = 10;
 activityList = ["Sightseeing", "Water Sports"];
-destination = 56;
+destination = 61;
 substr = "RoB";
 
 
@@ -48,8 +48,7 @@ g.V().has("User", "userId", user).
 
 //CO-TRAVELERS
 //returns users map
-g.V().has("User", "userId", user).
-    as("me").
+g.V().has("User", "userId", user).as("me").
     out("PARTICIPATED").
     in("PARTICIPATED").
     where(neq("me")).
@@ -106,11 +105,12 @@ g.V().has('User', 'userId', user).as('u').
 
 
 //DESTINATIONS OFFERING ACTIVITIES THAT USER LIKES
-// returns a a destinations and
+// returns a destinations and
 // number indicating how many activities has the destination with specific user in common 
-g.V().has('User', 'userId', user).
+g.V().has('User', 'userId', user).as('u').
     out('LIKES').as('a').
     in('OFFERS').as('d').
+    not(where(__.in('LED_TO').in('PARTICIPATED').as('u'))).
     groupCount().
         by("destinationName").
     unfold().
@@ -148,23 +148,18 @@ g.V().has('User', 'userId', user).as('u').
 //returns a number indicating the month of the year
 //and the input destination rating for that month
 g.V().has("Destination", "destinationId", destination).
-    in("LED_TO").
-    group().
-        by(values('journeyStart').
-            map{it.get().getMonth() + 1 }).
-        by(coalesce(__.in('ABOUT').
-                    values('rating').mean(), 
-                    constant(0))).
-    unfold().
-    order().
-        by(values, desc).
-    limit(1).
-    project("Month", "Rating").
-        by(keys).
-        by(choose(select(values)).
-            option(gt(0), (select(values))).
-            option(0, constant('Not rated.')));
-
+ inE("LED_TO").
+  group().by(values("startDate").map{it.get().getMonth() + 1}).
+  unfold().
+  project("month", "rating").
+    by(keys).
+    by(select(values).unfold().
+        outV().in('ABOUT').values('rating').mean().fold().
+        coalesce(unfold(),constant('not rated'))).
+  order().
+    by(__.select("rating").map { it.get() instanceof Number ? 0 : 1 }).
+    by(__.select("rating"), desc).
+  limit(3)
 
 //TEXT SEARCH
 //returns users whose name contains the input substring

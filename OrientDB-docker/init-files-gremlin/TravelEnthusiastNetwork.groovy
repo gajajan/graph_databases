@@ -39,13 +39,13 @@ def help() {
     println "destinationsByActivityList(g, activityList=['Sightseeing', 'Water Sports'])"
     println "\tReturns destinations based on a list of activities."
     println "--------------------------------------------------------------------------------"
-    println "recommendDestinationsByActivityList(g, userId=10, activityList)"
+    println "recommendDestinationsByActivityList(g, userId=10, activityList=['Sightseeing', 'Water Sports'])"
     println "\tRecommends destinations to a user based on a list of activities and ratings."
-     println "--------------------------------------------------------------------------------"
+    println "--------------------------------------------------------------------------------"
     println "recommendDestinationsByFavouriteActivities(g, userId=10)"
     println "\tRecommends destinations to a user based on activities liked by the user and ratings."
     println "--------------------------------------------------------------------------------"
-    println "favouriteMonth(g, destinationId=56)"
+    println "favouriteMonth(g, destinationId=7)"
     println "\tReturns the favorite month for a given destination based on ratings."
     println "--------------------------------------------------------------------------------"
     println "searchUsers(g, substr='RoB')"
@@ -53,7 +53,7 @@ def help() {
 }
 
 def firstNeighborhood(g, userId=10) {
-    return g.V().has('User', 'userId', userId).out('FOLLOWS').valueMap()
+    return g.V().has('User', 'userId', userId).out('FOLLOWS').valueMap();
 }
 
 def secondNeighborhood(g, userId=10) {
@@ -71,16 +71,24 @@ def secondNeighborhoodWithoutFirst(g, userId=10) {
                 __.not(__.as('me').out('FOLLOWS').as('fof'))).
             select('fof').
             dedup().
-            valueMap()
+            valueMap();
 }
 
 def coTravelers(g, userId=10){
-    return g.V().has("User", "userId", userId).as("me").
+    return g.V().has("User", "userId", user).as("me").
             out("PARTICIPATED").
             in("PARTICIPATED").
-            dedup().
             where(neq("me")).
-            valueMap()
+            groupCount().
+                by().
+            unfold().
+            order().
+                by(select(keys).values('firstName')).
+                by(select(keys).values('lastName')).
+            project("firstName", "lastName", "count").
+                by(select(keys).values('firstName')).
+                by(select(keys).values('lastName')).
+                by(values);
 }
 
 def visitedDestinations(g, userId=10){
@@ -95,7 +103,7 @@ def visitedDestinations(g, userId=10){
                 by(keys).
             project("name", "count").
                 by(keys).
-                by(values)
+                by(values);
 }
 
 def destinationsByFavouriteActivities(g, userId=10) {
@@ -111,7 +119,7 @@ def destinationsByFavouriteActivities(g, userId=10) {
                 by(keys).
             project("name", "count").
                 by(keys).
-                by(values)
+                by(values);
 }
 
 def destinationsByActivityList(g, activityList=["Sightseeing", "Water Sports"]) {
@@ -122,7 +130,7 @@ def destinationsByActivityList(g, activityList=["Sightseeing", "Water Sports"]) 
                 count().
                 is(eq(activityList.size()))
             ).
-            valueMap()
+            valueMap();
 }
 
 def recommendDestinationsByActivityList(g, userId=10, activityList=["Sightseeing", "Water Sports"]) {
@@ -150,7 +158,7 @@ def recommendDestinationsByActivityList(g, userId=10, activityList=["Sightseeing
                 by(select(keys).values('destinationName')).
                 by(choose(select(values)).
                     option(gt(0), (select(values))).
-                    option(0, constant('Not rated.')))
+                    option(0, constant('Not rated.')));
 }
 
 def recommendDestinationsByFavouriteActivities(g, userId=10) {
@@ -175,24 +183,20 @@ def recommendDestinationsByFavouriteActivities(g, userId=10) {
                     option(0, constant('Not rated.')));
 }
 
-def favouriteMonth(g, destinationId=56) {
-    return g.V().has("Destination", "destinationId", destinationId).
-            in("LED_TO").
-            group().
-                by(values('journeyStart').
-                    map{it.get().getMonth() + 1 }).
-                by(coalesce(__.in('ABOUT').
-                            values('rating').mean(), 
-                            constant(0))).
+def favouriteMonth(g, destinationId=7) {
+    return g.V().has("Destination", "destinationId", destination).
+            inE("LED_TO").
+            group().by(values("startDate").map{it.get().getMonth() + 1}).
             unfold().
-            order().
-                by(values, desc).
-            limit(1).
-            project("Month", "Rating").
+            project("month", "rating").
                 by(keys).
-                by(choose(select(values)).
-                    option(gt(0), (select(values))).
-                    option(0, constant('Not rated.')))
+                by(select(values).unfold().
+                    outV().in('ABOUT').values('rating').mean().fold().
+                    coalesce(unfold(),constant('not rated'))).
+            order().
+                by(__.select("rating").map { it.get() instanceof Number ? 0 : 1 }).
+                by(__.select("rating"), desc).
+            limit(3);
 }
 
 def searchUsers(g, substr="RoB") {
@@ -202,5 +206,5 @@ def searchUsers(g, substr="RoB") {
                 has("lastName", TextP.regex("(?i)" + substr))
             ).
             dedup().
-            valueMap()
+            valueMap();
 }

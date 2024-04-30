@@ -6,7 +6,7 @@
 {
     "user": 10,
     "activity_list": ["Sightseeing", "Water Sports"],
-    "destId": 56,
+    "destId": 7,
     "substr": "RoB"
 }
 
@@ -88,11 +88,12 @@ LIMIT 3;
 //THE MOST FAVOURITE MONTH FOR VISITING SPECIFIC DESTINATION
 //returns a number indicating the month of the year
 //and the input destination rating for that month
-MATCH (d:Destination {destinationId: $destId})<-[:LED_TO]-(j:Journey)<-[:ABOUT]-(r:Rating)
-WITH d, j.journeyStart.month AS month, coalesce(avg(r.rating), 'Not rated.') as rate
-ORDER BY rate DESC
-LIMIT 1
-RETURN month, rate;
+MATCH (d:Destination {destinationId: $destId})<-[l:LED_TO]-(j:Journey)
+OPTIONAL MATCH (j)<-[:ABOUT]-(r:Rating)
+RETURN l.startDate.month AS month, 
+coalesce(avg(r.rating), "not rated") as rating
+ORDER BY rating DESC
+LIMIT 3;
 
 
 //TEXT SEARCH

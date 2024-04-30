@@ -41,6 +41,8 @@ Alternatively, you can use initialization files to connect to the database with 
 ```
 These files also contain functions with prepared queries, which are more convenient to use. List of these functions is printed by `help()` function. :warning: Every function has first parameter `g`. For __Youtube__ database functions return measured time and result.
 
+The usage of lightweight edges must be defined before import in JSON files by specifying the `useLightweightEdges` parameter as `true`.
+
 ### Neo4j
 ```bash
 docker build -t neo4j-database:1.0 .

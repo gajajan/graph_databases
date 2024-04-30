@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{g}\PYG{o}{.}\PYG{n+na}{V}\PYG{o}{().}\PYG{n+na}{has}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}Destination\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}destinationId\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{l+m+mi}{7}\PYG{o}{).}
+\PYG{+w}{  }\PYG{n}{inE}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}LED\PYGZus{}TO\PYGZdq{}}\PYG{o}{).}
+\PYG{+w}{  }\PYG{n}{group}\PYG{o}{().}\PYG{n+na}{by}\PYG{o}{(}\PYG{n}{values}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}startDate\PYGZdq{}}\PYG{o}{).}\PYG{n+na}{map}\PYG{o}{\PYGZob{}}\PYG{n}{it}\PYG{o}{.}\PYG{n+na}{get}\PYG{o}{().}\PYG{n+na}{getMonth}\PYG{o}{()}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{\PYGZcb{}).}
+\PYG{+w}{  }\PYG{n}{unfold}\PYG{o}{().}
+\PYG{+w}{  }\PYG{n}{project}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}month\PYGZdq{}}\PYG{o}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}rating\PYGZdq{}}\PYG{o}{).}
+\PYG{+w}{    }\PYG{n}{by}\PYG{o}{(}\PYG{n}{keys}\PYG{o}{).}
+\PYG{+w}{    }\PYG{n}{by}\PYG{o}{(}\PYG{n}{select}\PYG{o}{(}\PYG{n}{values}\PYG{o}{).}\PYG{n+na}{unfold}\PYG{o}{().}
+\PYG{+w}{        }\PYG{n}{outV}\PYG{o}{().}\PYG{n+na}{in}\PYG{o}{(}\PYG{l+s+s1}{\PYGZsq{}ABOUT\PYGZsq{}}\PYG{o}{).}\PYG{n+na}{values}\PYG{o}{(}\PYG{l+s+s1}{\PYGZsq{}rating\PYGZsq{}}\PYG{o}{).}\PYG{n+na}{mean}\PYG{o}{().}\PYG{n+na}{fold}\PYG{o}{().}
+\PYG{+w}{        }\PYG{n}{coalesce}\PYG{o}{(}\PYG{n}{unfold}\PYG{o}{(),}\PYG{n}{constant}\PYG{o}{(}\PYG{l+s+s1}{\PYGZsq{}not rated\PYGZsq{}}\PYG{o}{))).}
+\PYG{+w}{  }\PYG{n}{order}\PYG{o}{().}
+\PYG{+w}{    }\PYG{n}{by}\PYG{o}{(}\PYG{n}{\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n+na}{select}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}rating\PYGZdq{}}\PYG{o}{).}\PYG{n+na}{map}\PYG{+w}{ }\PYG{o}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{it}\PYG{o}{.}\PYG{n+na}{get}\PYG{o}{()}\PYG{+w}{ }\PYG{k}{instanceof}\PYG{+w}{ }\PYG{n}{Number}\PYG{+w}{ }\PYG{o}{?}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZcb{}).}
+\PYG{+w}{    }\PYG{n}{by}\PYG{o}{(}\PYG{n}{\PYGZus{}\PYGZus{}}\PYG{o}{.}\PYG{n+na}{select}\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}rating\PYGZdq{}}\PYG{o}{),}\PYG{+w}{ }\PYG{n}{desc}\PYG{o}{).}
+\PYG{+w}{  }\PYG{n}{limit}\PYG{o}{(}\PYG{l+m+mi}{3}\PYG{o}{)}
+\end{Verbatim}

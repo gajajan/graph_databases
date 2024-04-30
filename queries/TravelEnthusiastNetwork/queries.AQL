@@ -116,8 +116,8 @@ FOR d IN unvisited
 //THE MOST FAVOURITE MONTH FOR VISITING SPECIFIC DESTINATION
 //returns a number indicating the month of the year
 //and the input destination rating for that month
-FOR j IN INBOUND @destination LED_TO
-    COLLECT monthAggregate = DATE_MONTH(j.journeyStart) INTO months
+FOR j,e IN INBOUND @destination LED_TO
+    COLLECT monthAggregate = DATE_MONTH(e.startDate) INTO months
     LET monthJourneys = (
         FOR m IN months
             RETURN m.j._id
@@ -128,7 +128,7 @@ FOR j IN INBOUND @destination LED_TO
                 RETURN r.rating
     )
     SORT averageRating DESC
-    LIMIT 1
+    LIMIT 3
     RETURN { month: monthAggregate, averageRating: averageRating ? : 'not rated' }
 
 
@@ -137,4 +137,4 @@ FOR j IN INBOUND @destination LED_TO
 FOR u IN User
     FILTER CONTAINS(UPPER(u.firstName), UPPER(@substr))
         OR  CONTAINS(UPPER(u.lastName), UPPER(@substr))
-    RETURN u
+    RETURN {userId: u._key, name: CONCAT(u.firstName, " ", u.lastName)}

@@ -1,79 +1,81 @@
 \babel@toc {czech}{}\relax 
-\contentsline {section}{\numberline {1}Základní pojmy z teorie grafů}{9}{section.1}%
-\contentsline {section}{\numberline {2}Grafové databáze}{11}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Nativní ukládání a zpracování dat}{12}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Datové struktury pro reprezentaci grafu}{12}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Matice sousednosti}{12}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Seznam sousedů}{13}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Grafové modely}{13}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Labeled property graph}{13}{subsubsection.2.3.1}%
+\contentsline {section}{\numberline {1}Základní pojmy z teorie grafů}{10}{section.1}%
+\contentsline {section}{\numberline {2}Grafové databáze}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Nativní ukládání a zpracování dat}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Datové struktury pro reprezentaci grafu}{13}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Matice sousednosti}{13}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Seznam sousedů}{14}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Grafové modely}{14}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Labeled property graph}{14}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Directed Acyclic Graph}{14}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Resource Description Framework}{14}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.3}Resource Description Framework}{15}{subsubsection.2.3.3}%
 \contentsline {subsubsection}{\numberline {2.3.4}Hypergrafy}{15}{subsubsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.4}Systémy OLTP a OLAP}{15}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Systémy OLTP a OLAP}{16}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Výhody grafových databází}{16}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Nevýhody grafových databází}{16}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Implementace grafových databází}{17}{subsection.2.7}%
-\contentsline {subsubsection}{\numberline {2.7.1}Neo4j}{17}{subsubsection.2.7.1}%
-\contentsline {subsubsection}{\numberline {2.7.2}OrientDB}{18}{subsubsection.2.7.2}%
-\contentsline {subsubsection}{\numberline {2.7.3}ArangoDB}{19}{subsubsection.2.7.3}%
-\contentsline {subsection}{\numberline {2.8}Dotazovací jazyky v grafových databázích}{20}{subsection.2.8}%
-\contentsline {subsubsection}{\numberline {2.8.1}Cypher}{21}{subsubsection.2.8.1}%
-\contentsline {subsubsection}{\numberline {2.8.2}Gremlin}{21}{subsubsection.2.8.2}%
-\contentsline {subsubsection}{\numberline {2.8.3}AQL}{22}{subsubsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.6}Nevýhody grafových databází}{17}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Implementace grafových databází}{18}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Neo4j}{18}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}OrientDB}{19}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}ArangoDB}{20}{subsubsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.8}Dotazovací jazyky v grafových databázích}{21}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Cypher}{22}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}Gremlin}{22}{subsubsection.2.8.2}%
+\contentsline {subsubsection}{\numberline {2.8.3}AQL}{23}{subsubsection.2.8.3}%
 \contentsline {section}{\numberline {3}Modelování grafových dat}{23}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Definice problému}{25}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Co od aplikace očekáváme?}{25}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Jaké informace budou v databázi uchovávány?}{26}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Jak spolu tyto informace vzájemně souvisí?}{26}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1}Definice problému}{26}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Co od aplikace očekáváme?}{26}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Jaké informace budou v databázi uchovávány?}{27}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Jak spolu tyto informace vzájemně souvisí?}{27}{subsubsection.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.1.4}Na jaké otázky potřebujeme v aplikaci najít odpověď?}{27}{subsubsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.2}Konceptuální datový model}{27}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Entity}{27}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2}Konceptuální datový model}{28}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Entity}{28}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Vztahy}{28}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Konceptuální model}{28}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3}Konceptuální datový model}{29}{subsubsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.3}Logický datový model}{29}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Vrcholové labely}{29}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Hranové labely}{30}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Vlastnosti}{31}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Logický model}{32}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.1}Vrcholové labely}{30}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Hranové labely}{31}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Vlastnosti}{32}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Logický datový model}{32}{subsubsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.4}Testování modelu}{32}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Unit testy}{33}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Profile a Explain}{33}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Indexy}{34}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Denormalizace}{34}{subsubsection.3.4.4}%
-\contentsline {section}{\numberline {4}Cestování v grafu}{35}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Procházení grafu}{35}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Prohledávání do šířky}{36}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Prohledávání do hloubky}{36}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Předdefinovaná cesta}{37}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Hledání cesty v neohodnoceném grafu}{38}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Hledání cesty v ohodnoceném grafu}{39}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Algoritmy}{40}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Algoritmy pro hledání cesty v grafu}{41}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Djikstrův algoritmus}{41}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Algoritmus A*}{42}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}Minimální kostra grafu}{42}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Random walk}{43}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Algoritmy pro míru centrality}{44}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}Degree Centrality}{44}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}Closeness Centrality}{44}{subsubsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.3}Betweeness Centrality}{45}{subsubsection.5.4.3}%
-\contentsline {subsubsection}{\numberline {5.4.4}PageRank}{45}{subsubsection.5.4.4}%
-\contentsline {subsubsection}{\numberline {5.4.5}Použití algoritmů pro míru centrality}{45}{subsubsection.5.4.5}%
-\contentsline {subsection}{\numberline {5.5}Detekce komunit}{45}{subsection.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.1}Počítání trojúhelníků a shlukovacího koeficientu}{46}{subsubsection.5.5.1}%
-\contentsline {subsubsection}{\numberline {5.5.2}Hledání komponent}{47}{subsubsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.3}Algoritmus Louvain}{47}{subsubsection.5.5.3}%
-\contentsline {section}{\numberline {6}Testování vybraných implementací}{49}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Výsledky}{50}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Shrnutí}{51}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}OrientDB}{51}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}ArangoDB}{53}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}Neo4j}{53}{subsubsection.6.2.3}%
-\contentsline {section}{Z\'av\v er}{54}{section*.6}%
+\contentsline {subsubsection}{\numberline {3.4.3}Indexy}{35}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Denormalizace}{35}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Ukázky dotazů}{35}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Cestování v grafu}{37}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Procházení grafu}{37}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Prohledávání do šířky}{38}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Prohledávání do hloubky}{38}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Předdefinovaná cesta}{39}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Ukázka předdefinované cesty}{39}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Hledání cesty v neohodnoceném grafu}{40}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Hledání cesty v ohodnoceném grafu}{41}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Algoritmy}{41}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Algoritmy pro hledání cesty v grafu}{43}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Djikstrův algoritmus}{43}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Algoritmus A*}{43}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Minimální kostra grafu}{44}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Random walk}{45}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Algoritmy pro míru centrality}{45}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Degree Centrality}{46}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Closeness Centrality}{46}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Betweeness Centrality}{46}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4}PageRank}{47}{subsubsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.5}Použití algoritmů pro míru centrality}{47}{subsubsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.5}Detekce komunit}{47}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Počítání trojúhelníků a shlukovacího koeficientu}{48}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Hledání komponent}{49}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Algoritmus Louvain}{49}{subsubsection.5.5.3}%
+\contentsline {section}{\numberline {6}Testování vybraných implementací}{51}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Výsledky testování}{52}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Shrnutí}{53}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}OrientDB}{53}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}ArangoDB}{55}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}Neo4j}{56}{subsubsection.6.2.3}%
+\contentsline {section}{Z\'av\v er}{57}{section*.6}%
 \babel@toc {czech}{}\relax 
 \babel@toc {czech}{}\relax 
-\contentsline {section}{Conclusions}{55}{section*.8}%
+\contentsline {section}{Conclusions}{58}{section*.8}%
 \babel@toc {english}{}\relax 
 \babel@toc {czech}{}\relax 
-\contentsline {section}{Literatura}{56}{section*.10}%
+\contentsline {section}{Literatura}{59}{section*.10}%
