@@ -1,21 +1,21 @@
 # Grafové Databáze
 Repozitář pro bakalářskou práci zaměřenou na grafové databáze.
 
-## Obsah
-* Složky `*-docker` obsahují potřebné soubory pro sestavení Dockerových obrazů.
-* Složka `kidiplom` obsahuje aktuální verzi textového dokumentu.
-* Složka `queries` zahrnuje dotazy pro různá datová soubory zmíněná v textovém dokumentu.
-  - Soubory s dotazy Cypher
-  - Soubory s dotazy Gremlin
-  - Soubory s dotazy AQL
-  - Soubory s dotazy OrientDB SQL
-  - Soubory s dotazy pro algoritmy Neo4j
-* Soubor `Measurements.xlsx` s výsledky experimentů.
-
 ## Zvolené implementace
 * OrientDB
 * Neo4j
 * ArangoDB
+
+## Obsah
+* Složky `*-docker` obsahují potřebné soubory pro sestavení Dockerových obrazů pro jednotlivé implementace.
+* Složka `kidiplom` obsahuje textový dokument.
+* Složka `queries` zahrnuje používané dotazy pro jednotlivé implementace.
+  - Soubory s dotazy Cypher (používané v Neo4j)
+  - Soubory s dotazy Gremlin (používané s OrientDB)
+  - Soubory s dotazy AQL (používané v ArangoDB)
+  - Soubory s dotazy OrientDB SQL (používané v OrientDB)
+  - Soubory s dotazy pro algoritmy Neo4j
+* Soubor `Measurements.xlsx` s výsledky experimentů.
 
 ## Databáze
 V praktické části jsem v každé implementaci pracoval s nejvýše čtyřmi databázemi:
