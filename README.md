@@ -9,7 +9,7 @@ Repozitář pro bakalářskou práci zaměřenou na grafové databáze.
 ## Obsah
 * Složky `*-docker` obsahují potřebné soubory pro sestavení Dockerových obrazů pro jednotlivé implementace.
 * Složka `kidiplom` obsahuje textový dokument.
-* Složka `queries` zahrnuje používané dotazy pro jednotlivé implementace.
+* Složka `queries` obsahuje podsložky s používanými dotazy pro jednotlivé implementace.
   - Soubory s dotazy Cypher (používané v Neo4j)
   - Soubory s dotazy Gremlin (používané s OrientDB)
   - Soubory s dotazy AQL (používané v ArangoDB)
@@ -48,12 +48,30 @@ graph = OrientGraph.open("plocal:/orientdb/databases/<SELECTED_DATABASE>", "root
 //establishing a graph traversal source object
 g = graph.traversal();
 ```
+Připojení k databázi je doprovázeno 2 Errory, sdělujícími že je databáze uzamknuta jiným procesem. Na funkčnost nemají vliv.
 
 Je však doporučeno použít inicializační soubory k připojení k databázi s názvem _<SELECTED_DATABASE>_, které se nacházejí v kontejneru ve složce `/init-files-gremlin/`. Příkaz pro připojení v interaktivním shellu kontejneru je:
 ```bash
 /orientdb/bin/gremlin.sh -i /init-files-gremlin/<SELECTED_DATABASE>.groovy -Xmx4g
 ```
-Tyto soubory obsahují funkce s předpřipravenými dotazy, které jsou pro používání pohodlnější. Seznam těchto funkcí lze zobrazit pomocí funkce `help()`. :warning: Každá funkce má jako první parametr `g`. Pro databázi s názvem __Youtube__ funkce vrací čas běhu dotazů.
+Tyto soubory obsahují funkce s předpřipravenými dotazy, které jsou pro používání pohodlnější. Seznam těchto funkcí lze zobrazit pomocí funkce `help()`. :warning: Každá funkce má jako první parametr `g`. Pro databázi s názvem __Youtube__ funkce vrací řetězec s výsledkem a časem běhu dotazu.
+
+Na některé funkce lze navázat například funkci `count()` a zjistit tak počet vrácených výsledků. Příklad:
+```groovy
+gremlin> searchUsers(g)
+==>[userId:[153],firstName:[Ashley],lastName:[Roberts]]
+==>[userId:[146],firstName:[Kathryn],lastName:[Robbins]]
+==>[userId:[226],firstName:[Zachary],lastName:[Roberts]]
+==>[userId:[228],firstName:[Robert],lastName:[Parker]]
+==>[userId:[252],firstName:[Robert],lastName:[Murphy]]
+==>[userId:[189],firstName:[Robert],lastName:[Willis]]
+==>[userId:[229],firstName:[Robin],lastName:[Myers]]
+==>[userId:[238],firstName:[Robin],lastName:[Rivera]]
+==>[userId:[71],firstName:[Marie],lastName:[Robertson]]
+==>[userId:[8],firstName:[Robert],lastName:[Fuller]]
+gremlin> searchUsers(g).count()
+==>10
+```
 
 Pro použití _lightweight hran_ v databázi je nutné nastavit v JSON souborech umístěných v kontejneru ve složce `/import/Youtube` parametr `useLightweightEdges` na `true` před importováním databáze __Youtube__. Pokud databázi importujete do stejného Docker kontejneru, je nutné též změnit název databáze nastavením parametru `dbURL` na `plocal:../databases/<NEW_DATABASE_NAME>`.
 
