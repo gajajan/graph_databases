@@ -1255,7 +1255,7 @@ V porovnání s ostatními databázemi však OrientDB silně zaostávala. Z výs
 Dokumentace OrientDB není v porovnání s ostatními příliš přehledná. Setkal jsem se s odkazy na prázdné webové stránky a to i v rámci webového rozhraní OrientDB Studio. Problémy s databází se mi řešily hůře než u ostatních, neboť komunita OrientDB na internetu není tak velká. Při importování dat se někdy do databáze nevložily všechny vrcholy a hrany, i když soubor určený pro import byl stejný.
 
 \subsubsection{ArangoDB}
-Databáze v prvním testu zvládla dobře vkládání a mazání dat. Například vkládání hran bylo v ArangoDB rychlejší než u databáze Neo4j. Jinak se databáze většinou pohybovala mezi dalšími dvěmi testovanými databázemi.  Jediným větším problémem byl dotaz Q6 na hledání nejkratší cesty, mezi dvěma nepropojenými vrcholy. Ani po čtyřiceti minutách se nezastavil, když jsem využil vestavěnou funkci \texttt{SHORTEST\_PATH}.
+Databáze v prvním testu zvládla dobře vkládání a mazání dat. Vkládání hran bylo v ArangoDB rychlejší než u databáze Neo4j. Jinak se databáze většinou pohybovala mezi dalšími dvěmi testovanými databázemi.  Jediným větším problémem byl dotaz Q6 na hledání nejkratší cesty, mezi dvěma nepropojenými vrcholy. Ani po čtyřiceti minutách se nezastavil, když jsem využil vestavěnou funkci \texttt{SHORTEST\_PATH}.
 
 \subsubsection{Neo4j}
 Neo4j byla dle očekávání ve zpracování dotazů nejrychlejší. Při práci s databází jsem nenarazil na žádný problém. Jedním z důvodů jistě bylo zaměření databáze pouze na grafy, oproti multimodelovým konkurentům. Výsledky prvních pokusů pro testování cache se výrazněji nelišily od následujících testů v porovnání s~ostatními testovanými databázemi.

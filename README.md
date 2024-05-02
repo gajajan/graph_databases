@@ -1,32 +1,46 @@
-# Graph Databases
-Repository for a bachelor's thesis focusing on graph databases.
+# Grafové Databáze
+Repozitář pro bakalářskou práci zaměřenou na grafové databáze.
 
-## Content
-* The `*-docker` folders contain the necessary files for building Docker images.
-* The `kidiplom` folder contains the current version of the text document.
-* The `queries` folder includes queries for different datasets mentioned in the text document.
-  - Files with Cypher queries
-  - Files with Gremlin queries
-  - Files with AQL queries
-  - Files with OrientDB SQL queries
-  - Files with queries for Neo4j algorithms
-* The `Measurements.xlsx` file with the experiment results.
+## Obsah
+* Složky `*-docker` obsahují potřebné soubory pro sestavení Dockerových obrazů.
+* Složka `kidiplom` obsahuje aktuální verzi textového dokumentu.
+* Složka `queries` zahrnuje dotazy pro různá datová soubory zmíněná v textovém dokumentu.
+  - Soubory s dotazy Cypher
+  - Soubory s dotazy Gremlin
+  - Soubory s dotazy AQL
+  - Soubory s dotazy OrientDB SQL
+  - Soubory s dotazy pro algoritmy Neo4j
+* Soubor `Measurements.xlsx` s výsledky experimentů.
 
-## Running Docker
+## Zvolené implementace
+* OrientDB
+* Neo4j
+* ArangoDB
+
+## Databáze
+V praktické části jsem v každé implementaci pracoval s nejvýše čtyřmi databázemi:
+* `TravelEnthusiastNetwork`
+* `RailNetwork`
+* `Youtube`
+* databáze pro zkoušení algoritmů 
+  - pouze v Neo4j
+
+## Spuštění Dockeru
 
 ### OrientDB
+Vytvořte Docker kontejner pomocí příkazů:
 ```bash
 docker build -t orientdb-database:1.0 .
 docker run -p 2480:2480 orientdb-database:1.0
 ```
-
-OrientDB Studio is available at the IP address http://localhost:2480. Initial password and username are set to `root`. The databases __TravelEnthusiastNetwork__ and __RailNetwork__ are loaded automatically. For testing the import in OrientDB, use in the interactive shell
+OrientDB Studio je dostupné na IP adrese http://localhost:2480. Přihlašovací údaje jsou nastaveny na `root`. Databáze __TravelEnthusiastNetwork__ a __RailNetwork__ jsou načteny automaticky při vytváření Docker obrazu. Pro testování importování v OrientDB použijte v interaktivním shellu kontejneru následující příkazy:
 ```bash
 sh youtube-import-test.sh
 sh youtube-properties-import.sh
 ```
+Po importování se zobrazí čas importování pro vrcholy a hrany.
 
-The Gremlin Console is located in the `/orientdb/bin/` folder. You can connect to the database with the name _<SELECTED_DATABASE>_ using `/orientdb/bin/gremlin.sh` with the following commands:
+Gremlin Console `gremlin.sh` je umístěna v kontejneru ve složce `/orientdb/bin/`. Pro připojení k databázi s názvem _<SELECTED_DATABASE>_ v konzoli lze použít následující příkaz:
 ```groovy
 //OrientDb database connector
 graph = OrientGraph.open("plocal:/orientdb/databases/<SELECTED_DATABASE>", "root", "root");
@@ -35,36 +49,37 @@ graph = OrientGraph.open("plocal:/orientdb/databases/<SELECTED_DATABASE>", "root
 g = graph.traversal();
 ```
 
-Alternatively, you can use initialization files to connect to the database with the name _<SELECTED_DATABASE>_, which are located in the `/init-files-gremlin/` folder. The command for this in the interactive shell is:
+Je však doporučeno použít inicializační soubory k připojení k databázi s názvem _<SELECTED_DATABASE>_, které se nacházejí v kontejneru ve složce `/init-files-gremlin/`. Příkaz pro připojení v interaktivním shellu kontejneru je:
 ```bash
 /orientdb/bin/gremlin.sh -i /init-files-gremlin/<SELECTED_DATABASE>.groovy -Xmx4g
 ```
-These files also contain functions with prepared queries, which are more convenient to use. List of these functions is printed by `help()` function. :warning: Every function has first parameter `g`. For __Youtube__ database functions return measured time and result.
+Tyto soubory obsahují funkce s předpřipravenými dotazy, které jsou pro používání pohodlnější. Seznam těchto funkcí lze zobrazit pomocí funkce `help()`. :warning: Každá funkce má jako první parametr `g`. Pro databázi s názvem __Youtube__ funkce vrací čas běhu dotazů.
 
-The usage of lightweight edges must be defined before import in JSON files by specifying the `useLightweightEdges` parameter as `true`.
+Pro použití _lightweight hran_ v databázi je nutné nastavit v JSON souborech umístěných v kontejneru ve složce `/import/Youtube` parametr `useLightweightEdges` na `true` před importováním databáze __Youtube__. Pokud databázi importujete do stejného Docker kontejneru, je nutné též změnit název databáze nastavením parametru `dbURL` na `plocal:../databases/<NEW_DATABASE_NAME>`.
 
 ### Neo4j
+Vytvořte Docker kontejner pomocí příkazů:
 ```bash
 docker build -t neo4j-database:1.0 .
 docker run -p 7474:7474 -p 7687:7687 neo4j-database:1.0
 ```
 
-The Neo4j Browser is available at the IP address http://localhost:7474. There is __no__ initial password and username because authentification in docker file is set to `none`.
+Neo4j Browser je dostupný na IP adrese http://localhost:7474. Není zde potřeba žádných přihlašovacích údajů, neboť autentifikace je nastavena na `none`.
 
-Create a database with the name _<DATABASE_NAME>_ in the Neo4j Browser with the command:
+Vytvoření databáze se jménem _<DATABASE_NAME>_ v Neo4j Browseru se provádí příkazem:
 ```cypher
 CREATE DATABASE <DATABASE_NAME>
 ```
-You need four databases __travelenthusiastnetwork__, __railnetwork__, __youtube__ and one for testing algorithms.
+Jsou potřeba vytvořit tyto čtyři databáze: __travelenthusiastnetwork__, __railnetwork__, __youtube__ a jedna pro testování algoritmů.
 
-Then you can select database with the name _<DATABASE_NAME>_ with the command:
+Zvolení databáze se jménem _<DATABASE_NAME>_ se provádí příkazem:
 ```cypher
 :use <DATABASE_NAME>
 ```
 
-Import data into the selected database in the Neo4j Browser using the Cypher files located in the `/import/` folder. This method was also used to test the import in Neo4j.
+Data lze importovat do vybrané databáze v Neo4j Browseru pomocí zkopírování Cypher souborů nacházejících se v kontejneru ve složce `/import/`. Případně v repozitáři ve složce `/Neo4j-docker/import/`. Tato metoda byla také použita při testování importování pro každý dotaz zvlášť. Neo4j Browser pro každý spuštěný dotaz vrací i čas běhu.
 
-In Cypher queries, parameters are used. Values _y1,...,yn_ of parameters _x1,...,xn_ can be specified with command:
+V dotazech Cypher jsou používány parametry. Hodnoty _y1,...,yn_ parametrů `x1,...,xn` lze specifikovat příkazem:
 ```cypher
 :params 
 {
@@ -75,21 +90,24 @@ In Cypher queries, parameters are used. Values _y1,...,yn_ of parameters _x1,...
 ```
 
 ### ArangoDB
+Vytvořte Docker kontejner pomocí příkazů:
 ```bash
 docker build -t arangodb-database:1.0 . 
 docker run -p 8529:8529 arangodb-database:1.0
 ```
 
-The ArangoDB Web Interface is available at the IP address http://localhost:8529. Initial password and username are set to `root`.
+ArangoDB Web Interface je dostupné na IP adrese http://localhost:8529. Přihlašovací údaje jsou nastaveny na `root`.
 
-The databases __TravelEnthusiastNetwork__ and __RailNetwork__ can be imported via the interactive shell using
+Databáze __TravelEnthusiastNetwork__ a __RailNetwork__ lze importovat v interaktivním shellu kontejneru pomocí příkazu
 ```bash
 sh import.sh
 ```
-For testing the import in ArangoDB, use in the interactive shell
+Pro testování importování dat do databáze __Youtube__ použijte v interaktivním shellu kontejneru příkazy:
 ```bash
 sh youtube-import-test.sh
 sh youtube-properties-import.sh
 ```
+Po importování se zobrazí čas importování pro vrcholy a hrany.
 
-In AQL queries, bind parameters are used. More information about them can be found at https://docs.arangodb.com/3.12/aql/fundamentals/bind-parameters/.
+V dotazech AQL jsou používány parametry. Příklad jejich použití je ukázán na obrázku, který se nachází v repozitáři ve složce `/arangodb-example.png`. Do textové části vyznačené modrým obdélníkem se píší dotazy a do části označené červeným obdélníkem se píší parametry. Jako hodnoty parametrů se volí `_id` atribut požadovaného vrcholu. Tedy např. `"User/10"`. U některých dotazů je též vyžadováno pole řetězců. Tedy např. `["string1", "string2"]`.
+![Image Alt text](/arangodb-example.jpg)

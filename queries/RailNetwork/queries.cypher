@@ -12,15 +12,15 @@
 //UNWEIGHTED SHORTEST PATH
 MATCH (source:Station {stationId: $src}), (dest:Station {stationId: $dst})
 MATCH path = shortestPath((source)-[:LEADS_TO*]-(dest))
-RETURN nodes(path) AS stations, length(path) AS pathLength;
+RETURN nodes(path) AS stations, length(path) AS edgeCount;
 
 
 //WEIGHTED SHORTEST PATH
-//not working! - very computationally expensive
+//not working - very computationally expensive!!
 MATCH (src:Station {stationId: $src}),
       (dst:Station {stationId: $dst})
 MATCH p = (src)-[:LEADS_TO]-+(dst)
-RETURN reduce(acc = 0, r in relationships(p) | acc + r.length)
+RETURN reduce(s = 0, r in relationships(p) | s + r.length)
   AS distance
 ORDER BY distance ASC
 LIMIT 1
@@ -32,11 +32,10 @@ LIMIT 1
 //there is no need to check cycles in path
 MATCH (source:Station {stationId: $src}), (dest:Station {stationId: $dst})
 MATCH path = (source)-[:LEADS_TO*1..8]-(dest)
-WITH path,
-reduce(l=0, r in relationships(path) | l+r.length) AS distance
+WITH path,reduce(l=0, r in relationships(path) | l+r.length) AS distance
 ORDER BY distance ASC
 LIMIT 1
-RETURN [node IN nodes(path) | node.stationName] AS stations, length(path) AS pathLength, length;
+RETURN [node IN nodes(path) | node.stationName] AS stations, length(path) AS edgeCount, distance;
 
 
 //GRAPH PROJECTION
@@ -65,7 +64,7 @@ RETURN  [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS stations, t
 //A*
 //uses latitude and longitude like heuristic
 MATCH (source:Station {stationId: $src}), (target:Station {stationId: $dst})
-CALL gds.shortestPath.astar.stream('a*',{
+CALL gds.shortestPath.astar.stream('stations',{
     sourceNode: source,
     targetNode: target,
     relationshipWeightProperty: "length",

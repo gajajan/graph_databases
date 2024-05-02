@@ -11,9 +11,9 @@ CALL gds.graph.project(
 );
 
 // MINIMUM SPANNING TREE
-MATCH (n:City {name: 'A'})
+MATCH (s:City {name: 'A'})
 CALL gds.spanningTree.stream('cities', {
-  sourceNode: n,
+  sourceNode: s,
   relationshipWeightProperty: 'distance'
 })
 YIELD nodeId,parentId, weight
@@ -23,8 +23,8 @@ RETURN COLLECT({
   from: fromNode.name,
   to: toNode.name,
   distance: weight
-}) AS spanningTree,
-sum(weight);
+}) AS edge,
+sum(weight) AS weightSum;
 
 // CENTRALITY
 
@@ -69,11 +69,13 @@ ORDER BY localClusteringCoefficient DESC
 // WEAK CONNECTED COMPONENTS
 CALL gds.wcc.stream('cities')
 YIELD nodeId, componentId
-RETURN gds.util.asNode(nodeId).name AS name, componentId
-ORDER BY componentId, name
+WITH componentId, gds.util.asNode(nodeId).name AS city
+ORDER BY componentId, city
+RETURN componentId, COLLECT(city) AS citiesInComunitty
 
 // LOUVAIN
 CALL gds.louvain.stream('cities')
-YIELD nodeId, communityId, intermediateCommunityIds
-RETURN gds.util.asNode(nodeId).name AS name, communityId
-ORDER BY componentId, name
+YIELD nodeId, communityId
+WITH communityId, gds.util.asNode(nodeId).name AS city
+ORDER BY communityId, city
+RETURN communityId, COLLECT(city) AS citiesInComunitty

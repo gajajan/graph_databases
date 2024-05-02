@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  29 APR 2024 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  30 APR 2024 21:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2160,6 +2160,9 @@ AED: lastpage setting LastPage
 LaTeX Warning: There were undefined references.
 
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                kidiplom
 (biblatex)                and rerun LaTeX afterwards.
@@ -2173,7 +2176,7 @@ Package logreq Info: Writing requests to 'kidiplom.run.xml'.
 Here is how much of TeX's memory you used:
  34259 strings out of 475385
  642265 string characters out of 2776907
- 1597098 words of memory out of 3000000
+ 1597040 words of memory out of 3000000
  54715 multiletter control sequences out of 15000+600000
  548795 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2203,7 +2206,7 @@ Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gajaj/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gajaj/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on kidiplom.pdf (61 pages, 2228313 bytes).
+Output written on kidiplom.pdf (61 pages, 2228140 bytes).
 PDF statistics:
  1239 PDF objects out of 1440 (max. 8388607)
  270 named destinations out of 1000 (max. 500000)
