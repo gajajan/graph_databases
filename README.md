@@ -110,4 +110,4 @@ sh youtube-properties-import.sh
 Po importování se zobrazí čas importování pro vrcholy a hrany.
 
 V dotazech AQL jsou používány parametry. Příklad jejich použití je ukázán na obrázku, který se nachází v repozitáři ve složce `/arangodb-example.png`. Do textové části vyznačené modrým obdélníkem se píší dotazy a do části označené červeným obdélníkem se píší parametry. Jako hodnoty parametrů se volí `_id` atribut požadovaného vrcholu. Tedy např. `"User/10"`. U některých dotazů je též vyžadováno pole řetězců. Tedy např. `["string1", "string2"]`.
-![Image Alt text](/arangodb-example.jpg)
+![Image Alt text](/arangodb-example.png)
