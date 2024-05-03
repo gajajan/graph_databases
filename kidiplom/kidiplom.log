@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  2 MAY 2024 23:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  3 MAY 2024 16:54
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2011,7 +2011,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1255 
+l.1252 
         <./graphics//properties-test.png>] [56] [57
 
 ] [58
@@ -2168,7 +2168,7 @@ Package logreq Info: Writing requests to 'kidiplom.run.xml'.
 Here is how much of TeX's memory you used:
  34260 strings out of 475385
  642346 string characters out of 2776907
- 1598197 words of memory out of 3000000
+ 1599197 words of memory out of 3000000
  54717 multiletter control sequences out of 15000+600000
  548795 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2198,7 +2198,7 @@ Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gajaj/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gajaj/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on kidiplom.pdf (61 pages, 2360052 bytes).
+Output written on kidiplom.pdf (61 pages, 2360388 bytes).
 PDF statistics:
  1236 PDF objects out of 1440 (max. 8388607)
  269 named destinations out of 1000 (max. 500000)

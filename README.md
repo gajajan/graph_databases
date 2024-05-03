@@ -82,13 +82,13 @@ Pro použití _lightweight hran_ v databázi je nutné použít nový kontejner 
 ```bash
 /orientdb/bin/oetl.sh /import/Youtube/users.json
 ```
-Následně jsem databázi otevřel v OrientDB Studiu a nastavil `useLightweightEdges` pomocí checkbuttonu a uožil. Postup je znázorněn na obrázku `/images/orientdb-lightweight-edges.png`:
+Následně jsem databázi otevřel v OrientDB Studiu a nastavil `useLightweightEdges` pomocí checkbuttonu a uložil. Postup je znázorněn na obrázku `/images/orientdb-lightweight-edges.png`:
 ![Image Alt text](/images/orientdb-lightweight-edges.png)
 Následně jsem zastavil a rozběhnul Docker kontejner a přidal hrany:
 ```bash
 /orientdb/bin/oetl.sh /import/Youtube/friends.json
 ```
-Po importování hran, které proběhlo v pořádku, by v OrientDB Studiu mělo být počet hran s labelem `FRIENDS` nastaven na 0, jak na obrázku `/orientdb-lightweight-edges-2.png`:
+Po importování hran, které proběhlo v pořádku, by v OrientDB Studiu měl být počet hran s labelem `FRIENDS` nastaven na 0, jak na obrázku `/orientdb-lightweight-edges-2.png`:
 ![Image Alt text](/images/orientdb-lightweight-edges-2.png)
 
 ### Neo4j
@@ -134,12 +134,12 @@ ArangoDB Web Interface je dostupné na IP adrese http://localhost:8529. Přihla�
 
 Databáze __TravelEnthusiastNetwork__ a __RailNetwork__ lze importovat v interaktivním shellu kontejneru pomocí příkazu
 ```bash
-sh import.sh
+sh /import.sh
 ```
 Pro testování importování dat do databáze __Youtube__ použijte v interaktivním shellu kontejneru příkazy:
 ```bash
-sh youtube-import-test.sh
-sh youtube-properties-import.sh
+sh /youtube-import-test.sh
+sh /youtube-properties-import.sh
 ```
 Po importování se zobrazí čas importování pro vrcholy a hrany.
 

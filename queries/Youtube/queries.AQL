@@ -5,7 +5,6 @@ LET friends = (
     OPTIONS { uniqueVertices: "global", order: "bfs" }
         RETURN f
 )
-
 RETURN COUNT_DISTINCT(friends)
 
 
@@ -22,14 +21,14 @@ FOR p IN OUTBOUND SHORTEST_PATH
 
 
 //Q7
-FOR u IN users
+FOR u IN User
     FILTER u.age > 75 AND STARTS_WITH(u.firstName, "Ma")
     COLLECT WITH COUNT INTO c
     RETURN c
 
 
 //Q8
-FOR u IN users
+FOR u IN User
     FILTER u.firstName == "James"
     COLLECT AGGREGATE a=AVG(u.age)
     RETURN a

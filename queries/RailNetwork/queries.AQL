@@ -3,8 +3,7 @@
 
 //UNWEIGHTED SHORTEST PATH
 LET shortestPath = (
-    FOR v, e IN OUTBOUND SHORTEST_PATH @from TO @to 
-        GRAPH 'Graph'
+    FOR v, e IN OUTBOUND SHORTEST_PATH @from TO @to LEADS_TO
         RETURN { station: v.stationName, edge_length: e.length }
 )
 
@@ -17,8 +16,7 @@ RETURN { stations, totalLength, stationsCount }
 
 //WEIGHTED SHORTEST PATH
 LET shortestPath = (
-    FOR v, e IN OUTBOUND SHORTEST_PATH @from TO @to 
-        GRAPH 'Graph'
+    FOR v, e IN OUTBOUND SHORTEST_PATH @from TO @to LEADS_TO
          OPTIONS {weightAttribute: 'length'}
         RETURN { station: v.stationName, edge_length: e.length }
 )

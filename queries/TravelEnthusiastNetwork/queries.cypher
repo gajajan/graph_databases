@@ -101,4 +101,5 @@ LIMIT 3;
 MATCH (u:User)
 WHERE toUpper(u.firstName) CONTAINS toUpper($substr)
 OR toUpper(u.lastName) CONTAINS toUpper($substr)
-RETURN u
+RETURN u.userId as userId, u.firstName + " " + u.lastName as name
+ORDER BY u.firstName, u.lastName
