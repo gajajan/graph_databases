@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  3 MAY 2024 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  3 MAY 2024 22:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1904,22 +1904,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1061 Z
-        nalost počtu trojúhelníků lze využít též pro výpočet \text...
-
+l.1062 
+       
 pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1061 Z
-        nalost počtu trojúhelníků lze využít též pro výpočet \text...
- <./graphics//ExampleGraph.png>] [49
+l.1062 
+        <./graphics//ExampleGraph.png>] [49
 pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1098 \item $
-              m$ je součet přes všechna ohodnocení hran,] [50
+l.1099 \item $
+              A_{uv}$ je váha hrany mezi vrcholy $u$ a $v$,] [50
 pdfTeX warning (ext4): destination with the same identifier (name{table.10}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2174,7 +2172,7 @@ Package logreq Info: Writing requests to 'kidiplom.run.xml'.
 Here is how much of TeX's memory you used:
  34284 strings out of 475385
  643511 string characters out of 2776907
- 1602455 words of memory out of 3000000
+ 1603455 words of memory out of 3000000
  54734 multiletter control sequences out of 15000+600000
  548795 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2204,7 +2202,7 @@ Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gajaj/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gajaj/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on kidiplom.pdf (62 pages, 2382824 bytes).
+Output written on kidiplom.pdf (62 pages, 2382797 bytes).
 PDF statistics:
  1260 PDF objects out of 1440 (max. 8388607)
  276 named destinations out of 1000 (max. 500000)
