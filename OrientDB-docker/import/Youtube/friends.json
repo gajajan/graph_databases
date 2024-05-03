@@ -1,5 +1,5 @@
 {
-  "configuration": {"psrsllel": true},
+  "configuration": {"parallel": true},
     "source": { "file": { "path": "/csv/Youtube/com-youtube.ungraph.tsv" } },
     "extractor": { 
       "csv": {

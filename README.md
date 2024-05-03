@@ -35,8 +35,8 @@ docker run -p 2480:2480 orientdb-database:1.0
 ```
 OrientDB Studio je dostupné na IP adrese http://localhost:2480. Přihlašovací údaje jsou nastaveny na `root`. Databáze __TravelEnthusiastNetwork__ a __RailNetwork__ jsou načteny automaticky při vytváření Docker obrazu. Pro testování importování v OrientDB použijte v interaktivním shellu kontejneru následující příkazy:
 ```bash
-sh youtube-import-test.sh
-sh youtube-properties-import.sh
+sh /youtube-import-test.sh
+sh /youtube-properties-import.sh
 ```
 Po importování se zobrazí čas importování pro vrcholy a hrany.
 
@@ -49,6 +49,11 @@ graph = OrientGraph.open("plocal:/orientdb/databases/<SELECTED_DATABASE>", "root
 g = graph.traversal();
 ```
 Připojení k databázi je doprovázeno několika errory sdělujícími, že je databáze uzamknuta jiným procesem. Na funkčnost nemají vliv. Někdy též se k databázi nepovedlo přihlásit a pomohlo až restartování kontejneru.
+Při přidávání vlastností se tiskne asi každou milisekundu: 
+```bash
+SEVER {db=Youtube} input type not supported::  class java.lang.Integer [OETLOrientDBLoader]
+```
+Ale změna vlastností proběhne v pořádku. Změna vlastností trvá podobný čas jako přidání hran.
 
 Je však doporučeno použít inicializační soubory k připojení k databázi s názvem _<SELECTED_DATABASE>_, které se nacházejí v kontejneru ve složce `/init-files-gremlin/`. Příkaz pro připojení v interaktivním shellu kontejneru je:
 ```bash
@@ -73,7 +78,18 @@ gremlin> searchUsers(g).count()
 ==>10
 ```
 
-Pro použití _lightweight hran_ v databázi je nutné nastavit v JSON souborech umístěných v kontejneru ve složce `/import/Youtube` parametr `useLightweightEdges` na `true` před importováním databáze __Youtube__. Pokud databázi importujete do stejného Docker kontejneru, je nutné též změnit název databáze nastavením parametru `dbURL` na `plocal:../databases/<NEW_DATABASE_NAME>`.
+Pro použití _lightweight hran_ v databázi je nutné použít nový kontejner pro OrientDB (na stejném se mi to nepodařilo zprovoznit) a nastavit v JSON souborech umístěných v kontejneru ve složce `/import/Youtube` parametr `useLightweightEdges` na `true`. Databáze i přes nastavení parametru vkládala regulární hrany. Proto jsem postupoval následovně. V interaktivním shellu kontejneru jsem zadal příkaz pro importování vrcholů:
+```bash
+/orientdb/bin/oetl.sh /import/Youtube/users.json
+```
+Následně jsem databázi otevřel v OrientDB Studiu a nastavil `useLightweightEdges` pomocí checkbuttonu a uožil. Postup je znázorněn na obrázku `/images/orientdb-lightweight-edges.png`:
+![Image Alt text](/images/orientdb-lightweight-edges.png)
+Následně jsem zastavil a rozběhnul Docker kontejner a přidal hrany:
+```bash
+/orientdb/bin/oetl.sh /import/Youtube/friends.json
+```
+Po importování hran, které proběhlo v pořádku, by v OrientDB Studiu mělo být počet hran s labelem `FRIENDS` nastaven na 0, jak na obrázku `/orientdb-lightweight-edges-2.png`:
+![Image Alt text](/images/orientdb-lightweight-edges-2.png)
 
 ### Neo4j
 Vytvořte Docker kontejner pomocí příkazů:
@@ -128,4 +144,4 @@ sh youtube-properties-import.sh
 Po importování se zobrazí čas importování pro vrcholy a hrany.
 
 V dotazech AQL jsou používány parametry. Příklad jejich použití je ukázán na obrázku, který se nachází v repozitáři ve složce `/arangodb-example.png`. Do textové části vyznačené modrým obdélníkem se píší dotazy a do části označené červeným obdélníkem se píší parametry. Jako hodnoty parametrů se volí `_id` atribut požadovaného vrcholu. Tedy např. `"User/10"`. U některých dotazů je též vyžadováno pole řetězců. Tedy např. `["string1", "string2"]`.
-![Image Alt text](/arangodb-example.png)
+![Image Alt text](/images/arangodb-example.png)

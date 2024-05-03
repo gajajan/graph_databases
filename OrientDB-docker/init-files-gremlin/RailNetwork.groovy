@@ -17,14 +17,17 @@ g = graph.traversal();
 :set edge.color green
 
 def help() {
-    println "unweightedShortestPath(g, start=1048, target=319, limit=1)"
+    println "unweightedShortestPath(g, start=1048, target=319)"
     println "\tFinds the unweighted shortest path between two railway stations."
+    println "--------------------------------------------------------------------------------"
+    println "unweightedMShortestPath(g, start=212, target=317, m=2)"
+    println "\tFinds M unweighted shortest paths between two railway stations. This query doesn't use simplePath() and for long distances it runs for a very long time."
     println "--------------------------------------------------------------------------------"
     println "weightedShortestPath(g, start=1048, target=319)"
     println "\tFinds the weighted shortest path between two railway stations."
 }
 
-def unweightedShortestPath(g, start=1048, target=319, limit=1) {
+def unweightedShortestPath(g, start=1048, target=319) {
     return g.withSack(0.0).
             V().
             has("Station", "stationId", start).
@@ -34,7 +37,30 @@ def unweightedShortestPath(g, start=1048, target=319, limit=1) {
                     inV().
                     simplePath()).
             until(has("Station", "stationId", target)).
-            limit(limit).
+            limit(1).
+            order().
+                by(sack(), asc).
+            project("stations", "stationsCount", "totalLength").
+                by(path().
+                    unfold().
+                    hasLabel("Station").
+                    values("stationName").
+                    fold()).
+                by(path().count(local).math('(_+1)/2')).
+                by(sack()).
+            fold()
+}
+
+def unweightedMShortestPath(g, start=212, target=317, m=2) {
+    return g.withSack(0.0).
+            V().
+            has("Station", "stationId", start).
+            repeat(outE("LEADS_TO").
+                    sack(sum).
+                        by("length").
+                    inV()).
+            until(has("Station", "stationId", target)).
+            limit(m).
             order().
                 by(sack(), asc).
             project("stations", "stationsCount", "totalLength").

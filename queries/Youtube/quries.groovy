@@ -4,7 +4,7 @@ g.V().has("User", "userId", 1).as('me').
     repeat(both()).
     emit().times(3).
     where(neq('me')).
-    dedup().count().
+    dedup().count()
            
 //Q5
 g.V().has("User", "userId", 12000).
