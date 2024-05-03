@@ -90,6 +90,7 @@ Následně jsem zastavil a rozběhnul Docker kontejner a přidal hrany:
 ```
 Po importování hran, které proběhlo v pořádku, by v OrientDB Studiu měl být počet hran s labelem `FRIENDS` nastaven na 0, jak na obrázku `/orientdb-lightweight-edges-2.png`:
 ![Image Alt text](/images/orientdb-lightweight-edges-2.png)
+Hrany jsou takto uloženy pouze jako odkazy ve vrcholech.
 
 ### Neo4j
 Vytvořte Docker kontejner pomocí příkazů:
