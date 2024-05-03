@@ -1120,6 +1120,74 @@
       \field{title}{Graph Algorithms: Practical Examples in Apache Spark and Neo4j}
       \field{year}{2019}
     \endentry
+    \entry{dijkstra-original}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2066778d476d4368455cb8e3ba6d03b4}{%
+           family={Dijkstra},
+           familyi={D\bibinitperiod},
+           given={Edsger\bibnamedelima W},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{fullhash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{bibnamehash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{authorbibnamehash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{authornamehash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{authorfullhash}{2066778d476d4368455cb8e3ba6d03b4}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Numerische mathematik}
+      \field{number}{1}
+      \field{title}{A note on two problems in connexion with graphs}
+      \field{volume}{1}
+      \field{year}{1959}
+      \field{pages}{269\bibrangedash 271}
+      \range{pages}{3}
+    \endentry
+    \entry{bellman-original}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7bb51e859e70aaedef4ed1f3bb67779b}{%
+           family={Bellman},
+           familyi={B\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society (AMS)}%
+      }
+      \strng{namehash}{7bb51e859e70aaedef4ed1f3bb67779b}
+      \strng{fullhash}{7bb51e859e70aaedef4ed1f3bb67779b}
+      \strng{bibnamehash}{7bb51e859e70aaedef4ed1f3bb67779b}
+      \strng{authorbibnamehash}{7bb51e859e70aaedef4ed1f3bb67779b}
+      \strng{authornamehash}{7bb51e859e70aaedef4ed1f3bb67779b}
+      \strng{authorfullhash}{7bb51e859e70aaedef4ed1f3bb67779b}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1552-4485}
+      \field{journaltitle}{Quarterly of Applied Mathematics}
+      \field{number}{1}
+      \field{title}{On a routing problem}
+      \field{volume}{16}
+      \field{year}{1958}
+      \field{pages}{87\bibrangedash 90}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1090/qam/102435
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1090/qam/102435
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1090/qam/102435
+      \endverb
+    \endentry
     \entry{astar}{misc}{}
       \name{author}{1}{}{%
         {{hash=78d7c16520476bac6552a11c3cd01e99}{%
@@ -1152,6 +1220,176 @@
       \verb https://diana.ms.mff.cuni.cz/pogamut_files/lectures/2015-2016/04.2-Pathfinding-Bajer060410.pdf
       \endverb
     \endentry
+    \entry{a*-original}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a9ce6ce2ae6a0f1ac64e4efe810d622c}{%
+           family={Hart},
+           familyi={H\bibinitperiod},
+           given={Peter\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=91c95ed3e3f572f27346b1131492bb8b}{%
+           family={Nilsson},
+           familyi={N\bibinitperiod},
+           given={Nils\bibnamedelima J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=253a4de6b29f96e30136e368e9af44d0}{%
+           family={Raphael},
+           familyi={R\bibinitperiod},
+           given={Bertram},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a03bc90212dd8a91661d34cb6ae8c15}
+      \strng{fullhash}{9a03bc90212dd8a91661d34cb6ae8c15}
+      \strng{bibnamehash}{9a03bc90212dd8a91661d34cb6ae8c15}
+      \strng{authorbibnamehash}{9a03bc90212dd8a91661d34cb6ae8c15}
+      \strng{authornamehash}{9a03bc90212dd8a91661d34cb6ae8c15}
+      \strng{authorfullhash}{9a03bc90212dd8a91661d34cb6ae8c15}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Systems Science and Cybernetics}
+      \field{number}{2}
+      \field{title}{A Formal Basis for the Heuristic Determination of Minimum Cost Paths}
+      \field{volume}{4}
+      \field{year}{1968}
+      \field{pages}{100\bibrangedash 107}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/TSSC.1968.300136
+      \endverb
+      \keyw{Costs;Mathematical programming;Minimization methods;Functional programming;Automatic control;Minimax techniques;Gradient methods;Chemical technology;Automatic programming;Instruction sets}
+    \endentry
+    \entry{betweenness-original}{article}{}
+      \name{author}{1}{}{%
+        {{hash=012eafed0334767d87ec2b33bacb3367}{%
+           family={Freeman},
+           familyi={F\bibinitperiod},
+           given={Linton\bibnamedelima C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {[American Sociological Association, Sage Publications, Inc.]}%
+      }
+      \strng{namehash}{012eafed0334767d87ec2b33bacb3367}
+      \strng{fullhash}{012eafed0334767d87ec2b33bacb3367}
+      \strng{bibnamehash}{012eafed0334767d87ec2b33bacb3367}
+      \strng{authorbibnamehash}{012eafed0334767d87ec2b33bacb3367}
+      \strng{authornamehash}{012eafed0334767d87ec2b33bacb3367}
+      \strng{authorfullhash}{012eafed0334767d87ec2b33bacb3367}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A Family of new measures of point and graph centrality based on early intuitions of Bavelas (1948) is introduced. These measures define centrality in terms of the degree to which a point falls on the shortest path between others and therefore has a potential for control of communication. They may be used to index centrality in any large or small network of symmetrical relations, whether connected or unconnected.}
+      \field{issn}{00380431}
+      \field{journaltitle}{Sociometry}
+      \field{number}{1}
+      \field{title}{A Set of Measures of Centrality Based on Betweenness}
+      \field{urlday}{3}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{40}
+      \field{year}{1977}
+      \field{urldateera}{ce}
+      \field{pages}{35\bibrangedash 41}
+      \range{pages}{7}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/3033543
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/3033543
+      \endverb
+    \endentry
+    \entry{pagerank-original}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ade8269d287e9c1531e4a1cbad0b4b82}{%
+           family={Brin},
+           familyi={B\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5ca20489809aaab392f875d6bc785086}{%
+           family={Page},
+           familyi={P\bibinitperiod},
+           given={Lawrence},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Science Publishers B. V.}%
+      }
+      \strng{namehash}{67f006a7ae882b83a187215c4e9bdf2f}
+      \strng{fullhash}{67f006a7ae882b83a187215c4e9bdf2f}
+      \strng{bibnamehash}{67f006a7ae882b83a187215c4e9bdf2f}
+      \strng{authorbibnamehash}{67f006a7ae882b83a187215c4e9bdf2f}
+      \strng{authornamehash}{67f006a7ae882b83a187215c4e9bdf2f}
+      \strng{authorfullhash}{67f006a7ae882b83a187215c4e9bdf2f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{The anatomy of a large-scale hypertextual Web search engine}
+      \field{volume}{30}
+      \field{year}{1998}
+      \verb{doi}
+      \verb 10.1016/S0169-7552(98)00110-X
+      \endverb
+    \endentry
+    \entry{louvain-original}{article}{}
+      \name{author}{4}{}{%
+        {{hash=7c4ebd50451e5b718eb3d5ad6cfbad71}{%
+           family={Blondel},
+           familyi={B\bibinitperiod},
+           given={Vincent\bibnamedelima D},
+           giveni={V\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=6b6e1859f5b4504b6f852c6112880f18}{%
+           family={Guillaume},
+           familyi={G\bibinitperiod},
+           given={Jean-Loup},
+           giveni={J\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=a0bc3d83c54bda6a078936b2d87d6c9f}{%
+           family={Lambiotte},
+           familyi={L\bibinitperiod},
+           given={Renaud},
+           giveni={R\bibinitperiod}}}%
+        {{hash=78c7291a964edd655c49fdec8099ab3e}{%
+           family={Lefebvre},
+           familyi={L\bibinitperiod},
+           given={Etienne},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{fullhash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{bibnamehash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{authorbibnamehash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{authornamehash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \strng{authorfullhash}{6ef1b75c96dd583dc19da75ac0cb7d23}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1742-5468}
+      \field{journaltitle}{Journal of Statistical Mechanics: Theory and Experiment}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Fast unfolding of communities in large networks}
+      \field{volume}{2008}
+      \field{year}{2008}
+      \field{pages}{P10008}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1088/1742-5468/2008/10/p10008
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1088/1742-5468/2008/10/P10008
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1088/1742-5468/2008/10/P10008
+      \endverb
+    \endentry
     \entry{louvain}{article}{}
       \name{author}{3}{}{%
         {{hash=b61c7b6eeaa58572d109f9c87e5a61b0}{%
@@ -1176,8 +1414,8 @@
       \strng{authorbibnamehash}{397740ae110f9a9caed4e1c37e7e429f}
       \strng{authornamehash}{397740ae110f9a9caed4e1c37e7e429f}
       \strng{authorfullhash}{397740ae110f9a9caed4e1c37e7e429f}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprinttype}{arXiv}
@@ -1214,8 +1452,8 @@
       \strng{authorbibnamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authornamehash}{8b6c59a3c7880c51055cf3864633578b}
       \strng{authorfullhash}{8b6c59a3c7880c51055cf3864633578b}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{2}
@@ -1252,8 +1490,8 @@
       \strng{authorbibnamehash}{f4ce85f39265e8336e7d030faaa9b63a}
       \strng{authornamehash}{f4ce85f39265e8336e7d030faaa9b63a}
       \strng{authorfullhash}{f4ce85f39265e8336e7d030faaa9b63a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{12}

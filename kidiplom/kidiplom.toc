@@ -58,7 +58,7 @@
 \contentsline {subsection}{\numberline {5.4}Algoritmy pro míru centrality}{46}{subsection.5.4}%
 \contentsline {subsubsection}{\numberline {5.4.1}Degree Centrality}{46}{subsubsection.5.4.1}%
 \contentsline {subsubsection}{\numberline {5.4.2}Closeness Centrality}{47}{subsubsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.3}Betweeness Centrality}{47}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3}Betweenness Centrality}{47}{subsubsection.5.4.3}%
 \contentsline {subsubsection}{\numberline {5.4.4}PageRank}{47}{subsubsection.5.4.4}%
 \contentsline {subsubsection}{\numberline {5.4.5}Použití algoritmů pro míru centrality}{47}{subsubsection.5.4.5}%
 \contentsline {subsection}{\numberline {5.5}Detekce komunit}{48}{subsection.5.5}%

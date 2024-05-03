@@ -46,11 +46,6 @@ YIELD nodeId, score
 RETURN gds.util.asNode(nodeId).name AS name, score
 ORDER BY score DESC
 
-// EIGEN VECTOR
-CALL gds.eigenvector.stream('cities')
-YIELD nodeId, score
-RETURN gds.util.asNode(nodeId).name AS name, score
-ORDER BY score DESC, name ASC
 
 // COMUNITY DETECTION
 

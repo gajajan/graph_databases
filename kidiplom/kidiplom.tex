@@ -943,12 +943,12 @@ Algoritmy pak mohou běžet ve třech režimech:
 V praxi je užitečné v grafu najít rychle optimální cestu mezi dvěma, či více vrcholy. Tento problém potřebují řešit například nástroje pracující s grafy reprezentující mapy, které hledají vhodné trasy mezi body na mapě. Dalšími příklady optimalizační problémů jsou řízení dodavatelských řetězců, hledání nejvhodnějšího autobusového spojení a analýza počítačové sítě. Pro řešení tohoto problému vznikly různé algoritmy. Každý pracuje odlišně a je výhodný pro různé poddruhy problémů. Dva z nich si zde představíme.
 
 \subsubsection{Dijkstrův algoritmus}
-Při psaní této podkapitoly jsem čerpal převážně ze zdroje \cite{disk}. Dijkstrův algoritmus je jeden z nejznámějších algoritmů pro hledání nejkratší cesty. Lze jej aplikovat na~neohodnocené grafy, nebo grafy s kladným ohodnocením hran. Jedná se o~hladový algoritmus, který vychází z daného vrcholu a~hledá nejkratší cesty ke~všem ostatním vrcholům v grafu. Lze jej také omezit, aby iteroval jen dokud nenajde nejkratší cestu ke konkrétnímu cílovému vrcholu. Správné řešení je dosáhnuto díky pamatování si dosud nejkratších nalezených cest do již navštívených vrcholů. V každé iteraci se pak vybere jeden vrchol s~nejkratší nalezenou cestu ze všech vrcholů, které ještě nebyly zpracovány. Poté se aktualizují všechny nejkratší cesty do jeho sousedů, pokud cesta přes tento vybraný vrchol představuje zlepšení. Pokud je nějaký vrchol nedosažitelný nebo ještě nebyl navštívený, má hodnotu $\infty$.
+Při psaní této podkapitoly jsem čerpal převážně ze zdroje \cite{disk}. Dijkstrův algoritmus\cite{dijkstra-original} je jeden z nejznámějších algoritmů pro hledání nejkratší cesty. Lze jej aplikovat na~neohodnocené grafy, nebo grafy s kladným ohodnocením hran. Jedná se o~hladový algoritmus, který vychází z daného vrcholu a~hledá nejkratší cesty ke~všem ostatním vrcholům v grafu. Lze jej také omezit, aby iteroval jen dokud nenajde nejkratší cestu ke konkrétnímu cílovému vrcholu. Správné řešení je dosáhnuto díky pamatování si dosud nejkratších nalezených cest do již navštívených vrcholů. V každé iteraci se pak vybere jeden vrchol s~nejkratší nalezenou cestu ze všech vrcholů, které ještě nebyly zpracovány. Poté se aktualizují všechny nejkratší cesty do jeho sousedů, pokud cesta přes tento vybraný vrchol představuje zlepšení. Pokud je nějaký vrchol nedosažitelný nebo ještě nebyl navštívený, má hodnotu $\infty$.
 
-Nevýhodou tohoto algoritmu je, že pro nalezení nejkratší cesty mezi dvěma zadanými vrcholy je v nejhorším případě potřeba nalézt všechny nejkratší cesty do ostatních vrcholů, než se algoritmus dostane k požadovanému výsledku. To nastává v případě, kdy je mezi danými vrcholy nejkratší cesta nejdelší ze všech nejkratších cest z počátečního vrcholu do ostatních vrcholů. Dijkstrův algoritmus navíc nefunguje v grafu, kde se vyskytují hrany se záporným ohodnocením. V těchto grafech je proto nutné použít jiný algoritmus -- například Bellman-Fordův algoritmus. \cite{neo4jDoc}
+Nevýhodou tohoto algoritmu je, že pro nalezení nejkratší cesty mezi dvěma zadanými vrcholy je v nejhorším případě potřeba nalézt všechny nejkratší cesty do ostatních vrcholů, než se algoritmus dostane k požadovanému výsledku. To nastává v případě, kdy je mezi danými vrcholy nejkratší cesta nejdelší ze všech nejkratších cest z počátečního vrcholu do ostatních vrcholů. Dijkstrův algoritmus navíc nefunguje v grafu, kde se vyskytují hrany se záporným ohodnocením. V těchto grafech je proto nutné použít jiný algoritmus -- například Bellman-Fordův\cite{bellman-original} algoritmus.
 
 \subsubsection{Algoritmus A*}
-Při psaní této podkapitoly jsem čerpal též ze zdroje \cite{astar}. A* pracuje podobně jako Dijkstrův algoritmus. Avšak často dosahuje výsledku rychleji díky dodatečné informaci, kterou dostane na vstupu. Této informaci se říká heuristika. Je to funkce $h\colon V\to \mathbb{R}^+$ odhadující délku cesty ze všech vrcholů do cílového vrcholu. Pro správný výsledek by heuristika měla být optimistická, tedy odhad vzdálenosti by měl být nejvýše roven skutečné vzdálenosti. Platí, že čím lépe odhadneme heuristiku, tím rychleji algoritmus najde řešení. Dijkstrův algoritmus je speciálním případem A*. Pro něj platí $h(v)=0$ pro všechny vrcholy $v \in V$. Pro svůj rychlý výpočet je například implementován ve videohrách.
+Při psaní této podkapitoly jsem čerpal též ze zdroje \cite{astar}. Algoritmus A*\cite{a*-original} pracuje podobně jako Dijkstrův algoritmus. Avšak často dosahuje výsledku rychleji díky dodatečné informaci, kterou dostane na vstupu. Této informaci se říká heuristika. Je to funkce $h\colon V\to \mathbb{R}^+$ odhadující délku cesty ze všech vrcholů do cílového vrcholu. Pro správný výsledek by heuristika měla být optimistická, tedy odhad vzdálenosti by měl být nejvýše roven skutečné vzdálenosti. Platí, že čím lépe odhadneme heuristiku, tím rychleji algoritmus najde řešení. Dijkstrův algoritmus je speciálním případem A*. Pro něj platí $h(v)=0$ pro všechny vrcholy $v \in V$. Pro svůj rychlý výpočet je například implementován ve videohrách.
 
 Rozhodnutí do jakého vrcholu bude algoritmus pokračovat je provedeno na~základě funkce $f(n) = g(n) + h(n)$ pro každý navštívený vrchol $n$. Funkce $g(n)$ představuje součet ohodnocení nejkratší cesty z počátečního vrcholu přes již navštívené vrcholy do $n$. Funkce $h(n)$ je vstupní heuristika. V každé iteraci pak algoritmus pokračuje vrcholem, pro který je hodnota funkce $f$ nejmenší.
 
@@ -965,7 +965,7 @@ Při psaní této podkapitoly jsem čerpal převážně z knihy \cite{graphAlgor
 
 \texttt{GDS} knihovna obsahuje \mbox{Primův} algoritmus. Tento iterativní hladový algoritmus vyžaduje na vstupu specifikovat počáteční vrchol $s$. Postupně je z něj vytvářen strom $T$ tak, že v každém kroku je k $T$ připojena jedna hrana. Vždy je vybrána hrana s nejmenší váhou, která vede z vrcholu v $T$ do vrcholu mimo $T$. Pokud neexistuje hrana, která by šla do stromu přidat, výpočet skončí a vrátí $T$, kde $T$ je minimální kostra komponenty vstupního grafu obsahující $s$. Pokud při implementaci využíváme binární prioritní frontu dostaneme celkovou složitost $O(|E| \log_2 |V|)$.
 
-Tento algoritmus lze využít pro nejlevnější propojení měst vodním potrubím, kde nižší ohodnocení hran znamená menší náklady. Hledání minimální kostry se též využívá při aproximování složitých problémů, jako je například problém obchodního cestujícího. \cite{graphAlgorithms}
+Tento algoritmus lze využít pro nejlevnější propojení měst vodním potrubím, kde nižší ohodnocení hran znamená menší náklady. Hledání minimální kostry se též využívá při aproximování složitých problémů, jako je například problém obchodního cestujícího.\cite{graphAlgorithms}
 
 \subsection{Random walk}
 Při psaní této podkapitoly jsem čerpal převážně ze zdroje \cite{neo4jDoc}. Random walk provádí náhodné sledy zadané délky z daného vrcholu. Jedná se o průchod grafem, kde je vždy v aktuálním vrcholu náhodně vybrána hrana, kterou bude algoritmus pokračovat. V klasické verzi algoritmu je v každém vrcholu pravděpodobnost vybrání hrany uniformní a nezáleží na předchozích výběrech. \texttt{GDS} nabízí sofistikovanější verzi označovanou jako \textit{Random walk druhého řádu}. U tohoto algoritmu se specifikují dva parametry:
@@ -1005,22 +1005,20 @@ Nejznámnější a nejjednodušší mírou centrality je degree centrality. Tato
 \subsubsection{Closeness Centrality}
 Myšlenkou closeness centrality je identifikovat nejvlivnější vrchol v grafu na základě toho, jak rychle je možné se z něj lze dostat do ostatních vrcholů. Konkrétně je to vrchol, pro který je součet nejkratších cest do všech ostatních vrcholů co nejmenší. V případě nesouvislého grafu lze využít \textit{harmonic centrality}, která se umí vypořádat s nedosažitelnými vrcholy. Skóre vrcholu $ u \in V $ v grafu $G = \langle V,E\rangle$ se pak počítá podle vzorce
 \begin{equation*}
-\label{eq:closenessCentrality}
-closenessCentrality(u) = \frac{1}{ \sum_{ v \in V \smallsetminus \{ u \} }{ dist(u,v) } },
+closenessCentrality(u) = \frac{1}{ \sum_{ v \in V \smallsetminus \{ u \} }{ dist(u,v) } }.
 \end{equation*}
-nebo se normalizuje
+
+\subsubsection{Betweenness Centrality}
+Algoritmus pro výpočet betweenness centrality\cite{betweenness-original} nejprve spočítá nejkratší cesty mezi všemi páry různých vrcholů v grafu. Každý vrchol poté obdrží skóre, které je tím vyšší, čím více nejkratších cest vede přes daný vrchol. Tyto hodnoty mohou být klíčové například v grafu, kde vrcholy reprezentují křižovatky a hrany představují cesty mezi nimi. Informace o tom, kterými křižovatkami prochází nejvíce nejkratších cest, můžeme využít pro odhad lokací, kde se pravděpodobně bude pohybovat nejvíce lidí. Základní vzorec pro počítání skóre vrcholu $ u \in V $ v grafu $G = \langle V,E\rangle$ je
 \begin{equation*}
-\label{eq:normalizedClosenessCentrality}
-normalizedClosenessCentrality(u) = \frac{ |V| - 1 }{ \sum_{ v \in V \smallsetminus \{ u \} }{ dist(u,v) } } .
+betweennessCentrality(u) = \sum_{ v \neq u \neq w \in V } \frac{\delta(u)}{ { dist(v,w) } },
 \end{equation*}
+kde $\delta(u)$ značí počet nejkratších cest, které prochází vrcholem $u$.
 
-\subsubsection{Betweeness Centrality}
-Algoritmus pro výpočet betweenness centrality nejprve spočítá nejkratší cesty mezi všemi páry různých vrcholů v grafu. Každý vrchol poté obdrží skóre, které je tím vyšší, čím více nejkratších cest vede přes daný vrchol. Tyto hodnoty mohou být klíčové například v grafu, kde vrcholy reprezentují křižovatky a hrany představují cesty mezi nimi. Informace o tom, kterými křižovatkami prochází nejvíce nejkratších cest, můžeme využít pro odhad lokací, kde se pravděpodobně bude pohybovat nejvíce lidí.
-
-Algoritmy pro closeness a betweeness centrality mohou být v případě velkých grafů výpočetně dost náročné. Proto se často přistupuje k jiným, ne zcela přesným, zato mnohem rychlejším, algoritmům.
+Algoritmy pro closeness a betweenness centrality mohou být v případě velkých grafů výpočetně dost náročné. Proto se často přistupuje k jiným, ne zcela přesným, zato mnohem rychlejším, algoritmům.
 
 \subsubsection{PageRank}
-S tímto iterativním algoritmem přišla na trh společnost Google. Byl určen pro hodnocení významnosti webových stránek, kde webové stránky si lze představit jako vrcholy grafu. Hrany mezi nimi reprezentují odkazy na stránkách odkazující na jiné stránky. Důležitost vrcholu je určena nejen důležitostí vrcholu samotného, ale také důležitostí vrcholů na tuto stránku odkazujících. Vysoké skóre vrcholu tedy znamená, že je vrchol propojen s vrcholy, které mají též vysoké skóre.
+S tímto iterativním algoritmem\cite{pagerank-original} přišla na trh společnost Google. Byl určen pro hodnocení významnosti webových stránek, kde webové stránky si lze představit jako vrcholy grafu. Hrany mezi nimi reprezentují odkazy na stránkách odkazující na jiné stránky. Důležitost vrcholu je určena nejen důležitostí vrcholu samotného, ale také důležitostí vrcholů na tuto stránku odkazujících. Vysoké skóre vrcholu tedy znamená, že je vrchol propojen s vrcholy, které mají též vysoké skóre.
 
 Toto řešení je založeno na vlastních vektorech a stochastických maticích z~lineární algebry. Výpočet skóre většinou vede na nekonečný výpočet a proto se omezuje počet iterací tohoto výpočtu, nebo se udává maximální možná odchylka mezi výsledky iterací.
 
@@ -1047,8 +1045,6 @@ Výsledky aplikace zmíněných algoritmů pro měření centrality na graf z ob
  \textbf{Closeness Centrality} & 0,75 & 0,6 & 0,75 & 0,75 & 0,67 & 0,55 & 0,6 \\
  \hline
  \textbf{Betweeness Centrality} & 3,33 & 0 & 1,33 & 1,33 & 2,67 & 1 & 1,33 \\
- \hline
- \textbf{Eigen Vector Centrality} & 0,45 & 0,41 & 0,49 & 0,49 & 0,32 & 0,14 & 0,17 \\
  \hline
 \end{tabular}
 \end{center}
@@ -1091,7 +1087,7 @@ Pro ukázkový graf na obrázku \ref{fig:example-graph} počet trojúhelníků a
 Nalezení komponent v grafu je užitečné pro pochopení našich dat. Algoritmy pro tuto úlohu jsou rychlé. Mohou být využívány v grafech, které se často aktualizují pro detekci nových vrcholů mezi skupinami. Nebo jsou použity pro hrubé nalezení komunit, které lze dál analyzovat.  Existují algoritmy pro hledání silně a~slabě souvislých komponent. Pro graf na obrázku \ref{fig:example-graph} nám algoritmus pro hledání slabě souvislých komponent vrátí, že všechny vrcholy grafu jsou součástí jedné komponenty.
 
 \subsubsection{Algoritmus Louvain}
-Tento hladový a iterativní algoritmus se snaží maximalizovat modularitu komunit. Mudularita je způsob, jakým můžeme měřit kvalitu nalezených komunit. Porovnává komunity v grafu s náhodným grafem, který vznikne odstraněním hran v původním grafu a následným přidáním těchto hran mezi dva náhodně zvolené nepropojené vrcholy. U náhodného grafu se předpokládá rovnoměrné propojení těchto vrcholů. Modularita nabývá hodnot z intervalu $\langle -1, 1\rangle$. Čím je hodnota vyšší, tím jsou vrcholy v komunitách propojenější. Výpočet modularity je počítán vzorcem
+Louvainův algoritmus\cite{louvain-original} je hladový a iterativní algoritmus, který se snaží maximalizovat modularitu komunit. Mudularita je způsob, jakým můžeme měřit kvalitu nalezených komunit. Porovnává komunity v grafu s náhodným grafem, který vznikne odstraněním hran v původním grafu a následným přidáním těchto hran mezi dva náhodně zvolené nepropojené vrcholy. U náhodného grafu se předpokládá rovnoměrné propojení těchto vrcholů. Modularita nabývá hodnot z intervalu $\langle -1, 1\rangle$. Čím je hodnota vyšší, tím jsou vrcholy v komunitách propojenější. Výpočet modularity je počítán vzorcem
 \begin{equation} 
 \label{eq:louvain}
 M = \frac{1}{2m} \sum_{u,v} [A_{uv} - \frac{k_u k_v}{2m}] \delta (C_u, C_v),

@@ -1,14 +1,16 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'kidiplom.blg'
-[161] biber-MSWIN64:340> INFO - === 
-[217] Biber.pm:418> INFO - Reading 'kidiplom.bcf'
-[359] Biber.pm:978> INFO - Found 42 citekeys in bib section 0
-[378] Biber.pm:4401> INFO - Processing section 0
-[403] Biber.pm:4592> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
-[487] bibtex.pm:1713> INFO - LaTeX decoding ...
-[553] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
-[769] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[769] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
-[769] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
-[802] bbl.pm:654> INFO - Writing 'kidiplom.bbl' with encoding 'UTF-8'
-[820] bbl.pm:757> INFO - Output to kidiplom.bbl
+[113] biber-MSWIN64:340> INFO - === 
+[146] Biber.pm:418> INFO - Reading 'kidiplom.bcf'
+[249] Biber.pm:978> INFO - Found 48 citekeys in bib section 0
+[266] Biber.pm:4401> INFO - Processing section 0
+[280] Biber.pm:4592> INFO - Looking for bibtex file 'bibliografie.bib' for section 0
+[334] bibtex.pm:1713> INFO - LaTeX decoding ...
+[406] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliografie.bib'
+[595] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[595] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
+[595] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
+[625] bbl.pm:654> INFO - Writing 'kidiplom.bbl' with encoding 'UTF-8'
+[641] bbl.pm:757> INFO - Output to kidiplom.bbl
+[641] Biber.pm:130> WARN - legacy month field 'Apr' in entry 'pagerank-original' is not an integer - this will probably not sort properly.
+[642] Biber.pm:132> INFO - WARNINGS: 1
