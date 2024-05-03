@@ -15,6 +15,7 @@ Repozitář pro bakalářskou práci zaměřenou na grafové databáze.
   - Soubory s dotazy AQL (používané v ArangoDB)
   - Soubory s dotazy OrientDB SQL (používané v OrientDB)
   - Soubory s dotazy pro algoritmy Neo4j
+* Složka `images` s obrázky sloužícími jako návody.
 * Soubor `Measurements.xlsx` s výsledky experimentů.
 
 ## Databáze
@@ -22,7 +23,7 @@ V praktické části jsem v každé implementaci pracoval s nejvýše čtyřmi d
 * `TravelEnthusiastNetwork`
 * `RailNetwork`
 * `Youtube`
-* databáze pro zkoušení algoritmů 
+* databáze pro zkoušení algoritmů
   - pouze v Neo4j
 
 ## Spuštění Dockeru
