@@ -44,7 +44,8 @@ def unweightedShortestPath(g, start=1048, target=319, limit=1) {
                     values("stationName").
                     fold()).
                 by(path().count(local).math('(_+1)/2')).
-                by(sack())
+                by(sack()).
+            fold()
 }
 
 def weightedShortestPath(g, start=1048, target=319) {

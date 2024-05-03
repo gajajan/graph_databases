@@ -118,7 +118,9 @@
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
       \field{month}{02}
+      \field{title}{Diskrétní struktury 1}
       \field{urlday}{12}
       \field{urlmonth}{3}
       \field{urlyear}{2024}
@@ -148,7 +150,9 @@
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
       \field{month}{02}
+      \field{title}{Orientované grafy}
       \field{urlday}{12}
       \field{urlmonth}{3}
       \field{urlyear}{2024}
@@ -337,7 +341,9 @@
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
       \field{month}{02}
+      \field{title}{The Neighborhood Walk Story}
       \field{urlday}{12}
       \field{urlmonth}{3}
       \field{urlyear}{2024}
@@ -479,7 +485,9 @@
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
       \field{month}{02}
+      \field{title}{OLTP a OLAP systémy}
       \field{urlday}{12}
       \field{urlmonth}{3}
       \field{urlyear}{2024}
@@ -509,7 +517,9 @@
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
       \field{month}{10}
+      \field{title}{How to choose a graph database: we compare 6 favorites}
       \field{urlday}{13}
       \field{urlmonth}{4}
       \field{urlyear}{2024}
@@ -520,6 +530,54 @@
       \endverb
       \verb{url}
       \verb https://cambridge-intelligence.com/choosing-graph-database/#:~:text=Scalability%20of%20graph,in%20their%20data.
+      \endverb
+    \endentry
+    \entry{practitioner}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7e3a56b041e27498551bce0851ab3e94}{%
+           family={Broecheler},
+           familyi={B\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=785aeb7f0dd378069d9b3cbd7e06759e}{%
+           family={Gosnell},
+           familyi={G\bibinitperiod},
+           given={Denise\bibnamedelima Koessler},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O’Reilly Media, Inc.}%
+      }
+      \strng{namehash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{fullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{bibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{authorbibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{authornamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \strng{authorfullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st Edition}
+      \field{isbn}{978-1-492-04407-9}
+      \field{title}{Practitioner’s Guide to graph data: Applying graph thinking and graph technologies to solve complex problems}
+      \field{year}{2020}
+    \endentry
+    \entry{GQL}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Graph Query Language GQL}
+      \field{title}{GQL Standard}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.gqlstandards.org/
+      \endverb
+      \verb{url}
+      \verb https://www.gqlstandards.org/
       \endverb
     \endentry
     \entry{amazonNeptune}{misc}{}
@@ -564,8 +622,8 @@
       \strng{authorbibnamehash}{611274d5c57db275351b94caee551578}
       \strng{authornamehash}{611274d5c57db275351b94caee551578}
       \strng{authorfullhash}{611274d5c57db275351b94caee551578}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{month}{3}
       \field{urlday}{12}
@@ -592,8 +650,8 @@
       \strng{authorbibnamehash}{54b50b84031ef09256008a7541557b35}
       \strng{authornamehash}{54b50b84031ef09256008a7541557b35}
       \strng{authorfullhash}{54b50b84031ef09256008a7541557b35}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{urlday}{12}
       \field{urlmonth}{3}
@@ -801,8 +859,8 @@
       \strng{authorbibnamehash}{41d54e9cc95f6d9dbd108993455e7477}
       \strng{authornamehash}{41d54e9cc95f6d9dbd108993455e7477}
       \strng{authorfullhash}{41d54e9cc95f6d9dbd108993455e7477}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{3}
@@ -820,8 +878,8 @@
       \endverb
     \endentry
     \entry{pgql}{misc}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{month}{3}
       \field{title}{PGQL | Property Graph Query Language}
@@ -959,44 +1017,13 @@
       \strng{authorbibnamehash}{1a5fa5eb175563cee2deda98ed13f388}
       \strng{authornamehash}{1a5fa5eb175563cee2deda98ed13f388}
       \strng{authorfullhash}{1a5fa5eb175563cee2deda98ed13f388}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{1st Edition}
-      \field{isbn}{978-1-61729-637-6}
-      \field{title}{Graph databases in action: Examples in Gremlin}
-      \field{year}{2020}
-    \endentry
-    \entry{practitioner}{book}{}
-      \name{author}{2}{}{%
-        {{hash=7e3a56b041e27498551bce0851ab3e94}{%
-           family={Broecheler},
-           familyi={B\bibinitperiod},
-           given={Matthias},
-           giveni={M\bibinitperiod}}}%
-        {{hash=785aeb7f0dd378069d9b3cbd7e06759e}{%
-           family={Gosnell},
-           familyi={G\bibinitperiod},
-           given={Denise\bibnamedelima Koessler},
-           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {O’Reilly Media, Inc.}%
-      }
-      \strng{namehash}{27251b7fcfd27660f3a61b6ca4578f3d}
-      \strng{fullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
-      \strng{bibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
-      \strng{authorbibnamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
-      \strng{authornamehash}{27251b7fcfd27660f3a61b6ca4578f3d}
-      \strng{authorfullhash}{27251b7fcfd27660f3a61b6ca4578f3d}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
-      \field{isbn}{978-1-492-04407-9}
-      \field{title}{Practitioner’s Guide to graph data: Applying graph thinking and graph technologies to solve complex problems}
+      \field{isbn}{978-1-61729-637-6}
+      \field{title}{Graph databases in action: Examples in Gremlin}
       \field{year}{2020}
     \endentry
     \entry{macrometa}{misc}{}
@@ -1084,8 +1111,8 @@
       \strng{authorbibnamehash}{e3a7806cabc758a58d3db2789774e36e}
       \strng{authornamehash}{e3a7806cabc758a58d3db2789774e36e}
       \strng{authorfullhash}{e3a7806cabc758a58d3db2789774e36e}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1st Edition}
@@ -1110,7 +1137,9 @@
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
       \field{month}{02}
+      \field{title}{Algoritmy pro pathfinding}
       \field{urlday}{12}
       \field{urlmonth}{3}
       \field{urlyear}{2024}
@@ -1147,8 +1176,8 @@
       \strng{authorbibnamehash}{397740ae110f9a9caed4e1c37e7e429f}
       \strng{authornamehash}{397740ae110f9a9caed4e1c37e7e429f}
       \strng{authorfullhash}{397740ae110f9a9caed4e1c37e7e429f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprinttype}{arXiv}

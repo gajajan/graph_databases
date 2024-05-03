@@ -48,13 +48,13 @@ graph = OrientGraph.open("plocal:/orientdb/databases/<SELECTED_DATABASE>", "root
 //establishing a graph traversal source object
 g = graph.traversal();
 ```
-Připojení k databázi je doprovázeno 2 Errory, sdělujícími že je databáze uzamknuta jiným procesem. Na funkčnost nemají vliv.
+Připojení k databázi je doprovázeno několika errory sdělujícími, že je databáze uzamknuta jiným procesem. Na funkčnost nemají vliv. Někdy též se k databázi nepovedlo přihlásit a pomohlo až restartování kontejneru.
 
 Je však doporučeno použít inicializační soubory k připojení k databázi s názvem _<SELECTED_DATABASE>_, které se nacházejí v kontejneru ve složce `/init-files-gremlin/`. Příkaz pro připojení v interaktivním shellu kontejneru je:
 ```bash
 /orientdb/bin/gremlin.sh -i /init-files-gremlin/<SELECTED_DATABASE>.groovy -Xmx4g
 ```
-Tyto soubory obsahují funkce s předpřipravenými dotazy, které jsou pro používání pohodlnější. Seznam těchto funkcí lze zobrazit pomocí funkce `help()`. :warning: Každá funkce má jako první parametr `g`. Pro databázi s názvem __Youtube__ funkce vrací řetězec s výsledkem a časem běhu dotazu.
+Tyto soubory obsahují funkce s předpřipravenými dotazy, které jsou pro používání pohodlnější. Seznam těchto funkcí lze zobrazit pomocí funkce `help()`. Každá funkce má jako první parametr `g`, který je instancí objektu pro procházení grafu. Pro databázi s názvem __Youtube__ funkce vrací řetězec s výsledkem a časem běhu dotazu.
 
 Na některé funkce lze navázat například funkci `count()` a zjistit tak počet vrácených výsledků. Příklad:
 ```groovy

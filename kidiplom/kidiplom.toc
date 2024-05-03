@@ -1,17 +1,16 @@
 \babel@toc {czech}{}\relax 
 \contentsline {section}{\numberline {1}Základní pojmy z teorie grafů}{10}{section.1}%
-\contentsline {section}{\numberline {2}Grafové databáze}{12}{section.2}%
+\contentsline {section}{\numberline {2}Grafové databáze}{13}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Nativní ukládání a zpracování dat}{13}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Datové struktury pro reprezentaci grafu}{13}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Matice sousednosti}{13}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Matice sousednosti}{14}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Seznam sousedů}{14}{subsubsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.3}Grafové modely}{14}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Labeled property graph}{14}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Directed Acyclic Graph}{14}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Resource Description Framework}{15}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Hypergrafy}{15}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.2}Resource Description Framework}{15}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Hypergrafy}{15}{subsubsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.4}Systémy OLTP a OLAP}{16}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Výhody grafových databází}{16}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Výhody grafových databází}{17}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Nevýhody grafových databází}{17}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Implementace grafových databází}{18}{subsection.2.7}%
 \contentsline {subsubsection}{\numberline {2.7.1}Neo4j}{18}{subsubsection.2.7.1}%
@@ -21,7 +20,7 @@
 \contentsline {subsubsection}{\numberline {2.8.1}Cypher}{22}{subsubsection.2.8.1}%
 \contentsline {subsubsection}{\numberline {2.8.2}Gremlin}{22}{subsubsection.2.8.2}%
 \contentsline {subsubsection}{\numberline {2.8.3}AQL}{23}{subsubsection.2.8.3}%
-\contentsline {section}{\numberline {3}Modelování grafových dat}{23}{section.3}%
+\contentsline {section}{\numberline {3}Modelování grafových dat}{24}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Definice problému}{26}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Co od aplikace očekáváme?}{26}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Jaké informace budou v databázi uchovávány?}{27}{subsubsection.3.1.2}%
@@ -50,19 +49,19 @@
 \contentsline {subsubsection}{\numberline {4.2.1}Ukázka předdefinované cesty}{39}{subsubsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.3}Hledání cesty v neohodnoceném grafu}{40}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Hledání cesty v ohodnoceném grafu}{41}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Algoritmy}{41}{section.5}%
+\contentsline {section}{\numberline {5}Algoritmy}{43}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Algoritmy pro hledání cesty v grafu}{43}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Djikstrův algoritmus}{43}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Algoritmus A*}{43}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1}Dijkstrův algoritmus}{43}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Algoritmus A*}{44}{subsubsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.2}Minimální kostra grafu}{44}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Random walk}{45}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Algoritmy pro míru centrality}{45}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4}Algoritmy pro míru centrality}{46}{subsection.5.4}%
 \contentsline {subsubsection}{\numberline {5.4.1}Degree Centrality}{46}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}Closeness Centrality}{46}{subsubsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.3}Betweeness Centrality}{46}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.2}Closeness Centrality}{47}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Betweeness Centrality}{47}{subsubsection.5.4.3}%
 \contentsline {subsubsection}{\numberline {5.4.4}PageRank}{47}{subsubsection.5.4.4}%
 \contentsline {subsubsection}{\numberline {5.4.5}Použití algoritmů pro míru centrality}{47}{subsubsection.5.4.5}%
-\contentsline {subsection}{\numberline {5.5}Detekce komunit}{47}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.5}Detekce komunit}{48}{subsection.5.5}%
 \contentsline {subsubsection}{\numberline {5.5.1}Počítání trojúhelníků a shlukovacího koeficientu}{48}{subsubsection.5.5.1}%
 \contentsline {subsubsection}{\numberline {5.5.2}Hledání komponent}{49}{subsubsection.5.5.2}%
 \contentsline {subsubsection}{\numberline {5.5.3}Algoritmus Louvain}{49}{subsubsection.5.5.3}%

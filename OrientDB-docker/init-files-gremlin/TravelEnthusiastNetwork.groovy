@@ -75,7 +75,7 @@ def secondNeighborhoodWithoutFirst(g, userId=10) {
 }
 
 def coTravelers(g, userId=10){
-    return g.V().has("User", "userId", user).as("me").
+    return g.V().has("User", "userId", userId).as("me").
             out("PARTICIPATED").
             in("PARTICIPATED").
             where(neq("me")).
@@ -184,7 +184,7 @@ def recommendDestinationsByFavouriteActivities(g, userId=10) {
 }
 
 def favouriteMonth(g, destinationId=7) {
-    return g.V().has("Destination", "destinationId", destination).
+    return g.V().has("Destination", "destinationId", destinationId).
             inE("LED_TO").
             group().by(values("startDate").map{it.get().getMonth() + 1}).
             unfold().

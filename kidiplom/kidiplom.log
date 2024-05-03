@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  30 APR 2024 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.4.30)  2 MAY 2024 23:05
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1543,39 +1543,37 @@ Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 169.
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
  line 173.
- [10] [11] [12] [13] [14]
-<./graphics//KnowledgeGraph-Example.png, id=377, 600.5637pt x 377.4903pt>
+ [10] [11] [12] [13
+
+] [14]
+<./graphics//KnowledgeGraph-Example.png, id=374, 600.5637pt x 377.4903pt>
 File: ./graphics//KnowledgeGraph-Example.png Graphic file (type png)
 <use ./graphics//KnowledgeGraph-Example.png>
 Package pdftex.def Info: ./graphics//KnowledgeGraph-Example.png  used on input 
-line 304.
+line 301.
 (pdftex.def)             Requested size: 409.50119pt x 257.40424pt.
-<./graphics//Hypergraph-Example.png, id=380, 527.8119pt x 272.9397pt>
-File: ./graphics//Hypergraph-Example.png Graphic file (type png)
-<use ./graphics//Hypergraph-Example.png>
-Package pdftex.def Info: ./graphics//Hypergraph-Example.png  used on input line
- 313.
-(pdftex.def)             Requested size: 409.50119pt x 211.76761pt.
  [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.316 \end{figure}
-                   <./graphics//KnowledgeGraph-Example.png>]
+l.308 
+       <./graphics//KnowledgeGraph-Example.png>]
+<./graphics//Hypergraph-Example.png, id=385, 527.8119pt x 272.9397pt>
+File: ./graphics//Hypergraph-Example.png Graphic file (type png)
+<use ./graphics//Hypergraph-Example.png>
+Package pdftex.def Info: ./graphics//Hypergraph-Example.png  used on input line
+ 310.
+(pdftex.def)             Requested size: 409.50119pt x 211.76761pt.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-21.
+18.
 
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (2.55186pt too wide) in paragraph at lines 321--322
-\T1/lmr/m/n/12 mal˝ pod-graf. Gra-fovÈ da-ta-b·ze jsou ob-vykle na-vrh-nuty pro
- po-u-∫itÌ v OLTP
- []
-
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 32
-6.
+3.
+
 (C:\Users\gajaj\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
@@ -1584,87 +1582,89 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.327 
-       <./graphics//Hypergraph-Example.png>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 337.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 337.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 337.
- [17]
-Overfull \hbox (1.60388pt too wide) in paragraph at lines 344--345
+l.324 
+       <./graphics//Hypergraph-Example.png>] [17]
+Overfull \hbox (1.60388pt too wide) in paragraph at lines 341--342
 \T1/lmr/m/n/12 do-ta-zo-va-cÌm ja-zy-kem, ≤k·-lo-va-tel-nostÌ a pod-po-rou ACID
  trans-akcÌ. ACID je zkrat-
  []
 
-[18] [19] [20] [21] [22]
+[18] [19]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 372.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 372.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 372.
+ [20] [21] [22]
 \openout5 = `kidiplom.pyg'.
 
  (_minted-kidiplom/xcode.pygstyle)
 (_minted-kidiplom/DEE7AA807BCD04CF3897C1D98434DC6FAC246E0C616A16DF68E7542FFE210
 1B0.pygtex)
 Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
-t line 429.
+t line 426.
  [23]
-<./graphics//GraphDatabase-DecisionTree.png, id=492, 758.3532pt x 1039.2426pt>
+<./graphics//GraphDatabase-DecisionTree.png, id=488, 758.3532pt x 1039.2426pt>
 File: ./graphics//GraphDatabase-DecisionTree.png Graphic file (type png)
 <use ./graphics//GraphDatabase-DecisionTree.png>
 Package pdftex.def Info: ./graphics//GraphDatabase-DecisionTree.png  used on in
-put line 450.
+put line 447.
 (pdftex.def)             Requested size: 409.50119pt x 561.18265pt.
 
-Underfull \hbox (badness 2717) in paragraph at lines 481--481
+Underfull \hbox (badness 2717) in paragraph at lines 478--478
 []|\T1/lmr/m/n/12 CestovatelskÈ ak-ti-vity, kterÈ
  []
 
 
-Underfull \hbox (badness 2547) in paragraph at lines 481--481
+Underfull \hbox (badness 2547) in paragraph at lines 478--478
 []|\T1/lmr/m/n/12 HodnocenÌ jed-not-li-v˝ch cest
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24] [25
+[24
+
+] [25
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.484 P
+l.481 P
        ostup modelov√°n√≠ se d√° dle \cite{inAction} rozdƒõlit do ƒçty≈ô f√°...
  <./graphics//GraphDatabase-DecisionTree.png>] [26
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.499 
+l.496 
       ] [27] [28]
-<./graphics//TravelEnthusiastNetwork-Conceptual.png, id=524, 768.471pt x 354.60
+<./graphics//TravelEnthusiastNetwork-Conceptual.png, id=521, 768.471pt x 354.60
 48pt>
 File: ./graphics//TravelEnthusiastNetwork-Conceptual.png Graphic file (type png
 )
 <use ./graphics//TravelEnthusiastNetwork-Conceptual.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Conceptual.png  us
-ed on input line 550.
+ed on input line 547.
 (pdftex.def)             Requested size: 409.50119pt x 188.95686pt.
  [29
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.560 
+l.557 
        <./graphics//TravelEnthusiastNetwork-Conceptual.png>]
-<./graphics//VertexLabels.png, id=531, 816.4101pt x 328.8285pt>
+<./graphics//VertexLabels.png, id=528, 816.4101pt x 328.8285pt>
 File: ./graphics//VertexLabels.png Graphic file (type png)
 <use ./graphics//VertexLabels.png>
-Package pdftex.def Info: ./graphics//VertexLabels.png  used on input line 562.
+Package pdftex.def Info: ./graphics//VertexLabels.png  used on input line 559.
 (pdftex.def)             Requested size: 409.50119pt x 164.93567pt.
-<./graphics//MoreVertexLabels.png, id=533, 514.42188pt x 152.06813pt>
+<./graphics//MoreVertexLabels.png, id=530, 514.42188pt x 152.06813pt>
 File: ./graphics//MoreVertexLabels.png Graphic file (type png)
 <use ./graphics//MoreVertexLabels.png>
 Package pdftex.def Info: ./graphics//MoreVertexLabels.png  used on input line 5
-72.
+69.
 (pdftex.def)             Requested size: 409.50119pt x 121.05368pt.
 
 
@@ -1675,20 +1675,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.578 
+l.575 
        <./graphics//VertexLabels.png>] [31
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.587 
+l.584 
        <./graphics//MoreVertexLabels.png>]
-<./graphics//TravelEnthusiastNetwork-Graph.png, id=547, 552.1428pt x 322.806pt>
+<./graphics//TravelEnthusiastNetwork-Graph.png, id=544, 552.1428pt x 322.806pt>
 
 File: ./graphics//TravelEnthusiastNetwork-Graph.png Graphic file (type png)
 <use ./graphics//TravelEnthusiastNetwork-Graph.png>
 Package pdftex.def Info: ./graphics//TravelEnthusiastNetwork-Graph.png  used on
- input line 603.
+ input line 600.
 (pdftex.def)             Requested size: 409.50119pt x 239.4145pt.
 
 
@@ -1703,10 +1703,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./graphics//UnitTest-Graph.png, id=554, 479.6319pt x 236.8047pt>
+<./graphics//UnitTest-Graph.png, id=551, 479.6319pt x 236.8047pt>
 File: ./graphics//UnitTest-Graph.png Graphic file (type png)
 <use ./graphics//UnitTest-Graph.png>
-Package pdftex.def Info: ./graphics//UnitTest-Graph.png  used on input line 643
+Package pdftex.def Info: ./graphics//UnitTest-Graph.png  used on input line 640
 .
 (pdftex.def)             Requested size: 409.50119pt x 202.18105pt.
 
@@ -1717,14 +1717,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.652 D
+l.649 D
        ruh√©mu ≈ô√≠k√°me \textit{profile} a podle dodan√©ho dotazu profiluje...
  <./graphics//TravelEnthusiastNetwork-Graph.png>] [34
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.656 
+l.653 
        <./graphics//UnitTest-Graph.png>]
 \openout5 = `kidiplom.pyg'.
 
@@ -1767,25 +1767,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.765 \clearpage
+l.762 \clearpage
                 
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.765 \clearpage
+l.762 \clearpage
                 
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.765 \clearpage
+l.762 \clearpage
                 ]
-<./graphics//RailNetwork-Graph.png, id=591, 243.309pt x 130.3269pt>
+<./graphics//RailNetwork-Graph.png, id=588, 243.309pt x 130.3269pt>
 File: ./graphics//RailNetwork-Graph.png Graphic file (type png)
 <use ./graphics//RailNetwork-Graph.png>
 Package pdftex.def Info: ./graphics//RailNetwork-Graph.png  used on input line 
-787.
+784.
 (pdftex.def)             Requested size: 182.48131pt x 97.74492pt.
  [37
 
@@ -1794,23 +1794,23 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.803 
+l.800 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.803 
+l.800 
        <./graphics//RailNetwork-Graph.png>]
-<./graphics//Bfs.png, id=602, 1079.53313pt x 454.69875pt>
+<./graphics//Bfs.png, id=599, 1079.53313pt x 454.69875pt>
 File: ./graphics//Bfs.png Graphic file (type png)
 <use ./graphics//Bfs.png>
-Package pdftex.def Info: ./graphics//Bfs.png  used on input line 807.
+Package pdftex.def Info: ./graphics//Bfs.png  used on input line 804.
 (pdftex.def)             Requested size: 409.50119pt x 172.48204pt.
-<./graphics//Dfs.png, id=604, 1090.0725pt x 466.24188pt>
+<./graphics//Dfs.png, id=601, 1090.0725pt x 466.24188pt>
 File: ./graphics//Dfs.png Graphic file (type png)
 <use ./graphics//Dfs.png>
-Package pdftex.def Info: ./graphics//Dfs.png  used on input line 818.
+Package pdftex.def Info: ./graphics//Dfs.png  used on input line 815.
 (pdftex.def)             Requested size: 409.50119pt x 175.14618pt.
 
 
@@ -1821,13 +1821,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.825 
+l.822 
        <./graphics//Bfs.png>] [39
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.830 
+l.827 
        <./graphics//Dfs.png>]
 \openout5 = `kidiplom.pyg'.
 
@@ -1859,86 +1859,86 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.935 
-      ] [42] [43]
-<./graphics//Minimum-Spanning-Tree.png, id=647, 1080.035pt x 422.07687pt>
+l.926 \clearpage
+                ] [42] [43
+
+]
+<./graphics//Minimum-Spanning-Tree.png, id=646, 1088.3862pt x 406.1574pt>
 File: ./graphics//Minimum-Spanning-Tree.png Graphic file (type png)
 <use ./graphics//Minimum-Spanning-Tree.png>
 Package pdftex.def Info: ./graphics//Minimum-Spanning-Tree.png  used on input l
-ine 964.
-(pdftex.def)             Requested size: 409.50119pt x 160.03021pt.
- [44
+ine 961.
+(pdftex.def)             Requested size: 409.50119pt x 152.81064pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[44] [45
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.974 
-       <./graphics//Minimum-Spanning-Tree.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[45] [46
+l.980 
+       <./graphics//Minimum-Spanning-Tree.png>] [46
 pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1026 
-       ]
-<./graphics//ExampleGraph.png, id=668, 570.2103pt x 380.3811pt>
+l.1007 \begin{equation*}
+                        ]
+<./graphics//ExampleGraph.png, id=669, 570.2103pt x 380.3811pt>
 File: ./graphics//ExampleGraph.png Graphic file (type png)
 <use ./graphics//ExampleGraph.png>
-Package pdftex.def Info: ./graphics//ExampleGraph.png  used on input line 1039.
+Package pdftex.def Info: ./graphics//ExampleGraph.png  used on input line 1032.
 
 (pdftex.def)             Requested size: 171.0644pt x 114.1152pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[47
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[47] [48
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1066 
-        <./graphics//ExampleGraph.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[48
+       
 pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1099 
-       ] [49
+l.1066 
+        <./graphics//ExampleGraph.png>] [49
 pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1126 \item K
-              a≈æd√° nalezen√° komunita tvo≈ô√≠ vrchol v nov√©m grafu. Ka≈æd...
-] [50
+l.1103 \item $
+              A_{uv}$ je v√°ha hrany mezi vrcholy $u$ a $v$,] [50
 pdfTeX warning (ext4): destination with the same identifier (name{table.10}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1145 \clearpage
+l.1138 \clearpage
                  ]
-<./graphics//Youtube-Graph.png, id=707, 217.5327pt x 93.2283pt>
+<./graphics//Youtube-Graph.png, id=708, 217.5327pt x 93.2283pt>
 File: ./graphics//Youtube-Graph.png Graphic file (type png)
 <use ./graphics//Youtube-Graph.png>
-Package pdftex.def Info: ./graphics//Youtube-Graph.png  used on input line 1151
+Package pdftex.def Info: ./graphics//Youtube-Graph.png  used on input line 1144
 .
 (pdftex.def)             Requested size: 163.14911pt x 69.92105pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1170--1170
+Underfull \hbox (badness 10000) in paragraph at lines 1163--1163
 []|\T1/lmr/m/n/12 P∞·telstvÌ mezi
  []
 
-<./graphics//youtube-log.png, id=709, 635.2533pt x 332.442pt>
+<./graphics//youtube-log.png, id=710, 635.2533pt x 332.442pt>
 File: ./graphics//youtube-log.png Graphic file (type png)
 <use ./graphics//youtube-log.png>
-Package pdftex.def Info: ./graphics//youtube-log.png  used on input line 1177.
+Package pdftex.def Info: ./graphics//youtube-log.png  used on input line 1170.
 (pdftex.def)             Requested size: 409.50119pt x 214.29915pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1950,18 +1950,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1186 
+l.1179 
        
 pdfTeX warning (ext4): destination with the same identifier (name{table.11}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1186 
+l.1179 
         <./graphics//Youtube-Graph.png>]
-<./graphics//insertDelete.png, id=717, 642.4803pt x 274.626pt>
+<./graphics//insertDelete.png, id=718, 642.4803pt x 274.626pt>
 File: ./graphics//insertDelete.png Graphic file (type png)
 <use ./graphics//insertDelete.png>
-Package pdftex.def Info: ./graphics//insertDelete.png  used on input line 1193.
+Package pdftex.def Info: ./graphics//insertDelete.png  used on input line 1186.
 
 (pdftex.def)             Requested size: 409.50119pt x 175.03928pt.
 
@@ -1971,61 +1971,56 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./graphics//results.png, id=722, 709.6914pt x 1029.1248pt>
+<./graphics//results.png, id=723, 709.6914pt x 1029.1248pt>
 File: ./graphics//results.png Graphic file (type png)
 <use ./graphics//results.png>
-Package pdftex.def Info: ./graphics//results.png  used on input line 1229.
+Package pdftex.def Info: ./graphics//results.png  used on input line 1222.
 (pdftex.def)             Requested size: 409.50119pt x 593.81499pt.
-<./graphics//properties-test.png, id=723, 682.9515pt x 318.7107pt>
+<./graphics//properties-test.png, id=724, 682.9515pt x 318.7107pt>
 File: ./graphics//properties-test.png Graphic file (type png)
 <use ./graphics//properties-test.png>
 Package pdftex.def Info: ./graphics//properties-test.png  used on input line 12
-37.
+30.
 (pdftex.def)             Requested size: 409.50119pt x 191.10144pt.
 [52
 pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1246 \subsubsection
+l.1239 \subsubsection
                      {OrientDB} <./graphics//youtube-log.png>] [53
 pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1250 
+l.1243 
        
 pdfTeX warning (ext4): destination with the same identifier (name{table.12}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1250 
+l.1243 
         <./graphics//insertDelete.png>] [54
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1250 
+l.1243 
         <./graphics//results.png>] [55
 pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1260 \subsubsection
-                     {Neo4j} <./graphics//properties-test.png>] [56] [57
+l.1255 
+        <./graphics//properties-test.png>] [56] [57
 
-]
-[58
+] [58
 
 ]
 
 Package biblatex Warning: Name format 'last-first' deprecated.
 (biblatex)                Please use 'family-given' instead.
 (biblatex)                Using 'family-given' now.
-
-
-Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
 
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
@@ -2130,10 +2125,6 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
-
-Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
 [60]
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
@@ -2144,7 +2135,19 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (4.48375pt too wide) in paragraph at lines 1300--1300
+Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (4.48375pt too wide) in paragraph at lines 1293--1293
 []\T1/lmr/m/n/12 Needham, Mark; Hod-ler, Amy E. \T1/lmr/m/it/12 Graph Al-go-ri-
 thms: Practi-cal Exam-ples in Apache
  []
@@ -2156,17 +2159,6 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 
 AED: lastpage setting LastPage
 [61] (kidiplom.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                kidiplom
-(biblatex)                and rerun LaTeX afterwards.
-
 runsystem(del kidiplom.pyg)...executed.
 
 Package logreq Info: Writing requests to 'kidiplom.run.xml'.
@@ -2174,10 +2166,10 @@ Package logreq Info: Writing requests to 'kidiplom.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34259 strings out of 475385
- 642265 string characters out of 2776907
- 1597040 words of memory out of 3000000
- 54715 multiletter control sequences out of 15000+600000
+ 34260 strings out of 475385
+ 642346 string characters out of 2776907
+ 1598197 words of memory out of 3000000
+ 54717 multiletter control sequences out of 15000+600000
  548795 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,16n,121p,2608b,2650s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -2206,9 +2198,9 @@ Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gajaj/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/gajaj/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/g
 ajaj/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on kidiplom.pdf (61 pages, 2228140 bytes).
+Output written on kidiplom.pdf (61 pages, 2360052 bytes).
 PDF statistics:
- 1239 PDF objects out of 1440 (max. 8388607)
- 270 named destinations out of 1000 (max. 500000)
- 741 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1236 PDF objects out of 1440 (max. 8388607)
+ 269 named destinations out of 1000 (max. 500000)
+ 733 words of extra memory for PDF output out of 10000 (max. 10000000)
 
