@@ -139,7 +139,7 @@ science}
 
 \section*{Úvod}
 
-Grafové databáze, stejně jako jiné databáze (například relační, dokumentové a klíč-hodnota) představují systém pro uchovávání a zpracovávání dat. Jsou, jak již název napovídá, postaveny na jednom z oborů diskrétní matematiky zvaném teorie grafů. Díky této struktuře vykazují skvělé vlastnosti pro aplikace, které ve větší míře pracují se vztahy mezi jednotlivými entitami. V dnešním světě je mnoho problémů, které vyžadují práci s takovými daty. Toho jsou důkazem data z webové stránky \cite{dbEngines}, která ukazují nejvyšší růst popularity grafových databází v posledním desetiletí ve srovnání s ostatními databázovými modely.
+Grafové databáze, stejně jako jiné databáze (například relační, dokumentové a~klíč-hodnota) představují systém pro uchovávání a zpracovávání dat. Jsou, jak již název napovídá, postaveny na jednom z oborů diskrétní matematiky zvaném teorie grafů. Díky této struktuře vykazují skvělé vlastnosti pro aplikace, které ve větší míře pracují se vztahy mezi jednotlivými entitami. V dnešním světě je mnoho problémů, které vyžadují práci s takovými daty. Toho jsou důkazem data z webové stránky \cite{dbEngines}, která ukazují nejvyšší růst popularity grafových databází v posledním desetiletí ve srovnání s ostatními databázovými modely.
 
 Tato práce má dva cíle. Prvním je představit grafové databáze, jejich silné a slabé stránky, modelování grafových dat a práci s těmito daty. Druhým cílem je otestovat vybrané implementace grafových databází pomocí navržených experimentů.
 
@@ -149,7 +149,7 @@ Druhá kapitola se věnuje grafovým databázím. Zahrnuje přehled různých ty
 
 Třetí kapitola popisuje modelování dat v grafových databázích. Na konkrétním příkladu ukazuje postup modelování, který je rozdělen do čtyř fází, které jsou podrobně vysvětleny. Je zde upozorněno na nejčastější chyby, které mohou při modelování nastat.
 
-Čtvrtá kapitola pojednává o cestování v grafu. Zabývá se předdefinovanými cestami, které jsou známy a specifikovány v rámci databázového schématu a hledáním cest mezi vrcholy. Všechny části jsou provázeny příklady.
+Čtvrtá kapitola pojednává o cestování v grafu. Zabývá se předdefinovanými cestami, které jsou známy a specifikovány v rámci databázového schématu a~hledáním cest mezi vrcholy. Všechny části jsou provázeny příklady.
 
 V páté kapitole je nahlédnuto na některé algoritmy využívané v grafových databázích. Jsou zde například přehledově představeny algoritmy pro hledání cest v grafu, pro míru centrality a pro detekci komunit.
 
@@ -341,7 +341,7 @@ Jelikož jsou grafové databáze často schema-less, tak může docházet k neko
 Existuje spousta implementací grafových databází. Liší se například nativností, dotazovacím jazykem, škálovatelností a podporou ACID transakcí. ACID je zkratkou pro čtyři žádané vlastnosti databázových transakcí: atomicita, konzistence, izolovanost a trvalost. Jakou z nich využít pro naši aplikaci je otázka zkoumání funkcionalit jednotlivých implementací. Známými grafovými databázemi jsou například:
 
 \begin{itemize}
-\item \textit{Amazon Neptune} -- rychlý, spolehlivý, plně řízený a vysoce zabezpečený systém pro hustě propojené grafy. Podporuje jak LPG, tak RDF grafový model. Databáze byla představena v roce 2017 společností Amazon. Výhodou je podpora známých dotazovací jazyků Gremlin, openCypher a SPARQL.\cite{amazonNeptune}
+\item \textit{Amazon Neptune} -- rychlý, spolehlivý, plně řízený a vysoce zabezpečený systém pro hustě propojené grafy. Podporuje jak LPG, tak RDF grafový model. Databáze byla představena v roce 2017 společností Amazon. Výhodou je podpora známých dotazovací jazyků Gremlin, openCypher a~SPARQL.\cite{amazonNeptune}
 \item \textit{TigerGraph} -- moderní, nativní grafová databáze pro ukládání LPG grafových modelů. Nabízí vestavěné paralelní výpočty nad grafy.\cite{tigerGraph}
 \item \textit{AllegroGraph} -- výkonná multi-model open-source databáze. Data mohou být ukládána ve formě RDF grafu, vektorů nebo dokumentů. AllegroGraph je kompatibilní se standardy W3C/ISO a podporuje dotazy prostřednictvím SPARQL a Prologu.\cite{allegroGraph} Dle knihy \cite{graphDatabases} nemá nativní grafové zpracování.
 \item \textit{JanusGraph} -- jedná se o open-source projekt společnosti The Linux Foundation. Jedná se o odnož grafové databáze Titan. Je založen na Apache TinkerPop, a proto lze klást dotazy prostřednictvím jazyka Gremlin. Kromě online transakčního zpracování (OLTP) podporuje JanusGraph globální grafovou analýzu (OLAP) díky integraci Apache Spark.\cite{janusGraph}
@@ -369,7 +369,7 @@ OrientDB též umožňuje takzvané \textit{lightweight} hrany, které zlepšuj�
 V práci je využívána bezplatná verze OrientDB Community Edition. OrientDB nabízí i placenou verzi Enterprise Edition, která poskytuje výhody jako správu zálohování, migrační nástroje, monitorování systému a CRUD operací v~reálném čase a jiné.
 
 \subsubsection{ArangoDB}
-Při psaní této podkapitoly jsem čerpal též ze zdroje \cite{arangoDBDoc}. ArangoDB je multi-model open-source databáze. Lze ji použít jako plnohodnotné úložiště dokumentů, grafů, párů klíč-hodnota, full-text vyhledávací engine nebo jakoukoli kombinaci těchto technologií. První verze byla představena společností ArangoDB Inc. v roce 2012. S daty je možno pracovat prostřednictvím jazyka AQL (ArangoDB Query Language). Pokud server provozující ArangoDB běží lokálně je možno interagovat s databází skrze webové rozhraní na adrese \url{127.0.0.1:8529}, nebo prostřednictvím textového rozhraní \textit{arangosh}. Lze též komunikovat prostřednictvím HTTP API, nebo driveru. Ačkoli je ArangoDB schema-less, umožňuje vynutit strukturu dokumentů v rámci kolekcí. Toho lze dosáhnout pomocí definování \textit{JSON Schema}\footnote{\url{https://json-schema.org/}} formátu. Databáze nabízí též placenou verzi, nabízející například vyšší výkonnost, zabezpečení a škálování grafů.
+Při psaní této podkapitoly jsem čerpal též ze zdroje \cite{arangoDBDoc}. ArangoDB je multi-model open-source databáze. Lze ji použít jako plnohodnotné úložiště dokumentů, grafů, párů klíč-hodnota, full-text vyhledávací engine nebo jakoukoli kombinaci těchto technologií. První verze byla představena společností ArangoDB Inc. v roce 2012. S daty je možno pracovat prostřednictvím jazyka AQL (ArangoDB Query Language). Pokud server provozující ArangoDB běží lokálně, je možné interagovat s databází skrze webové rozhraní na adrese \url{127.0.0.1:8529}, nebo prostřednictvím textového rozhraní \textit{arangosh}. Lze též komunikovat prostřednictvím HTTP API, nebo driveru. Ačkoli je ArangoDB schema-less, umožňuje vynutit strukturu dokumentů v rámci kolekcí. Toho lze dosáhnout pomocí definování \textit{JSON Schema}\footnote{\url{https://json-schema.org/}} formátu. Databáze nabízí též placenou verzi, nabízející například vyšší výkonnost, zabezpečení a škálování grafů.
 
 Data jsou ukládána ve formátu JSON. Nejmenší jednotkou v databázi je \textit{dokument}, který představuje jeden záznam dat. Dokumenty jsou ukládány v binární podobě zvané \textit{VelocyPack}. Dokumenty jsou dále organizovány do \textit{kolekcí}, které mohou obsahovat libovolné množství dokumentů. Každý dokument patří právě do jedné kolekce. Každý dokument má dále \textit{atributy}, které slouží jako vlastnosti. Každý dokument navíc obsahuje minimálně 3 povinné atributy, nazývané \textit{systémové}. Jsou odlišeny od ostatních tak, že začínají podtržítkem. Mají datový typ \texttt{string} a všechny jsou určené pouze ke čtení.
 \begin{itemize}
@@ -659,7 +659,7 @@ Indexy však také mají nevýhody. Zvýšují nároky na úložný prostor a mo
 \textit{Denormalizace} je metoda, která do databáze přidává redundantní data za účelem zrychlení čtení dat. Denormalizace v grafových databázích většinou znamená kopírování hodnot vlastností vrcholů na incidentní hrany. Často se jedná o časové informace. Nevýhodou tohoto procesu je nutná udržba těchto kopií což vede ke~zpomalení zápisů. Denormalizace je tedy vhodná pouze pro aplikace, kde počet operací pro čtení z databáze mnohonásobně převyšuje počet operací pro zápis.
 
 \subsection{Ukázky dotazů}
-V této podkapitole jsou ukázány tři zdrojové kódy \ref{kod:recommendation}, \ref{kod:substring} a \ref{kod:favouriteMonth} pro dotazy odpovídající na některé otázky z podkapitoly \ref{sec:problem-definition}. Výsledky dotazů jsou v tabulkách \ref{tab:recommendation}, \ref{tab:substring} a \ref{tab:favouriteMonth}. U dotazů, které vracejí více než tři výsledky, jsou uvedeny pouze první tři. Desetinná čísla ve výsledcích jsou zaokrouhlena na 3 desetinná místa.
+V této podkapitole jsou ukázány tři zdrojové kódy \ref{kod:recommendation}, \ref{kod:substring} a \ref{kod:favouriteMonth} pro dotazy odpovídající na některé otázky z podkapitoly \ref{sec:problem-definition}. Výsledky dotazů jsou v tabulkách \ref{tab:recommendation}, \ref{tab:substring} a~\ref{tab:favouriteMonth}. U dotazů, které vracejí více než tři výsledky, jsou uvedeny pouze první tři. Desetinná čísla ve výsledcích jsou zaokrouhlena na 3 desetinná místa.
 
 \begin{listing}[h]
 \begin{minted}{cypher}
@@ -701,7 +701,8 @@ FOR u IN User
     FILTER CONTAINS(UPPER(u.firstName), UPPER("RoB"))
         OR  CONTAINS(UPPER(u.lastName), UPPER("RoB"))
     SORT u.firstName, u.lastName
-    RETURN {userId: u._key, name: CONCAT(u.firstName, " ", u.lastName)}
+    RETURN {userId: u._key,
+    	name: CONCAT(u.firstName, " ", u.lastName)}
 \end{minted}
 \caption[Ukázka dotazu v AQL]{Dotaz v AQL odpovídající na zadání \uv{Najdi uživatele, jejichž jméno nebo přijmení obsahuje specifikovaný řetězec.}}
 \label{kod:substring}
@@ -725,8 +726,7 @@ FOR u IN User
 
 \begin{listing}[h]
 \begin{minted}{Groovy}
-g.V().has("Destination", "destinationId", 7).
-  inE("LED_TO").
+g.V().has("Destination", "destinationId", 7).inE("LED_TO").
   group().by(values("startDate").map{it.get().getMonth() + 1}).
   unfold().
   project("month", "rating").
@@ -735,7 +735,8 @@ g.V().has("Destination", "destinationId", 7).
         outV().in('ABOUT').values('rating').mean().fold().
         coalesce(unfold(),constant('not rated'))).
   order().
-    by(__.select("rating").map { it.get() instanceof Number ? 0 : 1 }).
+    by(__.select("rating").
+    map { it.get() instanceof Number ? 0 : 1 }).
     by(__.select("rating"), desc).
   limit(3)
 \end{minted}
@@ -948,7 +949,7 @@ Při psaní této podkapitoly jsem čerpal převážně ze zdroje \cite{disk}. D
 Nevýhodou tohoto algoritmu je, že pro nalezení nejkratší cesty mezi dvěma zadanými vrcholy je v nejhorším případě potřeba nalézt všechny nejkratší cesty do ostatních vrcholů, než se algoritmus dostane k požadovanému výsledku. To nastává v případě, kdy je mezi danými vrcholy nejkratší cesta nejdelší ze všech nejkratších cest z počátečního vrcholu do ostatních vrcholů. Dijkstrův algoritmus navíc nefunguje v grafu, kde se vyskytují hrany se záporným ohodnocením. V těchto grafech je proto nutné použít jiný algoritmus -- například Bellman-Fordův\cite{bellman-original} algoritmus.
 
 \subsubsection{Algoritmus A*}
-Při psaní této podkapitoly jsem čerpal též ze zdroje \cite{astar}. Algoritmus A*\cite{a*-original} pracuje podobně jako Dijkstrův algoritmus. Avšak často dosahuje výsledku rychleji díky dodatečné informaci, kterou dostane na vstupu. Této informaci se říká heuristika. Je to funkce $h\colon V\to \mathbb{R}^+$ odhadující délku cesty ze všech vrcholů do cílového vrcholu. Pro správný výsledek by heuristika měla být optimistická, tedy odhad vzdálenosti by měl být nejvýše roven skutečné vzdálenosti. Platí, že čím lépe odhadneme heuristiku, tím rychleji algoritmus najde řešení. Dijkstrův algoritmus je speciálním případem A*. Pro něj platí $h(v)=0$ pro všechny vrcholy $v \in V$. Pro svůj rychlý výpočet je například implementován ve videohrách.
+Při psaní této podkapitoly jsem čerpal též ze zdroje \cite{astar}. Algoritmus A*\cite{a*-original} pracuje podobně jako Dijkstrův algoritmus. Avšak často dosahuje výsledku rychleji díky dodatečné informaci, kterou dostane na vstupu. Této informaci se říká heuristika. Je to funkce $h\colon V\to \mathbb{R}^+$ odhadující délku cesty ze všech vrcholů do~cílového vrcholu. Pro správný výsledek by heuristika měla být optimistická, tedy odhad vzdálenosti by měl být nejvýše roven skutečné vzdálenosti. Platí, že čím lépe odhadneme heuristiku, tím rychleji algoritmus najde řešení. Dijkstrův algoritmus je speciálním případem A*. Pro něj platí $h(v)=0$ pro všechny vrcholy $v \in V$. Pro svůj rychlý výpočet je například implementován ve videohrách.
 
 Rozhodnutí do jakého vrcholu bude algoritmus pokračovat je provedeno na~základě funkce $f(n) = g(n) + h(n)$ pro každý navštívený vrchol $n$. Funkce $g(n)$ představuje součet ohodnocení nejkratší cesty z počátečního vrcholu přes již navštívené vrcholy do $n$. Funkce $h(n)$ je vstupní heuristika. V každé iteraci pak algoritmus pokračuje vrcholem, pro který je hodnota funkce $f$ nejmenší.
 
@@ -1053,12 +1054,12 @@ Výsledky aplikace zmíněných algoritmů pro měření centrality na graf z ob
 \subsection{Detekce komunit}
 Při psaní této podkapitoly jsem čerpal převážně ze zdrojů \cite{graphAlgorithms} a \cite{neo4jDoc}. Algoritmy detekce komunit v grafech se zaměřují na nalezení skupin vrcholů, tzv. \textit{komunit}, které jsou mezi sebou silněji propojeny než s vrcholy v jiných částech grafu. Příkladem využití je analýza sociálních sítí, kde se hledají komunity blízkých přátel, které tvoří shluky propojených vrcholů. Následně lze z těchto informací odhadovat chování jednotlivců podle členů jejich komunity. Znalost komunit lze též využít pro doporučování produktů uživatelům s podobným nákupním chováním.
 
-Algoritmy pro detekci komunit se dělí na \textit{deterministické} a \textit{nedeterministické}. Deterministické vrací pro stejný graf vždy stejný výsledek, zatímco výsledek u nedeterministických může být pro stejný graf při opakovaném spuštění mírně odlišný. Mezi deterministické se řadí počítání trojúhelníků, výpočet shlukavacího koeficientu, nebo hledání komponent. Mezi nedeterministické patří například Label Propagation, nebo Louvain Modularity.
+Algoritmy pro detekci komunit se dělí na \textit{deterministické} a \textit{nedeterministické}. Deterministické vrací pro stejný graf vždy stejný výsledek, zatímco výsledek u~nedeterministických může být pro stejný graf při opakovaném spuštění mírně odlišný. Mezi deterministické se řadí počítání trojúhelníků, výpočet shlukavacího koeficientu, nebo hledání komponent. Mezi nedeterministické patří například Label Propagation, nebo Louvain Modularity.
 
 \subsubsection{Počítání trojúhelníků a shlukovacího koeficientu}
 Algoritmus pro každý vrchol vrátí počet \textit{trojúhelníků}, kterých je daný vrchol součástí. Trojúhelník je zde definován jako skupina tří navzájem propojených vrcholů. Trojúhelníky nám pomáhají určit do jaké míry jsou vrcholy v našem grafu propojeny. V hustých grafech, lze obvykle nalézt více trojúhelníků. Algoritmus je oblíbený při analýze sociálních sítí, kde pomáhá detekovat komunity, nebo zkoumání skupin webových stránek s podobným námětem.
 
-Znalost počtu trojúhelníků lze využít též pro výpočet \textit{shlukovacího koeficientu} vrcholu, který určuje pravděpodobnost, s jakou jsou jeho sousedé propojeni -- tvoří s ním trojúhelník. Pokud je hodnota koeficientu rovna 1, znamená to, že vrchol se svými sousedy tvoří kliku v grafu. Shlukovací koeficient vrcholu $u$ lze vypočítat pomocí vzorce
+Znalost počtu trojúhelníků lze využít též pro výpočet \textit{shlukovacího koeficientu} vrcholu, který určuje pravděpodobnost, s jakou jsou jeho sousedé propojeni. Pokud je hodnota koeficientu rovna 1, znamená to, že vrchol se svými sousedy tvoří kliku v grafu. Shlukovací koeficient vrcholu $u$ lze vypočítat pomocí vzorce
 
 \begin{equation} 
 \label{eq:ClusteringCoefficient}
@@ -1133,7 +1134,7 @@ Pro ukázkový graf \ref{fig:example-graph} nám algoritmus z knihovny \texttt{G
 \end{table}
 \clearpage
 \section{Testování vybraných implementací}
-Pro testování byl použit dataset \cite{youtubeDataset} obsahující informace o vztazích uživatelů ze sociální sítě Youtube. Pro testování byl též vytvořen csv soubor obsahující identifikátory všech uživatelů v síti a další soubor s vlastnostmi. Tato data tvoří neorientovaný graf. Při testování byly použity orientované hrany a obecně byly procházeny jak výchozí, tak příchozí hrany. Příslušný logický datový model k testovanému datasetu ukazuje obrázek \ref{fig:Youtube-Graph}. Seznam souborů shrnuje tabulka \ref{tab:Youtube-csv}.
+Pro testování byl použit dataset \cite{youtubeDataset} obsahující informace o vztazích uživatelů ze sociální sítě Youtube. Pro testování byl též vytvořen csv soubor obsahující identifikátory všech uživatelů v síti a další soubor s vlastnostmi. Tato data tvoří neorientovaný graf. Při testování byly použity orientované hrany a obecně byly procházeny jak výchozí, tak příchozí hrany. Příslušný logický datový model k~testovanému datasetu ukazuje obrázek \ref{fig:Youtube-Graph}. Seznam souborů shrnuje tabulka \ref{tab:Youtube-csv}.
 
 \begin{figure}[h]
 \begin{center}
@@ -1254,7 +1255,7 @@ Neo4j byla dle očekávání ve zpracování dotazů nejrychlejší. Při práci
 %% \documentclass, výchozí český) se zadává použitím makra s uvedením
 %% jazyka jako nepovinného parametru.
 \begin{kiconclusions}
-Cílem práce bylo představit grafové databáze. Popsal jsem principy ukládání a praci s daty ve formě grafu. V práci jsem se věnoval modelování grafových dat a následně hlavní přednosti grafových databází -- cestování grafem. Představil jsem tři kategorie grafových algoritmů používaných v grafových databázích. Konkrétně to byly algoritmy pro hledání cest, míru centrality a detekci komunit.
+Cílem práce bylo představit grafové databáze. Popsal jsem principy ukládání a~praci s daty ve formě grafu. V práci jsem se věnoval modelování grafových dat a~následně hlavní přednosti grafových databází -- cestování grafem. Představil jsem tři kategorie grafových algoritmů používaných v grafových databázích. Konkrétně to byly algoritmy pro hledání cest, míru centrality a detekci komunit.
 
 V praktické části jsem se věnoval vybraným známým grafovým databázovým systémům a ukázkám jejich použití. Demonstroval jsem na nich jednotlivé problémy zmiňované v textu práce. Následně jsem vybral dataset, na kterém byly vybrané implementace experimentálně porovnány. Nejlepší výsledky při testování podávala databáze Neo4j. Pro jednodušší zprovoznění jsem pro jednotlivé databáze vytvořil \texttt{Dockerfile} s potřebným nastavením.
 

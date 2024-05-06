@@ -3,5 +3,6 @@
 \PYG{+w}{    }\PYG{n}{FILTER}\PYG{+w}{ }\PYG{k}{CONTAINS}\PYG{p}{(}\PYG{k}{UPPER}\PYG{p}{(}\PYG{n}{u}\PYG{p}{.}\PYG{n}{firstName}\PYG{p}{),}\PYG{+w}{ }\PYG{k}{UPPER}\PYG{p}{(}\PYG{l+s+ss}{\PYGZdq{}RoB\PYGZdq{}}\PYG{p}{))}
 \PYG{+w}{        }\PYG{k}{OR}\PYG{+w}{  }\PYG{k}{CONTAINS}\PYG{p}{(}\PYG{k}{UPPER}\PYG{p}{(}\PYG{n}{u}\PYG{p}{.}\PYG{n}{lastName}\PYG{p}{),}\PYG{+w}{ }\PYG{k}{UPPER}\PYG{p}{(}\PYG{l+s+ss}{\PYGZdq{}RoB\PYGZdq{}}\PYG{p}{))}
 \PYG{+w}{    }\PYG{n}{SORT}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{firstName}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{lastName}
-\PYG{+w}{    }\PYG{k}{RETURN}\PYG{+w}{ }\PYG{err}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{\PYGZus{}key}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{n}{CONCAT}\PYG{p}{(}\PYG{n}{u}\PYG{p}{.}\PYG{n}{firstName}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+ss}{\PYGZdq{} \PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{lastName}\PYG{p}{)}\PYG{err}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{RETURN}\PYG{+w}{ }\PYG{err}{\PYGZob{}}\PYG{n}{userId}\PYG{p}{:}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{\PYGZus{}key}\PYG{p}{,}
+\PYG{+w}{    	}\PYG{n}{name}\PYG{p}{:}\PYG{+w}{ }\PYG{n}{CONCAT}\PYG{p}{(}\PYG{n}{u}\PYG{p}{.}\PYG{n}{firstName}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+ss}{\PYGZdq{} \PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{lastName}\PYG{p}{)}\PYG{err}{\PYGZcb{}}
 \end{Verbatim}
