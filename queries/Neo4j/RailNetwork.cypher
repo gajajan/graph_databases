@@ -1,4 +1,4 @@
-//QUERIES SEPARATED BY NAMES WITH CAPITAL LETTERS
+//DOTAZY ODDELENY POMOCI NAZVU S VELKYMI PISMENY
 
 
 //PARAMS SETTING
@@ -16,7 +16,7 @@ RETURN nodes(path) AS stations, length(path) AS edgeCount;
 
 
 //WEIGHTED SHORTEST PATH
-//not working - very computationally expensive!!
+//nelze - vypocetne narocne
 MATCH (src:Station {stationId: $src}),
       (dst:Station {stationId: $dst})
 MATCH p = (src)-[:LEADS_TO]-+(dst)
@@ -27,9 +27,8 @@ LIMIT 1
 
 
 //WEIGHTED SHORTEST PATH
-//the shortest path of all paths having 1 - 8 edges
-//computationally expensive - it tries every path of length 1 - 8 and takes minimum of them
-//there is no need to check cycles in path
+//nejkratsi cesty ktere maji 1 - 8 hran
+//vypocetne narocnejsi
 MATCH (source:Station {stationId: $src}), (dest:Station {stationId: $dst})
 MATCH path = (source)-[:LEADS_TO*1..8]-(dest)
 WITH path,reduce(l=0, r in relationships(path) | l+r.length) AS distance
@@ -62,7 +61,7 @@ RETURN  [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS stations, t
 
 
 //A*
-//uses latitude and longitude like heuristic
+//pouziva zemepisnou sirku a delku jako heuristiku
 MATCH (source:Station {stationId: $src}), (target:Station {stationId: $dst})
 CALL gds.shortestPath.astar.stream('stations',{
     sourceNode: source,
@@ -76,7 +75,6 @@ RETURN  [nodeId IN nodeIds | gds.util.asNode(nodeId).stationName] AS stations, t
 
 
 //RANDOM WALK
-//from vertex with id 9 with point distance
 MATCH (src:Station {stationId: 9})
 WITH src
 CALL gds.randomWalk.stream(

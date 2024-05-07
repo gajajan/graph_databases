@@ -526,7 +526,7 @@ Následující seznam ukazuje, jakým způsobem jsou odpovědi na předchozí ot
 Tyto otázky po vytvoření modelu přeložíme pomocí dotazovacího jazyka na dotazy.
  
 \subsection{Konceptuální datový model}
-V této fázi vyvineme konceptuální datový model, což je přehledný diagram popisující typy dat a jejich propojenost v naší aplikaci. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data ruzných typů v rámci vyvíjené aplikace spolu souvisí. Tento proces vyžaduje identifikování a seskupení všech entit a vztahů, které se v naší aplikaci vyskytují. K~tomu nám pomohou odpovědi na otázky z podkapitoly \ref{sec:problem-definition}. Je možné, že model navrhneme špatně a~budeme jej muset předělat.
+V této fázi vyvineme konceptuální datový model, což je přehledný diagram popisující typy dat a jejich propojenost v naší aplikaci. Vyvarujeme se v něm pro nevývojáře zbytečným detailům a zaměříme se pouze na to, jak data různých typů v rámci vyvíjené aplikace spolu souvisí. Tento proces vyžaduje identifikování a seskupení všech entit a vztahů, které se v naší aplikaci vyskytují. K~tomu nám pomohou odpovědi na otázky z podkapitoly \ref{sec:problem-definition}. Je možné, že model navrhneme špatně a~budeme jej muset předělat.
 
 Při vyvíjení datového modelu vývojáři aplikace často kreslí na tabuli, jak jsou data v rámci projektu mezi sebou propojena. Proto konceptuální datový model je v některých zdrojích označován jako \textit{whiteboard model}. 
 
@@ -1270,6 +1270,40 @@ In the practical part, I focused on selected well-known implementations of graph
 
 The thesis could be expanded by comparing more implementations of graph databases. This comparison would be much more beneficial if conducted under stricter conditions to ensure much higher testing accuracy. Also, greater attention could be devoted to graph databases implementing the RDF model or hypergraph.
 \end{kiconclusions}
+
+
+\appendix
+
+\section{Obsah elektronických dat}
+
+\begin{description}
+
+\item[\texttt{ArangoDB-docker/}] \hfill \\
+Adresář obsahující potřebné soubory pro sestavení kontejneru v Dockeru pro databázi ArangoDB. Do kontejneru jsou též zkopírovány datasety zmiňované v práci, na kterých lze zkoušet dotazy v dotazovacím jazyku AQL z adresáře \texttt{/queries}.
+
+\item[\texttt{images/}] \hfill \\
+Adresář obsahující obrázky, které jsou použité v \texttt{readme.txt}.
+
+\item[\texttt{kidiplom/}] \hfill \\
+Adresář obsahující text práce ve formátu PDF, vytvořený s použitím závazného stylu KI PřF UP v Olomouci pro závěrečné práce a všechny soubory potřebné pro vytvoření PDF dokumentu, včetně zdrojového kódu, obrázků a dalších příloh.
+
+\item[\texttt{Neo4j-docker/}] \hfill \\
+Adresář obsahující potřebné soubory pro sestavení kontejneru v Dockeru pro databázi Neo4j. Do kontejneru jsou též zkopírovány datasety zmiňované v práci, na kterých lze zkoušet dotazy v dotazovacím jazyku Cypher z adresáře \texttt{/queries}.
+
+\item[\texttt{OrientDB-docker/}] \hfill \\
+Adresář obsahující potřebné soubory pro sestavení kontejneru v Dockeru pro databázi OrientDB. Do kontejneru jsou též zkopírovány datasety zmiňované v práci, na kterých lze zkoušet dotazy v dotazovacím jazyku Gremlin nebo SQL z adresáře \texttt{/queries}.
+
+\item[\texttt{queries/}] \hfill \\
+Adresář obsahuje podadresáře určené pro vybrané implementace grafových databází. V těchto poadresářích jsou textové soubory s ukázkovými dotazy. 
+
+\item[\texttt{Measurement.xlsx}] \hfill \\
+Dokument Microsoft Excel obsahující zaznamenané výsledky měření.
+
+\item[\texttt{readme.txt}] \hfill \\
+Textový soubor sloužící pro zprovoznění praktické části práce.
+
+\end{description}
+
 
 
 %% -------------------------------------------------------------------

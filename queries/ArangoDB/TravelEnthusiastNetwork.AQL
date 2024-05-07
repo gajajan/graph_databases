@@ -1,4 +1,4 @@
-//QUERIES SEPARATED BY NAMES WITH CAPITAL LETTERS
+//DOTAZY ODDELENY POMOCI NAZVU S VELKYMI PISMENY
 
 
 //FIRST NEIGHBORHOOD
@@ -12,7 +12,6 @@ FOR fof IN 2..2 OUTBOUND @user FOLLOWS
 
 
 //SECOND NEIGHBORHOOD WITHOUT FIRST
-//first neighborhood
 LET f = (
     FOR v IN OUTBOUND @user FOLLOWS
         RETURN DISTINCT v
@@ -25,8 +24,8 @@ FOR fof IN 2..2 OUTBOUND @user FOLLOWS
 
 
 //VISITED DESTINATIONS
-//returns a destination name and
-// a number indicating how many times user visited specific destination
+//vrací jméno destinace
+// a počet indikující kolikrát uživatel danou destinaci navstivil
 FOR d IN 2..2 OUTBOUND @user PARTICIPATED, LED_TO
     COLLECT name = d.destinationName WITH COUNT INTO count
     SORT count DESC, name
@@ -34,7 +33,6 @@ FOR d IN 2..2 OUTBOUND @user PARTICIPATED, LED_TO
 
 
 //CO-TRAVELERS
-//returns user's id and name
 FOR journey IN OUTBOUND @user PARTICIPATED
     FOR f IN INBOUND journey PARTICIPATED
         FILTER f._id != @user
@@ -55,7 +53,9 @@ FOR d IN Destination
 
 
 //DESTINATION RECOMMENDATION BASED ON ACTIVITY LIST
-//destinations which offer all activities in list
+//nabízí 3 destinace které uživatel nenavštívil
+//tato destinace musí nabízet všechny aktivity formulované v activityList
+//dotaz vrací jméno destinace a její hodnocení, seřazené podle hodnocení
 LET destinations = (
     FOR d IN Destination
         LET matching_activities = (
@@ -66,13 +66,11 @@ LET destinations = (
         FILTER LENGTH(matching_activities) == LENGTH(@activity_list)
         RETURN DISTINCT d
 )
-//destinations that the user has not visited
 LET visited = (
   FOR d IN 2..2 OUTBOUND @user PARTICIPATED, LED_TO
     RETURN d
 )
 LET unvisited = MINUS(destinations, visited)
-//average rating for those destinations
 FOR d IN unvisited
     LET averageRating = AVG(
         FOR r IN 2..2 INBOUND d LED_TO, ABOUT
@@ -84,6 +82,8 @@ FOR d IN unvisited
 
 
 //DESTINATIONS OFFERING ACTIVITIES THAT USER LIKES
+// vrací destinaci a
+// cislo indikujici kolik aktivit ma destinace s uzivatelem spolecne
 FOR d IN 2..2 OUTBOUND @user LIKES, INBOUND OFFERS
     COLLECT name = d.destinationName WITH COUNT INTO count
     SORT count DESC, name
@@ -91,18 +91,15 @@ FOR d IN 2..2 OUTBOUND @user LIKES, INBOUND OFFERS
 
 
 //DESTINATION RECOMMENDATION BASED ON USER'S FAVOURITE ACTIVITIES
-//destinations that offer activities that the user likes
 LET destinations = (
     FOR d IN 2..2 OUTBOUND @user LIKES, INBOUND OFFERS
         RETURN DISTINCT d
 )
-//destinations that the user has visited
 LET visited = (
   FOR d IN 2..2 OUTBOUND @user PARTICIPATED, LED_TO
     RETURN d
 )
 LET unvisited = MINUS(destinations, visited)
-//average rating for those destinations
 FOR d IN unvisited
     LET averageRating = AVG(
         FOR r IN 2..2 INBOUND d LED_TO, ABOUT
@@ -114,8 +111,8 @@ FOR d IN unvisited
 
 
 //THE MOST FAVOURITE MONTH FOR VISITING SPECIFIC DESTINATION
-//returns a number indicating the month of the year
-//and the input destination rating for that month
+//vrací cislo reprezentujici mesic v roce a hodnoceni
+//vysledek je serazen podle hodnoceni a omezen na 3
 FOR j,e IN INBOUND @destination LED_TO
     COLLECT monthAggregate = DATE_MONTH(e.startDate) INTO months
     LET monthJourneys = (
@@ -133,7 +130,7 @@ FOR j,e IN INBOUND @destination LED_TO
 
 
 //TEXT SEARCH
-//returns users whose name contains the input substring
+//vraci uzivatele jejichz jmeno obsahuje vstupni retezec
 FOR u IN User
     FILTER CONTAINS(UPPER(u.firstName), UPPER(@substr))
         OR  CONTAINS(UPPER(u.lastName), UPPER(@substr))

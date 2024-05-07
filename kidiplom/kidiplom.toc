@@ -77,4 +77,5 @@
 \contentsline {section}{Conclusions}{58}{section*.8}%
 \babel@toc {english}{}\relax 
 \babel@toc {czech}{}\relax 
-\contentsline {section}{Literatura}{59}{section*.10}%
+\contentsline {section}{\numberline {A}Obsah elektronických dat}{59}{appendix.A}%
+\contentsline {section}{Literatura}{60}{section*.10}%

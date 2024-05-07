@@ -1,4 +1,4 @@
-//QUERIES SEPARATED BY NAMES WITH CAPITAL LETTERS
+//DOTAZY ODDELENY POMOCI NAZVU S VELKYMI PISMENY
 
 
 //VARIABLES SETTING
@@ -30,8 +30,8 @@ g.V().has("User", "userId", user).
         select('fof').dedup().valueMap();
 
 //VISITED DESTINATIONS
-//returns a destination name and
-// a number indicating how many times user visited specific destination
+//vrací jméno destinace
+// a počet indikující kolikrát uživatel danou destinaci navstivil
 g.V().has("User", "userId", user).
     out("PARTICIPATED").
     out("LED_TO").
@@ -47,7 +47,6 @@ g.V().has("User", "userId", user).
 
 
 //CO-TRAVELERS
-//returns users map
 g.V().has("User", "userId", user).as("me").
     out("PARTICIPATED").
     in("PARTICIPATED").
@@ -75,9 +74,9 @@ g.V().hasLabel('Destination').as('d').
 
 
 //DESTINATION RECOMMENDATION BASED ON ACTIVITY LIST
-//offers 3 destinations that the user has not visited
-//the destination must offer all activities whose name is in the input list
-//returns the destination names and their rating sorted by average rating
+//nabízí 3 destinace které uživatel nenavštívil
+//tato destinace musí nabízet všechny aktivity formulované v activityList
+//dotaz vrací jméno destinace a její hodnocení, seřazené podle hodnocení
 g.V().has('User', 'userId', user).as('u').
     V().hasLabel('Destination').as('d').
     where(
@@ -105,8 +104,8 @@ g.V().has('User', 'userId', user).as('u').
 
 
 //DESTINATIONS OFFERING ACTIVITIES THAT USER LIKES
-// returns a destinations and
-// number indicating how many activities has the destination with specific user in common 
+// vrací destinaci a
+// cislo indikujici kolik aktivit ma destinace s uzivatelem spolecne
 g.V().has('User', 'userId', user).as('u').
     out('LIKES').as('a').
     in('OFFERS').as('d').
@@ -145,8 +144,8 @@ g.V().has('User', 'userId', user).as('u').
 
 
 //THE MOST FAVOURITE MONTH FOR VISITING SPECIFIC DESTINATION
-//returns a number indicating the month of the year
-//and the input destination rating for that month
+//vrací cislo reprezentujici mesic v roce a hodnoceni
+//vysledek je serazen podle hodnoceni a omezen na 3
 g.V().has("Destination", "destinationId", destination).
  inE("LED_TO").
   group().by(values("startDate").map{it.get().getMonth() + 1}).
@@ -162,7 +161,7 @@ g.V().has("Destination", "destinationId", destination).
   limit(3)
 
 //TEXT SEARCH
-//returns users whose name contains the input substring
+//vraci uzivatele jejichz jmeno obsahuje vstupni retezec
 //case sensitive!
 g.V().hasLabel("User").
     or(
@@ -172,7 +171,7 @@ g.V().hasLabel("User").
     valueMap();
 
 //TEXT SEARCH
-//returns users whose name contains the input substring
+//vraci uzivatele jejichz jmeno obsahuje vstupni retezec
 g.V().hasLabel("User").
     or(has("firstName", TextP.regex("(?i)" + substr)),
         has("lastName", TextP.regex("(?i)" + substr))).

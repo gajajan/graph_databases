@@ -1,5 +1,5 @@
 //Q1 - Q4
-//depth x is specified in times(x)
+//hloubka x specifikována pomocí times(x)
 g.V().has("User", "userId", 1).as('me').
     repeat(both()).
     emit().times(3).

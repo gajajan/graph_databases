@@ -1,4 +1,4 @@
-//QUERIES SEPARATED BY NAMES WITH CAPITAL LETTERS
+//DOTAZY ODDELENY POMOCI NAZVU S VELKYMI PISMENY
 
 
 //PARAMS SETTING
@@ -28,15 +28,14 @@ RETURN DISTINCT fof;
 
 
 //VISITED DESTINATIONS
-//returns a destination name and
-// a number indicating how many times user visited specific destination
+//vrací jméno destinace
+// a počet indikující kolikrát uživatel danou destinaci navstivil
 MATCH (u:User {userId:$user})-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d:Destination)
 RETURN d.destinationName, COUNT(d) AS count
 ORDER BY count DESC, d.destinationName ASC;
 
 
 //CO-TRAVELERS
-//returns user's id and name
 MATCH (u:User {userId:$user})-[:PARTICIPATED]->(:Journey)<-[:PARTICIPATED]-(f:User)
 WHERE NOT f IS u
 RETURN DISTINCT f.userId AS userId, f.firstName AS firstName, f.lastName AS lastName, COUNT (f) AS count
@@ -52,9 +51,9 @@ RETURN d;
 
 
 //DESTINATION RECOMMENDATION BASED ON ACTIVITY LIST
-//offers 3 destinations that the user has not visited
-//the destination must offer all activities whose name is in the input list
-//returns the destination names and their rating sorted by average rating
+//nabízí 3 destinace které uživatel nenavštívil
+//tato destinace musí nabízet všechny aktivity formulované v activityList
+//dotaz vrací jméno destinace a její hodnocení, seřazené podle hodnocení
 MATCH (a:TravelActivity) WHERE a.activityName IN $activity_list
 WITH collect(a) AS activities
 MATCH (d:Destination)
@@ -68,14 +67,14 @@ LIMIT 3;
 
 
 //DESTINATIONS OFFERING ACTIVITIES THAT USER LIKES
+// vrací destinaci a
+// cislo indikujici kolik aktivit ma destinace s uzivatelem spolecne
 MATCH (:User {userId: $user})-[:LIKES]->(a:TravelActivity)<-[:OFFERS]-(d:Destination)
 RETURN d.destinationName AS name, COUNT(a) AS count
 ORDER BY count DESC, name;
 
 
 //DESTINATION RECOMMENDATION BASED ON USER'S FAVOURITE ACTIVITIES
-// returns a a destinations and
-// number indicating how many activities has the destination with specific user in common 
 MATCH (u:User {userId: $user})-[:LIKES]->(a:TravelActivity)<-[:OFFERS]-(d:Destination)
 WHERE NOT (u)-[:PARTICIPATED]->(:Journey)-[:LED_TO]->(d)
 OPTIONAL MATCH (d)<-[:LED_TO]-()<-[:ABOUT]-(r:Rating)
@@ -86,8 +85,8 @@ LIMIT 3;
 
 
 //THE MOST FAVOURITE MONTH FOR VISITING SPECIFIC DESTINATION
-//returns a number indicating the month of the year
-//and the input destination rating for that month
+//vrací cislo reprezentujici mesic v roce a hodnoceni
+//vysledek je serazen podle hodnoceni a omezen na 3
 MATCH (d:Destination {destinationId: $destId})<-[l:LED_TO]-(j:Journey)
 OPTIONAL MATCH (j)<-[:ABOUT]-(r:Rating)
 RETURN l.startDate.month AS month, 
@@ -97,7 +96,7 @@ LIMIT 3;
 
 
 //TEXT SEARCH
-//returns users whose name contains the input substring
+//vraci uzivatele jejichz jmeno obsahuje vstupni retezec
 MATCH (u:User)
 WHERE toUpper(u.firstName) CONTAINS toUpper($substr)
 OR toUpper(u.lastName) CONTAINS toUpper($substr)

@@ -1,5 +1,5 @@
 --Q1,Q2,Q3,Q4
---depth is specified by MAXDEPTH
+--hloubka specifikována pomocí MAXDEPTH
 SELECT count(*)
 FROM (TRAVERSE both("FRIENDS") FROM (SELECT * FROM User WHERE userId = 1) MAXDEPTH 2 STRATEGY BREADTH_FIRST)
 WHERE $depth > 0

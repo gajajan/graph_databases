@@ -1,3 +1,5 @@
+//DOTAZY ODDELENY POMOCI NAZVU S VELKYMI PISMENY
+
 // CALL GDS.GRAPH.PROJECT
 CALL gds.graph.project(
     'cities',

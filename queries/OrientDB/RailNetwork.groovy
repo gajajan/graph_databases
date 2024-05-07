@@ -1,4 +1,4 @@
-//QUERIES SEPARATED BY NAMES WITH CAPITAL LETTERS
+//DOTAZY ODDELENY POMOCI NAZVU S VELKYMI PISMENY
 
 
 //VARIABLES SETTING
@@ -7,7 +7,7 @@ dst = 319;
 
 
 //UNWEIGHTED SHORTEST PATH
-//repeat().until() pattern uses barriers -> it executes eagerly using breadth-first search
+//repeat().until() pattern pouziva bariery -> breadth-first search
 g.V().has("Station", "stationId", src).
     repeat(out("LEADS_TO")).
     until(has("Station", "stationId", dst)).
@@ -19,7 +19,7 @@ g.V().has("Station", "stationId", src).
 
 
 //WEIGHTED SHORTEST PATH - naive
-//not working -- computationally expensive
+//nelze - vypocetne narocne
 g.withSack(0.0).
     V().
     has("Station", "stationId", src).
@@ -43,9 +43,7 @@ g.withSack(0.0).
 
 
 //WEIGHTED SHORTEST PATH
-//optimization - something like Dijkstra
-//group creates a "lookup table" with 2 columns - vertices and minDist
-//so we keep the shortest distance found so far to each visited node
+//optimalizace na zpusob dijkstrova algoritmu 
 g.withSack(0.0).
     V().
     has("Station", "stationId", src).
